@@ -1250,27 +1250,40 @@
   }
 
   // --- Cosmic Galaxy Canvas Renderer ---
+  let bgScaledCanvas = null, bgScaledSource = null;
+  function getScaledBackground() {
+    if (!background) return null;
+    if (bgScaledCanvas && bgScaledSource === background) return bgScaledCanvas;
+    bgScaledSource = background;
+    const c = document.createElement('canvas');
+    c.width = W;
+    c.height = H;
+    const g = c.getContext('2d');
+    const s = Math.max(W / background.width, H / background.height);
+    const w = background.width * s, h = background.height * s;
+    g.drawImage(background, (W - w) / 2, (H - h) / 2, w, h);
+    bgScaledCanvas = c;
+    return bgScaledCanvas;
+  }
+
   function drawWaterMotion(t, x, y, width, height) {
     if (!data.waterMotion?.enabled || !background) return;
-    const top=y+height*clamp(Number(data.waterMotion.horizon)||.805,.55,.95);
-    const amount=Number(data.waterMotion.amount)||1;
-    const phase=t*Math.PI/4;
-    ctx.save();ctx.beginPath();ctx.rect(0,top,W,H-top);ctx.clip();
-    for(let row=top;row<H;row+=3){
-      const depth=clamp((row-top)/(H-top));
-      const sourceY=(row-y)/height*background.height;
-      const sourceH=Math.min(background.height-sourceY,4/height*background.height);
-      if(sourceH<=0)continue;
-      const shift=(Math.sin(phase+depth*22)*5+Math.sin(phase*2-depth*13)*2)*depth*amount;
-      ctx.drawImage(background,0,sourceY,background.width,sourceH,x+shift,row,width,4);
-    }
-    ctx.globalCompositeOperation='screen';ctx.strokeStyle='#f4aacd';ctx.lineWidth=.7;
-    for(let i=0;i<10;i++){
-      const depth=(i+1)/11;
-      const cy=top+depth*(H-top);
-      const cx=W*(.63+Math.sin(phase*.5+i)*.008);
-      ctx.globalAlpha=.025+Math.pow(depth,1.5)*.045;
-      ctx.beginPath();ctx.ellipse(cx,cy,20+depth*65,1+depth*2,0,0,Math.PI*2);ctx.stroke();
+    const srcCanvas = getScaledBackground() || background;
+    const top = Math.floor(y + height * clamp(Number(data.waterMotion.horizon) || .805, .55, .95));
+    const amount = Number(data.waterMotion.amount) || 1;
+    const phase = t * Math.PI / 4;
+    const rowStep = recording() ? 10 : 6;
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(0, top, W, H - top);
+    ctx.clip();
+    for (let row = top; row < H; row += rowStep) {
+      const depth = clamp((row - top) / (H - top));
+      const sourceY = ((row - y) / height) * srcCanvas.height;
+      const sourceH = Math.min(srcCanvas.height - sourceY, ((rowStep + 1) / height) * srcCanvas.height);
+      if (sourceH <= 0) continue;
+      const shift = (Math.sin(phase + depth * 22) * 5 + Math.sin(phase * 2 - depth * 13) * 2) * depth * amount;
+      ctx.drawImage(srcCanvas, 0, sourceY, srcCanvas.width, sourceH, x + shift, row, width, rowStep + 1);
     }
     ctx.restore();
   }
@@ -1298,13 +1311,13 @@
   // 2026-11-15: Khách hàng phản hồi nền bị tĩnh quá chán nhưng trước đó nếu giật theo beat lại khó chịu; nên giữ chuyển động trôi chậm điện ảnh rất êm (zoom 1.02 + 0.004*sin) không bị giật cục theo trống mà khung hình vẫn có sức sống.
   function drawBackground(t) {
     if (background) {
+      const srcCanvas = getScaledBackground() || background;
       const zoom = 1.02 + 0.004 * Math.sin(t * 0.14);
-      const s = Math.max(W / background.width, H / background.height) * zoom;
-      const w = background.width * s,
-        h = background.height * s;
+      const w = W * zoom,
+        h = H * zoom;
       const x = (W - w) / 2 + Math.sin(t * 0.11) * 4;
       const y = (H - h) / 2 + Math.cos(t * 0.09) * 2.5;
-      ctx.drawImage(background, x, y, w, h);
+      ctx.drawImage(srcCanvas, x, y, w, h);
       drawWaterMotion(t,x,y,w,h);
       drawSettingSun(t,x,y,w,h);
     } else {
@@ -2219,11 +2232,8 @@
       const x=W*.19+(i+.5)*step;
       ctx.globalAlpha=(.32+.56*visibility)*(.48+.52*level);
       ctx.fillStyle=i%3===0?'#fef08a':i%3===1?`rgb(${r},${g},${b})`:'#f472b6';
-      ctx.shadowColor=ctx.fillStyle;
-      ctx.shadowBlur=8*pulse;
       ctx.beginPath();ctx.roundRect(x-3,centerY-height/2,5.5,height,3);ctx.fill();
     }
-    ctx.shadowBlur=0;
     if(visibility>.02 && data.intro?.style!=='storybook'){
       const beats=effect.beats;
       for(let i=beats.length-1;i>=0;i--){
@@ -2239,18 +2249,19 @@
       const ribbonColors=['#fb923c','#38bdf8','#f472b6'];
       for(let layer=0;layer<3;layer++){
         ctx.save();
-        ctx.globalAlpha=visibility*(0.64-layer*0.14);
         ctx.strokeStyle=ribbonColors[layer];
-        ctx.shadowColor=ribbonColors[layer];
-        ctx.shadowBlur=12;
-        ctx.lineWidth=3.2-layer*0.6;
         ctx.beginPath();
-        for(let k=0;k<=80;k++){
-          const u=k/80, taper=Math.sin(u*Math.PI);
+        for(let k=0;k<=64;k++){
+          const u=k/64, taper=Math.sin(u*Math.PI);
           const spec=Math.max(spectrumAt(t, (k+layer*5)%18), 0.25);
           const y=waveY + (Math.sin(u*Math.PI*4 + t*3.8 + layer*1.1)*(22 + spec*36 + pulse*22))*taper;
           if(k===0) ctx.moveTo(x0,y); else ctx.lineTo(x0+span*u,y);
         }
+        ctx.globalAlpha=visibility*(0.22-layer*0.04);
+        ctx.lineWidth=8-layer*1.5;
+        ctx.stroke();
+        ctx.globalAlpha=visibility*(0.68-layer*0.14);
+        ctx.lineWidth=3.0-layer*0.5;
         ctx.stroke();
         ctx.restore();
       }
@@ -2400,29 +2411,20 @@
           // Animated beat-synced karaoke underline bar under the active word
           const barW = Math.max(6, w.width * clamp(wProg * 1.15, 0.15, 1));
           const barY = art.size * 0.54;
-          ctx.shadowColor = glowColor;
-          ctx.shadowBlur = 12 + 10 * pulse;
+          ctx.shadowBlur = 0;
           ctx.fillStyle = '#fef08a';
           ctx.beginPath();
           ctx.roundRect(w.x, barY, barW, 4, 2);
           ctx.fill();
         } else if (isSung) {
-          ctx.shadowColor = glowColor;
-          ctx.shadowBlur = (12 + 8 * pulse) * glowAmount;
-          ctx.shadowOffsetY = 0;
-          ctx.fillStyle = mainColor;
-          ctx.fillText(w.text, w.x, 0);
-
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.92)';
-          ctx.shadowBlur = 7;
-          ctx.shadowOffsetY = 2;
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
+          ctx.fillText(w.text, w.x, 2.5);
           ctx.fillStyle = mainColor;
           ctx.fillText(w.text, w.x, 0);
         } else {
           ctx.globalAlpha = visibleOpacity * 0.72;
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-          ctx.shadowBlur = 6;
-          ctx.shadowOffsetY = 2;
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
+          ctx.fillText(w.text, w.x, 2.5);
           ctx.fillStyle = mainColor;
           ctx.fillText(w.text, w.x, 0);
         }
@@ -3038,7 +3040,64 @@
     ctx.restore();
   }
 
-  function loop(stamp) {
+  // 2026-11-16: Khách hàng phản hồi khi đang xuất video mà chuyển sang tab khác trên Chrome để xem thì video xuất ra bị đơ; nguyên nhân do Chrome tạm dừng requestAnimationFrame và hoãn flush GPU 2D Canvas khi tab bị ẩn (document.hidden). Khắc phục bằng cách kết hợp Web Worker 30fps + xung nhịp AudioContext ScriptProcessorNode (không bao giờ bị Chrome khóa khi có nhạc) + ép flush GPU bằng getImageData(0,0,1,1) và requestFrame() khi tab ẩn.
+  let exportWorker = null;
+  let exportAudioTicker = null;
+  let exportWakeLock = null;
+  let lastRecordDrawStamp = 0;
+
+  function startExportBackgroundTicker() {
+    stopExportBackgroundTicker();
+    try {
+      const blob = new Blob(
+        ['let id=setInterval(()=>postMessage(Date.now()),33);onmessage=e=>{if(e.data==="stop")clearInterval(id);}'],
+        { type: 'application/javascript' }
+      );
+      exportWorker = new Worker(URL.createObjectURL(blob));
+      exportWorker.onmessage = () => {
+        if (recording() && (document.hidden || performance.now() - lastRecordDrawStamp >= 32)) {
+          loop(performance.now(), true);
+        }
+      };
+    } catch (e) {}
+    try {
+      ensureAudioContextSync();
+      const proc = audioContext.createScriptProcessor(2048, 1, 1);
+      proc.onaudioprocess = () => {
+        if (recording() && (document.hidden || performance.now() - lastRecordDrawStamp >= 33)) {
+          loop(performance.now(), true);
+        }
+      };
+      proc.connect(audioContext.destination);
+      exportAudioTicker = proc;
+    } catch (e) {}
+    if (navigator.wakeLock && navigator.wakeLock.request) {
+      navigator.wakeLock.request('screen').then((wl) => { exportWakeLock = wl; }).catch(() => {});
+    }
+  }
+
+  function stopExportBackgroundTicker() {
+    if (exportWorker) {
+      try {
+        exportWorker.postMessage('stop');
+        exportWorker.terminate();
+      } catch (e) {}
+      exportWorker = null;
+    }
+    if (exportAudioTicker) {
+      try {
+        exportAudioTicker.onaudioprocess = null;
+        exportAudioTicker.disconnect();
+      } catch (e) {}
+      exportAudioTicker = null;
+    }
+    if (exportWakeLock) {
+      try { exportWakeLock.release(); } catch (e) {}
+      exportWakeLock = null;
+    }
+  }
+
+  function loop(stamp, fromWorker = false) {
     if (!lastStamp) lastStamp = stamp;
     const dt = Math.min(0.1, (stamp - lastStamp) / 1000);
     lastStamp = stamp;
@@ -3061,9 +3120,21 @@
     if (playing && previewSegEnd !== null && t >= previewSegEnd) {
       pause();
     }
-    if (playing || t !== lastDrawnTime) draw(t);
-    if (Math.floor(stamp / 120) !== Math.floor((stamp - dt * 1000) / 120)) updateTransport(t);
-    requestAnimationFrame(loop);
+    if (recording()) {
+      if (stamp - lastRecordDrawStamp >= 30 || fromWorker) {
+        lastRecordDrawStamp = stamp;
+        draw(t);
+        try {
+          if (document.hidden) ctx.getImageData(0, 0, 1, 1);
+          const vTrack = exportStream?.getVideoTracks?.()?.[0];
+          if (vTrack && typeof vTrack.requestFrame === 'function') vTrack.requestFrame();
+        } catch (e) {}
+      }
+    } else if (playing || t !== lastDrawnTime) {
+      draw(t);
+    }
+    if (!document.hidden && Math.floor(stamp / 120) !== Math.floor((stamp - dt * 1000) / 120)) updateTransport(t);
+    if (!fromWorker) requestAnimationFrame(loop);
   }
 
   function getCanvasPoint(e) {
@@ -4157,9 +4228,12 @@
     try {
       pause();
       await ensureAudioRouting();
-      const mime = ['video/webm;codecs=vp9,opus', 'video/webm;codecs=vp8,opus', 'video/webm'].find((x) =>
-        MediaRecorder.isTypeSupported(x)
-      );
+      const mime = [
+        'video/webm;codecs=h264,opus',
+        'video/webm;codecs=vp8,opus',
+        'video/webm;codecs=vp9,opus',
+        'video/webm'
+      ].find((x) => MediaRecorder.isTypeSupported(x));
       if (!mime) {
         toast('Hệ thống chưa hỗ trợ ghi WebM.');
         return;
@@ -4173,13 +4247,14 @@
       recordingChunks = [];
       exportRecorder = new MediaRecorder(exportStream, {
         mimeType: mime,
-        videoBitsPerSecond: 6000000,
+        videoBitsPerSecond: 5000000,
         audioBitsPerSecond: 192000
       });
       exportRecorder.ondataavailable = (e) => {
         if (e.data && e.data.size) recordingChunks.push(e.data);
       };
       exportRecorder.onstop = () => {
+        stopExportBackgroundTicker();
         const chunks = recordingChunks;
         recordingChunks = [];
         if (chunks.length) download(new Blob(chunks, { type: mime }), 'nebula-lyric-video.webm');
@@ -4197,10 +4272,14 @@
         $('previewStatus').textContent = 'LIVE PREVIEW';
         toast('Đã lưu video WebM thành công!');
       };
-      exportRecorder.onerror = () => toast('Có lỗi trong lúc ghi video.');
+      exportRecorder.onerror = () => {
+        stopExportBackgroundTicker();
+        toast('Có lỗi trong lúc ghi video.');
+      };
       setTime(0);
       draw(0);
-      exportRecorder.start(200);
+      startExportBackgroundTicker();
+      exportRecorder.start(1000);
       $('exportBtn').classList.add('recording');
       $('exportBtn').textContent = '■ Dừng & lưu video';
       $('previewStatus').textContent = '● ĐANG GHI VIDEO';
