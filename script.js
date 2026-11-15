@@ -1602,8 +1602,13 @@
 
   function renderLyricSegment(seg, prevSeg, nextSeg, t) {
     // Reject inactive cues before measuring or rasterizing any text.
-    const activeMode = VALID_MODES.includes(data.lyricMode) ? data.lyricMode : (seg.mode || 'queue');
-    const motion = NebulaMotion.state({ ...seg, mode: activeMode }, t, NebulaMotion.beatBreath(data.beatEffect,t),data.lyricDirection);
+    const activeMode = seg.songPart === 2 && VALID_MODES.includes(seg.mode)
+      ? seg.mode
+      : VALID_MODES.includes(data.lyricMode)
+      ? data.lyricMode
+      : (seg.mode || 'queue');
+    const dir = seg.songPart === 2 ? 'down' : data.lyricDirection;
+    const motion = NebulaMotion.state({ ...seg, mode: activeMode }, t, NebulaMotion.beatBreath(data.beatEffect,t), dir);
     if (!motion) return null;
     const art = createLyricArtwork(seg);
     return {...motion, art, lines:[art.label], size:art.size, lineHeight:art.size*1.4, activeNow:true, priority:100};
@@ -1966,12 +1971,143 @@
     ctx.restore();
   }
 
+  let sunsetRemixArtwork = null, sunsetRemixKey = '';
+  // 2026-11-16: Khách hàng yêu cầu thêm bài thứ 2 (Đến Khi Nào - ChaChaCha Remix) nối sau bài 1 trên cùng hình nền Hồ Hoàng Hôn Dưới Ánh Trăng Sao nhưng có hiệu ứng nhạc dạo và chạy chữ khác một chút; bổ sung drawSunsetRemixIntro với vương miện sóng nhạc mặt trời hoàng hôn + khung kim cương phát sáng theo beat và hỗ trợ hiển thị cả ở đầu bài lẫn đoạn chuyển bài (secondIntro).
+  function drawSunsetRemixIntro(t, customCfg = null) {
+    const cfg = customCfg || data.intro;
+    if (!cfg?.enabled) return;
+    const start = Number(cfg.start) || 0;
+    const first = sortedLyrics()[0]?.start ?? 32.1;
+    const end = Number(cfg.end) || (start + Math.max(5, first - 0.4));
+    if (t < start || t >= end) return;
+    const localT = t - start;
+    const dur = end - start;
+    const title = String(cfg.title || data.songTitle || '').trim();
+    const subtitle = String(cfg.subtitle || data.artist || '').trim();
+    const key = JSON.stringify(['sunset-remix', title, subtitle]);
+    if (!sunsetRemixArtwork || key !== sunsetRemixKey) {
+      sunsetRemixKey = key;
+      sunsetRemixArtwork = document.createElement('canvas');
+      sunsetRemixArtwork.width = W;
+      sunsetRemixArtwork.height = 340;
+      const g = sunsetRemixArtwork.getContext('2d');
+      g.textAlign = 'center';
+      g.textBaseline = 'middle';
+      const upperTitle = title.toLocaleUpperCase('vi-VN');
+      g.font = '800 88px "Oswald",sans-serif';
+      const fitted = Math.min(88, 88 * (W * 0.86) / Math.max(1, g.measureText(upperTitle).width));
+      g.font = `800 ${fitted}px "Oswald",sans-serif`;
+
+      g.shadowColor = 'rgba(0, 0, 0, 0.95)';
+      g.shadowBlur = 18;
+      g.shadowOffsetY = 4;
+      g.fillStyle = '#000000';
+      g.fillText(upperTitle, W / 2, 125);
+
+      g.shadowColor = '#fb923c';
+      g.shadowBlur = 30;
+      g.shadowOffsetY = 0;
+      g.fillStyle = '#ffffff';
+      g.fillText(upperTitle, W / 2, 125);
+
+      g.shadowColor = '#f472b6';
+      g.shadowBlur = 12;
+      g.fillStyle = '#fffbeb';
+      g.fillText(upperTitle, W / 2, 125);
+
+      const subUpper = subtitle.toLocaleUpperCase('vi-VN');
+      g.font = '600 26px "Oswald","Be Vietnam Pro",sans-serif';
+      const subW = g.measureText(subUpper).width + 72;
+      g.shadowColor = 'rgba(0, 0, 0, 0.88)';
+      g.shadowBlur = 12;
+      g.fillStyle = 'rgba(28, 12, 24, 0.76)';
+      g.strokeStyle = '#fb923c';
+      g.lineWidth = 2;
+      g.beginPath();
+      g.roundRect((W - subW) / 2, 196, subW, 50, 12);
+      g.fill();
+      g.stroke();
+
+      g.shadowColor = '#fb923c';
+      g.shadowBlur = 10;
+      g.fillStyle = '#fed7aa';
+      g.fillText(subUpper, W / 2, 222);
+    }
+
+    const enter = smooth(localT / 0.95);
+    const out = smooth((dur - localT) / 0.95);
+    const alpha = enter * out;
+    const pulse = beatPulse(t);
+    const cx = W * 0.5, cy = H * 0.23;
+
+    ctx.save();
+    ctx.globalAlpha = alpha;
+
+    // Rotating diamond beat frame around sunset emblem
+    for (let d = 0; d < 2; d++) {
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(t * (d === 0 ? 0.45 : -0.35) + d * (Math.PI / 4));
+      const sz = 66 + d * 22 + pulse * 18;
+      ctx.strokeStyle = d === 0 ? '#fb923c' : '#f472b6';
+      ctx.shadowColor = ctx.strokeStyle;
+      ctx.shadowBlur = 14;
+      ctx.lineWidth = 2.4;
+      ctx.strokeRect(-sz / 2, -sz / 2, sz, sz);
+      ctx.restore();
+    }
+
+    // Sunburst upper-arc equalizer
+    const arcBars = 28;
+    const arcRadius = 74 + pulse * 10;
+    for (let i = 0; i <= arcBars; i++) {
+      const u = i / arcBars;
+      const angle = Math.PI + u * Math.PI;
+      const band = Math.floor(Math.abs(u - 0.5) * 32);
+      const lvl = spectrumAt(t, band);
+      const barLen = 10 + lvl * 48 + pulse * 20;
+      const x1 = cx + Math.cos(angle) * arcRadius;
+      const y1 = cy + Math.sin(angle) * arcRadius;
+      const x2 = cx + Math.cos(angle) * (arcRadius + barLen);
+      const y2 = cy + Math.sin(angle) * (arcRadius + barLen);
+      ctx.strokeStyle = i % 2 === 0 ? '#fb923c' : '#fde047';
+      ctx.lineWidth = 3.5;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+    }
+
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.scale(0.76 + pulse * 0.15, 0.76 + pulse * 0.15);
+    ctx.drawImage(musicGlyph('🌅'), -80, -80);
+    ctx.restore();
+
+    ctx.save();
+    const titleY = H * 0.46;
+    const bounceOffset = Math.sin(localT * 3.2) * 3 - pulse * 6;
+    const titleScale = (0.92 + 0.08 * enter) * (1 + pulse * 0.032);
+    ctx.translate(W / 2, titleY + bounceOffset);
+    ctx.scale(titleScale, titleScale);
+    ctx.drawImage(sunsetRemixArtwork, -W / 2, -145);
+    ctx.restore();
+
+    ctx.restore();
+  }
+
   function drawIntro(t) {
     const intro=data.intro;
-    if (!intro?.enabled) return;
-    if(intro.style==='ballad'){drawBalladIntro(t);return;}
-    if(intro.style==='storybook'){ drawStorybookIntro(t); return; }
-    drawRemixIntro(t);
+    if (intro?.enabled) {
+      if(intro.style==='ballad') drawBalladIntro(t);
+      else if(intro.style==='storybook') drawStorybookIntro(t);
+      else if(intro.style==='sunset-remix') drawSunsetRemixIntro(t, intro);
+      else drawRemixIntro(t);
+    }
+    if (data.secondIntro?.enabled) {
+      drawSunsetRemixIntro(t, data.secondIntro);
+    }
   }
 
   function drawBalladInterlude(t) {
@@ -2178,7 +2314,7 @@
     ctx.globalAlpha = visibleOpacity;
 
     const mainColor = data.textColor || '#ffffff';
-    const glowColor = data.accentColor || '#ffffff';
+    const glowColor = seg.accentColor || data.accentColor || '#ffffff';
     const glowAmount = clamp(Number(data.glow ?? 68) / 100, 0, 1.5);
     const pulse = data.beatEffect?.enabled ? beatPulse(t) : 0;
 
@@ -3849,6 +3985,23 @@
       'nebula-lyric-project.json'
     )
   );
+
+  async function loadQuickExportProject(jsonPath, label) {
+    try {
+      pause();
+      const res = await fetch(jsonPath);
+      if (!res.ok) throw new Error('missing export json');
+      const obj = await res.json();
+      await applyProjectObject(obj);
+      setTime(0);
+      toast(`Đã chuyển sang: ${label}`);
+    } catch (err) {
+      toast(`Không thể mở ${label}`);
+    }
+  }
+  $('quickSong1Btn')?.addEventListener('click', () => loadQuickExportProject('/exports/sao-minh-chua-nam-tay-nhau.json', 'Bài 1: Sao Mình Chưa Nắm Tay Nhau'));
+  $('quickSong2Btn')?.addEventListener('click', () => loadQuickExportProject('/exports/den-khi-nao.json', 'Bài 2: Đến Khi Nào'));
+  $('quickMedleyBtn')?.addEventListener('click', () => loadQuickExportProject('/exports/lien-khuc-2-bai.json', 'Liên Khúc 2 Bài Nối Tiếp'));
 
   $('loadProjectBtn').addEventListener('click', () => $('projectInput').click());
   async function applyProjectObject(obj) {
