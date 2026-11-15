@@ -4,8 +4,10 @@
   const $ = (id) => document.getElementById(id);
   const canvas = $('scene'),
     ctx = canvas.getContext('2d', { alpha: false });
-  const W = canvas.width,
-    H = canvas.height;
+  const W = 1600,
+    H = 900,
+    EXPORT_W = 1920,
+    EXPORT_H = 1080;
   const audio = $('audio');
   const KEY = 'nebula_lyric_project_v3';
   const LOCAL_API_BASE =
@@ -1261,12 +1263,12 @@
     if (bgScaledCanvas && bgScaledSource === background) return bgScaledCanvas;
     bgScaledSource = background;
     const c = document.createElement('canvas');
-    c.width = W;
-    c.height = H;
+    c.width = EXPORT_W;
+    c.height = EXPORT_H;
     const g = c.getContext('2d');
-    const s = Math.max(W / background.width, H / background.height);
+    const s = Math.max(EXPORT_W / background.width, EXPORT_H / background.height);
     const w = background.width * s, h = background.height * s;
-    g.drawImage(background, (W - w) / 2, (H - h) / 2, w, h);
+    g.drawImage(background, (EXPORT_W - w) / 2, (EXPORT_H - h) / 2, w, h);
     bgScaledCanvas = c;
     return bgScaledCanvas;
   }
@@ -3049,13 +3051,18 @@
     </div>`;
   }
 
+  // 2026-11-16: Khách hàng phản hồi video xuất ra đăng lên YouTube chỉ tối đa được 720p mà không lên được 1080p; trước đó sizePreviewCanvas(true) đặt độ phân giải xuất là 1600×900 (nhỏ hơn chuẩn 1920×1080 nên bị YouTube hạ xuống bậc 720p) và thiếu khóa contentHint="detail" cùng bitrate 12Mbps cho Full HD, nên nâng độ phân giải xuất cố định lên 1920×1080 (EXPORT_W × EXPORT_H) và khóa không cho resize làm tụt độ phân giải khi đang ghi hình.
+  let isExporting = false;
   function sizePreviewCanvas(fullSize = false) {
-    if (recording() && !fullSize) return;
+    if ((recording() || isExporting) && !fullSize) return;
     const shownWidth = canvas.getBoundingClientRect().width || W;
-    const width = fullSize ? W : Math.min(W, Math.max(800, Math.ceil(shownWidth * Math.min(window.devicePixelRatio || 1, 1.25) / 16) * 16));
-    const height = Math.round(width * H / W);
+    const width = fullSize
+      ? EXPORT_W
+      : Math.min(W, Math.max(800, Math.ceil((shownWidth * Math.min(window.devicePixelRatio || 1, 1.25)) / 16) * 16));
+    const height = fullSize ? EXPORT_H : Math.round((width * H) / W);
     if (canvas.width !== width || canvas.height !== height) {
-      canvas.width=width; canvas.height=height;
+      canvas.width = width;
+      canvas.height = height;
       draw(time());
     }
   }
@@ -4273,17 +4280,25 @@
       pause();
       await ensureAudioRouting();
       const mime = [
+        'video/webm;codecs=vp9,opus',
         'video/webm;codecs=h264,opus',
         'video/webm;codecs=vp8,opus',
-        'video/webm;codecs=vp9,opus',
         'video/webm'
       ].find((x) => MediaRecorder.isTypeSupported(x));
       if (!mime) {
         toast('Hệ thống chưa hỗ trợ ghi WebM.');
         return;
       }
+      isExporting = true;
+      clearTimeout(previewResizeTimer);
       sizePreviewCanvas(true);
+      setTime(0);
+      draw(0);
       const videoCanvasStream = canvas.captureStream(30);
+      const vTrack = videoCanvasStream.getVideoTracks()[0];
+      if (vTrack && 'contentHint' in vTrack) {
+        try { vTrack.contentHint = 'detail'; } catch (e) {}
+      }
       exportStream = new MediaStream([
         ...videoCanvasStream.getVideoTracks(),
         ...audioDestination.stream.getAudioTracks()
@@ -4291,17 +4306,18 @@
       recordingChunks = [];
       exportRecorder = new MediaRecorder(exportStream, {
         mimeType: mime,
-        videoBitsPerSecond: 5000000,
-        audioBitsPerSecond: 192000
+        videoBitsPerSecond: 12000000,
+        audioBitsPerSecond: 256000
       });
       exportRecorder.ondataavailable = (e) => {
         if (e.data && e.data.size) recordingChunks.push(e.data);
       };
       exportRecorder.onstop = () => {
+        isExporting = false;
         stopExportBackgroundTicker();
         const chunks = recordingChunks;
         recordingChunks = [];
-        if (chunks.length) download(new Blob(chunks, { type: mime }), 'nebula-lyric-video.webm');
+        if (chunks.length) download(new Blob(chunks, { type: mime }), 'nebula-lyric-video-1080p.webm');
         if (exportStream)
           exportStream
             .getTracks()
@@ -4314,19 +4330,18 @@
         $('exportBtn').innerHTML =
           '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg><span>Xuất video WebM</span>';
         $('previewStatus').textContent = 'LIVE PREVIEW';
-        toast('Đã lưu video WebM thành công!');
+        toast('Đã lưu video WebM 1080p Full HD thành công!');
       };
       exportRecorder.onerror = () => {
+        isExporting = false;
         stopExportBackgroundTicker();
         toast('Có lỗi trong lúc ghi video.');
       };
-      setTime(0);
-      draw(0);
       startExportBackgroundTicker();
       exportRecorder.start(1000);
       $('exportBtn').classList.add('recording');
       $('exportBtn').textContent = '■ Dừng & lưu video';
-      $('previewStatus').textContent = '● ĐANG GHI VIDEO';
+      $('previewStatus').textContent = '● ĐANG GHI 1080P';
       if (pcmReady && pcmBuffer) {
         startPcmSourceAt(0);
         playing = true;
@@ -4335,8 +4350,9 @@
         playing = true;
       }
       setPlayingUI();
-      toast('Đang ghi video 30fps. Chờ nhạc hết hoặc bấm Dừng & lưu.');
+      toast('Đang ghi video Full HD 1080p (1920×1080 · 30fps). Chờ nhạc hết hoặc bấm Dừng & lưu.');
     } catch (err) {
+      isExporting = false;
       console.error(err);
       if (exportRecorder && exportRecorder.state === 'recording') exportRecorder.stop();
       toast('Không thể xuất video.');
