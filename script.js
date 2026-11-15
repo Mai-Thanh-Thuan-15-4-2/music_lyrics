@@ -465,6 +465,11 @@
     document
       .querySelectorAll('.weather')
       .forEach((el) => el.classList.toggle('selected', el.dataset.weather === data.weather));
+    const srcVid = String(data.beatEffect?.sourceVideoId || data.youtubeId || '');
+    $('quickSong1Btn')?.classList.toggle('active', srcVid === '0zJkOay1Ly8');
+    $('quickSong2Btn')?.classList.toggle('active', srcVid === 'EnnNI-RlM40');
+    $('quickMedleyBtn')?.classList.toggle('active', srcVid.includes('0zJkOay1Ly8_EnnNI-RlM40'));
+    clearAllTextArtworks();
     buildList();
     draw(time());
   }
@@ -1502,17 +1507,33 @@
     }
   }
 
+  // 2026-11-16: Khách hàng phản hồi tựa bài "ĐẾN KHI NÀO" bị lỗi font (chữ Đ, N, KHI, NÀO rơi vào Arial Black còn chữ Ế rơi vào Times New Roman); trước đó dùng font-weight 800 với sans-serif/Arial Narrow khi Oswald chỉ hỗ trợ tối đa weight 700 và sunsetRemixArtwork không được xóa cache sau khi webFont tải xong, nên đổi fallback sang Be Vietnam Pro, dùng đúng weight 700 cho Oswald và chỉ khóa cache khi font tiếng Việt đã sẵn sàng.
   function fontFamily() {
     if(data.font==='poetic') return "'Lora',Georgia,serif";
-    if (data.font === 'oswald') return `'Oswald','Arial Narrow',sans-serif`;
+    if (data.font === 'oswald') return `'Oswald','Be Vietnam Pro','Segoe UI',Arial,sans-serif`;
     if (data.font === 'elegant') return `'Playfair Display',Georgia,serif`;
     if (data.font === 'modern') return `'DM Sans','Be Vietnam Pro',sans-serif`;
-    return `'Be Vietnam Pro',Arial,sans-serif`;
+    return `'Be Vietnam Pro','Segoe UI',Arial,sans-serif`;
   }
 
   function fontWeight() {
     if(data.font==='poetic') return '500';
     return data.font === 'elegant' || data.font === 'oswald' ? '700' : '800';
+  }
+
+  function isCanvasFontReady(fontSpec, sampleText) {
+    if (!document.fonts || typeof document.fonts.check !== 'function') return true;
+    try {
+      const oswaldFaces = [...document.fonts].filter(
+        (f) => f.family.replace(/["']/g, '').toLowerCase() === 'oswald' && String(f.weight) === '700'
+      );
+      if (!oswaldFaces.length) return false;
+      const loadedCount = oswaldFaces.filter((f) => f.status === 'loaded').length;
+      if (loadedCount < 2) return false;
+      return document.fonts.check(fontSpec, sampleText || 'ĐẾN KHI NÀO');
+    } catch (e) {
+      return true;
+    }
   }
 
   const lyricArtwork = new Map();
@@ -1522,11 +1543,12 @@
     const parts = NebulaMotion.textAndIcons(seg.text, rawIcon);
     const resolvedIcon = parts.icon || rawIcon;
     const label = data.font === 'oswald' ? parts.text.toLocaleUpperCase('vi-VN') : parts.text;
+    const requestedSize = clamp(Number(data.fontSize) || 76, 28, 130);
+    const fontReady = isCanvasFontReady(`${fontWeight()} ${requestedSize}px ${fontFamily()}`, label || 'ĐẾN');
     const wordsSignature = Array.isArray(seg.words) && seg.words.length ? seg.words.map(w => `${w.word ?? w.w ?? ''}_${w.start ?? w.t ?? 0}_${w.end ?? 0}`).join('|') : '';
-    const key = JSON.stringify([seg.text, label, resolvedIcon, data.font, data.fontSize, data.textColor, data.accentColor, data.glow, wordsSignature]);
+    const key = JSON.stringify([seg.text, label, resolvedIcon, data.font, data.fontSize, data.textColor, data.accentColor, data.glow, wordsSignature, fontReady]);
     if (lyricArtwork.has(key)) return lyricArtwork.get(key);
 
-    const requestedSize = clamp(Number(data.fontSize) || 76, 28, 130);
     const maxWidth = W * 0.92;
     const gap = resolvedIcon && label ? requestedSize * 0.26 : 0;
     ctx.font = `${fontWeight()} ${requestedSize}px ${fontFamily()}`;
@@ -1609,7 +1631,9 @@
     const art = {label, icon:resolvedIcon, size, totalWidth, textWidth, iconWidth, spacing,
       text:raster(label, textWidth, false), symbol:raster(resolvedIcon, iconWidth, true), wordLayout};
     if (lyricArtwork.size > 24) lyricArtwork.clear();
-    lyricArtwork.set(key, art);
+    if (isCanvasFontReady(`${fontWeight()} ${Math.round(size)}px ${fontFamily()}`, label || 'ĐẾN')) {
+      lyricArtwork.set(key, art);
+    }
     return art;
   }
 
@@ -1847,19 +1871,24 @@
     if (end <= 0 || t < 0 || t >= end) return;
     const title = String(intro.title || data.songTitle || '').trim();
     const subtitle = String(intro.subtitle || data.artist || '').trim();
-    const key = JSON.stringify(['remix', title, subtitle, data.accentColor]);
+    const upperTitle = title.toLocaleUpperCase('vi-VN');
+    const subUpper = subtitle.toLocaleUpperCase('vi-VN');
+    const fontReady = isCanvasFontReady('700 84px "Oswald"', upperTitle + ' ' + subUpper);
+    const key = JSON.stringify(['remix', title, subtitle, data.accentColor, fontReady]);
     if (!introArtwork || key !== introArtworkKey) {
       introArtworkKey = key;
+      if (!fontReady && document.fonts?.load) {
+        document.fonts.load('700 84px "Oswald"', upperTitle + ' ' + subUpper).then(() => { clearAllTextArtworks(); draw(time()); }).catch(() => {});
+      }
       introArtwork = document.createElement('canvas');
       introArtwork.width = W;
       introArtwork.height = 320;
       const g = introArtwork.getContext('2d');
       g.textAlign = 'center';
       g.textBaseline = 'middle';
-      const upperTitle = title.toLocaleUpperCase('vi-VN');
-      g.font = '800 84px "Oswald",sans-serif';
+      g.font = '700 84px "Oswald","Be Vietnam Pro","Segoe UI",Arial,sans-serif';
       const fitted = Math.min(84, 84 * (W * 0.86) / Math.max(1, g.measureText(upperTitle).width));
-      g.font = `800 ${fitted}px "Oswald",sans-serif`;
+      g.font = `700 ${fitted}px "Oswald","Be Vietnam Pro","Segoe UI",Arial,sans-serif`;
 
       // Deep contrast shadow
       g.shadowColor = 'rgba(0, 0, 0, 0.95)';
@@ -1882,8 +1911,7 @@
       g.fillText(upperTitle, W / 2, 118);
 
       // Subtitle badge
-      const subUpper = subtitle.toLocaleUpperCase('vi-VN');
-      g.font = '600 26px "Oswald","Be Vietnam Pro",sans-serif';
+      g.font = '600 26px "Oswald","Be Vietnam Pro","Segoe UI",Arial,sans-serif';
       const subW = g.measureText(subUpper).width + 64;
       g.shadowColor = 'rgba(0, 0, 0, 0.85)';
       g.shadowBlur = 12;
@@ -1985,7 +2013,19 @@
   }
 
   let sunsetRemixArtwork = null, sunsetRemixKey = '';
-  // 2026-11-16: Khách hàng yêu cầu thêm bài thứ 2 (Đến Khi Nào - ChaChaCha Remix) nối sau bài 1 trên cùng hình nền Hồ Hoàng Hôn Dưới Ánh Trăng Sao nhưng có hiệu ứng nhạc dạo và chạy chữ khác một chút; bổ sung drawSunsetRemixIntro với vương miện sóng nhạc mặt trời hoàng hôn + khung kim cương phát sáng theo beat và hỗ trợ hiển thị cả ở đầu bài lẫn đoạn chuyển bài (secondIntro).
+  function clearAllTextArtworks() {
+    lyricArtwork.clear();
+    introArtwork = null;
+    introArtworkKey = '';
+    sunsetRemixArtwork = null;
+    sunsetRemixKey = '';
+    storybookArtwork = null;
+    storybookKey = '';
+    balladTitleArtwork = null;
+    balladTitleKey = '';
+  }
+
+  // 2026-11-16: Khách hàng yêu cầu thêm bài thứ 2 (Đến Khi Nào - ChaChaCha Remix) nối sau bài 1 trên cùng hình nền Hồ Hoàng Hôn Dưới Ánh Trăng Sao nhưng có hiệu ứng nhạc dạo và chạy chữ khác một chút, đồng thời sửa lỗi font chữ "ĐẾN KHI NÀO" bị rơi vào Arial Black/Times New Roman; dùng đúng weight 700 cho Oswald kèm fallback Be Vietnam Pro và kiểm tra isCanvasFontReady trước khi khóa sunsetRemixKey.
   function drawSunsetRemixIntro(t, customCfg = null) {
     const cfg = customCfg || data.intro;
     if (!cfg?.enabled) return;
@@ -1997,39 +2037,43 @@
     const dur = end - start;
     const title = String(cfg.title || data.songTitle || '').trim();
     const subtitle = String(cfg.subtitle || data.artist || '').trim();
-    const key = JSON.stringify(['sunset-remix', title, subtitle]);
+    const upperTitle = title.toLocaleUpperCase('vi-VN');
+    const subUpper = subtitle.toLocaleUpperCase('vi-VN');
+    const fontReady = isCanvasFontReady('700 86px "Oswald"', upperTitle + ' ' + subUpper);
+    const key = JSON.stringify(['sunset-remix', title, subtitle, fontReady]);
     if (!sunsetRemixArtwork || key !== sunsetRemixKey) {
       sunsetRemixKey = key;
+      if (!fontReady && document.fonts?.load) {
+        document.fonts.load('700 86px "Oswald"', upperTitle + ' ' + subUpper).then(() => { clearAllTextArtworks(); draw(time()); }).catch(() => {});
+      }
       sunsetRemixArtwork = document.createElement('canvas');
       sunsetRemixArtwork.width = W;
-      sunsetRemixArtwork.height = 340;
+      sunsetRemixArtwork.height = 360;
       const g = sunsetRemixArtwork.getContext('2d');
       g.textAlign = 'center';
       g.textBaseline = 'middle';
-      const upperTitle = title.toLocaleUpperCase('vi-VN');
-      g.font = '800 88px "Oswald",sans-serif';
-      const fitted = Math.min(88, 88 * (W * 0.86) / Math.max(1, g.measureText(upperTitle).width));
-      g.font = `800 ${fitted}px "Oswald",sans-serif`;
+      g.font = '700 86px "Oswald","Be Vietnam Pro","Segoe UI",Arial,sans-serif';
+      const fitted = Math.min(86, 86 * (W * 0.86) / Math.max(1, g.measureText(upperTitle).width));
+      g.font = `700 ${fitted}px "Oswald","Be Vietnam Pro","Segoe UI",Arial,sans-serif`;
 
       g.shadowColor = 'rgba(0, 0, 0, 0.95)';
       g.shadowBlur = 18;
       g.shadowOffsetY = 4;
       g.fillStyle = '#000000';
-      g.fillText(upperTitle, W / 2, 125);
+      g.fillText(upperTitle, W / 2, 134);
 
       g.shadowColor = '#fb923c';
       g.shadowBlur = 30;
       g.shadowOffsetY = 0;
       g.fillStyle = '#ffffff';
-      g.fillText(upperTitle, W / 2, 125);
+      g.fillText(upperTitle, W / 2, 134);
 
       g.shadowColor = '#f472b6';
       g.shadowBlur = 12;
       g.fillStyle = '#fffbeb';
-      g.fillText(upperTitle, W / 2, 125);
+      g.fillText(upperTitle, W / 2, 134);
 
-      const subUpper = subtitle.toLocaleUpperCase('vi-VN');
-      g.font = '600 26px "Oswald","Be Vietnam Pro",sans-serif';
+      g.font = '600 26px "Oswald","Be Vietnam Pro","Segoe UI",Arial,sans-serif';
       const subW = g.measureText(subUpper).width + 72;
       g.shadowColor = 'rgba(0, 0, 0, 0.88)';
       g.shadowBlur = 12;
@@ -2037,14 +2081,14 @@
       g.strokeStyle = '#fb923c';
       g.lineWidth = 2;
       g.beginPath();
-      g.roundRect((W - subW) / 2, 196, subW, 50, 12);
+      g.roundRect((W - subW) / 2, 206, subW, 50, 12);
       g.fill();
       g.stroke();
 
       g.shadowColor = '#fb923c';
       g.shadowBlur = 10;
       g.fillStyle = '#fed7aa';
-      g.fillText(subUpper, W / 2, 222);
+      g.fillText(subUpper, W / 2, 232);
     }
 
     const enter = smooth(localT / 0.95);
@@ -2518,10 +2562,10 @@
   // 2026-11-07: Khách hàng cần chèn thêm lớp Văn bản (chữ mở đầu / Intro, tên bài hát, ca sĩ) hoạt động giống hệt lớp GIF: chỉnh được font chữ, kích thước (kéo 4 góc trên màn hình hoặc thanh trượt), màu chữ/màu phát sáng và hẹn giờ xuất hiện; bổ sung nhánh type === 'text' trong bộ đo khung getStickerBox và bộ vẽ drawStickers.
   function getStickerFontSpec(fontKey) {
     if(fontKey==='poetic') return {family:"'Lora',Georgia,serif",weight:'500',upper:false};
-    if (fontKey === 'oswald') return { family: `'Oswald','Arial Narrow',sans-serif`, weight: '700', upper: true };
+    if (fontKey === 'oswald') return { family: `'Oswald','Be Vietnam Pro','Segoe UI',Arial,sans-serif`, weight: '700', upper: true };
     if (fontKey === 'elegant') return { family: `'Playfair Display',Georgia,serif`, weight: '700', upper: false };
     if (fontKey === 'modern') return { family: `'DM Sans','Be Vietnam Pro',sans-serif`, weight: '800', upper: false };
-    return { family: `'Be Vietnam Pro',Arial,sans-serif`, weight: '800', upper: false };
+    return { family: `'Be Vietnam Pro','Segoe UI',Arial,sans-serif`, weight: '800', upper: false };
   }
 
   function getTextStickerLines(st) {
@@ -4389,13 +4433,26 @@
   sizePreviewCanvas();
   requestAnimationFrame(loop);
 
-  // Load web fonts without blocking the offline-capable editor.
+  // Load web fonts without blocking the offline-capable editor, and force-load Vietnamese subsets before caching intro/lyric canvases.
+  const refreshWebFonts = () => {
+    clearAllTextArtworks();
+    draw(time());
+  };
   const webFont = document.createElement('link');
   webFont.rel = 'stylesheet';
   webFont.href =
     'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,500&family=Oswald:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap';
-  webFont.onload = () => document.fonts.ready.then(() => { lyricArtwork.clear(); introArtwork=null; storybookArtwork=null; balladTitleArtwork=null; draw(time()); });
-  if (document.fonts) document.fonts.addEventListener('loadingdone', () => { lyricArtwork.clear(); introArtwork=null; storybookArtwork=null; balladTitleArtwork=null; draw(time()); });
+  webFont.onload = () => document.fonts.ready.then(refreshWebFonts);
+  if (document.fonts) {
+    document.fonts.addEventListener('loadingdone', refreshWebFonts);
+    if (typeof document.fonts.load === 'function') {
+      Promise.all([
+        document.fonts.load('700 86px "Oswald"', 'ĐẾN KHI NÀO SAO MÌNH CHƯA NẮM TAY NHAU ĂÂĐÊÔƠƯẤẾỐỚỨỲỶỸỴ'),
+        document.fonts.load('600 26px "Oswald"', 'ĐẾN KHI NÀO SAO MÌNH CHƯA NẮM TAY NHAU ĂÂĐÊÔƠƯẤẾỐỚỨỲỶỸỴ'),
+        document.fonts.load('700 84px "Be Vietnam Pro"', 'ĐẾN KHI NÀO SAO MÌNH CHƯA NẮM TAY NHAU ĂÂĐÊÔƠƯẤẾỐỚỨỲỶỸỴ')
+      ]).then(refreshWebFonts).catch(() => {});
+    }
+    if (document.fonts.ready) document.fonts.ready.then(refreshWebFonts);
+  }
   document.head.appendChild(webFont);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { lyricArtwork.clear(); introArtwork=null; storybookArtwork=null; balladTitleArtwork=null; draw(time()); });
 })();

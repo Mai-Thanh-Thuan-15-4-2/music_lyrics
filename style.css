@@ -1973,3 +1973,27 @@ select:focus-visible {
 .beat-settings input[type=checkbox] { accent-color:#c084fc; width:16px; height:16px; }
 #beatBpm { color:#f2a6d5; font-size:11px; }
 .intro-toggle { margin-top:12px; font-size:12px; }
+
+.bottom-song-list { margin-top: 20px; }
+.song-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+.song-list-btn {
+  justify-content: flex-start;
+  padding: 12px 16px;
+  font-size: 12.5px;
+  border-color: rgba(148, 163, 255, 0.24);
+  background: rgba(16, 21, 44, 0.82);
+}
+.song-list-btn:hover {
+  border-color: var(--accent2);
+  background: rgba(30, 41, 82, 0.92);
+}
+.song-list-btn.active {
+  border-color: #fb923c;
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.2), rgba(56, 189, 248, 0.16));
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(251, 146, 60, 0.24);
+}

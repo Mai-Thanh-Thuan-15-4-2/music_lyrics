@@ -6,12 +6,20 @@
   <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#05060f" />
   <title>NEBULA — Lyric Motion Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,500&family=Oswald:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="apple-touch-icon" href="logo.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div aria-hidden="true" style="position:fixed;left:-9999px;top:-9999px;opacity:0;pointer-events:none;user-select:none">
+  <span style="font-family:'Oswald',sans-serif;font-weight:700">ĐẾN KHI NÀO SAO MÌNH CHƯA NẮM TAY NHAU ĂÂĐÊÔƠƯẤẾỐỚỨỲỶỸỴ</span>
+  <span style="font-family:'Oswald',sans-serif;font-weight:600">ĐẾN KHI NÀO SAO MÌNH CHƯA NẮM TAY NHAU ĂÂĐÊÔƠƯẤẾỐỚỨỲỶỸỴ</span>
+  <span style="font-family:'Be Vietnam Pro',sans-serif;font-weight:700">ĐẾN KHI NÀO SAO MÌNH CHƯA NẮM TAY NHAU ĂÂĐÊÔƠƯẤẾỐỚỨỲỶỸỴ</span>
+</div>
 <div class="cosmic-backdrop" aria-hidden="true">
   <div class="nebula-orb orb-violet"></div>
   <div class="nebula-orb orb-cyan"></div>
@@ -29,9 +37,6 @@
     </a>
 
     <div class="top-actions"><button class="btn btn-ghost" id="undoBtn" type="button" title="Hoàn tác (Ctrl+Z)" disabled>↶ Undo</button><button class="btn btn-ghost" id="redoBtn" type="button" title="Làm lại (Ctrl+Shift+Z / Ctrl+Y)" disabled>↷ Redo</button>
-      <button class="btn btn-ghost" id="quickSong1Btn" type="button" title="Mở Bài 1: Sao Mình Chưa Nắm Tay Nhau">🎵 Bài 1: Sao Mình Chưa Nắm Tay Nhau</button>
-      <button class="btn btn-ghost" id="quickSong2Btn" type="button" title="Mở Bài 2: Đến Khi Nào">🔥 Bài 2: Đến Khi Nào</button>
-      <button class="btn btn-ghost" id="quickMedleyBtn" type="button" title="Mở Liên Khúc 2 Bài Nối Tiếp">🎧 Liên Khúc 2 Bài</button>
       <div class="status-pill" id="engineBadge" title="Trạng thái kết nối xử lý âm thanh">
         <span class="status-dot" id="engineDot"></span>
         <span id="engineText">Sẵn sàng</span>
@@ -366,6 +371,24 @@
       </section>
     </aside>
   </div>
+
+  <section class="section section-pad bottom-song-list" aria-label="Danh sách bài hát có sẵn">
+    <div class="section-header" style="margin-bottom:12px">
+      <h2 class="section-title">Danh sách nhạc</h2>
+      <span class="section-hint">CHUYỂN NHANH BÀI HÁT</span>
+    </div>
+    <div class="song-list-grid">
+      <button class="btn btn-ghost song-list-btn" id="quickSong1Btn" type="button" title="Mở Bài 1: Sao Mình Chưa Nắm Tay Nhau">
+        🎵 Bài 1: Sao Mình Chưa Nắm Tay Nhau (Cha Cha Cha Remix)
+      </button>
+      <button class="btn btn-ghost song-list-btn" id="quickSong2Btn" type="button" title="Mở Bài 2: Đến Khi Nào">
+        🔥 Bài 2: Đến Khi Nào (ChaChaCha Remix · Mặt Trời Ngừng Chiếu)
+      </button>
+      <button class="btn btn-ghost song-list-btn" id="quickMedleyBtn" type="button" title="Mở Liên Khúc 2 Bài Nối Tiếp">
+        🎧 Liên Khúc 2 Bài (Sao Mình Chưa Nắm Tay Nhau × Đến Khi Nào)
+      </button>
+    </div>
+  </section>
 
   <footer class="footer">
     <span>NEBULA LYRIC STUDIO</span>
