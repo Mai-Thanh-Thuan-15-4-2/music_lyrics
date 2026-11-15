@@ -2,16 +2,13 @@
   "weather": "galaxy",
   "density": 22,
   "dim": 36,
-  "font": "vietnam",
+  "font": "oswald",
   "position": "center",
   "lyricDirection": "down",
   "fontSize": 80,
   "glow": 25,
   "textColor": "#faf5ff",
   "accentColor": "#c084fc",
-  "songTitle": "Pháo Hoa Lệ Rơi (Bản Cổ Phong)",
-  "artist": "Bướm Ngáo",
-  "_ytUrl": "https://youtu.be/TzEIs0oyyFA",
   "lyrics": [
     {
       "id": "phao-hoa-1",
@@ -86,7 +83,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.01,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -124,7 +121,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.65,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -137,11 +134,11 @@
         {
           "word": "Như",
           "start": 28.68,
-          "end": 29.0
+          "end": 29
         },
         {
           "word": "người",
-          "start": 29.0,
+          "start": 29,
           "end": 29.36
         },
         {
@@ -162,7 +159,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.37,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -190,17 +187,17 @@
         {
           "word": "đặt",
           "start": 32.56,
-          "end": 33.0
+          "end": 33
         },
         {
           "word": "xuống",
-          "start": 33.0,
+          "start": 33,
           "end": 34.08
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.93,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -238,7 +235,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.01,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -251,11 +248,11 @@
         {
           "word": "Một",
           "start": 36.64,
-          "end": 37.0
+          "end": 37
         },
         {
           "word": "câu",
-          "start": 37.0,
+          "start": 37,
           "end": 37.28
         },
         {
@@ -276,7 +273,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.65,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -319,7 +316,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.29,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -357,7 +354,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.09,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -395,7 +392,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.01,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -433,7 +430,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.65,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -466,17 +463,17 @@
         {
           "word": "cuộc",
           "start": 50.4,
-          "end": 51.0
+          "end": 51
         },
         {
           "word": "đời",
-          "start": 51.0,
+          "start": 51,
           "end": 52.2
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.57,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -514,7 +511,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.73,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -552,7 +549,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.69,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -595,7 +592,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.01,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -633,7 +630,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.49,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -676,7 +673,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.93,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -719,13 +716,13 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.77,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-19",
       "start": 71.36,
-      "end": 74.0,
+      "end": 74,
       "text": "Để lệ rơi",
       "icon": "💧🥺",
       "words": [
@@ -742,24 +739,24 @@
         {
           "word": "rơi",
           "start": 73.4,
-          "end": 74.0
+          "end": 74
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.09,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-20",
-      "start": 74.0,
+      "start": 74,
       "end": 76.48,
       "text": "Khi pháo hoa đang rực trời",
       "icon": "🎆✨",
       "words": [
         {
           "word": "Khi",
-          "start": 74.0,
+          "start": 74,
           "end": 74.64
         },
         {
@@ -790,7 +787,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.93,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -828,7 +825,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.45,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -851,11 +848,11 @@
         {
           "word": "chưa",
           "start": 80.68,
-          "end": 81.0
+          "end": 81
         },
         {
           "word": "từng",
-          "start": 81.0,
+          "start": 81,
           "end": 81.64
         },
         {
@@ -866,7 +863,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.21,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -894,7 +891,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.41,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -922,7 +919,7 @@
         {
           "word": "giữ",
           "start": 86.8,
-          "end": 88.0
+          "end": 88
         },
         {
           "word": "lời",
@@ -932,7 +929,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.69,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -965,7 +962,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.05,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1008,7 +1005,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.57,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1036,7 +1033,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.05,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1074,7 +1071,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.97,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1107,7 +1104,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.09,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1150,7 +1147,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.05,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1183,7 +1180,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.41,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1216,7 +1213,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.89,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1249,7 +1246,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.05,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1287,7 +1284,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.9,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1325,7 +1322,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.73,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1363,7 +1360,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.94,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1401,7 +1398,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1433,7 +1430,7 @@
         },
         {
           "word": "ngày",
-          "start": 119.0,
+          "start": 119,
           "end": 119.25
         },
         {
@@ -1444,7 +1441,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.73,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1482,7 +1479,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.7,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1525,7 +1522,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.7,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1568,7 +1565,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1611,7 +1608,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.33,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1639,7 +1636,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.3,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1677,7 +1674,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1710,7 +1707,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.37,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1753,7 +1750,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.94,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1791,7 +1788,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1829,7 +1826,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.62,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1872,7 +1869,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1915,7 +1912,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.66,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1958,7 +1955,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -1996,7 +1993,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.66,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2039,7 +2036,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.69,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2087,7 +2084,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.02,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2130,7 +2127,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.93,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2168,7 +2165,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.69,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2211,7 +2208,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.58,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2264,7 +2261,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.93,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2317,7 +2314,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.5,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2355,7 +2352,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.42,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2393,7 +2390,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2431,7 +2428,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.62,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2469,7 +2466,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2507,7 +2504,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.66,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2550,7 +2547,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.26,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2588,7 +2585,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.66,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2626,7 +2623,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.5,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2669,7 +2666,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2712,7 +2709,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.1,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2750,7 +2747,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.5,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2788,7 +2785,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.94,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2826,7 +2823,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.37,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2864,7 +2861,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.01,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2902,7 +2899,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.78,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2940,7 +2937,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -2978,7 +2975,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.85,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3016,7 +3013,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.69,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3059,7 +3056,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.65,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3102,7 +3099,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.74,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3150,7 +3147,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3198,7 +3195,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.13,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3236,7 +3233,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.85,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3274,7 +3271,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3312,7 +3309,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.66,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3350,7 +3347,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.98,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3388,7 +3385,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.46,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3426,7 +3423,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.98,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3464,7 +3461,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.61,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3517,7 +3514,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.57,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3545,7 +3542,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.93,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3588,7 +3585,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.57,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3631,7 +3628,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.29,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3659,7 +3656,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.73,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3687,7 +3684,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.09,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3725,7 +3722,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.69,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3758,7 +3755,7 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.49,
+      "timingMid": 1.97,
       "timingOut": 0.25
     },
     {
@@ -3806,14 +3803,17 @@
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.65,
+      "timingMid": 1.97,
       "timingOut": 0.25
     }
   ],
+  "songTitle": "Pháo Hoa Lệ Rơi (Bản Cổ Phong)",
+  "artist": "Bướm Ngáo",
+  "_ytUrl": "https://youtu.be/TzEIs0oyyFA",
   "beatEffect": {
     "enabled": true,
-    "bpm": 95.7,
     "amount": 0.85,
+    "bpm": 95.7,
     "sourceVideoId": "TzEIs0oyyFA",
     "beats": [
       {
@@ -5258,7 +5258,7 @@
       },
       {
         "time": 237.517,
-        "strength": 1.0
+        "strength": 1
       }
     ],
     "spectrum": {
@@ -130930,18 +130930,18 @@
     "enabled": true,
     "title": "Pháo Hoa Lệ Rơi",
     "subtitle": "Bản Cổ Phong · Bướm Ngáo",
-    "end": 20.0,
+    "end": 20,
     "style": "storybook",
     "headline": "Pháo Hoa Lệ Rơi",
     "subline": "Bản Cổ Phong Da Diết",
-    "ink": "#1e1b4b",
-    "secondaryInk": "#312e81",
-    "creditInk": "#4338ca",
+    "ink": "#ffffff",
+    "secondaryInk": "#f3e8ff",
+    "creditInk": "#e9d5ff",
     "lines": [
       "Pháo Hoa Lệ Rơi",
       "Em mặc áo dài đỏ, đứng cười giữa họ hàng..."
     ],
-    "titleEnd": 20.0
+    "titleEnd": 20
   },
   "waterMotion": {
     "enabled": false
@@ -130957,7 +130957,7 @@
   "stickers": [],
   "_selectedSegId": "phao-hoa-1",
   "_selectedStickerId": null,
-  "_updatedAt": 1794755837564,
+  "_updatedAt": 1794756124410,
   "backgroundStyle": "illustrated",
   "motionTheme": "ballad"
 }

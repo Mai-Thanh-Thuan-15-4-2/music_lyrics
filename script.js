@@ -1666,26 +1666,48 @@
 
   let introArtwork=null, introArtworkKey='';
   let storybookArtwork=null, storybookKey='';
+  // 2026-11-15: Khách hàng phản hồi tên bài hát chưa rõ với nền; trước đó drawStorybookIntro dùng tông mực tối (ink đậm) không có bóng đổ hay hào quang khiến chữ bị chìm vào nền đêm tối, nên nâng cấp đổ bóng kép (deep contrast shadow + accent glow aura) và dùng màu chữ sáng nổi bật rõ nét trên mọi nền.
   function drawStorybookIntro(t) {
     const intro=data.intro;
     const end=Math.min(Number(intro.end)||30,(sortedLyrics()[0]?.start||31.2)-1.2);
     if(t<0 || t>=end)return;
     const head=intro.headline||'Yêu Em', tail=intro.subline||'Đến giây phút cuối cùng';
-    const key=JSON.stringify([head,tail,intro.subtitle,intro.ink,intro.secondaryInk,intro.creditInk]);
+    const key=JSON.stringify([head,tail,intro.subtitle,intro.ink,intro.secondaryInk,intro.creditInk,data.accentColor]);
     if(!storybookArtwork || key!==storybookKey){
       storybookKey=key;
       const raster=(text,font,height,color,spacing=0)=>{
         const c=document.createElement('canvas');c.width=W;c.height=height;
-        const g=c.getContext('2d');g.font=font;g.fillStyle=color;g.textBaseline='middle';
+        const g=c.getContext('2d');g.font=font;g.textBaseline='middle';
         const letters=[...text];const width=letters.reduce((n,ch)=>n+g.measureText(ch).width,0)+Math.max(0,letters.length-1)*spacing;
+
+        // Deep contrast background shadow
+        g.fillStyle='#000000';
+        g.shadowColor='rgba(0,0,0,0.92)';
+        g.shadowBlur=18;
+        g.shadowOffsetY=4;
         let x=(W-width)/2;
         for(const ch of letters){g.fillText(ch,x,height/2);x+=g.measureText(ch).width+spacing;}
+
+        // Luminous aura glow with accent color
+        g.shadowColor=data.accentColor||'#c084fc';
+        g.shadowBlur=28;
+        g.shadowOffsetY=0;
+        g.fillStyle=color||'#ffffff';
+        x=(W-width)/2;
+        for(const ch of letters){g.fillText(ch,x,height/2);x+=g.measureText(ch).width+spacing;}
+
+        // Crisp bright core
+        g.shadowBlur=6;
+        g.fillStyle=color||'#ffffff';
+        x=(W-width)/2;
+        for(const ch of letters){g.fillText(ch,x,height/2);x+=g.measureText(ch).width+spacing;}
+
         return {canvas:c,width};
       };
       storybookArtwork={
-        head:raster(head,'italic 600 140px "Playfair Display",Georgia,serif',230,intro.ink||'#242957'),
-        tail:raster(tail.toLocaleUpperCase('vi-VN'),'500 30px "Be Vietnam Pro",sans-serif',100,intro.secondaryInk||'#34305e',3.2),
-        credit:raster(intro.subtitle||'','400 21px "Be Vietnam Pro",sans-serif',70,intro.creditInk||'#493258')
+        head:raster(head,'italic 600 140px "Playfair Display",Georgia,serif',230,intro.ink||'#ffffff'),
+        tail:raster(tail.toLocaleUpperCase('vi-VN'),'600 32px "Be Vietnam Pro",sans-serif',100,intro.secondaryInk||'#f3e8ff',3.2),
+        credit:raster(intro.subtitle||'','500 22px "Be Vietnam Pro",sans-serif',70,intro.creditInk||'#e9d5ff')
       };
     }
     const out=smooth((end-t)/1.4), enter=smooth((t-.25)/1.7), reveal=smooth((t-1.5)/1.7);
@@ -1697,9 +1719,14 @@
     ctx.save();ctx.beginPath();ctx.rect((W-art.tail.width)/2-6,H*.345-50,(art.tail.width+12)*reveal,100);ctx.clip();
     ctx.drawImage(art.tail.canvas,0,H*.345-50);ctx.restore();
     const line=smooth((t-2.5)/1.5);
-    ctx.globalAlpha=line*out*.6;ctx.strokeStyle=intro.secondaryInk||'#34305e';ctx.lineWidth=1.4;
-    ctx.beginPath();ctx.moveTo(W*.5-80*line,H*.392);ctx.lineTo(W*.5+80*line,H*.392);ctx.stroke();
-    ctx.globalAlpha=smooth((t-2.8)/1.5)*out*.82;
+    ctx.globalAlpha=line*out*.8;
+    ctx.strokeStyle=data.accentColor||intro.secondaryInk||'#c084fc';
+    ctx.shadowColor=data.accentColor||'#c084fc';
+    ctx.shadowBlur=12;
+    ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(W*.5-90*line,H*.392);ctx.lineTo(W*.5+90*line,H*.392);ctx.stroke();
+    ctx.shadowBlur=0;
+    ctx.globalAlpha=smooth((t-2.8)/1.5)*out*.88;
     ctx.drawImage(art.credit.canvas,0,H*.435-35);
     ctx.restore();
   }

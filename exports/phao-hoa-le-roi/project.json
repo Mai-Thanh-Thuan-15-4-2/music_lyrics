@@ -130934,9 +130934,9 @@
     "style": "storybook",
     "headline": "Pháo Hoa Lệ Rơi",
     "subline": "Bản Cổ Phong Da Diết",
-    "ink": "#1e1b4b",
-    "secondaryInk": "#312e81",
-    "creditInk": "#4338ca",
+    "ink": "#ffffff",
+    "secondaryInk": "#f3e8ff",
+    "creditInk": "#e9d5ff",
     "lines": [
       "Pháo Hoa Lệ Rơi",
       "Em mặc áo dài đỏ, đứng cười giữa họ hàng..."
@@ -130957,7 +130957,7 @@
   "stickers": [],
   "_selectedSegId": "phao-hoa-1",
   "_selectedStickerId": null,
-  "_updatedAt": 1794755837564,
+  "_updatedAt": 1794756124410,
   "backgroundStyle": "illustrated",
   "motionTheme": "ballad"
 }
