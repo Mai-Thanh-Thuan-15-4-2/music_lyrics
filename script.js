@@ -2043,12 +2043,25 @@
     ctx.save();
     ctx.globalAlpha = alpha;
 
+    // Expanding sunset shockwave rings from 0.0s onward
+    for (let r = 0; r < 3; r++) {
+      const phase = (t * 0.95 + r / 3) % 1;
+      ctx.save();
+      ctx.globalAlpha = alpha * (1 - phase) * (0.38 + 0.42 * pulse);
+      ctx.strokeStyle = r % 2 === 0 ? '#fb923c' : '#fde047';
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 56 + phase * 115 + pulse * 16, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+
     // Rotating diamond beat frame around sunset emblem
     for (let d = 0; d < 2; d++) {
       ctx.save();
       ctx.translate(cx, cy);
-      ctx.rotate(t * (d === 0 ? 0.45 : -0.35) + d * (Math.PI / 4));
-      const sz = 66 + d * 22 + pulse * 18;
+      ctx.rotate(t * (d === 0 ? 0.85 : -0.65) + d * (Math.PI / 4));
+      const sz = 66 + d * 22 + pulse * 20 + Math.sin(t * 4.5 + d) * 6;
       ctx.strokeStyle = d === 0 ? '#fb923c' : '#f472b6';
       ctx.shadowColor = ctx.strokeStyle;
       ctx.shadowBlur = 14;
@@ -2057,21 +2070,24 @@
       ctx.restore();
     }
 
-    // Sunburst upper-arc equalizer
-    const arcBars = 28;
+    // Sunburst upper-arc equalizer (reads melody + bass bands + continuous harmonic wave so 0s-16s never freezes)
+    const arcBars = 32;
     const arcRadius = 74 + pulse * 10;
     for (let i = 0; i <= arcBars; i++) {
       const u = i / arcBars;
       const angle = Math.PI + u * Math.PI;
-      const band = Math.floor(Math.abs(u - 0.5) * 32);
-      const lvl = spectrumAt(t, band);
-      const barLen = 10 + lvl * 48 + pulse * 20;
+      const midBand = 6 + (i % 12);
+      const bassBand = Math.min(5, Math.floor(Math.abs(u - 0.5) * 12));
+      const specVal = Math.max(spectrumAt(t, midBand), spectrumAt(t, bassBand));
+      const harmonic = 0.28 + 0.24 * Math.sin(t * 6.8 + i * 0.48) + 0.16 * Math.cos(t * 4.3 - i * 0.35);
+      const lvl = Math.max(specVal, harmonic);
+      const barLen = 12 + lvl * 52 + pulse * 22;
       const x1 = cx + Math.cos(angle) * arcRadius;
       const y1 = cy + Math.sin(angle) * arcRadius;
       const x2 = cx + Math.cos(angle) * (arcRadius + barLen);
       const y2 = cy + Math.sin(angle) * (arcRadius + barLen);
       ctx.strokeStyle = i % 2 === 0 ? '#fb923c' : '#fde047';
-      ctx.lineWidth = 3.5;
+      ctx.lineWidth = 3.6;
       ctx.lineCap = 'round';
       ctx.beginPath();
       ctx.moveTo(x1, y1);
@@ -2080,18 +2096,40 @@
     }
 
     ctx.save();
-    ctx.translate(cx, cy);
-    ctx.scale(0.76 + pulse * 0.15, 0.76 + pulse * 0.15);
+    ctx.translate(cx, cy + Math.sin(t * 3.6) * 4);
+    const emblemScale = 0.78 + pulse * 0.16 + 0.04 * Math.sin(t * 5.2);
+    ctx.scale(emblemScale, emblemScale);
     ctx.drawImage(musicGlyph('🌅'), -80, -80);
     ctx.restore();
 
     ctx.save();
     const titleY = H * 0.46;
-    const bounceOffset = Math.sin(localT * 3.2) * 3 - pulse * 6;
-    const titleScale = (0.92 + 0.08 * enter) * (1 + pulse * 0.032);
+    const bounceOffset = Math.sin(localT * 3.6) * 4.5 - pulse * 7;
+    const titleScale = (0.92 + 0.08 * enter) * (1 + pulse * 0.035 + 0.012 * Math.sin(t * 4.8));
     ctx.translate(W / 2, titleY + bounceOffset);
     ctx.scale(titleScale, titleScale);
     ctx.drawImage(sunsetRemixArtwork, -W / 2, -145);
+
+    // Animated sunset laser wings flanking the title badge
+    const wingSpan = (190 + pulse * 150 + 35 * Math.sin(t * 5.0)) * enter;
+    const wingGradL = ctx.createLinearGradient(-wingSpan - 130, 0, -65, 0);
+    wingGradL.addColorStop(0, 'rgba(251, 146, 60, 0)');
+    wingGradL.addColorStop(1, '#fde047');
+    ctx.strokeStyle = wingGradL;
+    ctx.lineWidth = 2.8;
+    ctx.beginPath();
+    ctx.moveTo(-wingSpan - 130, 22);
+    ctx.lineTo(-65, 22);
+    ctx.stroke();
+
+    const wingGradR = ctx.createLinearGradient(65, 0, wingSpan + 130, 0);
+    wingGradR.addColorStop(0, '#fde047');
+    wingGradR.addColorStop(1, 'rgba(251, 146, 60, 0)');
+    ctx.strokeStyle = wingGradR;
+    ctx.beginPath();
+    ctx.moveTo(65, 22);
+    ctx.lineTo(wingSpan + 130, 22);
+    ctx.stroke();
     ctx.restore();
 
     ctx.restore();
@@ -2173,11 +2211,13 @@
     const bars=56, step=W*.62/bars;
     for(let i=0;i<bars;i++){
       const band=Math.abs(i-(bars-1)/2);
-      const level=spectrumAt(t,Math.floor(band));
-      const amplitude=(.32+.68*visibility)*effect.amount;
-      const height=4+level*(78+58*pulse)*amplitude;
+      const rawLevel=Math.max(spectrumAt(t,Math.floor(band)), spectrumAt(t, 6 + (i % 10)) * 0.75);
+      const carrier=0.20 + 0.16 * Math.sin(t * 6.2 + i * 0.38) * Math.cos(t * 3.4 - i * 0.22);
+      const level=Math.max(rawLevel, carrier);
+      const amplitude=(.35+.65*visibility)*effect.amount;
+      const height=6+level*(78+58*pulse)*amplitude;
       const x=W*.19+(i+.5)*step;
-      ctx.globalAlpha=(.28+.58*visibility)*(.45+.55*level);
+      ctx.globalAlpha=(.32+.56*visibility)*(.48+.52*level);
       ctx.fillStyle=i%3===0?'#fef08a':i%3===1?`rgb(${r},${g},${b})`:'#f472b6';
       ctx.shadowColor=ctx.fillStyle;
       ctx.shadowBlur=8*pulse;
@@ -2194,27 +2234,27 @@
         ctx.ellipse(W/2,centerY,70+p*380,14+p*72,0,0,Math.PI*2);ctx.stroke();
       }
       const introEnd=Math.min(Number(data.intro?.end)||0,(sortedLyrics()[0]?.start||0)-0.4);
-      if(t>introEnd+1.0){
-        // Dynamic glowing wave ribbons + musical notes during instrumental breaks (interlude & outro)
-        const x0=W*.16, span=W*.68, waveY=H*.50;
-        const ribbonColors=['#38bdf8','#fbbf24','#f472b6'];
-        for(let layer=0;layer<3;layer++){
-          ctx.save();
-          ctx.globalAlpha=visibility*(0.62-layer*0.14);
-          ctx.strokeStyle=ribbonColors[layer];
-          ctx.shadowColor=ribbonColors[layer];
-          ctx.shadowBlur=12;
-          ctx.lineWidth=3.2-layer*0.6;
-          ctx.beginPath();
-          for(let k=0;k<=80;k++){
-            const u=k/80, taper=Math.sin(u*Math.PI);
-            const spec=spectrumAt(t, (k+layer*5)%18);
-            const y=waveY + (Math.sin(u*Math.PI*4 + t*3.2 + layer*1.1)*(24 + spec*36 + pulse*22))*taper;
-            if(k===0) ctx.moveTo(x0,y); else ctx.lineTo(x0+span*u,y);
-          }
-          ctx.stroke();
-          ctx.restore();
+      const inIntro = data.intro?.enabled && t < introEnd;
+      const x0=W*.16, span=W*.68, waveY=inIntro ? H*.68 : H*.50;
+      const ribbonColors=['#fb923c','#38bdf8','#f472b6'];
+      for(let layer=0;layer<3;layer++){
+        ctx.save();
+        ctx.globalAlpha=visibility*(0.64-layer*0.14);
+        ctx.strokeStyle=ribbonColors[layer];
+        ctx.shadowColor=ribbonColors[layer];
+        ctx.shadowBlur=12;
+        ctx.lineWidth=3.2-layer*0.6;
+        ctx.beginPath();
+        for(let k=0;k<=80;k++){
+          const u=k/80, taper=Math.sin(u*Math.PI);
+          const spec=Math.max(spectrumAt(t, (k+layer*5)%18), 0.25);
+          const y=waveY + (Math.sin(u*Math.PI*4 + t*3.8 + layer*1.1)*(22 + spec*36 + pulse*22))*taper;
+          if(k===0) ctx.moveTo(x0,y); else ctx.lineTo(x0+span*u,y);
         }
+        ctx.stroke();
+        ctx.restore();
+      }
+      if(!inIntro){
         const notes=['🎵','🎧','✨','🎶'];
         for(let n=0;n<notes.length;n++){
           ctx.save();
