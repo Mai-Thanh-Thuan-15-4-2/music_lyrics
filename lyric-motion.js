@@ -57,35 +57,36 @@
     const power=strength+(clamp(Number(b.strength)||0)-strength)*smooth(progress);
     return amount*power*(.5+.5*Math.cos(progress*Math.PI*2));
   }
-  // 2026-11-15: Khách hàng phản hồi hiệu ứng animation tự zoom lớn nhỏ rất khó chịu; trước đó các chế độ queue/soft/bounce tự động thay đổi result.scale theo progress và beatBreath làm chữ phóng to thu nhỏ liên tục, nên khóa result.scale = 1 và giảm biên độ dịch chuyển để giữ kích thước chữ ổn định tuyệt đối.
+  // 2026-11-15: Khách hàng phản hồi hiệu ứng animation tự zoom lớn nhỏ khó chịu ở chế độ thường nhưng vẫn cần dùng đủ 6 kiểu hiệu ứng chung; giữ scale = 1 ổn định cho queue/slide/bounce/poem/none và chỉ áp dụng thu phóng nhẹ khi người dùng chủ động chọn chế độ 'soft' (Mềm · zoom theo nhịp).
   function state(seg, t, rhythm = 0, direction = 'up') {
     const phase = phases(seg), local = t - Number(seg.start);
     if (local < 0 || local >= phase.duration) return null;
     const progress = local/phase.duration;
     const enter = smooth(local/phase.entry), leave = smooth((phase.duration-local)/phase.exit);
-    const result = {offsetX:0, offsetY:0, scale:1, opacity:enter*leave, progress, glowFactor:0.75, mode:seg.mode || 'soft'};
+    const result = {offsetX:0, offsetY:0, scale:1, opacity:enter*leave, progress, glowFactor:0.75, mode:seg.mode || 'queue'};
     const envelope = enter*leave;
     if (seg.mode === 'none') { result.opacity = 1; return result; }
     if (seg.mode === 'queue') {
-      result.offsetY = path(local, phase, [10, 0, 0, -10]);
+      result.offsetY = path(local, phase, [26, 0, 0, -26]);
       result.scale = 1;
     } else if (seg.mode === 'slide') {
-      result.offsetX = path(local, phase, [24, 0, 0, -24]);
+      result.offsetX = path(local, phase, [56, 0, 0, -56]);
       result.offsetY = 0;
       result.scale = 1;
     } else if (seg.mode === 'bounce') {
       const p = clamp(local/phase.entry), q = 1-leave;
-      result.offsetY = 12*(1-p)**3 - 8*q;
+      result.offsetY = 30*(1-p)**3 - 8*Math.sin(Math.PI*p)**2*(1-p) - 18*q;
       result.scale = 1;
     } else if (seg.mode === 'poem') {
       const fadeIn=smooth(local/Math.min(.52,phase.duration*.25));
       const fadeOut=smooth((phase.duration-local)/Math.min(.48,phase.duration*.23));
       result.opacity=fadeIn*fadeOut;
-      result.offsetY=10*(1-fadeIn)-8*(1-fadeOut);
+      result.offsetY=20*(1-fadeIn)-14*(1-fadeOut);
       result.scale=1;
     } else {
-      result.offsetY = 6*(1-enter)-6*(1-leave);
-      result.scale = 1;
+      const breath=clamp(rhythm)*envelope;
+      result.offsetY = 14*(1-enter)-10*(1-leave);
+      result.scale = 0.96+0.04*smooth(progress)+0.01*breath;
     }
     if(direction==='down')result.offsetY=-result.offsetY;
     return result;

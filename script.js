@@ -67,11 +67,12 @@
     dim: 38,
     font: 'oswald',
     position: 'center',
+    lyricMode: 'queue',
     lyricDirection: 'up',
-    fontSize: 84,
+    fontSize: 60,
     glow: 68,
-    textColor: '#f5f7ff',
-    accentColor: '#a78bfa',
+    textColor: '#ffffff',
+    accentColor: '#ffffff',
     lyrics: DEFAULT_LYRICS
   };
 
@@ -85,12 +86,18 @@
         ? saved.font
         : 'oswald';
       const restoredWeather = VALID_WEATHERS.includes(saved.weather) ? saved.weather : 'galaxy';
+      const restoredMode = VALID_MODES.includes(saved.lyricMode)
+        ? saved.lyricMode
+        : VALID_MODES.includes(saved.lyrics[0]?.mode)
+        ? saved.lyrics[0].mode
+        : 'queue';
       data = {
         ...data,
         ...saved,
         weather: restoredWeather,
         font: restoredFont,
-        fontSize: Number(saved.fontSize) || 84,
+        lyricMode: restoredMode,
+        fontSize: Number(saved.fontSize) || 60,
         lyrics: saved.lyrics
           .filter((x) => x && typeof x.text === 'string')
           .map((x) => ({
@@ -100,7 +107,7 @@
             words: Array.isArray(x.words) ? x.words : undefined,
             start: Math.max(0, Number(x.start) || 0),
             end: Math.max(0, Number(x.end) || 0),
-            mode: VALID_MODES.includes(x.mode) ? x.mode : 'queue',
+            mode: restoredMode,
             timingIn: Math.max(0.1, Number(x.timingIn) || 0.75),
             timingMid: Math.max(0, Number(x.timingMid ?? 1.5)),
             timingOut: Math.max(0.1, Number(x.timingOut) || 0.75)
@@ -433,6 +440,7 @@
     updateTransport(v);
   }
 
+  // 2026-11-15: Khách hàng yêu cầu chuyển bộ chọn hiệu ứng hoạt ảnh xuống phần cài đặt chung ("Typography & ánh sáng chữ") để áp dụng đồng bộ cho toàn bài; trước đó chỉ nằm lẻ ở từng đoạn lời khiến khó chỉnh chung, nên đồng bộ #lyricModeSelect vào applyData() và dùng chung data.lyricMode.
   function applyData() {
     syncBeatControls();
     const setV = (id, val) => {
@@ -444,6 +452,7 @@
     setV('fontSelect', data.font);
     setV('positionSelect', data.position);
     setV('directionSelect',data.lyricDirection==='down'?'down':'up');
+    setV('lyricModeSelect', VALID_MODES.includes(data.lyricMode) ? data.lyricMode : (data.lyrics[0]?.mode || 'queue'));
     setV('fontSize', data.fontSize);
     setV('glow', data.glow);
     setV('textColor', data.textColor);
@@ -627,7 +636,7 @@
     const item = document.createElement('div');
     item.className = 'lyric-item';
     item.dataset.id = seg.id;
-    item.innerHTML = `<div class="lyric-top"><span class="lyric-index">#${String(pageNum).padStart(2, '0')} / ${String(sorted.length).padStart(2, '0')}</span><span class="lyric-status">${secText(seg.start)} – ${secText(seg.end)}</span><button class="lyric-action" type="button" data-action="duplicate" title="Nhân bản câu này">⧉</button><button class="lyric-action" type="button" data-action="remove" title="Xóa câu này">×</button></div><textarea class="textarea lyric-words" data-field="text" placeholder="Nhập lời hát ở đây...">${escapeHtml(seg.text)}</textarea><div class="seg-timeline-box"><button class="seg-preview-btn" type="button" data-action="playSegment" title="Phát thử đoạn này">▶ Phát thử</button><div class="seg-track-area" tabindex="0"><div class="seg-track" data-role="segTrack"><div class="seg-track-bg"></div><div class="seg-range-fill"></div><div class="seg-playhead"></div><div class="seg-handle seg-handle-start" data-handle="start" title="Mốc bắt đầu"></div><div class="seg-handle seg-handle-end" data-handle="end" title="Mốc kết thúc"></div></div><div class="seg-window-labels"><span class="seg-win-min">00:00.00</span><span class="seg-win-dur"></span><span class="seg-win-max">00:20.00</span></div></div></div><div class="segment-time"><div class="timebox"><label>BẮT ĐẦU</label><div class="time-input-row"><input class="input" data-field="start" value="${secText(seg.start)}" aria-label="Thời gian bắt đầu"><button class="time-capture" type="button" data-action="setStart" title="Lấy mốc hiện tại">⊙</button></div></div><div class="timebox"><label>KẾT THÚC</label><div class="time-input-row"><input class="input" data-field="end" value="${secText(seg.end)}" aria-label="Thời gian kết thúc"><button class="time-capture" type="button" data-action="setEnd" title="Lấy mốc hiện tại">⊙</button></div></div></div><div class="seg-timing-panel"><div class="seg-timing-head"><strong>Nhịp chuyển động #${pageNum}</strong><button type="button" class="seg-sync-all-btn" data-action="syncTimingAll">Áp dụng mọi câu</button></div><div class="seg-timing-grid"><div class="seg-timing-item"><div class="seg-timing-label"><span>↗ Vào</span><b data-val="timingIn">${tIn.toFixed(2)}×</b></div><input class="range" type="range" min="0.1" max="2.5" step="0.05" data-field="timingIn" value="${tIn}" /></div><div class="seg-timing-item"><div class="seg-timing-label"><span>◇ Giữa</span><b data-val="timingMid">${tMid.toFixed(2)}×</b></div><input class="range" type="range" min="0" max="4.0" step="0.05" data-field="timingMid" value="${tMid}" /></div><div class="seg-timing-item"><div class="seg-timing-label"><span>↖ Ra</span><b data-val="timingOut">${tOut.toFixed(2)}×</b></div><input class="range" type="range" min="0.1" max="2.5" step="0.05" data-field="timingOut" value="${tOut}" /></div></div></div><div class="lyric-foot"><label class="lyric-icon-field">Emoji <input class="input" data-field="icon" aria-label="Emoji của câu" placeholder="✨" value="${escapeHtml(seg.icon || '')}" /></label><select class="select" data-field="mode" aria-label="Kiểu hoạt ảnh"><option value="queue" ${seg.mode === 'queue' ? 'selected' : ''}>Lướt dọc · liên tục</option><option value="bounce" ${seg.mode === 'bounce' ? 'selected' : ''}>Nảy nhẹ · đàn hồi</option><option value="poem" ${seg.mode === 'poem' ? 'selected' : ''}>Tan nhẹ · tình ca</option><option value="soft" ${seg.mode === 'soft' ? 'selected' : ''}>Mềm · zoom theo nhịp</option><option value="slide" ${seg.mode === 'slide' ? 'selected' : ''}>Trượt ngang · êm</option><option value="none" ${seg.mode === 'none' ? 'selected' : ''}>Không hiệu ứng (Tĩnh)</option></select></div>`;
+    item.innerHTML = `<div class="lyric-top"><span class="lyric-index">#${String(pageNum).padStart(2, '0')} / ${String(sorted.length).padStart(2, '0')}</span><span class="lyric-status">${secText(seg.start)} – ${secText(seg.end)}</span><button class="lyric-action" type="button" data-action="duplicate" title="Nhân bản câu này">⧉</button><button class="lyric-action" type="button" data-action="remove" title="Xóa câu này">×</button></div><textarea class="textarea lyric-words" data-field="text" placeholder="Nhập lời hát ở đây...">${escapeHtml(seg.text)}</textarea><div class="seg-timeline-box"><button class="seg-preview-btn" type="button" data-action="playSegment" title="Phát thử đoạn này">▶ Phát thử</button><div class="seg-track-area" tabindex="0"><div class="seg-track" data-role="segTrack"><div class="seg-track-bg"></div><div class="seg-range-fill"></div><div class="seg-playhead"></div><div class="seg-handle seg-handle-start" data-handle="start" title="Mốc bắt đầu"></div><div class="seg-handle seg-handle-end" data-handle="end" title="Mốc kết thúc"></div></div><div class="seg-window-labels"><span class="seg-win-min">00:00.00</span><span class="seg-win-dur"></span><span class="seg-win-max">00:20.00</span></div></div></div><div class="segment-time"><div class="timebox"><label>BẮT ĐẦU</label><div class="time-input-row"><input class="input" data-field="start" value="${secText(seg.start)}" aria-label="Thời gian bắt đầu"><button class="time-capture" type="button" data-action="setStart" title="Lấy mốc hiện tại">⊙</button></div></div><div class="timebox"><label>KẾT THÚC</label><div class="time-input-row"><input class="input" data-field="end" value="${secText(seg.end)}" aria-label="Thời gian kết thúc"><button class="time-capture" type="button" data-action="setEnd" title="Lấy mốc hiện tại">⊙</button></div></div></div><div class="seg-timing-panel"><div class="seg-timing-head"><strong>Nhịp chuyển động #${pageNum}</strong><button type="button" class="seg-sync-all-btn" data-action="syncTimingAll">Áp dụng mọi câu</button></div><div class="seg-timing-grid"><div class="seg-timing-item"><div class="seg-timing-label"><span>↗ Vào</span><b data-val="timingIn">${tIn.toFixed(2)}×</b></div><input class="range" type="range" min="0.1" max="2.5" step="0.05" data-field="timingIn" value="${tIn}" /></div><div class="seg-timing-item"><div class="seg-timing-label"><span>◇ Giữa</span><b data-val="timingMid">${tMid.toFixed(2)}×</b></div><input class="range" type="range" min="0" max="4.0" step="0.05" data-field="timingMid" value="${tMid}" /></div><div class="seg-timing-item"><div class="seg-timing-label"><span>↖ Ra</span><b data-val="timingOut">${tOut.toFixed(2)}×</b></div><input class="range" type="range" min="0.1" max="2.5" step="0.05" data-field="timingOut" value="${tOut}" /></div></div></div><div class="lyric-foot"><label class="lyric-icon-field">Emoji <input class="input" data-field="icon" aria-label="Emoji của câu" placeholder="✨" value="${escapeHtml(seg.icon || '')}" /></label></div>`;
     list.appendChild(item);
     syncSegmentTrackUI(item, seg, curTime);
     renderScrubberSegments();
@@ -1286,14 +1295,15 @@
     ctx.restore();
   }
 
-  // 2026-11-15: Khách hàng phản hồi hiệu ứng tự zoom lớn nhỏ rất khó chịu; trước đó drawBackground tự động zoom và lắc theo hàm sin(t) làm khung hình phập phồng liên tục, nên cố định zoom = 1 và giữ vị trí nền đứng yên ổn định.
+  // 2026-11-15: Khách hàng phản hồi nền bị tĩnh quá chán nhưng trước đó nếu giật theo beat lại khó chịu; nên giữ chuyển động trôi chậm điện ảnh rất êm (zoom 1.02 + 0.004*sin) không bị giật cục theo trống mà khung hình vẫn có sức sống.
   function drawBackground(t) {
     if (background) {
-      const s = Math.max(W / background.width, H / background.height);
+      const zoom = 1.02 + 0.004 * Math.sin(t * 0.14);
+      const s = Math.max(W / background.width, H / background.height) * zoom;
       const w = background.width * s,
         h = background.height * s;
-      const x = (W - w) / 2;
-      const y = (H - h) / 2;
+      const x = (W - w) / 2 + Math.sin(t * 0.11) * 4;
+      const y = (H - h) / 2 + Math.cos(t * 0.09) * 2.5;
       ctx.drawImage(background, x, y, w, h);
       drawWaterMotion(t,x,y,w,h);
       drawSettingSun(t,x,y,w,h);
@@ -1493,19 +1503,19 @@
   }
 
   const lyricArtwork = new Map();
-  // 2026-11-15: Khách hàng phản hồi thiếu icon; trước đó chỉ đọc qua NebulaMotion.textAndIcons nếu seg.icon rỗng sẽ mất biểu tượng cảm xúc, nên bổ sung dự phòng seg.icon || seg.tag || '' và fallback resolvedIcon để luôn render đầy đủ icon bên cạnh lời hát.
+  // 2026-11-15: Khách hàng phản hồi cỡ chữ quá nhỏ, thanh kéo cỡ chữ không ăn trên 54px và gõ sửa lời ở cột phải không cập nhật lên màn hình; trước đó requestedSize bị khóa Math.min(..., 54) và wordLayout chỉ lấy chữ cũ trong seg.words mà bỏ qua seg.text mới gõ, nên bỏ giới hạn 54px để nhận đúng data.fontSize và luôn tách từ trực tiếp từ parts.text kết hợp nội suy thời gian tự động.
   function createLyricArtwork(seg) {
     const rawIcon = seg.icon || seg.tag || '';
     const parts = NebulaMotion.textAndIcons(seg.text, rawIcon);
     const resolvedIcon = parts.icon || rawIcon;
     const label = data.font === 'oswald' ? parts.text.toLocaleUpperCase('vi-VN') : parts.text;
-    const wordsSignature = Array.isArray(seg.words) && seg.words.length ? seg.words.map(w => `${w.word}_${w.start}_${w.end}`).join('|') : '';
-    const key = JSON.stringify([label, resolvedIcon, data.font, data.fontSize, data.textColor, data.accentColor, data.glow, wordsSignature]);
+    const wordsSignature = Array.isArray(seg.words) && seg.words.length ? seg.words.map(w => `${w.word ?? w.w ?? ''}_${w.start ?? w.t ?? 0}_${w.end ?? 0}`).join('|') : '';
+    const key = JSON.stringify([seg.text, label, resolvedIcon, data.font, data.fontSize, data.textColor, data.accentColor, data.glow, wordsSignature]);
     if (lyricArtwork.has(key)) return lyricArtwork.get(key);
-    // 2026-11-15: Khách hàng phản hồi chữ tự zoom lớn nhỏ rất khó chịu giữa các câu ngắn và dài; trước đó fontSize 80px giữ nguyên ở câu ngắn nhưng bị ép nhỏ xuống ~52px ở câu dài khiến cỡ chữ nhảy to nhỏ liên tục qua từng câu, nên chuẩn hóa cỡ chữ đồng nhất (tối đa 54px với khung rộng 88% W) để mọi câu hát hiển thị cùng một kích thước ổn định.
-    const requestedSize = Math.min(Number(data.fontSize) || 54, 54);
-    const maxWidth = W * 0.88;
-    const gap = resolvedIcon && label ? requestedSize * 0.28 : 0;
+
+    const requestedSize = clamp(Number(data.fontSize) || 76, 28, 130);
+    const maxWidth = W * 0.92;
+    const gap = resolvedIcon && label ? requestedSize * 0.26 : 0;
     ctx.font = `${fontWeight()} ${requestedSize}px ${fontFamily()}`;
     const measured = ctx.measureText(label).width;
     ctx.font = `${requestedSize * 0.76}px "Segoe UI Emoji",sans-serif`;
@@ -1517,24 +1527,37 @@
     const pad = 40, height = Math.ceil(size * 2.1 + pad * 2);
 
     let wordLayout = null;
-    // 2026-11-15: Khách hàng xem video cần thấy lời bài hát hiển thị rõ ràng và chạy theo nhạc; trước đó lỗi không thấy lời do seg.words nhận khóa w/t thay vì word/start/end khiến text rỗng và wordLayout vẽ chuỗi trắng không fallback, nên sửa chuẩn hóa đa khóa (word||w||text, start??t, end) và tự động fallback sang raster cả câu nếu thiếu dữ liệu từ.
-    if (Array.isArray(seg.words) && seg.words.length > 0) {
+    const liveTokens = parts.text.trim() ? parts.text.trim().split(/\s+/) : [];
+    if (liveTokens.length > 0) {
       ctx.font = `${fontWeight()} ${size}px ${fontFamily()}`;
       const spaceW = ctx.measureText(' ').width;
       let curX = 0;
       const validEntries = [];
-      for (let i = 0; i < seg.words.length; i++) {
-        const w = seg.words[i];
-        const raw = w.word ?? w.w ?? w.text ?? '';
+      const hasMatchingWords = Array.isArray(seg.words) && seg.words.length === liveTokens.length;
+      const segDur = Math.max(0.2, (Number(seg.end) || 0) - (Number(seg.start) || 0));
+
+      for (let i = 0; i < liveTokens.length; i++) {
+        const raw = liveTokens[i];
         const wordText = data.font === 'oswald' ? String(raw).toLocaleUpperCase('vi-VN') : String(raw);
         if (!wordText.trim()) continue;
         const wWidth = ctx.measureText(wordText).width;
-        const wStart = Number(w.start ?? w.t ?? seg.start);
-        const wEnd = Number(w.end ?? (i + 1 < seg.words.length ? (seg.words[i+1].start ?? seg.words[i+1].t) : seg.end));
+        let wStart, wEnd;
+        if (hasMatchingWords) {
+          const w = seg.words[i];
+          wStart = Number(w.start ?? w.t ?? seg.start);
+          wEnd = Number(w.end ?? (i + 1 < seg.words.length ? (seg.words[i + 1].start ?? seg.words[i + 1].t) : seg.end));
+        } else if (Array.isArray(seg.words) && i < seg.words.length) {
+          const w = seg.words[i];
+          wStart = Number(w.start ?? w.t ?? (seg.start + (i / liveTokens.length) * segDur));
+          wEnd = Number(w.end ?? (seg.start + ((i + 1) / liveTokens.length) * segDur));
+        } else {
+          wStart = Number(seg.start) + (i / liveTokens.length) * segDur;
+          wEnd = Number(seg.start) + ((i + 1) / liveTokens.length) * segDur;
+        }
         validEntries.push({
           text: wordText,
           start: wStart,
-          end: Math.max(wStart + 0.1, wEnd),
+          end: Math.max(wStart + 0.08, wEnd),
           x: curX,
           width: wWidth
         });
@@ -1579,7 +1602,8 @@
 
   function renderLyricSegment(seg, prevSeg, nextSeg, t) {
     // Reject inactive cues before measuring or rasterizing any text.
-    const motion = NebulaMotion.state(seg, t, NebulaMotion.beatBreath(data.beatEffect,t),data.lyricDirection);
+    const activeMode = VALID_MODES.includes(data.lyricMode) ? data.lyricMode : (seg.mode || 'queue');
+    const motion = NebulaMotion.state({ ...seg, mode: activeMode }, t, NebulaMotion.beatBreath(data.beatEffect,t),data.lyricDirection);
     if (!motion) return null;
     const art = createLyricArtwork(seg);
     return {...motion, art, lines:[art.label], size:art.size, lineHeight:art.size*1.4, activeNow:true, priority:100};
@@ -1954,7 +1978,7 @@
     persistStickers();
   }
 
-  // 2026-11-15: Khách hàng phản hồi chữ bị giật giật khi hát; trước đó hiệu ứng chữ nhảy cao lift -3.5px, scale 1.07x và icon rung lắc theo beatPulse làm chữ rung giật liên tục, nên cố định baseline vững chắc, làm mượt chuyển động và làm nổi bật từ đang hát bằng hào quang trắng phát quang êm dịu không rung giật.
+  // 2026-11-15: Khách hàng phản hồi hiệu ứng chữ bị tĩnh quá chán và không nhận các tùy chỉnh hiệu ứng/màu sắc/ánh sáng; trước đó drawWords bỏ qua item.offsetX, item.offsetY, item.scale, item.opacity khiến mọi kiểu hoạt ảnh đều đứng im, nên khôi phục đầy đủ phép biến đổi chuyển động từ NebulaMotion kết hợp lướt từ karaoke mượt mà và icon bồng bềnh theo nhịp.
   function drawWords(t) {
     const sorted = sortedLyrics();
     let selected = null;
@@ -1996,9 +2020,14 @@
     const baseY = H * (data.position === 'upper' ? 0.33 : data.position === 'lower' ? 0.64 : 0.5);
 
     ctx.save();
-    ctx.translate(W * 0.5, baseY);
-    const visibleOpacity = Math.max(0.88, item.opacity || 0);
+    ctx.translate(W * 0.5 + (item.offsetX || 0), baseY + (item.offsetY || 0));
+    ctx.scale(item.scale || 1, item.scale || 1);
+    const visibleOpacity = clamp(item.opacity ?? 1, 0, 1);
     ctx.globalAlpha = visibleOpacity;
+
+    const mainColor = data.textColor || '#ffffff';
+    const glowColor = data.accentColor || '#ffffff';
+    const glowAmount = clamp(Number(data.glow ?? 68) / 100, 0, 1.5);
 
     if (art.wordLayout && art.wordLayout.length > 0) {
       const textCenterOffset = -art.totalWidth / 2 + art.textWidth / 2;
@@ -2015,33 +2044,47 @@
 
         ctx.save();
         if (isCurrent) {
-          // Luminous aura glow around current word - rock solid baseline without vertical lift or scale jitter
-          ctx.shadowColor = 'rgba(255, 255, 255, 0.95)';
-          ctx.shadowBlur = 18;
+          const wProg = clamp((t - w.start) / Math.max(0.08, w.end - w.start), 0, 1);
+          const wave = Math.sin(wProg * Math.PI);
+          const lift = -2.2 * wave;
+          const wordScale = 1 + 0.032 * wave;
+          const wordCenterX = w.x + w.width / 2;
+
+          ctx.translate(wordCenterX, lift);
+          ctx.scale(wordScale, wordScale);
+          ctx.translate(-wordCenterX, 0);
+
+          // Luminous aura glow around current word
+          ctx.shadowColor = glowColor;
+          ctx.shadowBlur = (22 + 12 * wave) * Math.max(0.4, glowAmount);
           ctx.shadowOffsetY = 0;
-          ctx.fillStyle = '#ffffff';
+          ctx.fillStyle = mainColor;
           ctx.fillText(w.text, w.x, 0);
 
-          // Deep contrast shadow for ultra-crisp white core
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
-          ctx.shadowBlur = 6;
+          // Crisp core with deep contrast shadow
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.92)';
+          ctx.shadowBlur = 7;
           ctx.shadowOffsetY = 2;
           ctx.fillStyle = '#ffffff';
           ctx.fillText(w.text, w.x, 0);
         } else if (isSung) {
-          // Sung words: pure crisp white with deep black shadow
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
-          ctx.shadowBlur = 8;
+          ctx.shadowColor = glowColor;
+          ctx.shadowBlur = 12 * glowAmount;
+          ctx.shadowOffsetY = 0;
+          ctx.fillStyle = mainColor;
+          ctx.fillText(w.text, w.x, 0);
+
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.92)';
+          ctx.shadowBlur = 7;
           ctx.shadowOffsetY = 2;
-          ctx.fillStyle = '#ffffff';
+          ctx.fillStyle = mainColor;
           ctx.fillText(w.text, w.x, 0);
         } else {
-          // Upcoming words: soft translucent white
-          ctx.globalAlpha = visibleOpacity * 0.72;
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+          ctx.globalAlpha = visibleOpacity * 0.68;
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.88)';
           ctx.shadowBlur = 6;
           ctx.shadowOffsetY = 2;
-          ctx.fillStyle = '#ffffff';
+          ctx.fillStyle = mainColor;
           ctx.fillText(w.text, w.x, 0);
         }
         ctx.restore();
@@ -2054,9 +2097,12 @@
 
     if (art.symbol) {
       const x = art.totalWidth / 2 - art.iconWidth / 2;
+      const floatY = Math.sin(t * 2.1 + Number(seg.start || 0)) * 2.5;
+      const iconScale = 1 + 0.03 * Math.sin(t * 2.6 + Number(seg.start || 0));
       ctx.save();
-      ctx.translate(x, 0);
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+      ctx.translate(x, floatY);
+      ctx.scale(iconScale, iconScale);
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.88)';
       ctx.shadowBlur = 8;
       ctx.drawImage(art.symbol, -art.symbol.displayWidth / 2, -art.symbol.displayHeight / 2, art.symbol.displayWidth, art.symbol.displayHeight);
       ctx.restore();
@@ -3083,6 +3129,7 @@
     })
   );
 
+  // 2026-11-15: Khách hàng phản hồi chỉnh hiệu ứng chung và gõ sửa lời bên phải không ăn vào lời trên màn hình; trước đó thiếu lắng nghe sự kiện cho #lyricModeSelect và khi gõ vào textarea data-field="text" thì mảng seg.words vẫn giữ chữ cũ, nên bổ sung lyricModeSelect vào bộ lắng nghe điều khiển chung và tự động đồng bộ lại seg.words + xóa cache lyricArtwork ngay khi gõ chữ.
   for (const prop of [
     'density',
     'dim',
@@ -3091,18 +3138,31 @@
     'fontSelect',
     'positionSelect',
     'directionSelect',
+    'lyricModeSelect',
     'textColor',
     'accentColor'
   ]) {
     const el = $(prop);
-    el.addEventListener('input', () => {
-      const name = { fontSelect: 'font', positionSelect: 'position', directionSelect: 'lyricDirection' }[prop] || prop;
+    if (!el) continue;
+    const onControlUpdate = () => {
+      const name = {
+        fontSelect: 'font',
+        positionSelect: 'position',
+        directionSelect: 'lyricDirection',
+        lyricModeSelect: 'lyricMode'
+      }[prop] || prop;
       data[name] = el.type === 'checkbox' ? el.checked : el.type === 'range' ? Number(el.value) : el.value;
+      if (prop === 'lyricModeSelect' && Array.isArray(data.lyrics)) {
+        for (const s of data.lyrics) s.mode = data.lyricMode;
+      }
       if (['density', 'dim', 'glow'].includes(prop)) $(prop + 'Val').textContent = data[name] + '%';
       if (prop === 'fontSize') $('fontSizeVal').textContent = data.fontSize + ' px';
+      lyricArtwork.clear();
       persist();
       draw(time());
-    });
+    };
+    el.addEventListener('input', onControlUpdate);
+    el.addEventListener('change', onControlUpdate);
   }
 
   $('lyricList').addEventListener('input', (e) => {
@@ -3113,6 +3173,27 @@
     if (!seg) return;
     if (field === 'text' || field === 'mode' || field === 'icon') {
       seg[field] = e.target.value;
+      if (field === 'text') {
+        const rawIcon = seg.icon || seg.tag || '';
+        const parts = NebulaMotion.textAndIcons(seg.text, rawIcon);
+        if (parts.icon && !seg.icon) seg.icon = parts.icon;
+        const tokens = parts.text.trim() ? parts.text.trim().split(/\s+/) : [];
+        const oldWords = Array.isArray(seg.words) ? seg.words : [];
+        const segDur = Math.max(0.2, (Number(seg.end) || 0) - (Number(seg.start) || 0));
+        seg.words = tokens.map((tok, i) => {
+          if (oldWords.length === tokens.length && oldWords[i]) {
+            return { ...oldWords[i], word: tok };
+          }
+          const st = Number(seg.start) + (i / Math.max(1, tokens.length)) * segDur;
+          const en = Number(seg.start) + ((i + 1) / Math.max(1, tokens.length)) * segDur;
+          return {
+            word: tok,
+            start: Math.round(st * 100) / 100,
+            end: Math.round(en * 100) / 100
+          };
+        });
+      }
+      lyricArtwork.clear();
       persist();
       draw(time());
       return;
@@ -3612,6 +3693,11 @@
         ? obj.font
         : 'oswald';
       const importedWeather = VALID_WEATHERS.includes(obj.weather) ? obj.weather : 'galaxy';
+      const importedMode = VALID_MODES.includes(obj.lyricMode)
+        ? obj.lyricMode
+        : VALID_MODES.includes(obj.lyrics?.[0]?.mode)
+        ? obj.lyrics[0].mode
+        : 'queue';
       const fallbackIn = Math.max(0.1, Number(obj.timingIn) || 0.75);
       const fallbackMid = Math.max(0, Number(obj.timingMid ?? 1.5));
       const fallbackOut = Math.max(0.1, Number(obj.timingOut) || 0.75);
@@ -3620,7 +3706,8 @@
         ...obj,
         weather: importedWeather,
         font: importedFont,
-        fontSize: Number(obj.fontSize) || 84,
+        lyricMode: importedMode,
+        fontSize: Number(obj.fontSize) || 76,
         beatEffect: normalizeBeatEffect(obj.beatEffect || obj.rhythmEffect || obj.rhythm || obj.beatTrack),
         lyrics: obj.lyrics.map((p, i) => ({
           id: p.id || i + Date.now(),
@@ -3629,7 +3716,7 @@
           text: String(p.text || ''),
           icon: String(p.icon || ''),
           words: Array.isArray(p.words) ? p.words : undefined,
-          mode: VALID_MODES.includes(p.mode) ? p.mode : 'queue',
+          mode: VALID_MODES.includes(p.mode) ? p.mode : importedMode,
           timingIn: Math.max(0.1, Number(p.timingIn) || fallbackIn),
           timingMid: Math.max(0, Number(p.timingMid ?? fallbackMid)),
           timingOut: Math.max(0.1, Number(p.timingOut) || fallbackOut)
