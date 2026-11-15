@@ -5,7 +5,7 @@
   "font": "oswald",
   "position": "center",
   "lyricDirection": "down",
-  "fontSize": 80,
+  "fontSize": 54,
   "glow": 20,
   "textColor": "#ffffff",
   "accentColor": "#ffffff",
@@ -997,15 +997,15 @@
     },
     {
       "id": "seg_026",
-      "text": "Hóa thêm một đời dở dang 💔🍂",
+      "text": "Hóa thêm một đời lỡ dở dang 💔🍂",
       "icon": "💔🍂",
       "tag": "💔🍂",
       "mode": "none",
       "timingIn": 0.35,
-      "timingMid": 1.9,
+      "timingMid": 2.5,
       "timingOut": 0.25,
       "start": 89.96,
-      "end": 92.46,
+      "end": 93.06,
       "words": [
         {
           "word": "Hóa",
@@ -1028,14 +1028,19 @@
           "end": 91.28
         },
         {
-          "word": "dở",
+          "word": "lỡ",
           "start": 91.28,
           "end": 91.56
         },
         {
-          "word": "dang",
+          "word": "dở",
           "start": 91.56,
-          "end": 92.46
+          "end": 92.16
+        },
+        {
+          "word": "dang",
+          "start": 92.16,
+          "end": 93.06
         }
       ]
     },
@@ -131057,9 +131062,9 @@
     "backgroundName": "Thung lũng pha lê dưới trăng tím"
   },
   "stickers": [],
-  "_selectedSegId": "seg_001",
+  "_selectedSegId": "seg_026",
   "_selectedStickerId": null,
-  "_updatedAt": 1794758160898,
+  "_updatedAt": 1794759405959,
   "backgroundStyle": "illustrated",
   "motionTheme": "ballad"
 }

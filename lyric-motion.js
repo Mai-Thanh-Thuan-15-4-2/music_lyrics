@@ -57,6 +57,7 @@
     const power=strength+(clamp(Number(b.strength)||0)-strength)*smooth(progress);
     return amount*power*(.5+.5*Math.cos(progress*Math.PI*2));
   }
+  // 2026-11-15: Khách hàng phản hồi hiệu ứng animation tự zoom lớn nhỏ rất khó chịu; trước đó các chế độ queue/soft/bounce tự động thay đổi result.scale theo progress và beatBreath làm chữ phóng to thu nhỏ liên tục, nên khóa result.scale = 1 và giảm biên độ dịch chuyển để giữ kích thước chữ ổn định tuyệt đối.
   function state(seg, t, rhythm = 0, direction = 'up') {
     const phase = phases(seg), local = t - Number(seg.start);
     if (local < 0 || local >= phase.duration) return null;
@@ -65,29 +66,26 @@
     const result = {offsetX:0, offsetY:0, scale:1, opacity:enter*leave, progress, glowFactor:0.75, mode:seg.mode || 'soft'};
     const envelope = enter*leave;
     if (seg.mode === 'none') { result.opacity = 1; return result; }
-    // 2026-11-15: Khách hàng yêu cầu hiệu ứng chữ mượt mà, bay bổng hơn; trước đó kiểu queue dùng biên độ nhảy 68px ([68, 12, -12, -68]) làm câu hát ngắn bị giật cục khi vào/ra, nên tinh chỉnh biên độ lướt êm 28px ([28, 5, -5, -28]), bổ sung nhịp thở beatBreath và sóng lượn vi mô để chuyển động chữ tự nhiên.
     if (seg.mode === 'queue') {
-      const breath = clamp(rhythm) * envelope;
-      result.offsetY = path(local, phase, [28, 5, -5, -28]) - 1.2 * breath;
-      result.scale = 0.97 + 0.03 * envelope + 0.012 * breath;
+      result.offsetY = path(local, phase, [10, 0, 0, -10]);
+      result.scale = 1;
     } else if (seg.mode === 'slide') {
-      result.offsetX = path(local, phase, [64, 6, -6, -64]);
-      result.offsetY = 2 * Math.sin(progress*Math.PI*2) * envelope;
+      result.offsetX = path(local, phase, [24, 0, 0, -24]);
+      result.offsetY = 0;
+      result.scale = 1;
     } else if (seg.mode === 'bounce') {
       const p = clamp(local/phase.entry), q = 1-leave;
-      result.offsetY = 34*(1-p)**3 - 9*Math.sin(Math.PI*p)**2*(1-p) - 22*q;
-      result.scale = 1 - 0.04*(1-enter) + 0.022*Math.sin(Math.PI*p)**2 - 0.02*q;
+      result.offsetY = 12*(1-p)**3 - 8*q;
+      result.scale = 1;
     } else if (seg.mode === 'poem') {
       const fadeIn=smooth(local/Math.min(.52,phase.duration*.25));
       const fadeOut=smooth((phase.duration-local)/Math.min(.48,phase.duration*.23));
       result.opacity=fadeIn*fadeOut;
-      result.offsetY=42*(1-fadeIn)-28*(1-fadeOut)+Math.sin(t*.35)*1.5*result.opacity;
+      result.offsetY=10*(1-fadeIn)-8*(1-fadeOut);
       result.scale=1;
     } else {
-      // Land softly, remain centered and grow slowly throughout the cue.
-      const breath=clamp(rhythm)*envelope;
-      result.offsetY = 18*(1-enter)-12*(1-leave)-1.1*breath;
-      result.scale = 0.965+0.055*smooth(progress)+0.012*breath;
+      result.offsetY = 6*(1-enter)-6*(1-leave);
+      result.scale = 1;
     }
     if(direction==='down')result.offsetY=-result.offsetY;
     return result;

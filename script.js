@@ -1286,14 +1286,14 @@
     ctx.restore();
   }
 
+  // 2026-11-15: Khách hàng phản hồi hiệu ứng tự zoom lớn nhỏ rất khó chịu; trước đó drawBackground tự động zoom và lắc theo hàm sin(t) làm khung hình phập phồng liên tục, nên cố định zoom = 1 và giữ vị trí nền đứng yên ổn định.
   function drawBackground(t) {
     if (background) {
-      const zoom = data.backgroundStyle==='illustrated' ? 1.018+0.004*Math.sin(t*.12) : 1.055+0.012*Math.sin(t*.17);
-      const s = Math.max(W / background.width, H / background.height) * zoom;
+      const s = Math.max(W / background.width, H / background.height);
       const w = background.width * s,
         h = background.height * s;
-      const x = (W - w) / 2 + Math.sin(t * 0.13) * W * 0.006;
-      const y = (H - h) / 2 + Math.cos(t * 0.11) * H * 0.007;
+      const x = (W - w) / 2;
+      const y = (H - h) / 2;
       ctx.drawImage(background, x, y, w, h);
       drawWaterMotion(t,x,y,w,h);
       drawSettingSun(t,x,y,w,h);
@@ -1502,9 +1502,10 @@
     const wordsSignature = Array.isArray(seg.words) && seg.words.length ? seg.words.map(w => `${w.word}_${w.start}_${w.end}`).join('|') : '';
     const key = JSON.stringify([label, resolvedIcon, data.font, data.fontSize, data.textColor, data.accentColor, data.glow, wordsSignature]);
     if (lyricArtwork.has(key)) return lyricArtwork.get(key);
-    const requestedSize = Number(data.fontSize) || 72;
-    const maxWidth = W * 0.8;
-    const gap = resolvedIcon && label ? requestedSize * 0.3 : 0;
+    // 2026-11-15: Khách hàng phản hồi chữ tự zoom lớn nhỏ rất khó chịu giữa các câu ngắn và dài; trước đó fontSize 80px giữ nguyên ở câu ngắn nhưng bị ép nhỏ xuống ~52px ở câu dài khiến cỡ chữ nhảy to nhỏ liên tục qua từng câu, nên chuẩn hóa cỡ chữ đồng nhất (tối đa 54px với khung rộng 88% W) để mọi câu hát hiển thị cùng một kích thước ổn định.
+    const requestedSize = Math.min(Number(data.fontSize) || 54, 54);
+    const maxWidth = W * 0.88;
+    const gap = resolvedIcon && label ? requestedSize * 0.28 : 0;
     ctx.font = `${fontWeight()} ${requestedSize}px ${fontFamily()}`;
     const measured = ctx.measureText(label).width;
     ctx.font = `${requestedSize * 0.76}px "Segoe UI Emoji",sans-serif`;
@@ -1995,10 +1996,8 @@
     const baseY = H * (data.position === 'upper' ? 0.33 : data.position === 'lower' ? 0.64 : 0.5);
 
     ctx.save();
-    const stableOffsetY = Number.isFinite(item.offsetY) ? item.offsetY * 0.2 : 0;
-    ctx.translate(W * 0.5 + (item.offsetX || 0), baseY + stableOffsetY);
-    ctx.scale(item.scale || 1, item.scale || 1);
-    const visibleOpacity = Math.max(0.85, item.opacity || 0);
+    ctx.translate(W * 0.5, baseY);
+    const visibleOpacity = Math.max(0.88, item.opacity || 0);
     ctx.globalAlpha = visibleOpacity;
 
     if (art.wordLayout && art.wordLayout.length > 0) {
@@ -2636,19 +2635,14 @@
   });
 
   let lastDrawnTime = NaN;
+  // 2026-11-15: Khách hàng phản hồi hiệu ứng tự zoom lớn nhỏ rất khó chịu; trước đó draw(t) tính cameraScale nhấp nhô theo beatPulse(t)*.025 trên mỗi nhịp trống làm toàn bộ khung cảnh phóng to thu nhỏ liên tục, nên bỏ cameraScale để giữ khung hình ổn định tuyệt đối.
   function draw(t) {
     lastDrawnTime = t;
     ctx.setTransform(canvas.width/W, 0, 0, canvas.height/H, 0, 0);
     ctx.save();
     ctx.clearRect(0, 0, W, H);
-    ctx.save();
-    const cameraScale = data.motionTheme==='ballad' ? 1+.003*(1-Math.cos(t*.07)) : 1+beatPulse(t)*.025;
-    ctx.translate(W / 2, H / 2);
-    ctx.scale(cameraScale, cameraScale);
-    ctx.translate(-W / 2, -H / 2);
     drawBackground(t);
     drawWeather(t);
-    ctx.restore();
     drawBeatAccents(t);
     drawInstrumental(t);
     drawIntro(t);
@@ -3791,15 +3785,15 @@
   }
 
   $('exportBtn').addEventListener('click', () => (recording() ? stopRecord() : startRecord()));
+  // 2026-11-15: Khách hàng cần khi tải lại trang (F5) sẽ hiển thị ngay dữ liệu chuẩn mới nhất từ workspace_state.json; trước đó beforeunload gọi persist() ghi đè dữ liệu cũ trong RAM lên localStorage với _updatedAt=Date.now() khiến bản cập nhật trên đĩa bị bỏ qua, nên không gọi persist() khi unload và luôn ưu tiên nạp từ /api/workspace.
   window.addEventListener('beforeunload', (e) => {
-    persist();
     if (recording()) {
       e.preventDefault();
       e.returnValue = 'Video đang ghi chưa lưu.';
     }
   });
 
-  // 2026-11-15: Khách hàng mong muốn khi tạo dự án mới vào workspace_state.json thì mở ứng dụng lên sẽ hiển thị ngay dự án, nhạc và ảnh nền mới; trước đó chỉ đọc /api/workspace khi localStorage trống và luôn ghi đè bởi IndexedDB cũ, nên cần ưu tiên bản workspace_state.json mới hơn và gọi applyProjectObject để đồng bộ cả lyrics lẫn media.
+  // 2026-11-15: Khách hàng mong muốn khi tạo hoặc cập nhật dự án vào workspace_state.json thì mở/F5 ứng dụng lên sẽ hiển thị ngay dự án chuẩn mới nhất; luôn ưu tiên nạp bản từ /api/workspace và đồng bộ xuống localStorage.
   async function restoreWorkspaceFromCache() {
     try {
       const savedLocal = JSON.parse(localStorage.getItem(KEY) || 'null');
@@ -3808,10 +3802,11 @@
         const res = await fetch(`${LOCAL_API_BASE}/api/workspace`);
         if (res.ok) {
           const parsed = await res.json();
-          if (parsed && Array.isArray(parsed.lyrics)) diskObj = parsed;
+          if (parsed && Array.isArray(parsed.lyrics) && parsed.lyrics.length > 0) diskObj = parsed;
         }
       } catch (e) {}
-      if (diskObj && (!savedLocal || (Number(diskObj._updatedAt) || 0) > (Number(savedLocal._updatedAt) || 0))) {
+      if (diskObj) {
+        localStorage.setItem(KEY, JSON.stringify(diskObj));
         await applyProjectObject(diskObj);
         return;
       }
