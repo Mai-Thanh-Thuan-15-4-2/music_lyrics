@@ -75,8 +75,10 @@
       result.scale = 1;
     } else if (seg.mode === 'bounce') {
       const p = clamp(local/phase.entry), q = 1-leave;
-      result.offsetY = 30*(1-p)**3 - 8*Math.sin(Math.PI*p)**2*(1-p) - 18*q;
-      result.scale = 1;
+      const breath = clamp(rhythm) * envelope;
+      result.offsetX = 24 * (1 - p) ** 2 - 18 * q;
+      result.offsetY = 32*(1-p)**3 - 10*Math.sin(Math.PI*p)**2*(1-p) - 20*q - 4.5*breath;
+      result.scale = 1 + 0.028 * breath;
     } else if (seg.mode === 'poem') {
       const fadeIn=smooth(local/Math.min(.52,phase.duration*.25));
       const fadeOut=smooth((phase.duration-local)/Math.min(.48,phase.duration*.23));
@@ -85,8 +87,9 @@
       result.scale=1;
     } else {
       const breath=clamp(rhythm)*envelope;
-      result.offsetY = 14*(1-enter)-10*(1-leave);
-      result.scale = 0.96+0.04*smooth(progress)+0.01*breath;
+      result.offsetX = 22*(1-enter) - 18*(1-leave);
+      result.offsetY = 16*(1-enter) - 12*(1-leave) - 3.5*breath;
+      result.scale = 0.94 + 0.06*enter + 0.035*breath;
     }
     if(direction==='down')result.offsetY=-result.offsetY;
     return result;

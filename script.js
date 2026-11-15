@@ -1821,37 +1821,157 @@
     ctx.restore();
   }
 
+  // 2026-11-16: Khách hàng yêu cầu hiệu ứng nhạc dạo và chạy chữ mới có beat theo nhịp cho bài Remix trên nền Hồ Hoàng Hôn Dưới Ánh Trăng Sao (giữ font Oswald); bổ sung drawRemixIntro với vòng sóng phổ nhạc tròn + hào quang neon theo nhịp trống Cha Cha Cha và nâng cấp drawInstrumental + drawWords đập theo beat.
+  function drawRemixIntro(t) {
+    const intro = data.intro;
+    const first = sortedLyrics()[0]?.start ?? 15.1;
+    const end = Math.max(0, Math.min(Number(intro.end) || first - 0.35, first - 0.35));
+    if (end <= 0 || t < 0 || t >= end) return;
+    const title = String(intro.title || data.songTitle || '').trim();
+    const subtitle = String(intro.subtitle || data.artist || '').trim();
+    const key = JSON.stringify(['remix', title, subtitle, data.accentColor]);
+    if (!introArtwork || key !== introArtworkKey) {
+      introArtworkKey = key;
+      introArtwork = document.createElement('canvas');
+      introArtwork.width = W;
+      introArtwork.height = 320;
+      const g = introArtwork.getContext('2d');
+      g.textAlign = 'center';
+      g.textBaseline = 'middle';
+      const upperTitle = title.toLocaleUpperCase('vi-VN');
+      g.font = '800 84px "Oswald",sans-serif';
+      const fitted = Math.min(84, 84 * (W * 0.86) / Math.max(1, g.measureText(upperTitle).width));
+      g.font = `800 ${fitted}px "Oswald",sans-serif`;
+
+      // Deep contrast shadow
+      g.shadowColor = 'rgba(0, 0, 0, 0.95)';
+      g.shadowBlur = 18;
+      g.shadowOffsetY = 4;
+      g.fillStyle = '#000000';
+      g.fillText(upperTitle, W / 2, 118);
+
+      // Outer neon cyan-sunset halo
+      g.shadowColor = data.accentColor || '#38bdf8';
+      g.shadowBlur = 28;
+      g.shadowOffsetY = 0;
+      g.fillStyle = '#ffffff';
+      g.fillText(upperTitle, W / 2, 118);
+
+      // Crisp white core
+      g.shadowColor = '#fbbf24';
+      g.shadowBlur = 10;
+      g.fillStyle = '#ffffff';
+      g.fillText(upperTitle, W / 2, 118);
+
+      // Subtitle badge
+      const subUpper = subtitle.toLocaleUpperCase('vi-VN');
+      g.font = '600 26px "Oswald","Be Vietnam Pro",sans-serif';
+      const subW = g.measureText(subUpper).width + 64;
+      g.shadowColor = 'rgba(0, 0, 0, 0.85)';
+      g.shadowBlur = 12;
+      g.fillStyle = 'rgba(8, 15, 35, 0.72)';
+      g.strokeStyle = data.accentColor || '#38bdf8';
+      g.lineWidth = 1.8;
+      g.beginPath();
+      g.roundRect((W - subW) / 2, 186, subW, 48, 24);
+      g.fill();
+      g.stroke();
+
+      g.shadowColor = data.accentColor || '#38bdf8';
+      g.shadowBlur = 10;
+      g.fillStyle = '#fef08a';
+      g.fillText(subUpper, W / 2, 211);
+    }
+
+    const enter = smooth(t / 0.9);
+    const out = smooth((end - t) / 0.9);
+    const alpha = enter * out;
+    const pulse = beatPulse(t);
+    const cx = W * 0.5, cy = H * 0.23;
+
+    ctx.save();
+    ctx.globalAlpha = alpha;
+
+    // Expanding beat shockwave rings around the emblem
+    for (let r = 0; r < 2; r++) {
+      const phase = ((t * 1.1 + r * 0.5) % 1);
+      ctx.save();
+      ctx.globalAlpha = alpha * (1 - phase) * (0.35 + 0.45 * pulse);
+      ctx.strokeStyle = r === 0 ? (data.accentColor || '#38bdf8') : '#fbbf24';
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 58 + phase * 95 + pulse * 18, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // Radial 36-bar circular equalizer synced to spectrum & beat
+    const radialBars = 36;
+    const baseRadius = 56 + pulse * 10;
+    for (let i = 0; i < radialBars; i++) {
+      const angle = (i / radialBars) * Math.PI * 2 - Math.PI / 2 + t * 0.25;
+      const band = Math.floor(Math.abs((i % 18) - 9) * 1.8);
+      const lvl = spectrumAt(t, band);
+      const barLen = 8 + lvl * 42 + pulse * 18;
+      const x1 = cx + Math.cos(angle) * baseRadius;
+      const y1 = cy + Math.sin(angle) * baseRadius;
+      const x2 = cx + Math.cos(angle) * (baseRadius + barLen);
+      const y2 = cy + Math.sin(angle) * (baseRadius + barLen);
+      ctx.strokeStyle = i % 2 === 0 ? '#38bdf8' : '#fbbf24';
+      ctx.lineWidth = 3.2;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+    }
+
+    // Center pulsing emblem
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.scale(0.76 + pulse * 0.14, 0.76 + pulse * 0.14);
+    ctx.drawImage(musicGlyph('🎧'), -80, -80);
+    ctx.restore();
+
+    // Title & subtitle with beat breath and slide-in
+    ctx.save();
+    const titleY = H * 0.46;
+    const titleScale = (0.94 + 0.06 * enter) * (1 + pulse * 0.028);
+    ctx.translate(W / 2, titleY);
+    ctx.scale(titleScale, titleScale);
+    ctx.drawImage(introArtwork, -W / 2, -140);
+
+    // Beat-reactive laser wings beside the title
+    const wingSpan = (180 + pulse * 140) * enter;
+    const wingGradL = ctx.createLinearGradient(-wingSpan - 120, 0, -60, 0);
+    wingGradL.addColorStop(0, 'rgba(56, 189, 248, 0)');
+    wingGradL.addColorStop(1, '#fbbf24');
+    ctx.strokeStyle = wingGradL;
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.moveTo(-wingSpan - 120, 18);
+    ctx.lineTo(-60, 18);
+    ctx.stroke();
+
+    const wingGradR = ctx.createLinearGradient(60, 0, wingSpan + 120, 0);
+    wingGradR.addColorStop(0, '#fbbf24');
+    wingGradR.addColorStop(1, 'rgba(56, 189, 248, 0)');
+    ctx.strokeStyle = wingGradR;
+    ctx.beginPath();
+    ctx.moveTo(60, 18);
+    ctx.lineTo(wingSpan + 120, 18);
+    ctx.stroke();
+    ctx.restore();
+
+    ctx.restore();
+  }
+
   function drawIntro(t) {
     const intro=data.intro;
     if (!intro?.enabled) return;
     if(intro.style==='ballad'){drawBalladIntro(t);return;}
     if(intro.style==='storybook'){ drawStorybookIntro(t); return; }
-    const first=sortedLyrics()[0]?.start ?? 30;
-    const end=Math.max(0,Math.min(Number(intro.end)||first-1.2,first-1.2));
-    if (end<=0 || t<0 || t>=end) return;
-    const title=String(intro.title||data.songTitle||'').trim();
-    const subtitle=String(intro.subtitle||data.artist||'').trim();
-    const key=JSON.stringify([title,subtitle,data.accentColor]);
-    if (!introArtwork || key!==introArtworkKey) {
-      introArtworkKey=key;
-      introArtwork=document.createElement('canvas');introArtwork.width=W;introArtwork.height=300;
-      const g=introArtwork.getContext('2d');
-      g.textAlign='center';g.textBaseline='middle';
-      g.font='700 82px "Oswald",sans-serif';
-      const fitted=Math.min(82,82*(W*.82)/Math.max(1,g.measureText(title.toLocaleUpperCase('vi-VN')).width));
-      g.font=`700 ${fitted}px "Oswald",sans-serif`;
-      g.fillStyle='#fff5fa';g.shadowColor=data.accentColor;g.shadowBlur=12;
-      g.fillText(title.toLocaleUpperCase('vi-VN'),W/2,120);
-      g.shadowBlur=0;g.fillStyle='#f0c4dc';g.font='500 28px "Be Vietnam Pro",sans-serif';
-      g.fillText(subtitle,W/2,200,W*.8);
-    }
-    const alpha=smooth(t/1.2)*smooth((end-t)/1.15);
-    const pulse=beatPulse(t);
-    ctx.save();ctx.globalAlpha=alpha;
-    ctx.drawImage(introArtwork,0,H*.40-120+16*(1-alpha));
-    ctx.translate(W/2,H*.23);ctx.scale(1+pulse*.14,1+pulse*.14);
-    ctx.drawImage(musicGlyph('🎧'),-80,-80);
-    ctx.restore();
+    drawRemixIntro(t);
   }
 
   function drawBalladInterlude(t) {
@@ -1911,34 +2031,66 @@
     if (!effect?.enabled) return;
     const visibility=smooth(instrumentalVisibility(t));
     const pulse=beatPulse(t);
-    const {r,g,b}=hexToRgb(data.accentColor);
-    const centerY=H*(data.intro?.style==='storybook' ? .91 : .87-.14*visibility);
+    const {r,g,b}=hexToRgb(data.accentColor || '#38bdf8');
+    const centerY=H*(data.intro?.style==='storybook' ? .91 : .89-.12*visibility);
     ctx.save();
-    const bars=48, step=W*.55/bars;
+    const bars=56, step=W*.62/bars;
     for(let i=0;i<bars;i++){
       const band=Math.abs(i-(bars-1)/2);
       const level=spectrumAt(t,Math.floor(band));
-      const amplitude=(.28+.72*visibility)*effect.amount;
-      const height=3+level*(70+50*pulse)*amplitude;
-      const x=W*.225+(i+.5)*step;
-      ctx.globalAlpha=(.22+.52*visibility)*(.4+.6*level);
-      ctx.fillStyle=i%3===0?'#ffd6ea':`rgb(${r},${g},${b})`;
-      ctx.beginPath();ctx.roundRect(x-3,centerY-height/2,6,height,3);ctx.fill();
+      const amplitude=(.32+.68*visibility)*effect.amount;
+      const height=4+level*(78+58*pulse)*amplitude;
+      const x=W*.19+(i+.5)*step;
+      ctx.globalAlpha=(.28+.58*visibility)*(.45+.55*level);
+      ctx.fillStyle=i%3===0?'#fef08a':i%3===1?`rgb(${r},${g},${b})`:'#f472b6';
+      ctx.shadowColor=ctx.fillStyle;
+      ctx.shadowBlur=8*pulse;
+      ctx.beginPath();ctx.roundRect(x-3,centerY-height/2,5.5,height,3);ctx.fill();
     }
-    // A bar pulse stays audible-looking during verses without moving the words.
-    if(visibility>.01 && data.intro?.style!=='storybook'){
+    ctx.shadowBlur=0;
+    if(visibility>.02 && data.intro?.style!=='storybook'){
       const beats=effect.beats;
       for(let i=beats.length-1;i>=0;i--){
         const age=t-beats[i].time;
-        if(age<0)continue;if(age>1.1)break;if(i%4)continue;
-        const p=age/1.1;ctx.globalAlpha=visibility*(1-p)*.22*effect.amount;
-        ctx.strokeStyle=data.accentColor;ctx.lineWidth=2;ctx.beginPath();
-        ctx.ellipse(W/2,centerY,60+p*340,12+p*65,0,0,Math.PI*2);ctx.stroke();
+        if(age<0)continue;if(age>1.1)break;if(i%2)continue;
+        const p=age/1.1;ctx.globalAlpha=visibility*(1-p)*.28*effect.amount;
+        ctx.strokeStyle=i%4===0?'#fbbf24':(data.accentColor || '#38bdf8');ctx.lineWidth=2.2;ctx.beginPath();
+        ctx.ellipse(W/2,centerY,70+p*380,14+p*72,0,0,Math.PI*2);ctx.stroke();
       }
-      const introEnd=Math.min(Number(data.intro?.end)||0,(sortedLyrics()[0]?.start||0)-1.2);
-      if(t>introEnd+1.5){
-        ctx.globalAlpha=visibility*.8;ctx.translate(W/2,H*.45+Math.sin(t)*3);
-        ctx.scale(.7+pulse*.1,.7+pulse*.1);ctx.drawImage(musicGlyph('🎶'),-80,-80);
+      const introEnd=Math.min(Number(data.intro?.end)||0,(sortedLyrics()[0]?.start||0)-0.4);
+      if(t>introEnd+1.0){
+        // Dynamic glowing wave ribbons + musical notes during instrumental breaks (interlude & outro)
+        const x0=W*.16, span=W*.68, waveY=H*.50;
+        const ribbonColors=['#38bdf8','#fbbf24','#f472b6'];
+        for(let layer=0;layer<3;layer++){
+          ctx.save();
+          ctx.globalAlpha=visibility*(0.62-layer*0.14);
+          ctx.strokeStyle=ribbonColors[layer];
+          ctx.shadowColor=ribbonColors[layer];
+          ctx.shadowBlur=12;
+          ctx.lineWidth=3.2-layer*0.6;
+          ctx.beginPath();
+          for(let k=0;k<=80;k++){
+            const u=k/80, taper=Math.sin(u*Math.PI);
+            const spec=spectrumAt(t, (k+layer*5)%18);
+            const y=waveY + (Math.sin(u*Math.PI*4 + t*3.2 + layer*1.1)*(24 + spec*36 + pulse*22))*taper;
+            if(k===0) ctx.moveTo(x0,y); else ctx.lineTo(x0+span*u,y);
+          }
+          ctx.stroke();
+          ctx.restore();
+        }
+        const notes=['🎵','🎧','✨','🎶'];
+        for(let n=0;n<notes.length;n++){
+          ctx.save();
+          ctx.globalAlpha=visibility*0.85;
+          const nx=W*0.5 + (n-1.5)*155;
+          const ny=H*0.36 + Math.sin(t*2.4+n)*8 - pulse*10;
+          ctx.translate(nx,ny);
+          const sc=0.68 + pulse*0.14;
+          ctx.scale(sc,sc);
+          ctx.drawImage(musicGlyph(notes[n]),-80,-80);
+          ctx.restore();
+        }
       }
     }
     ctx.restore();
@@ -2028,6 +2180,7 @@
     const mainColor = data.textColor || '#ffffff';
     const glowColor = data.accentColor || '#ffffff';
     const glowAmount = clamp(Number(data.glow ?? 68) / 100, 0, 1.5);
+    const pulse = data.beatEffect?.enabled ? beatPulse(t) : 0;
 
     if (art.wordLayout && art.wordLayout.length > 0) {
       const textCenterOffset = -art.totalWidth / 2 + art.textWidth / 2;
@@ -2046,30 +2199,40 @@
         if (isCurrent) {
           const wProg = clamp((t - w.start) / Math.max(0.08, w.end - w.start), 0, 1);
           const wave = Math.sin(wProg * Math.PI);
-          const lift = -2.2 * wave;
-          const wordScale = 1 + 0.032 * wave;
+          const lift = -3.4 * wave - 2.2 * pulse;
+          const wordScale = 1 + 0.048 * wave + 0.028 * pulse;
           const wordCenterX = w.x + w.width / 2;
 
           ctx.translate(wordCenterX, lift);
           ctx.scale(wordScale, wordScale);
           ctx.translate(-wordCenterX, 0);
 
-          // Luminous aura glow around current word
+          // Luminous aura glow around current word synced with beat
           ctx.shadowColor = glowColor;
-          ctx.shadowBlur = (22 + 12 * wave) * Math.max(0.4, glowAmount);
+          ctx.shadowBlur = (24 + 14 * wave + 16 * pulse) * Math.max(0.4, glowAmount);
           ctx.shadowOffsetY = 0;
           ctx.fillStyle = mainColor;
           ctx.fillText(w.text, w.x, 0);
 
           // Crisp core with deep contrast shadow
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.92)';
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.94)';
           ctx.shadowBlur = 7;
           ctx.shadowOffsetY = 2;
           ctx.fillStyle = '#ffffff';
           ctx.fillText(w.text, w.x, 0);
+
+          // Animated beat-synced karaoke underline bar under the active word
+          const barW = Math.max(6, w.width * clamp(wProg * 1.15, 0.15, 1));
+          const barY = art.size * 0.54;
+          ctx.shadowColor = glowColor;
+          ctx.shadowBlur = 12 + 10 * pulse;
+          ctx.fillStyle = '#fef08a';
+          ctx.beginPath();
+          ctx.roundRect(w.x, barY, barW, 4, 2);
+          ctx.fill();
         } else if (isSung) {
           ctx.shadowColor = glowColor;
-          ctx.shadowBlur = 12 * glowAmount;
+          ctx.shadowBlur = (12 + 8 * pulse) * glowAmount;
           ctx.shadowOffsetY = 0;
           ctx.fillStyle = mainColor;
           ctx.fillText(w.text, w.x, 0);
@@ -2080,8 +2243,8 @@
           ctx.fillStyle = mainColor;
           ctx.fillText(w.text, w.x, 0);
         } else {
-          ctx.globalAlpha = visibleOpacity * 0.68;
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.88)';
+          ctx.globalAlpha = visibleOpacity * 0.72;
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
           ctx.shadowBlur = 6;
           ctx.shadowOffsetY = 2;
           ctx.fillStyle = mainColor;
@@ -2097,8 +2260,8 @@
 
     if (art.symbol) {
       const x = art.totalWidth / 2 - art.iconWidth / 2;
-      const floatY = Math.sin(t * 2.1 + Number(seg.start || 0)) * 2.5;
-      const iconScale = 1 + 0.03 * Math.sin(t * 2.6 + Number(seg.start || 0));
+      const floatY = Math.sin(t * 2.4 + Number(seg.start || 0)) * 3.0 - pulse * 4.5;
+      const iconScale = 1 + 0.035 * Math.sin(t * 2.8 + Number(seg.start || 0)) + pulse * 0.08;
       ctx.save();
       ctx.translate(x, floatY);
       ctx.scale(iconScale, iconScale);
@@ -3617,24 +3780,24 @@
 
   // 2026-11-15: Khách hàng dùng tính năng mở dự án / khôi phục workspace có chứa sticker và GIF hoạt họa (như đoạn nhạc dạo); trước đó loadProjectMedia chỉ nạp nhạc và ảnh nền mà bỏ qua obj.media.stickers khiến animation không hiển thị, nên sửa để tải thêm danh sách sticker/GIF từ project JSON và đồng bộ vào bộ nhớ.
   async function loadProjectMedia(obj) {
-    if (!obj.media) return;
+    const media = obj.media || {};
     const localAsset = value => {
       if (!value) return null;
       const url = new URL(value, location.href);
       return url.origin === location.origin ? url.href : null;
     };
-    const bgUrl = localAsset(obj.media.background);
-    const audioUrl = localAsset(obj.media.audio);
+    const bgUrl = localAsset(media.background || obj.backgroundUrl);
+    const audioUrl = localAsset(media.audio || obj.audioUrl);
     if (bgUrl) {
       const result = await fetch(bgUrl);
       if (!result.ok) throw new Error('missing background');
-      useImage(await result.blob(), {name:obj.media.backgroundName || 'Hoàng hôn tím hồng',silent:true});
+      useImage(await result.blob(), {name: media.backgroundName || obj.backgroundFile || 'Hồ Hoàng Hôn Dưới Ánh Trăng Sao', silent:true});
     }
     if (audioUrl) {
       const result = await fetch(audioUrl);
       if (!result.ok) throw new Error('missing audio');
-      currentYtId = extractYoutubeId(obj._ytUrl || '');
-      if ($('ytUrlInput')) $('ytUrlInput').value = obj._ytUrl || '';
+      currentYtId = extractYoutubeId(obj._ytUrl || obj.youtubeUrl || obj.youtubeId || '');
+      if ($('ytUrlInput')) $('ytUrlInput').value = obj._ytUrl || obj.youtubeUrl || '';
       await loadAudioBlob(await result.blob(), obj.songTitle || 'Nhạc remix', obj.artist || 'YouTube');
       if (currentYtId) {
         $('ytThumbImg').src = `https://i.ytimg.com/vi/${currentYtId}/hqdefault.jpg`;
@@ -3643,8 +3806,8 @@
         $('ytPreviewCard').classList.remove('hidden');
       }
     }
-    const rawStickers = Array.isArray(obj.media.stickers) ? obj.media.stickers : (Array.isArray(obj.stickers) ? obj.stickers : null);
-    if (rawStickers && rawStickers.length) {
+    const rawStickers = Array.isArray(media.stickers) ? media.stickers : (Array.isArray(obj.stickers) ? obj.stickers : null);
+    if (rawStickers) {
       stickers = stickers.filter(s => s && s.type === 'text');
       for (const st of rawStickers) {
         if (!st) continue;
@@ -3659,6 +3822,7 @@
           } catch (e) {}
         }
       }
+      buildStickerList();
       persistStickers();
     }
   }
