@@ -6,17 +6,17 @@
   "position": "center",
   "lyricDirection": "down",
   "fontSize": 80,
-  "glow": 25,
-  "textColor": "#faf5ff",
-  "accentColor": "#c084fc",
-  "songTitle": "Pháo Hoa Lệ Rơi (Bản Cổ Phong)",
-  "artist": "Bướm Ngáo",
+  "glow": 20,
+  "textColor": "#ffffff",
+  "accentColor": "#ffffff",
+  "songTitle": "Pháo Hoa Lệ Rơi (Cổ Phong)",
+  "artist": "Quang Minh MasterD",
   "_ytUrl": "https://youtu.be/TzEIs0oyyFA",
   "lyrics": [
     {
       "id": "phao-hoa-1",
       "start": 21.4,
-      "end": 23.92,
+      "end": 23.31,
       "text": "Em mặc áo dài đỏ",
       "icon": "🧧✨",
       "words": [
@@ -43,18 +43,18 @@
         {
           "word": "đỏ",
           "start": 22.96,
-          "end": 23.92
+          "end": 23.31
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.97,
+      "timingMid": 1.36,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-2",
       "start": 23.92,
-      "end": 26.48,
+      "end": 25.79,
       "text": "Đứng cười giữa họ hàng",
       "icon": "👰🏻‍♀️🌸",
       "words": [
@@ -81,18 +81,18 @@
         {
           "word": "hàng",
           "start": 25.44,
-          "end": 26.48
+          "end": 25.79
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.01,
+      "timingMid": 1.32,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-3",
       "start": 26.48,
-      "end": 28.68,
+      "end": 28.39,
       "text": "Anh đứng ngoài cổng nhỏ",
       "icon": "🚪🥺",
       "words": [
@@ -119,18 +119,18 @@
         {
           "word": "nhỏ",
           "start": 28.04,
-          "end": 28.68
+          "end": 28.39
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.65,
+      "timingMid": 1.36,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-4",
       "start": 28.68,
-      "end": 31.6,
+      "end": 30.39,
       "text": "Như người dưng trần gian",
       "icon": "🍂🥀",
       "words": [
@@ -147,592 +147,592 @@
         {
           "word": "dưng",
           "start": 29.36,
-          "end": 30.04
+          "end": 29.64
         },
         {
           "word": "trần",
-          "start": 30.04,
-          "end": 30.64
+          "start": 29.64,
+          "end": 30.04
         },
         {
           "word": "gian",
-          "start": 30.64,
-          "end": 31.6
+          "start": 30.04,
+          "end": 30.39
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.37,
+      "timingMid": 1.16,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-5",
-      "start": 31.6,
-      "end": 34.08,
+      "start": 30.64,
+      "end": 32.91,
       "text": "Mâm trầu cau đặt xuống",
       "icon": "🏮🍃",
       "words": [
         {
           "word": "Mâm",
+          "start": 30.64,
+          "end": 31.6
+        },
+        {
+          "word": "trầu",
           "start": 31.6,
           "end": 31.88
         },
         {
-          "word": "trầu",
+          "word": "cau",
           "start": 31.88,
           "end": 32.24
         },
         {
-          "word": "cau",
+          "word": "đặt",
           "start": 32.24,
           "end": 32.56
         },
         {
-          "word": "đặt",
-          "start": 32.56,
-          "end": 33.0
-        },
-        {
           "word": "xuống",
-          "start": 33.0,
-          "end": 34.08
+          "start": 32.56,
+          "end": 32.91
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.93,
+      "timingMid": 1.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-6",
-      "start": 34.08,
-      "end": 36.64,
+      "start": 33.0,
+      "end": 35.43,
       "text": "Nghe lòng mình rơi rụng",
       "icon": "💔🌧️",
       "words": [
         {
           "word": "Nghe",
+          "start": 33.0,
+          "end": 34.08
+        },
+        {
+          "word": "lòng",
           "start": 34.08,
           "end": 34.44
         },
         {
-          "word": "lòng",
+          "word": "mình",
           "start": 34.44,
           "end": 34.76
         },
         {
-          "word": "mình",
+          "word": "rơi",
           "start": 34.76,
           "end": 35.08
         },
         {
-          "word": "rơi",
-          "start": 35.08,
-          "end": 35.72
-        },
-        {
           "word": "rụng",
-          "start": 35.72,
-          "end": 36.64
+          "start": 35.08,
+          "end": 35.43
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.01,
+      "timingMid": 1.88,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-7",
-      "start": 36.64,
-      "end": 38.84,
+      "start": 35.72,
+      "end": 37.95,
       "text": "Một câu chúc trăm năm",
       "icon": "🥂✨",
       "words": [
         {
           "word": "Một",
+          "start": 35.72,
+          "end": 36.64
+        },
+        {
+          "word": "câu",
           "start": 36.64,
           "end": 37.0
         },
         {
-          "word": "câu",
+          "word": "chúc",
           "start": 37.0,
           "end": 37.28
         },
         {
-          "word": "chúc",
+          "word": "trăm",
           "start": 37.28,
           "end": 37.6
         },
         {
-          "word": "trăm",
-          "start": 37.6,
-          "end": 38.24
-        },
-        {
           "word": "năm",
-          "start": 38.24,
-          "end": 38.84
+          "start": 37.6,
+          "end": 37.95
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.65,
+      "timingMid": 1.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-8",
-      "start": 38.84,
-      "end": 41.68,
+      "start": 38.24,
+      "end": 40.55,
       "text": "Mà anh nghe như tận cùng",
       "icon": "⚡🕯️",
       "words": [
         {
           "word": "Mà",
+          "start": 38.24,
+          "end": 38.84
+        },
+        {
+          "word": "anh",
           "start": 38.84,
           "end": 39.24
         },
         {
-          "word": "anh",
+          "word": "nghe",
           "start": 39.24,
           "end": 39.52
         },
         {
-          "word": "nghe",
+          "word": "như",
           "start": 39.52,
           "end": 39.88
         },
         {
-          "word": "như",
+          "word": "tận",
           "start": 39.88,
           "end": 40.2
         },
         {
-          "word": "tận",
-          "start": 40.2,
-          "end": 40.8
-        },
-        {
           "word": "cùng",
-          "start": 40.8,
-          "end": 41.68
+          "start": 40.2,
+          "end": 40.55
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.29,
+      "timingMid": 1.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-9",
-      "start": 41.68,
-      "end": 44.32,
+      "start": 40.8,
+      "end": 43.11,
       "text": "Ngày đó mình nghèo quá",
       "icon": "🌾🤍",
       "words": [
         {
           "word": "Ngày",
+          "start": 40.8,
+          "end": 41.68
+        },
+        {
+          "word": "đó",
           "start": 41.68,
           "end": 42.12
         },
         {
-          "word": "đó",
+          "word": "mình",
           "start": 42.12,
           "end": 42.44
         },
         {
-          "word": "mình",
+          "word": "nghèo",
           "start": 42.44,
           "end": 42.76
         },
         {
-          "word": "nghèo",
-          "start": 42.76,
-          "end": 43.36
-        },
-        {
           "word": "quá",
-          "start": 43.36,
-          "end": 44.32
+          "start": 42.76,
+          "end": 43.11
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.09,
+      "timingMid": 1.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-10",
-      "start": 44.32,
-      "end": 46.88,
+      "start": 43.36,
+      "end": 45.63,
       "text": "Đâu dám hứa xa xôi",
       "icon": "🌌🕊️",
       "words": [
         {
           "word": "Đâu",
+          "start": 43.36,
+          "end": 44.32
+        },
+        {
+          "word": "dám",
           "start": 44.32,
           "end": 44.64
         },
         {
-          "word": "dám",
+          "word": "hứa",
           "start": 44.64,
           "end": 44.96
         },
         {
-          "word": "hứa",
+          "word": "xa",
           "start": 44.96,
           "end": 45.28
         },
         {
-          "word": "xa",
-          "start": 45.28,
-          "end": 45.84
-        },
-        {
           "word": "xôi",
-          "start": 45.84,
-          "end": 46.88
+          "start": 45.28,
+          "end": 45.63
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.01,
+      "timingMid": 1.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-11",
-      "start": 46.88,
-      "end": 49.08,
+      "start": 45.84,
+      "end": 48.23,
       "text": "Anh lo từng bữa cơm",
       "icon": "🍚🥢",
       "words": [
         {
           "word": "Anh",
+          "start": 45.84,
+          "end": 46.88
+        },
+        {
+          "word": "lo",
           "start": 46.88,
           "end": 47.2
         },
         {
-          "word": "lo",
+          "word": "từng",
           "start": 47.2,
           "end": 47.52
         },
         {
-          "word": "từng",
+          "word": "bữa",
           "start": 47.52,
           "end": 47.88
         },
         {
-          "word": "bữa",
-          "start": 47.88,
-          "end": 48.44
-        },
-        {
           "word": "cơm",
-          "start": 48.44,
-          "end": 49.08
+          "start": 47.88,
+          "end": 48.23
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.65,
+      "timingMid": 1.84,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-12",
-      "start": 49.08,
-      "end": 52.2,
+      "start": 48.44,
+      "end": 50.75,
       "text": "Còn em mơ một cuộc đời",
       "icon": "💭🌟",
       "words": [
         {
           "word": "Còn",
+          "start": 48.44,
+          "end": 49.08
+        },
+        {
+          "word": "em",
           "start": 49.08,
           "end": 49.48
         },
         {
-          "word": "em",
+          "word": "mơ",
           "start": 49.48,
           "end": 49.76
         },
         {
-          "word": "mơ",
+          "word": "một",
           "start": 49.76,
           "end": 50.08
         },
         {
-          "word": "một",
+          "word": "cuộc",
           "start": 50.08,
           "end": 50.4
         },
         {
-          "word": "cuộc",
-          "start": 50.4,
-          "end": 51.0
-        },
-        {
           "word": "đời",
-          "start": 51.0,
-          "end": 52.2
+          "start": 50.4,
+          "end": 50.75
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.57,
+      "timingMid": 1.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-13",
-      "start": 52.24,
-      "end": 54.52,
+      "start": 51.0,
+      "end": 53.55,
       "text": "Người ta mang sính lễ",
       "icon": "🎁💍",
       "words": [
         {
           "word": "Người",
+          "start": 51.0,
+          "end": 52.24
+        },
+        {
+          "word": "ta",
           "start": 52.24,
           "end": 52.64
         },
         {
-          "word": "ta",
+          "word": "mang",
           "start": 52.64,
           "end": 52.92
         },
         {
-          "word": "mang",
+          "word": "sính",
           "start": 52.92,
           "end": 53.2
         },
         {
-          "word": "sính",
-          "start": 53.2,
-          "end": 53.56
-        },
-        {
           "word": "lễ",
-          "start": 53.56,
-          "end": 54.52
+          "start": 53.2,
+          "end": 53.55
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.73,
+      "timingMid": 2.0,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-14",
-      "start": 54.52,
-      "end": 56.76,
+      "start": 53.56,
+      "end": 55.83,
       "text": "Còn anh mang nỗi lo",
       "icon": "🥺⛈️",
       "words": [
         {
           "word": "Còn",
+          "start": 53.56,
+          "end": 54.52
+        },
+        {
+          "word": "anh",
           "start": 54.52,
           "end": 54.88
         },
         {
-          "word": "anh",
+          "word": "mang",
           "start": 54.88,
           "end": 55.16
         },
         {
-          "word": "mang",
+          "word": "nỗi",
           "start": 55.16,
           "end": 55.48
         },
         {
-          "word": "nỗi",
-          "start": 55.48,
-          "end": 56.08
-        },
-        {
           "word": "lo",
-          "start": 56.08,
-          "end": 56.76
+          "start": 55.48,
+          "end": 55.83
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.69,
+      "timingMid": 1.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-15",
-      "start": 57.08,
-      "end": 59.64,
+      "start": 56.08,
+      "end": 58.39,
       "text": "Nên tới lúc em gật đầu",
       "icon": "👰🏻‍♀️🤝🏻",
       "words": [
         {
           "word": "Nên",
+          "start": 56.08,
+          "end": 56.76
+        },
+        {
+          "word": "tới",
+          "start": 56.76,
+          "end": 57.08
+        },
+        {
+          "word": "lúc",
           "start": 57.08,
           "end": 57.4
         },
         {
-          "word": "tới",
+          "word": "em",
           "start": 57.4,
           "end": 57.76
         },
         {
-          "word": "lúc",
+          "word": "gật",
           "start": 57.76,
           "end": 58.04
         },
         {
-          "word": "em",
-          "start": 58.04,
-          "end": 58.64
-        },
-        {
-          "word": "gật",
-          "start": 58.64,
-          "end": 59.32
-        },
-        {
           "word": "đầu",
-          "start": 59.32,
-          "end": 59.64
+          "start": 58.04,
+          "end": 58.39
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.01,
+      "timingMid": 1.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-16",
-      "start": 59.64,
-      "end": 63.68,
+      "start": 58.64,
+      "end": 60.95,
       "text": "Anh biết mình thua rồi",
       "icon": "🥀💔",
       "words": [
         {
           "word": "Anh",
+          "start": 58.64,
+          "end": 59.32
+        },
+        {
+          "word": "biết",
+          "start": 59.32,
+          "end": 59.64
+        },
+        {
+          "word": "mình",
           "start": 59.64,
           "end": 60.24
         },
         {
-          "word": "biết",
+          "word": "thua",
           "start": 60.24,
           "end": 60.6
         },
         {
-          "word": "mình",
-          "start": 60.6,
-          "end": 61.2
-        },
-        {
-          "word": "thua",
-          "start": 61.2,
-          "end": 62.4
-        },
-        {
           "word": "rồi",
-          "start": 63.08,
-          "end": 63.68
+          "start": 60.6,
+          "end": 60.95
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.49,
+      "timingMid": 1.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-17",
-      "start": 63.08,
-      "end": 67.56,
+      "start": 61.2,
+      "end": 65.87,
       "text": "Mùa xuân người ta có đôi",
       "icon": "🌸💑",
       "words": [
         {
           "word": "Mùa",
+          "start": 61.2,
+          "end": 63.08
+        },
+        {
+          "word": "xuân",
           "start": 63.08,
           "end": 63.68
         },
         {
-          "word": "xuân",
+          "word": "người",
           "start": 63.68,
           "end": 64.72
         },
         {
-          "word": "người",
+          "word": "ta",
           "start": 64.72,
           "end": 65.08
         },
         {
-          "word": "ta",
+          "word": "có",
           "start": 65.08,
           "end": 65.52
         },
         {
-          "word": "có",
-          "start": 65.52,
-          "end": 66.36
-        },
-        {
           "word": "đôi",
-          "start": 66.36,
-          "end": 67.56
+          "start": 65.52,
+          "end": 65.87
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.93,
+      "timingMid": 4.12,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-18",
-      "start": 68.24,
-      "end": 72.56,
+      "start": 66.36,
+      "end": 70.87,
       "text": "Còn anh học cách buông trôi",
       "icon": "🍃🌊",
       "words": [
         {
           "word": "Còn",
+          "start": 66.36,
+          "end": 68.24
+        },
+        {
+          "word": "anh",
           "start": 68.24,
           "end": 68.92
         },
         {
-          "word": "anh",
+          "word": "học",
           "start": 68.92,
           "end": 69.8
         },
         {
-          "word": "học",
+          "word": "cách",
           "start": 69.8,
           "end": 70.16
         },
         {
-          "word": "cách",
+          "word": "buông",
           "start": 70.16,
           "end": 70.52
         },
         {
-          "word": "buông",
-          "start": 70.52,
-          "end": 71.36
-        },
-        {
           "word": "trôi",
-          "start": 71.36,
-          "end": 72.56
+          "start": 70.52,
+          "end": 70.87
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.77,
+      "timingMid": 3.96,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-19",
       "start": 71.36,
-      "end": 74.0,
+      "end": 73.75,
       "text": "Để lệ rơi",
       "icon": "💧🥺",
       "words": [
         {
           "word": "Để",
           "start": 71.36,
-          "end": 72.56
+          "end": 73.04
         },
         {
           "word": "lệ",
@@ -742,18 +742,18 @@
         {
           "word": "rơi",
           "start": 73.4,
-          "end": 74.0
+          "end": 73.75
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.09,
+      "timingMid": 1.84,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-20",
       "start": 74.0,
-      "end": 76.48,
+      "end": 76.27,
       "text": "Khi pháo hoa đang rực trời",
       "icon": "🎆✨",
       "words": [
@@ -785,3028 +785,3028 @@
         {
           "word": "trời",
           "start": 75.92,
-          "end": 76.48
+          "end": 76.27
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.93,
+      "timingMid": 1.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-21",
-      "start": 78.08,
-      "end": 80.08,
+      "start": 76.48,
+      "end": 79.71,
       "text": "Mà lòng anh thì tối",
       "icon": "🌑🕯️",
       "words": [
         {
           "word": "Mà",
+          "start": 76.48,
+          "end": 78.08
+        },
+        {
+          "word": "lòng",
           "start": 78.08,
           "end": 78.48
         },
         {
-          "word": "lòng",
+          "word": "anh",
           "start": 78.48,
           "end": 78.92
         },
         {
-          "word": "anh",
+          "word": "thì",
           "start": 78.92,
           "end": 79.44
         },
         {
-          "word": "thì",
-          "start": 79.44,
-          "end": 79.76
-        },
-        {
           "word": "tối",
-          "start": 79.76,
-          "end": 80.08
+          "start": 79.44,
+          "end": 79.71
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.45,
+      "timingMid": 2.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-22",
-      "start": 80.08,
-      "end": 82.84,
+      "start": 79.76,
+      "end": 81.35,
       "text": "Như đêm chưa từng tới",
       "icon": "🌌🖤",
       "words": [
         {
           "word": "Như",
+          "start": 79.76,
+          "end": 80.08
+        },
+        {
+          "word": "đêm",
           "start": 80.08,
           "end": 80.4
         },
         {
-          "word": "đêm",
+          "word": "chưa",
           "start": 80.4,
           "end": 80.68
         },
         {
-          "word": "chưa",
+          "word": "từng",
           "start": 80.68,
           "end": 81.0
         },
         {
-          "word": "từng",
-          "start": 81.0,
-          "end": 81.64
-        },
-        {
           "word": "tới",
-          "start": 81.64,
-          "end": 82.84
+          "start": 81.0,
+          "end": 81.35
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.21,
+      "timingMid": 1.04,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-23",
-      "start": 83.2,
-      "end": 85.16,
+      "start": 81.64,
+      "end": 83.95,
       "text": "Nhìn em đi",
       "icon": "👀🕊️",
       "words": [
         {
           "word": "Nhìn",
+          "start": 81.64,
+          "end": 83.2
+        },
+        {
+          "word": "em",
           "start": 83.2,
           "end": 83.6
         },
         {
-          "word": "em",
-          "start": 83.6,
-          "end": 84.24
-        },
-        {
           "word": "đi",
-          "start": 84.24,
-          "end": 85.16
+          "start": 83.6,
+          "end": 83.95
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.41,
+      "timingMid": 1.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-24",
-      "start": 85.44,
-      "end": 88.68,
+      "start": 84.24,
+      "end": 86.47,
       "text": "Anh chẳng dám giữ lời",
       "icon": "🥀🤐",
       "words": [
         {
           "word": "Anh",
+          "start": 84.24,
+          "end": 85.16
+        },
+        {
+          "word": "chẳng",
+          "start": 85.16,
+          "end": 85.44
+        },
+        {
+          "word": "dám",
           "start": 85.44,
           "end": 85.8
         },
         {
-          "word": "chẳng",
+          "word": "giữ",
           "start": 85.8,
           "end": 86.12
         },
         {
-          "word": "dám",
-          "start": 86.12,
-          "end": 86.8
-        },
-        {
-          "word": "giữ",
-          "start": 86.8,
-          "end": 88.0
-        },
-        {
           "word": "lời",
-          "start": 88.36,
-          "end": 88.68
+          "start": 86.12,
+          "end": 86.47
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.69,
+      "timingMid": 1.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-25",
-      "start": 88.36,
-      "end": 89.96,
+      "start": 86.8,
+      "end": 89.39,
       "text": "Sợ giữ em lại",
       "icon": "🔒🥺",
       "words": [
         {
           "word": "Sợ",
+          "start": 86.8,
+          "end": 88.36
+        },
+        {
+          "word": "giữ",
           "start": 88.36,
           "end": 88.68
         },
         {
-          "word": "giữ",
+          "word": "em",
           "start": 88.68,
           "end": 89.04
         },
         {
-          "word": "em",
-          "start": 89.04,
-          "end": 89.64
-        },
-        {
           "word": "lại",
-          "start": 89.64,
-          "end": 89.96
+          "start": 89.04,
+          "end": 89.39
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.05,
+      "timingMid": 2.04,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-26",
-      "start": 90.64,
-      "end": 93.76,
+      "start": 89.64,
+      "end": 91.51,
       "text": "Hóa thêm một đời dở dang",
       "icon": "💔🍂",
       "words": [
         {
           "word": "Hóa",
+          "start": 89.64,
+          "end": 89.96
+        },
+        {
+          "word": "thêm",
+          "start": 89.96,
+          "end": 90.32
+        },
+        {
+          "word": "một",
+          "start": 90.32,
+          "end": 90.64
+        },
+        {
+          "word": "đời",
           "start": 90.64,
           "end": 90.92
         },
         {
-          "word": "thêm",
+          "word": "dở",
           "start": 90.92,
           "end": 91.28
         },
         {
-          "word": "một",
-          "start": 91.28,
-          "end": 91.56
-        },
-        {
-          "word": "đời",
-          "start": 91.56,
-          "end": 92.16
-        },
-        {
-          "word": "dở",
-          "start": 92.16,
-          "end": 93.36
-        },
-        {
           "word": "dang",
-          "start": 93.44,
-          "end": 93.76
+          "start": 91.28,
+          "end": 91.51
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.57,
+      "timingMid": 1.32,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-27",
-      "start": 93.44,
-      "end": 95.04,
+      "start": 91.56,
+      "end": 93.71,
       "text": "Mình thương nhau",
       "icon": "💖🤍",
       "words": [
         {
           "word": "Mình",
-          "start": 93.44,
-          "end": 93.76
+          "start": 91.56,
+          "end": 92.16
         },
         {
           "word": "thương",
-          "start": 93.76,
-          "end": 94.44
+          "start": 92.16,
+          "end": 93.44
         },
         {
           "word": "nhau",
-          "start": 94.44,
-          "end": 95.04
+          "start": 93.44,
+          "end": 93.71
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.05,
+      "timingMid": 1.6,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-28",
-      "start": 95.72,
-      "end": 99.24,
+      "start": 93.76,
+      "end": 96.07,
       "text": "Nhưng không cùng một nơi",
       "icon": "🌏⚡",
       "words": [
         {
           "word": "Nhưng",
-          "start": 95.72,
-          "end": 96.2
+          "start": 93.76,
+          "end": 94.44
         },
         {
           "word": "không",
-          "start": 96.2,
-          "end": 96.64
+          "start": 94.44,
+          "end": 95.04
         },
         {
           "word": "cùng",
-          "start": 96.64,
-          "end": 97.84
+          "start": 95.04,
+          "end": 95.36
         },
         {
           "word": "một",
-          "start": 98.48,
-          "end": 98.92
+          "start": 95.36,
+          "end": 95.72
         },
         {
           "word": "nơi",
-          "start": 98.92,
-          "end": 99.24
+          "start": 95.72,
+          "end": 96.07
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.97,
+      "timingMid": 1.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-29",
-      "start": 98.48,
-      "end": 100.12,
+      "start": 96.2,
+      "end": 99.19,
       "text": "Người nắm tay em",
       "icon": "🤝🏻💍",
       "words": [
         {
           "word": "Người",
+          "start": 96.2,
+          "end": 96.64
+        },
+        {
+          "word": "nắm",
+          "start": 96.64,
+          "end": 98.48
+        },
+        {
+          "word": "tay",
           "start": 98.48,
           "end": 98.92
         },
         {
-          "word": "nắm",
-          "start": 98.92,
-          "end": 99.24
-        },
-        {
-          "word": "tay",
-          "start": 99.24,
-          "end": 99.64
-        },
-        {
           "word": "em",
-          "start": 99.64,
-          "end": 100.12
+          "start": 98.92,
+          "end": 99.19
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.09,
+      "timingMid": 2.44,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-30",
-      "start": 100.44,
-      "end": 104.04,
+      "start": 99.24,
+      "end": 101.39,
       "text": "Lo cho em cả cuộc đời",
       "icon": "🏡🛡️",
       "words": [
         {
           "word": "Lo",
+          "start": 99.24,
+          "end": 99.64
+        },
+        {
+          "word": "cho",
+          "start": 99.64,
+          "end": 100.12
+        },
+        {
+          "word": "em",
+          "start": 100.12,
+          "end": 100.44
+        },
+        {
+          "word": "cả",
           "start": 100.44,
           "end": 100.88
         },
         {
-          "word": "cho",
-          "start": 100.88,
-          "end": 101.13
-        },
-        {
-          "word": "em",
-          "start": 101.12,
-          "end": 101.44
-        },
-        {
-          "word": "cả",
-          "start": 101.44,
-          "end": 102.08
-        },
-        {
           "word": "cuộc",
-          "start": 102.08,
-          "end": 103.28
+          "start": 100.88,
+          "end": 101.12
         },
         {
           "word": "đời",
-          "start": 103.68,
-          "end": 104.04
+          "start": 101.12,
+          "end": 101.39
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.05,
+      "timingMid": 1.6,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-31",
-      "start": 103.68,
-      "end": 105.64,
+      "start": 101.44,
+      "end": 104.23,
       "text": "Còn anh chỉ biết",
       "icon": "🥀🌾",
       "words": [
         {
           "word": "Còn",
+          "start": 101.44,
+          "end": 102.08
+        },
+        {
+          "word": "anh",
+          "start": 102.08,
+          "end": 103.68
+        },
+        {
+          "word": "chỉ",
           "start": 103.68,
           "end": 104.04
         },
         {
-          "word": "anh",
-          "start": 104.04,
-          "end": 104.29
-        },
-        {
-          "word": "chỉ",
-          "start": 104.28,
-          "end": 104.96
-        },
-        {
           "word": "biết",
-          "start": 104.96,
-          "end": 105.64
+          "start": 104.04,
+          "end": 104.23
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.41,
+      "timingMid": 2.24,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-32",
-      "start": 105.64,
-      "end": 108.08,
+      "start": 104.28,
+      "end": 106.31,
       "text": "Đứng nhìn vậy thôi",
       "icon": "👀🌧️",
       "words": [
         {
           "word": "Đứng",
+          "start": 104.28,
+          "end": 104.96
+        },
+        {
+          "word": "nhìn",
+          "start": 104.96,
+          "end": 105.64
+        },
+        {
+          "word": "vậy",
           "start": 105.64,
           "end": 105.96
         },
         {
-          "word": "nhìn",
-          "start": 105.96,
-          "end": 106.4
-        },
-        {
-          "word": "vậy",
-          "start": 106.4,
-          "end": 106.88
-        },
-        {
           "word": "thôi",
-          "start": 106.88,
-          "end": 108.08
+          "start": 105.96,
+          "end": 106.31
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.89,
+      "timingMid": 1.48,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-33",
-      "start": 108.76,
-      "end": 110.36,
+      "start": 106.4,
+      "end": 109.35,
       "text": "Gửi em thanh xuân",
       "icon": "💌🌸",
       "words": [
         {
           "word": "Gửi",
+          "start": 106.4,
+          "end": 106.88
+        },
+        {
+          "word": "em",
+          "start": 106.88,
+          "end": 108.76
+        },
+        {
+          "word": "thanh",
           "start": 108.76,
           "end": 109.16
         },
         {
-          "word": "em",
-          "start": 109.16,
-          "end": 109.41
-        },
-        {
-          "word": "thanh",
-          "start": 109.4,
-          "end": 109.68
-        },
-        {
           "word": "xuân",
-          "start": 109.68,
-          "end": 110.36
+          "start": 109.16,
+          "end": 109.35
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.05,
+      "timingMid": 2.4,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-34",
-      "start": 111.48,
-      "end": 114.93,
+      "start": 109.4,
+      "end": 111.35,
       "text": "Rồi lặng lẽ buông lơi",
       "icon": "🍃🕊️",
       "words": [
         {
           "word": "Rồi",
-          "start": 111.48,
-          "end": 112.28
+          "start": 109.4,
+          "end": 109.68
         },
         {
           "word": "lặng",
-          "start": 112.28,
-          "end": 113.48
+          "start": 109.68,
+          "end": 110.36
         },
         {
           "word": "lẽ",
-          "start": 114.4,
-          "end": 114.65
+          "start": 110.36,
+          "end": 110.68
         },
         {
           "word": "buông",
-          "start": 114.56,
-          "end": 114.81
+          "start": 110.68,
+          "end": 111.0
         },
         {
           "word": "lơi",
-          "start": 114.68,
-          "end": 114.93
+          "start": 111.0,
+          "end": 111.35
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.9,
+      "timingMid": 1.4,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-35",
-      "start": 114.56,
-      "end": 115.84,
-      "text": "Anh như con thuyền vậy",
-      "icon": "⛵🌊",
+      "start": 111.48,
+      "end": 114.79,
+      "text": "Anh như con thuyền giấy",
+      "icon": "⛵📄",
       "words": [
         {
           "word": "Anh",
-          "start": 114.56,
-          "end": 114.81
+          "start": 111.48,
+          "end": 112.28
         },
         {
           "word": "như",
-          "start": 114.68,
-          "end": 114.93
+          "start": 112.28,
+          "end": 114.4
         },
         {
           "word": "con",
-          "start": 114.84,
-          "end": 115.2
+          "start": 114.4,
+          "end": 114.56
         },
         {
           "word": "thuyền",
-          "start": 115.2,
-          "end": 115.48
+          "start": 114.56,
+          "end": 114.68
         },
         {
-          "word": "vậy",
-          "start": 115.48,
-          "end": 115.84
+          "word": "giấy",
+          "start": 114.68,
+          "end": 114.79
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.73,
+      "timingMid": 2.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-36",
-      "start": 115.84,
-      "end": 117.33,
+      "start": 114.84,
+      "end": 116.35,
       "text": "Trôi lạc giữa mùa mưa",
       "icon": "🌧️⛈️",
       "words": [
         {
           "word": "Trôi",
+          "start": 114.84,
+          "end": 115.2
+        },
+        {
+          "word": "lạc",
+          "start": 115.2,
+          "end": 115.48
+        },
+        {
+          "word": "giữa",
+          "start": 115.48,
+          "end": 115.84
+        },
+        {
+          "word": "mùa",
           "start": 115.84,
           "end": 116.12
         },
         {
-          "word": "lạc",
-          "start": 116.12,
-          "end": 116.4
-        },
-        {
-          "word": "giữa",
-          "start": 116.4,
-          "end": 116.65
-        },
-        {
-          "word": "mùa",
-          "start": 116.64,
-          "end": 117.08
-        },
-        {
           "word": "mưa",
-          "start": 117.08,
-          "end": 117.33
+          "start": 116.12,
+          "end": 116.35
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.94,
+      "timingMid": 0.96,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-37",
-      "start": 117.24,
-      "end": 118.65,
+      "start": 116.4,
+      "end": 117.67,
       "text": "Chưa kịp ra tới biển",
       "icon": "🌊🌫️",
       "words": [
         {
           "word": "Chưa",
-          "start": 117.24,
-          "end": 117.49
+          "start": 116.4,
+          "end": 116.64
         },
         {
           "word": "kịp",
-          "start": 117.44,
-          "end": 117.72
+          "start": 116.64,
+          "end": 117.08
         },
         {
           "word": "ra",
-          "start": 117.72,
-          "end": 118.08
+          "start": 117.08,
+          "end": 117.24
         },
         {
           "word": "tới",
-          "start": 118.08,
-          "end": 118.4
+          "start": 117.24,
+          "end": 117.44
         },
         {
           "word": "biển",
-          "start": 118.4,
-          "end": 118.65
+          "start": 117.44,
+          "end": 117.67
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 0.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-38",
-      "start": 118.4,
-      "end": 119.68,
+      "start": 117.72,
+      "end": 118.95,
       "text": "Đã mục nát từ ngày xưa",
       "icon": "🪵🍂",
       "words": [
         {
           "word": "Đã",
-          "start": 118.4,
-          "end": 118.65
+          "start": 117.72,
+          "end": 118.08
         },
         {
           "word": "mục",
-          "start": 118.52,
-          "end": 118.77
+          "start": 118.08,
+          "end": 118.4
         },
         {
           "word": "nát",
-          "start": 118.72,
-          "end": 118.97
+          "start": 118.4,
+          "end": 118.52
         },
         {
           "word": "từ",
-          "start": 118.88,
-          "end": 119.13
+          "start": 118.52,
+          "end": 118.72
         },
         {
           "word": "ngày",
-          "start": 119.0,
-          "end": 119.25
+          "start": 118.72,
+          "end": 118.88
         },
         {
           "word": "xưa",
-          "start": 119.24,
-          "end": 119.68
+          "start": 118.88,
+          "end": 118.95
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.73,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-39",
-      "start": 119.97,
-      "end": 121.22,
+      "start": 119.0,
+      "end": 120.36,
       "text": "Em là ánh đèn phố",
       "icon": "🏮✨",
       "words": [
         {
           "word": "Em",
-          "start": 119.97,
-          "end": 120.22
+          "start": 119.0,
+          "end": 119.24
         },
         {
           "word": "là",
-          "start": 120.13,
-          "end": 120.41
+          "start": 119.24,
+          "end": 119.68
         },
         {
           "word": "ánh",
-          "start": 120.41,
-          "end": 120.66
+          "start": 119.68,
+          "end": 119.97
         },
         {
           "word": "đèn",
-          "start": 120.65,
-          "end": 120.97
+          "start": 119.97,
+          "end": 120.13
         },
         {
           "word": "phố",
-          "start": 120.97,
-          "end": 121.22
+          "start": 120.13,
+          "end": 120.36
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.7,
+      "timingMid": 0.81,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-40",
-      "start": 121.45,
-      "end": 122.7,
+      "start": 120.41,
+      "end": 121.72,
       "text": "Còn anh là con hẻm nhỏ",
       "icon": "🏘️🌑",
       "words": [
         {
           "word": "Còn",
-          "start": 121.45,
-          "end": 121.7
+          "start": 120.41,
+          "end": 120.65
         },
         {
           "word": "anh",
-          "start": 121.61,
-          "end": 121.86
+          "start": 120.65,
+          "end": 120.97
         },
         {
           "word": "là",
-          "start": 121.77,
-          "end": 122.02
+          "start": 120.97,
+          "end": 121.21
         },
         {
           "word": "con",
-          "start": 121.97,
-          "end": 122.25
+          "start": 121.21,
+          "end": 121.45
         },
         {
           "word": "hẻm",
-          "start": 122.25,
-          "end": 122.5
+          "start": 121.45,
+          "end": 121.61
         },
         {
           "word": "nhỏ",
-          "start": 122.45,
-          "end": 122.7
+          "start": 121.61,
+          "end": 121.72
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.7,
+      "timingMid": 0.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-41",
-      "start": 123.05,
-      "end": 124.42,
+      "start": 121.77,
+      "end": 123.0,
       "text": "Người ta đưa em về nhà",
       "icon": "🚗🏡",
       "words": [
         {
           "word": "Người",
-          "start": 123.05,
-          "end": 123.3
+          "start": 121.77,
+          "end": 121.97
         },
         {
           "word": "ta",
-          "start": 123.21,
-          "end": 123.49
+          "start": 121.97,
+          "end": 122.25
         },
         {
           "word": "đưa",
-          "start": 123.49,
-          "end": 123.74
+          "start": 122.25,
+          "end": 122.45
         },
         {
           "word": "em",
-          "start": 123.73,
-          "end": 124.01
+          "start": 122.45,
+          "end": 122.57
         },
         {
           "word": "về",
-          "start": 124.01,
-          "end": 124.26
+          "start": 122.57,
+          "end": 122.93
         },
         {
           "word": "nhà",
-          "start": 124.17,
-          "end": 124.42
+          "start": 122.93,
+          "end": 123.0
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-42",
-      "start": 124.17,
-      "end": 126.05,
+      "start": 123.05,
+      "end": 124.28,
       "text": "Còn anh về với trống trơ",
       "icon": "🥀🛋️",
       "words": [
         {
           "word": "Còn",
-          "start": 124.17,
-          "end": 124.42
+          "start": 123.05,
+          "end": 123.21
         },
         {
           "word": "anh",
-          "start": 124.33,
-          "end": 124.58
+          "start": 123.21,
+          "end": 123.49
         },
         {
           "word": "về",
-          "start": 124.53,
-          "end": 125.45
+          "start": 123.49,
+          "end": 123.73
         },
         {
           "word": "với",
-          "start": 125.45,
-          "end": 125.7
+          "start": 123.73,
+          "end": 124.01
         },
         {
           "word": "trống",
-          "start": 125.57,
-          "end": 125.82
+          "start": 124.01,
+          "end": 124.17
         },
         {
           "word": "trơ",
-          "start": 125.77,
-          "end": 126.05
+          "start": 124.17,
+          "end": 124.28
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.33,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-43",
-      "start": 125.57,
-      "end": 126.3,
+      "start": 124.33,
+      "end": 125.52,
       "text": "Anh từng nghĩ",
       "icon": "💭🤍",
       "words": [
         {
           "word": "Anh",
-          "start": 125.57,
-          "end": 125.82
+          "start": 124.33,
+          "end": 124.53
         },
         {
           "word": "từng",
-          "start": 125.77,
-          "end": 126.05
+          "start": 124.53,
+          "end": 125.45
         },
         {
           "word": "nghĩ",
-          "start": 126.05,
-          "end": 126.3
+          "start": 125.45,
+          "end": 125.52
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.3,
+      "timingMid": 0.64,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-44",
-      "start": 126.41,
-      "end": 127.78,
+      "start": 125.57,
+      "end": 126.68,
       "text": "Chỉ cần thương là đủ",
       "icon": "💖✨",
       "words": [
         {
           "word": "Chỉ",
-          "start": 126.41,
-          "end": 126.73
+          "start": 125.57,
+          "end": 125.77
         },
         {
           "word": "cần",
-          "start": 126.73,
-          "end": 126.98
+          "start": 125.77,
+          "end": 126.05
         },
         {
           "word": "thương",
-          "start": 126.89,
-          "end": 127.37
+          "start": 126.05,
+          "end": 126.21
         },
         {
           "word": "là",
-          "start": 127.37,
-          "end": 127.62
+          "start": 126.21,
+          "end": 126.41
         },
         {
           "word": "đủ",
-          "start": 127.53,
-          "end": 127.78
+          "start": 126.41,
+          "end": 126.68
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 0.56,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-45",
-      "start": 127.37,
-      "end": 128.29,
+      "start": 126.73,
+      "end": 127.64,
       "text": "Nhưng đời dạy anh",
       "icon": "📖🍂",
       "words": [
         {
           "word": "Nhưng",
-          "start": 127.37,
-          "end": 127.62
+          "start": 126.73,
+          "end": 126.89
         },
         {
           "word": "đời",
-          "start": 127.53,
-          "end": 127.78
+          "start": 126.89,
+          "end": 127.37
         },
         {
           "word": "dạy",
-          "start": 127.69,
-          "end": 128.01
+          "start": 127.37,
+          "end": 127.53
         },
         {
           "word": "anh",
-          "start": 128.01,
-          "end": 128.29
+          "start": 127.53,
+          "end": 127.64
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.37,
+      "timingMid": 0.36,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-46",
-      "start": 128.65,
-      "end": 130.14,
+      "start": 127.69,
+      "end": 129.24,
       "text": "Thương thôi chưa phải là đủ",
       "icon": "💔🌧️",
       "words": [
         {
           "word": "Thương",
+          "start": 127.69,
+          "end": 128.01
+        },
+        {
+          "word": "thôi",
+          "start": 128.01,
+          "end": 128.29
+        },
+        {
+          "word": "chưa",
+          "start": 128.29,
+          "end": 128.65
+        },
+        {
+          "word": "phải",
           "start": 128.65,
           "end": 128.93
         },
         {
-          "word": "thôi",
-          "start": 128.93,
-          "end": 129.18
-        },
-        {
-          "word": "chưa",
-          "start": 129.13,
-          "end": 129.38
-        },
-        {
-          "word": "phải",
-          "start": 129.29,
-          "end": 129.57
-        },
-        {
           "word": "là",
-          "start": 129.57,
-          "end": 129.89
+          "start": 128.93,
+          "end": 129.13
         },
         {
           "word": "đủ",
-          "start": 129.89,
-          "end": 130.14
+          "start": 129.13,
+          "end": 129.24
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.94,
+      "timingMid": 1.0,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-47",
-      "start": 130.53,
-      "end": 131.94,
+      "start": 129.29,
+      "end": 130.48,
       "text": "Vì ngoài kia cơm áo",
       "icon": "🌾🍚",
       "words": [
         {
           "word": "Vì",
-          "start": 130.53,
-          "end": 130.93
+          "start": 129.29,
+          "end": 129.57
         },
         {
           "word": "ngoài",
-          "start": 130.93,
-          "end": 131.18
+          "start": 129.57,
+          "end": 129.89
         },
         {
           "word": "kia",
-          "start": 131.17,
-          "end": 131.49
+          "start": 129.89,
+          "end": 130.05
         },
         {
           "word": "cơm",
-          "start": 131.49,
-          "end": 131.74
+          "start": 130.05,
+          "end": 130.21
         },
         {
           "word": "áo",
-          "start": 131.69,
-          "end": 131.94
+          "start": 130.21,
+          "end": 130.48
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 0.64,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-48",
-      "start": 132.17,
-      "end": 133.34,
+      "start": 130.53,
+      "end": 131.76,
       "text": "Không giống như trong mơ",
       "icon": "💭🌫️",
       "words": [
         {
           "word": "Không",
-          "start": 132.17,
-          "end": 132.45
+          "start": 130.53,
+          "end": 130.93
         },
         {
           "word": "giống",
-          "start": 132.45,
-          "end": 132.7
+          "start": 130.93,
+          "end": 131.17
         },
         {
           "word": "như",
-          "start": 132.61,
-          "end": 132.86
+          "start": 131.17,
+          "end": 131.49
         },
         {
           "word": "trong",
-          "start": 132.77,
-          "end": 133.09
+          "start": 131.49,
+          "end": 131.69
         },
         {
           "word": "mơ",
-          "start": 133.09,
-          "end": 133.34
+          "start": 131.69,
+          "end": 131.76
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.62,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-49",
-      "start": 133.09,
-      "end": 134.46,
+      "start": 131.81,
+      "end": 133.2,
       "text": "Người ta lo được cho em",
       "icon": "🛡️💍",
       "words": [
         {
           "word": "Người",
-          "start": 133.09,
-          "end": 133.34
+          "start": 131.81,
+          "end": 132.17
         },
         {
           "word": "ta",
-          "start": 133.25,
-          "end": 133.5
+          "start": 132.17,
+          "end": 132.45
         },
         {
           "word": "lo",
-          "start": 133.45,
-          "end": 133.73
+          "start": 132.45,
+          "end": 132.61
         },
         {
           "word": "được",
-          "start": 133.73,
-          "end": 133.98
+          "start": 132.61,
+          "end": 132.77
         },
         {
           "word": "cho",
-          "start": 133.93,
-          "end": 134.21
+          "start": 132.77,
+          "end": 133.09
         },
         {
           "word": "em",
-          "start": 134.21,
-          "end": 134.46
+          "start": 133.09,
+          "end": 133.2
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 0.84,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-50",
-      "start": 134.21,
-      "end": 135.42,
+      "start": 133.25,
+      "end": 134.48,
       "text": "Còn anh thì vẫn bơ vơ",
       "icon": "🥺🍂",
       "words": [
         {
           "word": "Còn",
-          "start": 134.21,
-          "end": 134.46
+          "start": 133.25,
+          "end": 133.45
         },
         {
           "word": "anh",
-          "start": 134.37,
-          "end": 134.62
+          "start": 133.45,
+          "end": 133.73
         },
         {
           "word": "thì",
-          "start": 134.53,
-          "end": 134.78
+          "start": 133.73,
+          "end": 133.93
         },
         {
           "word": "vẫn",
-          "start": 134.69,
-          "end": 134.97
+          "start": 133.93,
+          "end": 134.21
         },
         {
           "word": "bơ",
-          "start": 134.97,
-          "end": 135.22
+          "start": 134.21,
+          "end": 134.37
         },
         {
           "word": "vơ",
-          "start": 135.17,
-          "end": 135.42
+          "start": 134.37,
+          "end": 134.48
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.66,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-51",
-      "start": 135.17,
-      "end": 136.58,
+      "start": 134.53,
+      "end": 135.76,
       "text": "Họ hỏi anh sao không giữ",
       "icon": "🗣️❓",
       "words": [
         {
           "word": "Họ",
-          "start": 135.17,
-          "end": 135.42
+          "start": 134.53,
+          "end": 134.69
         },
         {
           "word": "hỏi",
+          "start": 134.69,
+          "end": 134.97
+        },
+        {
+          "word": "anh",
+          "start": 134.97,
+          "end": 135.17
+        },
+        {
+          "word": "sao",
+          "start": 135.17,
+          "end": 135.37
+        },
+        {
+          "word": "không",
           "start": 135.37,
           "end": 135.65
         },
         {
-          "word": "anh",
-          "start": 135.65,
-          "end": 135.9
-        },
-        {
-          "word": "sao",
-          "start": 135.81,
-          "end": 136.06
-        },
-        {
-          "word": "không",
-          "start": 135.97,
-          "end": 136.33
-        },
-        {
           "word": "giữ",
-          "start": 136.33,
-          "end": 136.58
+          "start": 135.65,
+          "end": 135.76
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-52",
-      "start": 136.45,
-      "end": 137.66,
+      "start": 135.81,
+      "end": 136.88,
       "text": "Anh chỉ cười cho qua",
       "icon": "🙂🥀",
       "words": [
         {
           "word": "Anh",
-          "start": 136.45,
-          "end": 136.7
+          "start": 135.81,
+          "end": 135.97
         },
         {
           "word": "chỉ",
-          "start": 136.61,
-          "end": 136.93
+          "start": 135.97,
+          "end": 136.33
         },
         {
           "word": "cười",
-          "start": 136.93,
-          "end": 137.18
+          "start": 136.33,
+          "end": 136.45
         },
         {
           "word": "cho",
-          "start": 137.09,
-          "end": 137.41
+          "start": 136.45,
+          "end": 136.61
         },
         {
           "word": "qua",
-          "start": 137.41,
-          "end": 137.66
+          "start": 136.61,
+          "end": 136.88
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.66,
+      "timingMid": 0.52,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-53",
-      "start": 137.57,
-      "end": 138.81,
+      "start": 136.93,
+      "end": 138.0,
       "text": "Giữ em bằng hai bàn tay",
       "icon": "🤲🏻🤍",
       "words": [
         {
           "word": "Giữ",
-          "start": 137.57,
-          "end": 137.82
+          "start": 136.93,
+          "end": 137.09
         },
         {
           "word": "em",
-          "start": 137.73,
-          "end": 137.98
+          "start": 137.09,
+          "end": 137.41
         },
         {
           "word": "bằng",
-          "start": 137.89,
-          "end": 138.14
+          "start": 137.41,
+          "end": 137.57
         },
         {
           "word": "hai",
-          "start": 138.05,
-          "end": 138.3
+          "start": 137.57,
+          "end": 137.73
         },
         {
           "word": "bàn",
-          "start": 138.21,
-          "end": 138.53
+          "start": 137.73,
+          "end": 137.89
         },
         {
           "word": "tay",
-          "start": 138.53,
-          "end": 138.81
+          "start": 137.89,
+          "end": 138.0
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.69,
+      "timingMid": 0.52,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-54",
-      "start": 138.81,
-      "end": 140.38,
+      "start": 138.05,
+      "end": 139.44,
       "text": "Chẳng khác nào giữ gió bay xa",
       "icon": "🍃💨",
       "words": [
         {
           "word": "Chẳng",
-          "start": 138.81,
-          "end": 139.06
+          "start": 138.05,
+          "end": 138.21
         },
         {
           "word": "khác",
-          "start": 139.01,
-          "end": 139.26
+          "start": 138.21,
+          "end": 138.53
         },
         {
           "word": "nào",
-          "start": 139.17,
-          "end": 139.42
+          "start": 138.53,
+          "end": 138.81
         },
         {
           "word": "giữ",
-          "start": 139.33,
-          "end": 139.58
+          "start": 138.81,
+          "end": 139.01
         },
         {
           "word": "gió",
-          "start": 139.49,
-          "end": 139.77
+          "start": 139.01,
+          "end": 139.17
         },
         {
           "word": "bay",
-          "start": 139.77,
-          "end": 140.13
+          "start": 139.17,
+          "end": 139.33
         },
         {
           "word": "xa",
-          "start": 140.13,
-          "end": 140.38
+          "start": 139.33,
+          "end": 139.44
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.02,
+      "timingMid": 0.84,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-55",
-      "start": 140.53,
-      "end": 142.01,
+      "start": 139.49,
+      "end": 140.92,
       "text": "Nên thôi anh chọn im lặng",
       "icon": "🤐🖤",
       "words": [
         {
           "word": "Nên",
-          "start": 140.53,
-          "end": 140.78
+          "start": 139.49,
+          "end": 139.77
         },
         {
           "word": "thôi",
-          "start": 140.73,
-          "end": 140.98
+          "start": 139.77,
+          "end": 140.13
         },
         {
           "word": "anh",
-          "start": 140.97,
-          "end": 141.22
+          "start": 140.13,
+          "end": 140.29
         },
         {
           "word": "chọn",
-          "start": 141.09,
-          "end": 141.37
+          "start": 140.29,
+          "end": 140.53
         },
         {
           "word": "im",
-          "start": 141.37,
-          "end": 141.69
+          "start": 140.53,
+          "end": 140.73
         },
         {
           "word": "lặng",
-          "start": 141.69,
-          "end": 142.01
+          "start": 140.73,
+          "end": 140.92
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.93,
+      "timingMid": 0.88,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-56",
-      "start": 141.69,
-      "end": 142.93,
+      "start": 140.97,
+      "end": 142.16,
       "text": "Đứng ngoài cuộc đời em",
       "icon": "🚪👀",
       "words": [
         {
           "word": "Đứng",
+          "start": 140.97,
+          "end": 141.09
+        },
+        {
+          "word": "ngoài",
+          "start": 141.09,
+          "end": 141.37
+        },
+        {
+          "word": "cuộc",
+          "start": 141.37,
+          "end": 141.69
+        },
+        {
+          "word": "đời",
           "start": 141.69,
           "end": 142.01
         },
         {
-          "word": "ngoài",
-          "start": 142.01,
-          "end": 142.26
-        },
-        {
-          "word": "cuộc",
-          "start": 142.21,
-          "end": 142.46
-        },
-        {
-          "word": "đời",
-          "start": 142.45,
-          "end": 142.7
-        },
-        {
           "word": "em",
-          "start": 142.65,
-          "end": 142.93
+          "start": 142.01,
+          "end": 142.16
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.69,
+      "timingMid": 0.64,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-57",
-      "start": 142.93,
-      "end": 144.06,
+      "start": 142.21,
+      "end": 143.48,
       "text": "Chúc em một đời yên ấm",
       "icon": "🕯️🌸",
       "words": [
         {
           "word": "Chúc",
-          "start": 142.93,
-          "end": 143.18
+          "start": 142.21,
+          "end": 142.45
         },
         {
           "word": "em",
-          "start": 143.13,
-          "end": 143.38
+          "start": 142.45,
+          "end": 142.65
         },
         {
           "word": "một",
-          "start": 143.33,
-          "end": 143.58
+          "start": 142.65,
+          "end": 142.93
         },
         {
           "word": "đời",
-          "start": 143.53,
-          "end": 143.78
+          "start": 142.93,
+          "end": 143.13
         },
         {
           "word": "yên",
-          "start": 143.65,
-          "end": 143.9
+          "start": 143.13,
+          "end": 143.33
         },
         {
           "word": "ấm",
-          "start": 143.81,
-          "end": 144.06
+          "start": 143.33,
+          "end": 143.48
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.58,
+      "timingMid": 0.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-58",
-      "start": 144.53,
-      "end": 149.01,
+      "start": 143.53,
+      "end": 145.16,
       "text": "Dù người bên cạnh không phải là anh",
       "icon": "💔🕊️",
       "words": [
         {
           "word": "Dù",
+          "start": 143.53,
+          "end": 143.65
+        },
+        {
+          "word": "người",
+          "start": 143.65,
+          "end": 143.81
+        },
+        {
+          "word": "bên",
+          "start": 143.81,
+          "end": 143.93
+        },
+        {
+          "word": "cạnh",
+          "start": 143.93,
+          "end": 144.09
+        },
+        {
+          "word": "không",
+          "start": 144.09,
+          "end": 144.25
+        },
+        {
+          "word": "phải",
+          "start": 144.25,
+          "end": 144.53
+        },
+        {
+          "word": "là",
           "start": 144.53,
           "end": 144.89
         },
         {
-          "word": "người",
-          "start": 144.89,
-          "end": 145.21
-        },
-        {
-          "word": "bên",
-          "start": 145.21,
-          "end": 145.57
-        },
-        {
-          "word": "cạnh",
-          "start": 145.57,
-          "end": 146.77
-        },
-        {
-          "word": "không",
-          "start": 148.13,
-          "end": 148.38
-        },
-        {
-          "word": "phải",
-          "start": 148.17,
-          "end": 148.42
-        },
-        {
-          "word": "là",
-          "start": 148.33,
-          "end": 148.65
-        },
-        {
           "word": "anh",
-          "start": 148.65,
-          "end": 149.01
+          "start": 144.89,
+          "end": 145.16
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.93,
+      "timingMid": 1.08,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-59",
-      "start": 148.33,
-      "end": 150.38,
+      "start": 145.21,
+      "end": 149.24,
       "text": "Anh từng nói đàn ông phải biết lo",
       "icon": "👨🏻‍💼🌾",
       "words": [
         {
           "word": "Anh",
+          "start": 145.21,
+          "end": 145.57
+        },
+        {
+          "word": "từng",
+          "start": 145.57,
+          "end": 148.13
+        },
+        {
+          "word": "nói",
+          "start": 148.13,
+          "end": 148.17
+        },
+        {
+          "word": "đàn",
+          "start": 148.17,
+          "end": 148.33
+        },
+        {
+          "word": "ông",
           "start": 148.33,
           "end": 148.65
         },
         {
-          "word": "từng",
+          "word": "phải",
           "start": 148.65,
           "end": 149.01
         },
         {
-          "word": "nói",
-          "start": 149.01,
-          "end": 149.26
-        },
-        {
-          "word": "đàn",
-          "start": 149.13,
-          "end": 149.38
-        },
-        {
-          "word": "ông",
-          "start": 149.29,
-          "end": 149.54
-        },
-        {
-          "word": "phải",
-          "start": 149.53,
-          "end": 149.97
-        },
-        {
           "word": "biết",
-          "start": 149.97,
-          "end": 150.22
+          "start": 149.01,
+          "end": 149.13
         },
         {
           "word": "lo",
-          "start": 150.13,
-          "end": 150.38
+          "start": 149.13,
+          "end": 149.24
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.5,
+      "timingMid": 3.48,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-60",
-      "start": 149.97,
-      "end": 150.94,
+      "start": 149.29,
+      "end": 150.48,
       "text": "Mà anh nhìn lại mình",
       "icon": "🪞🥺",
       "words": [
         {
           "word": "Mà",
-          "start": 149.97,
-          "end": 150.22
+          "start": 149.29,
+          "end": 149.53
         },
         {
           "word": "anh",
-          "start": 150.13,
-          "end": 150.38
+          "start": 149.53,
+          "end": 149.97
         },
         {
           "word": "nhìn",
-          "start": 150.33,
-          "end": 150.58
+          "start": 149.97,
+          "end": 150.13
         },
         {
           "word": "lại",
-          "start": 150.53,
-          "end": 150.78
+          "start": 150.13,
+          "end": 150.33
         },
         {
           "word": "mình",
-          "start": 150.69,
-          "end": 150.94
+          "start": 150.33,
+          "end": 150.48
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.42,
+      "timingMid": 0.64,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-61",
-      "start": 151.29,
-      "end": 152.7,
+      "start": 150.53,
+      "end": 151.56,
       "text": "Chẳng có gì để cho",
       "icon": "🤲🏻🥀",
       "words": [
         {
           "word": "Chẳng",
-          "start": 151.29,
-          "end": 151.54
+          "start": 150.53,
+          "end": 150.69
         },
         {
           "word": "có",
-          "start": 151.45,
-          "end": 151.7
+          "start": 150.69,
+          "end": 150.93
         },
         {
           "word": "gì",
-          "start": 151.61,
-          "end": 151.89
+          "start": 150.93,
+          "end": 151.29
         },
         {
           "word": "để",
-          "start": 151.89,
-          "end": 152.45
+          "start": 151.29,
+          "end": 151.45
         },
         {
           "word": "cho",
-          "start": 152.45,
-          "end": 152.7
+          "start": 151.45,
+          "end": 151.56
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 0.48,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-62",
-      "start": 152.73,
-      "end": 153.9,
+      "start": 151.61,
+      "end": 152.84,
       "text": "Em đi là đúng thôi",
       "icon": "🚶🏻‍♀️🤍",
       "words": [
         {
           "word": "Em",
-          "start": 152.73,
-          "end": 152.98
+          "start": 151.61,
+          "end": 151.89
         },
         {
           "word": "đi",
-          "start": 152.89,
-          "end": 153.21
+          "start": 151.89,
+          "end": 152.45
         },
         {
           "word": "là",
-          "start": 153.21,
-          "end": 153.57
+          "start": 152.45,
+          "end": 152.57
         },
         {
           "word": "đúng",
-          "start": 153.57,
-          "end": 153.82
+          "start": 152.57,
+          "end": 152.73
         },
         {
           "word": "thôi",
-          "start": 153.65,
-          "end": 153.9
+          "start": 152.73,
+          "end": 152.84
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.62,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-63",
-      "start": 154.13,
-      "end": 155.54,
+      "start": 152.89,
+      "end": 154.08,
       "text": "Anh không trách một lời",
       "icon": "🤐🌸",
       "words": [
         {
           "word": "Anh",
-          "start": 154.13,
-          "end": 154.45
+          "start": 152.89,
+          "end": 153.21
         },
         {
           "word": "không",
-          "start": 154.45,
-          "end": 154.81
+          "start": 153.21,
+          "end": 153.57
         },
         {
           "word": "trách",
-          "start": 154.81,
-          "end": 155.09
+          "start": 153.57,
+          "end": 153.65
         },
         {
           "word": "một",
-          "start": 155.09,
-          "end": 155.34
+          "start": 153.65,
+          "end": 153.81
         },
         {
           "word": "lời",
-          "start": 155.29,
-          "end": 155.54
+          "start": 153.81,
+          "end": 154.08
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 0.64,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-64",
-      "start": 155.29,
-      "end": 156.5,
+      "start": 154.13,
+      "end": 155.4,
       "text": "Chỉ trách mình năm đó",
       "icon": "⏳🍂",
       "words": [
         {
           "word": "Chỉ",
-          "start": 155.29,
-          "end": 155.54
+          "start": 154.13,
+          "end": 154.45
         },
         {
           "word": "trách",
-          "start": 155.45,
-          "end": 155.77
+          "start": 154.45,
+          "end": 154.81
         },
         {
           "word": "mình",
-          "start": 155.77,
-          "end": 156.05
+          "start": 154.81,
+          "end": 155.09
         },
         {
           "word": "năm",
-          "start": 156.05,
-          "end": 156.3
+          "start": 155.09,
+          "end": 155.29
         },
         {
           "word": "đó",
-          "start": 156.25,
-          "end": 156.5
+          "start": 155.29,
+          "end": 155.4
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.66,
+      "timingMid": 0.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-65",
-      "start": 156.57,
-      "end": 158.38,
+      "start": 155.45,
+      "end": 156.68,
       "text": "Chưa đủ lớn với cuộc đời",
       "icon": "🌱🌊",
       "words": [
         {
           "word": "Chưa",
-          "start": 156.57,
-          "end": 156.82
+          "start": 155.45,
+          "end": 155.77
         },
         {
           "word": "đủ",
-          "start": 156.73,
-          "end": 157.05
+          "start": 155.77,
+          "end": 156.05
         },
         {
           "word": "lớn",
-          "start": 157.05,
-          "end": 157.85
+          "start": 156.05,
+          "end": 156.25
         },
         {
           "word": "với",
-          "start": 157.85,
-          "end": 158.1
+          "start": 156.25,
+          "end": 156.41
         },
         {
           "word": "cuộc",
-          "start": 157.97,
-          "end": 158.22
+          "start": 156.41,
+          "end": 156.57
         },
         {
           "word": "đời",
-          "start": 158.13,
-          "end": 158.38
+          "start": 156.57,
+          "end": 156.68
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.26,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-66",
-      "start": 157.97,
-      "end": 159.18,
+      "start": 156.73,
+      "end": 158.28,
       "text": "Bên kia nhạc cưới vang",
       "icon": "🎺💒",
       "words": [
         {
           "word": "Bên",
-          "start": 157.97,
-          "end": 158.22
+          "start": 156.73,
+          "end": 157.05
         },
         {
           "word": "kia",
-          "start": 158.13,
-          "end": 158.38
+          "start": 157.05,
+          "end": 157.85
         },
         {
           "word": "nhạc",
-          "start": 158.33,
-          "end": 158.61
+          "start": 157.85,
+          "end": 157.97
         },
         {
           "word": "cưới",
-          "start": 158.61,
-          "end": 158.93
+          "start": 157.97,
+          "end": 158.13
         },
         {
           "word": "vang",
-          "start": 158.93,
-          "end": 159.18
+          "start": 158.13,
+          "end": 158.28
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.66,
+      "timingMid": 1.0,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-67",
-      "start": 159.25,
-      "end": 160.3,
+      "start": 158.33,
+      "end": 159.4,
       "text": "Bên này tim anh vỡ",
       "icon": "💔🥀",
       "words": [
         {
           "word": "Bên",
-          "start": 159.25,
-          "end": 159.5
+          "start": 158.33,
+          "end": 158.61
         },
         {
           "word": "này",
-          "start": 159.45,
-          "end": 159.7
+          "start": 158.61,
+          "end": 158.93
         },
         {
           "word": "tim",
-          "start": 159.57,
-          "end": 159.89
+          "start": 158.93,
+          "end": 159.13
         },
         {
           "word": "anh",
-          "start": 159.89,
-          "end": 160.14
+          "start": 159.13,
+          "end": 159.25
         },
         {
           "word": "vỡ",
-          "start": 160.05,
-          "end": 160.3
+          "start": 159.25,
+          "end": 159.4
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.5,
+      "timingMid": 0.52,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-68",
-      "start": 160.21,
-      "end": 161.58,
+      "start": 159.45,
+      "end": 160.64,
       "text": "Một người bước lên xe hoa",
       "icon": "🚗👰🏻‍♀️",
       "words": [
         {
           "word": "Một",
+          "start": 159.45,
+          "end": 159.57
+        },
+        {
+          "word": "người",
+          "start": 159.57,
+          "end": 159.89
+        },
+        {
+          "word": "bước",
+          "start": 159.89,
+          "end": 160.05
+        },
+        {
+          "word": "lên",
+          "start": 160.05,
+          "end": 160.21
+        },
+        {
+          "word": "xe",
           "start": 160.21,
           "end": 160.53
         },
         {
-          "word": "người",
-          "start": 160.53,
-          "end": 160.78
-        },
-        {
-          "word": "bước",
-          "start": 160.69,
-          "end": 160.94
-        },
-        {
-          "word": "lên",
-          "start": 160.85,
-          "end": 161.17
-        },
-        {
-          "word": "xe",
-          "start": 161.17,
-          "end": 161.42
-        },
-        {
           "word": "hoa",
-          "start": 161.33,
-          "end": 161.58
+          "start": 160.53,
+          "end": 160.64
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 0.64,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-69",
-      "start": 161.53,
-      "end": 163.18,
+      "start": 160.69,
+      "end": 161.96,
       "text": "Một người học cách bơ vơ",
       "icon": "🚶🏻‍♂️🌧️",
       "words": [
         {
           "word": "Một",
+          "start": 160.69,
+          "end": 160.85
+        },
+        {
+          "word": "người",
+          "start": 160.85,
+          "end": 161.17
+        },
+        {
+          "word": "học",
+          "start": 161.17,
+          "end": 161.33
+        },
+        {
+          "word": "cách",
+          "start": 161.33,
+          "end": 161.53
+        },
+        {
+          "word": "bơ",
           "start": 161.53,
           "end": 161.81
         },
         {
-          "word": "người",
-          "start": 161.81,
-          "end": 162.06
-        },
-        {
-          "word": "học",
-          "start": 162.01,
-          "end": 162.26
-        },
-        {
-          "word": "cách",
-          "start": 162.17,
-          "end": 162.77
-        },
-        {
-          "word": "bơ",
-          "start": 162.77,
-          "end": 163.02
-        },
-        {
           "word": "vơ",
-          "start": 162.93,
-          "end": 163.18
+          "start": 161.81,
+          "end": 161.96
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.1,
+      "timingMid": 0.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-70",
-      "start": 162.93,
-      "end": 163.98,
+      "start": 162.01,
+      "end": 163.2,
       "text": "Mình từng là tất cả",
       "icon": "💖✨",
       "words": [
         {
           "word": "Mình",
-          "start": 162.93,
-          "end": 163.18
+          "start": 162.01,
+          "end": 162.17
         },
         {
           "word": "từng",
-          "start": 163.09,
-          "end": 163.34
+          "start": 162.17,
+          "end": 162.77
         },
         {
           "word": "là",
-          "start": 163.25,
-          "end": 163.5
+          "start": 162.77,
+          "end": 162.93
         },
         {
           "word": "tất",
-          "start": 163.45,
-          "end": 163.73
+          "start": 162.93,
+          "end": 163.09
         },
         {
           "word": "cả",
-          "start": 163.73,
-          "end": 163.98
+          "start": 163.09,
+          "end": 163.2
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.5,
+      "timingMid": 0.64,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-71",
-      "start": 164.37,
-      "end": 165.86,
+      "start": 163.25,
+      "end": 164.32,
       "text": "Giờ thành người đã qua",
       "icon": "👥🍂",
       "words": [
         {
           "word": "Giờ",
-          "start": 164.37,
-          "end": 164.65
+          "start": 163.25,
+          "end": 163.45
         },
         {
           "word": "thành",
-          "start": 164.65,
-          "end": 165.13
+          "start": 163.45,
+          "end": 163.73
         },
         {
           "word": "người",
-          "start": 165.13,
-          "end": 165.38
+          "start": 163.73,
+          "end": 163.89
         },
         {
           "word": "đã",
-          "start": 165.37,
-          "end": 165.62
+          "start": 163.89,
+          "end": 164.09
         },
         {
           "word": "qua",
-          "start": 165.61,
-          "end": 165.86
+          "start": 164.09,
+          "end": 164.32
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.94,
+      "timingMid": 0.52,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-72",
-      "start": 165.97,
-      "end": 167.89,
+      "start": 164.37,
+      "end": 165.76,
       "text": "Như hai con đường cũ",
       "icon": "🛣️🌫️",
       "words": [
         {
           "word": "Như",
-          "start": 165.97,
-          "end": 166.25
+          "start": 164.37,
+          "end": 164.65
         },
         {
           "word": "hai",
-          "start": 166.25,
-          "end": 166.61
+          "start": 164.65,
+          "end": 165.13
         },
         {
           "word": "con",
-          "start": 166.61,
-          "end": 166.89
+          "start": 165.13,
+          "end": 165.37
         },
         {
           "word": "đường",
-          "start": 166.89,
-          "end": 167.21
+          "start": 165.37,
+          "end": 165.61
         },
         {
           "word": "cũ",
-          "start": 167.21,
-          "end": 167.89
+          "start": 165.61,
+          "end": 165.76
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.37,
+      "timingMid": 0.84,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-73",
-      "start": 167.21,
-      "end": 170.77,
+      "start": 165.81,
+      "end": 167.16,
       "text": "Chẳng còn chung lối ra",
       "icon": "⚡🚪",
       "words": [
         {
           "word": "Chẳng",
-          "start": 167.21,
-          "end": 167.89
+          "start": 165.81,
+          "end": 165.97
         },
         {
           "word": "còn",
-          "start": 167.89,
-          "end": 169.09
+          "start": 165.97,
+          "end": 166.25
         },
         {
           "word": "chung",
-          "start": 170.13,
-          "end": 170.38
+          "start": 166.25,
+          "end": 166.61
         },
         {
           "word": "lối",
-          "start": 170.25,
-          "end": 170.5
+          "start": 166.61,
+          "end": 166.89
         },
         {
           "word": "ra",
-          "start": 170.41,
-          "end": 170.77
+          "start": 166.89,
+          "end": 167.16
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.01,
+      "timingMid": 0.8,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-74",
-      "start": 170.25,
-      "end": 171.58,
+      "start": 167.21,
+      "end": 170.76,
       "text": "Anh vẫn sống như cũ",
       "icon": "☕⏳",
       "words": [
         {
           "word": "Anh",
-          "start": 170.25,
-          "end": 170.5
+          "start": 167.21,
+          "end": 167.89
         },
         {
           "word": "vẫn",
-          "start": 170.41,
-          "end": 170.77
+          "start": 167.89,
+          "end": 170.13
         },
         {
           "word": "sống",
-          "start": 170.77,
-          "end": 171.05
+          "start": 170.13,
+          "end": 170.25
         },
         {
           "word": "như",
-          "start": 171.05,
-          "end": 171.33
+          "start": 170.25,
+          "end": 170.41
         },
         {
           "word": "cũ",
-          "start": 171.33,
-          "end": 171.58
+          "start": 170.41,
+          "end": 170.76
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.78,
+      "timingMid": 3.0,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-75",
-      "start": 171.65,
-      "end": 173.02,
+      "start": 170.77,
+      "end": 172.0,
       "text": "Chỉ là thiếu em thôi",
       "icon": "🛋️💔",
       "words": [
         {
           "word": "Chỉ",
-          "start": 171.65,
-          "end": 172.05
+          "start": 170.77,
+          "end": 171.05
         },
         {
           "word": "là",
-          "start": 172.05,
-          "end": 172.33
+          "start": 171.05,
+          "end": 171.33
         },
         {
           "word": "thiếu",
-          "start": 172.33,
-          "end": 172.65
+          "start": 171.33,
+          "end": 171.53
         },
         {
           "word": "em",
-          "start": 172.65,
-          "end": 172.9
+          "start": 171.53,
+          "end": 171.65
         },
         {
           "word": "thôi",
-          "start": 172.77,
-          "end": 173.02
+          "start": 171.65,
+          "end": 172.0
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-76",
-      "start": 173.25,
-      "end": 174.65,
+      "start": 172.05,
+      "end": 173.2,
       "text": "Ly cà phê sáng đắng",
       "icon": "☕🍂",
       "words": [
         {
           "word": "Ly",
-          "start": 173.25,
-          "end": 173.61
+          "start": 172.05,
+          "end": 172.33
         },
         {
           "word": "cà",
-          "start": 173.61,
-          "end": 173.93
+          "start": 172.33,
+          "end": 172.65
         },
         {
           "word": "phê",
-          "start": 173.93,
-          "end": 174.18
+          "start": 172.65,
+          "end": 172.77
         },
         {
           "word": "sáng",
-          "start": 174.09,
-          "end": 174.34
+          "start": 172.77,
+          "end": 172.93
         },
         {
           "word": "đắng",
-          "start": 174.29,
-          "end": 174.65
+          "start": 172.93,
+          "end": 173.2
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.85,
+      "timingMid": 0.6,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-77",
-      "start": 174.65,
-      "end": 175.89,
+      "start": 173.25,
+      "end": 174.64,
       "text": "Giờ chẳng còn ai ngồi",
       "icon": "🪑🥀",
       "words": [
         {
           "word": "Giờ",
-          "start": 174.65,
-          "end": 174.9
+          "start": 173.25,
+          "end": 173.61
         },
         {
           "word": "chẳng",
-          "start": 174.89,
-          "end": 175.21
+          "start": 173.61,
+          "end": 173.93
         },
         {
           "word": "còn",
-          "start": 175.21,
-          "end": 175.46
+          "start": 173.93,
+          "end": 174.09
         },
         {
           "word": "ai",
-          "start": 175.37,
-          "end": 175.62
+          "start": 174.09,
+          "end": 174.29
         },
         {
           "word": "ngồi",
-          "start": 175.53,
-          "end": 175.89
+          "start": 174.29,
+          "end": 174.64
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.69,
+      "timingMid": 0.84,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-78",
-      "start": 175.89,
-      "end": 177.09,
+      "start": 174.65,
+      "end": 175.96,
       "text": "Bạn bè nói anh mạnh mẽ",
       "icon": "👥💪🏻",
       "words": [
         {
           "word": "Bạn",
-          "start": 175.89,
-          "end": 176.14
+          "start": 174.65,
+          "end": 174.89
         },
         {
           "word": "bè",
-          "start": 176.01,
-          "end": 176.26
+          "start": 174.89,
+          "end": 175.21
         },
         {
           "word": "nói",
-          "start": 176.21,
-          "end": 176.46
+          "start": 175.21,
+          "end": 175.37
         },
         {
           "word": "anh",
-          "start": 176.45,
-          "end": 176.7
+          "start": 175.37,
+          "end": 175.53
         },
         {
           "word": "mạnh",
-          "start": 176.65,
-          "end": 176.9
+          "start": 175.53,
+          "end": 175.89
         },
         {
           "word": "mẽ",
-          "start": 176.81,
-          "end": 177.09
+          "start": 175.89,
+          "end": 175.96
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.65,
+      "timingMid": 0.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-79",
-      "start": 177.09,
-      "end": 178.38,
+      "start": 176.01,
+      "end": 177.24,
       "text": "Chắc tại họ chưa từng yêu",
       "icon": "💔❓",
       "words": [
         {
           "word": "Chắc",
-          "start": 177.09,
-          "end": 177.34
+          "start": 176.01,
+          "end": 176.21
         },
         {
           "word": "tại",
-          "start": 177.29,
-          "end": 177.57
+          "start": 176.21,
+          "end": 176.45
         },
         {
           "word": "họ",
-          "start": 177.57,
-          "end": 177.82
+          "start": 176.45,
+          "end": 176.65
         },
         {
           "word": "chưa",
-          "start": 177.77,
-          "end": 178.02
+          "start": 176.65,
+          "end": 176.81
         },
         {
           "word": "từng",
-          "start": 177.93,
-          "end": 178.18
+          "start": 176.81,
+          "end": 177.09
         },
         {
           "word": "yêu",
-          "start": 178.13,
-          "end": 178.38
+          "start": 177.09,
+          "end": 177.24
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.74,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-80",
-      "start": 177.93,
-      "end": 179.34,
+      "start": 177.29,
+      "end": 178.6,
       "text": "Chưa từng đứng nhìn người mình thương",
       "icon": "👀👰🏻‍♀️",
       "words": [
         {
           "word": "Chưa",
-          "start": 177.93,
-          "end": 178.18
+          "start": 177.29,
+          "end": 177.57
         },
         {
           "word": "từng",
-          "start": 178.13,
-          "end": 178.38
+          "start": 177.57,
+          "end": 177.77
         },
         {
           "word": "đứng",
-          "start": 178.29,
-          "end": 178.54
+          "start": 177.77,
+          "end": 177.93
         },
         {
           "word": "nhìn",
-          "start": 178.49,
-          "end": 178.74
+          "start": 177.93,
+          "end": 178.13
         },
         {
           "word": "người",
-          "start": 178.65,
-          "end": 178.9
+          "start": 178.13,
+          "end": 178.29
         },
         {
           "word": "mình",
-          "start": 178.81,
-          "end": 179.09
+          "start": 178.29,
+          "end": 178.49
         },
         {
           "word": "thương",
-          "start": 179.09,
-          "end": 179.34
+          "start": 178.49,
+          "end": 178.6
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.86,
+      "timingMid": 0.76,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-81",
-      "start": 179.57,
-      "end": 181.25,
+      "start": 178.65,
+      "end": 180.12,
       "text": "Gả cho ai đó làm người yêu",
       "icon": "💒💍",
       "words": [
         {
           "word": "Gả",
-          "start": 179.57,
-          "end": 179.82
+          "start": 178.65,
+          "end": 178.81
         },
         {
           "word": "cho",
-          "start": 179.77,
-          "end": 180.13
+          "start": 178.81,
+          "end": 179.09
         },
         {
           "word": "ai",
-          "start": 180.13,
-          "end": 180.49
+          "start": 179.09,
+          "end": 179.25
         },
         {
           "word": "đó",
-          "start": 180.49,
-          "end": 180.74
+          "start": 179.25,
+          "end": 179.41
         },
         {
           "word": "làm",
-          "start": 180.69,
-          "end": 180.94
+          "start": 179.41,
+          "end": 179.57
         },
         {
           "word": "người",
-          "start": 180.81,
-          "end": 181.06
+          "start": 179.57,
+          "end": 179.77
         },
         {
           "word": "yêu",
-          "start": 180.97,
-          "end": 181.25
+          "start": 179.77,
+          "end": 180.12
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.13,
+      "timingMid": 0.92,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-82",
-      "start": 180.81,
-      "end": 182.21,
+      "start": 180.13,
+      "end": 181.2,
       "text": "Đời anh là lữ khách",
       "icon": "🎒👣",
       "words": [
         {
           "word": "Đời",
-          "start": 180.81,
-          "end": 181.06
+          "start": 180.13,
+          "end": 180.49
         },
         {
           "word": "anh",
-          "start": 180.97,
-          "end": 181.25
+          "start": 180.49,
+          "end": 180.69
         },
         {
           "word": "là",
-          "start": 181.25,
-          "end": 181.61
+          "start": 180.69,
+          "end": 180.81
         },
         {
           "word": "lữ",
-          "start": 181.61,
-          "end": 181.93
+          "start": 180.81,
+          "end": 180.97
         },
         {
           "word": "khách",
-          "start": 181.93,
-          "end": 182.21
+          "start": 180.97,
+          "end": 181.2
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.85,
+      "timingMid": 0.52,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-83",
-      "start": 182.21,
-      "end": 183.58,
+      "start": 181.25,
+      "end": 182.6,
       "text": "Ghé ngang qua tim em",
       "icon": "🚪💓",
       "words": [
         {
           "word": "Ghé",
-          "start": 182.21,
-          "end": 182.46
+          "start": 181.25,
+          "end": 181.61
         },
         {
           "word": "ngang",
-          "start": 182.37,
-          "end": 182.65
+          "start": 181.61,
+          "end": 181.93
         },
         {
           "word": "qua",
-          "start": 182.65,
-          "end": 183.09
+          "start": 181.93,
+          "end": 182.21
         },
         {
           "word": "tim",
-          "start": 183.09,
-          "end": 183.34
+          "start": 182.21,
+          "end": 182.37
         },
         {
           "word": "em",
-          "start": 183.33,
-          "end": 183.58
+          "start": 182.37,
+          "end": 182.6
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.82,
+      "timingMid": 0.8,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-84",
-      "start": 183.49,
-      "end": 184.7,
+      "start": 182.65,
+      "end": 183.8,
       "text": "Ở lại vài năm tháng",
       "icon": "⏳🌸",
       "words": [
         {
           "word": "Ở",
-          "start": 183.49,
-          "end": 183.74
+          "start": 182.65,
+          "end": 183.09
         },
         {
           "word": "lại",
-          "start": 183.69,
-          "end": 183.94
+          "start": 183.09,
+          "end": 183.33
         },
         {
           "word": "vài",
-          "start": 183.85,
-          "end": 184.13
+          "start": 183.33,
+          "end": 183.49
         },
         {
           "word": "năm",
-          "start": 184.13,
-          "end": 184.45
+          "start": 183.49,
+          "end": 183.69
         },
         {
           "word": "tháng",
-          "start": 184.45,
-          "end": 184.7
+          "start": 183.69,
+          "end": 183.8
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.66,
+      "timingMid": 0.6,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-85",
-      "start": 184.81,
-      "end": 186.34,
+      "start": 183.85,
+      "end": 185.0,
       "text": "Rồi cũng phải êm đềm",
       "icon": "🕊️🌊",
       "words": [
         {
           "word": "Rồi",
-          "start": 184.81,
-          "end": 185.06
+          "start": 183.85,
+          "end": 184.13
         },
         {
           "word": "cũng",
+          "start": 184.13,
+          "end": 184.45
+        },
+        {
+          "word": "phải",
+          "start": 184.45,
+          "end": 184.61
+        },
+        {
+          "word": "êm",
+          "start": 184.61,
+          "end": 184.81
+        },
+        {
+          "word": "đềm",
+          "start": 184.81,
+          "end": 185.0
+        }
+      ],
+      "mode": "queue",
+      "timingIn": 0.35,
+      "timingMid": 0.6,
+      "timingOut": 0.25
+    },
+    {
+      "id": "phao-hoa-86",
+      "start": 185.05,
+      "end": 186.32,
+      "text": "Không phải anh không tiếc",
+      "icon": "🥺💧",
+      "words": [
+        {
+          "word": "Không",
           "start": 185.05,
           "end": 185.73
         },
         {
           "word": "phải",
           "start": 185.73,
-          "end": 185.98
-        },
-        {
-          "word": "êm",
-          "start": 185.89,
-          "end": 186.14
-        },
-        {
-          "word": "đềm",
-          "start": 186.09,
-          "end": 186.34
-        }
-      ],
-      "mode": "queue",
-      "timingIn": 0.35,
-      "timingMid": 0.98,
-      "timingOut": 0.25
-    },
-    {
-      "id": "phao-hoa-86",
-      "start": 186.09,
-      "end": 187.1,
-      "text": "Không phải anh không tiếc",
-      "icon": "🥺💧",
-      "words": [
-        {
-          "word": "Không",
-          "start": 186.09,
-          "end": 186.34
-        },
-        {
-          "word": "phải",
-          "start": 186.21,
-          "end": 186.46
+          "end": 185.89
         },
         {
           "word": "anh",
-          "start": 186.37,
-          "end": 186.69
+          "start": 185.89,
+          "end": 186.09
         },
         {
           "word": "không",
-          "start": 186.69,
-          "end": 186.94
+          "start": 186.09,
+          "end": 186.21
         },
         {
           "word": "tiếc",
-          "start": 186.85,
-          "end": 187.1
+          "start": 186.21,
+          "end": 186.32
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.46,
+      "timingMid": 0.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-87",
-      "start": 187.33,
-      "end": 188.86,
+      "start": 186.37,
+      "end": 187.6,
       "text": "Chỉ là anh hiểu ra",
       "icon": "💡🍂",
       "words": [
         {
           "word": "Chỉ",
-          "start": 187.33,
-          "end": 187.65
+          "start": 186.37,
+          "end": 186.69
         },
         {
           "word": "là",
-          "start": 187.65,
-          "end": 188.29
+          "start": 186.69,
+          "end": 186.85
         },
         {
           "word": "anh",
-          "start": 188.29,
-          "end": 188.54
+          "start": 186.85,
+          "end": 187.05
         },
         {
           "word": "hiểu",
-          "start": 188.41,
-          "end": 188.66
+          "start": 187.05,
+          "end": 187.33
         },
         {
           "word": "ra",
-          "start": 188.61,
-          "end": 188.86
+          "start": 187.33,
+          "end": 187.6
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.98,
+      "timingMid": 0.68,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-88",
-      "start": 188.41,
-      "end": 189.57,
+      "start": 187.65,
+      "end": 188.92,
       "text": "Có những người sinh ra",
       "icon": "✨👥",
       "words": [
         {
           "word": "Có",
-          "start": 188.41,
-          "end": 188.66
+          "start": 187.65,
+          "end": 188.29
         },
         {
           "word": "những",
-          "start": 188.61,
-          "end": 188.86
+          "start": 188.29,
+          "end": 188.41
         },
         {
           "word": "người",
-          "start": 188.77,
-          "end": 189.02
+          "start": 188.41,
+          "end": 188.61
         },
         {
           "word": "sinh",
-          "start": 188.97,
-          "end": 189.25
+          "start": 188.61,
+          "end": 188.77
         },
         {
           "word": "ra",
-          "start": 189.25,
-          "end": 189.57
+          "start": 188.77,
+          "end": 188.92
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.61,
+      "timingMid": 0.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-89",
-      "start": 189.89,
-      "end": 194.01,
+      "start": 188.97,
+      "end": 191.48,
       "text": "Để thương chứ không để ở lại mà",
       "icon": "💔🥀",
       "words": [
         {
           "word": "Để",
+          "start": 188.97,
+          "end": 189.25
+        },
+        {
+          "word": "thương",
+          "start": 189.25,
+          "end": 189.57
+        },
+        {
+          "word": "chứ",
+          "start": 189.57,
+          "end": 189.89
+        },
+        {
+          "word": "không",
           "start": 189.89,
           "end": 190.17
         },
         {
-          "word": "thương",
+          "word": "để",
           "start": 190.17,
           "end": 190.49
         },
         {
-          "word": "chứ",
+          "word": "ở",
           "start": 190.49,
           "end": 190.85
         },
         {
-          "word": "không",
+          "word": "lại",
           "start": 190.85,
           "end": 191.13
         },
         {
-          "word": "để",
-          "start": 191.13,
-          "end": 191.77
-        },
-        {
-          "word": "ở",
-          "start": 191.77,
-          "end": 192.97
-        },
-        {
-          "word": "lại",
-          "start": 193.13,
-          "end": 193.38
-        },
-        {
           "word": "mà",
-          "start": 193.37,
-          "end": 194.01
+          "start": 191.13,
+          "end": 191.48
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.57,
+      "timingMid": 1.96,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-90",
-      "start": 193.13,
-      "end": 194.61,
+      "start": 191.77,
+      "end": 193.72,
       "text": "Để lệ rơi",
       "icon": "💧🥺",
       "words": [
         {
           "word": "Để",
-          "start": 193.13,
-          "end": 193.38
+          "start": 191.77,
+          "end": 193.13
         },
         {
           "word": "lệ",
-          "start": 193.37,
-          "end": 194.01
+          "start": 193.13,
+          "end": 193.37
         },
         {
           "word": "rơi",
-          "start": 194.01,
-          "end": 194.61
+          "start": 193.37,
+          "end": 193.72
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 0.93,
+      "timingMid": 1.4,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-91",
-      "start": 194.61,
-      "end": 197.73,
+      "start": 194.01,
+      "end": 196.28,
       "text": "Khi mùa xuân đi ngang đời",
       "icon": "🌸🍃",
       "words": [
         {
           "word": "Khi",
+          "start": 194.01,
+          "end": 194.61
+        },
+        {
+          "word": "mùa",
           "start": 194.61,
           "end": 194.97
         },
         {
-          "word": "mùa",
+          "word": "xuân",
           "start": 194.97,
           "end": 195.25
         },
         {
-          "word": "xuân",
+          "word": "đi",
           "start": 195.25,
           "end": 195.65
         },
         {
-          "word": "đi",
+          "word": "ngang",
           "start": 195.65,
           "end": 195.93
         },
         {
-          "word": "ngang",
-          "start": 195.93,
-          "end": 196.53
-        },
-        {
           "word": "đời",
-          "start": 196.53,
-          "end": 197.73
+          "start": 195.93,
+          "end": 196.28
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.57,
+      "timingMid": 1.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-92",
-      "start": 198.49,
-      "end": 201.33,
+      "start": 196.53,
+      "end": 200.4,
       "text": "Mà lòng anh chẳng giữ nổi",
       "icon": "🥀💔",
       "words": [
         {
           "word": "Mà",
+          "start": 196.53,
+          "end": 198.13
+        },
+        {
+          "word": "lòng",
+          "start": 198.13,
+          "end": 198.49
+        },
+        {
+          "word": "anh",
           "start": 198.49,
           "end": 198.93
         },
         {
-          "word": "lòng",
+          "word": "chẳng",
           "start": 198.93,
           "end": 199.73
         },
         {
-          "word": "anh",
+          "word": "giữ",
           "start": 199.73,
           "end": 200.05
         },
         {
-          "word": "chẳng",
-          "start": 200.05,
-          "end": 200.41
-        },
-        {
-          "word": "giữ",
-          "start": 200.41,
-          "end": 200.89
-        },
-        {
           "word": "nổi",
-          "start": 200.89,
-          "end": 201.33
+          "start": 200.05,
+          "end": 200.4
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.29,
+      "timingMid": 3.32,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-93",
-      "start": 201.33,
-      "end": 203.61,
+      "start": 200.41,
+      "end": 201.68,
       "text": "Một nụ cười",
       "icon": "🙂🌧️",
       "words": [
         {
           "word": "Một",
-          "start": 201.33,
-          "end": 201.97
+          "start": 200.41,
+          "end": 200.89
         },
         {
           "word": "nụ",
-          "start": 201.97,
-          "end": 203.17
+          "start": 200.89,
+          "end": 201.33
         },
         {
           "word": "cười",
-          "start": 203.17,
-          "end": 203.61
+          "start": 201.33,
+          "end": 201.68
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.73,
+      "timingMid": 0.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-94",
-      "start": 204.17,
-      "end": 205.81,
+      "start": 201.97,
+      "end": 203.96,
       "text": "Người hạnh phúc",
       "icon": "✨💐",
       "words": [
         {
           "word": "Người",
-          "start": 204.17,
-          "end": 205.17
+          "start": 201.97,
+          "end": 203.17
         },
         {
           "word": "hạnh",
-          "start": 205.17,
-          "end": 205.49
+          "start": 203.17,
+          "end": 203.61
         },
         {
           "word": "phúc",
-          "start": 205.49,
-          "end": 205.81
+          "start": 203.61,
+          "end": 203.96
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 1.09,
+      "timingMid": 1.44,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-95",
-      "start": 206.09,
-      "end": 209.33,
+      "start": 204.17,
+      "end": 206.44,
       "text": "Anh đứng phía sau thôi",
       "icon": "🚪🚶🏻‍♂️",
       "words": [
         {
           "word": "Anh",
-          "start": 206.09,
-          "end": 206.73
+          "start": 204.17,
+          "end": 205.17
         },
         {
           "word": "đứng",
-          "start": 206.73,
-          "end": 207.93
+          "start": 205.17,
+          "end": 205.49
         },
         {
           "word": "phía",
-          "start": 208.33,
-          "end": 208.77
+          "start": 205.49,
+          "end": 205.81
         },
         {
           "word": "sau",
-          "start": 208.77,
-          "end": 209.05
+          "start": 205.81,
+          "end": 206.09
         },
         {
           "word": "thôi",
-          "start": 209.05,
-          "end": 209.33
+          "start": 206.09,
+          "end": 206.44
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.69,
+      "timingMid": 1.72,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-96",
-      "start": 208.77,
-      "end": 212.81,
+      "start": 206.73,
+      "end": 209.28,
       "text": "Chúc em bình yên",
       "icon": "🕊️🌸",
       "words": [
         {
           "word": "Chúc",
+          "start": 206.73,
+          "end": 208.33
+        },
+        {
+          "word": "em",
+          "start": 208.33,
+          "end": 208.77
+        },
+        {
+          "word": "bình",
           "start": 208.77,
           "end": 209.05
         },
         {
-          "word": "em",
-          "start": 209.05,
-          "end": 209.33
-        },
-        {
-          "word": "bình",
-          "start": 209.33,
-          "end": 210.53
-        },
-        {
           "word": "yên",
-          "start": 212.53,
-          "end": 212.81
+          "start": 209.05,
+          "end": 209.28
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 3.49,
+      "timingMid": 2.0,
       "timingOut": 0.25
     },
     {
       "id": "phao-hoa-97",
-      "start": 212.53,
-      "end": 215.73,
+      "start": 209.33,
+      "end": 214.56,
       "text": "Dù người đó không phải anh rồi",
       "icon": "💔♾️",
       "words": [
         {
           "word": "Dù",
+          "start": 209.33,
+          "end": 212.53
+        },
+        {
+          "word": "người",
           "start": 212.53,
           "end": 212.81
         },
         {
-          "word": "người",
+          "word": "đó",
           "start": 212.81,
           "end": 213.17
         },
         {
-          "word": "đó",
+          "word": "không",
           "start": 213.17,
           "end": 213.45
         },
         {
-          "word": "không",
+          "word": "phải",
           "start": 213.45,
           "end": 213.81
         },
         {
-          "word": "phải",
+          "word": "anh",
           "start": 213.81,
           "end": 214.21
         },
         {
-          "word": "anh",
-          "start": 214.21,
-          "end": 214.73
-        },
-        {
           "word": "rồi",
-          "start": 214.73,
-          "end": 215.73
+          "start": 214.21,
+          "end": 214.56
         }
       ],
       "mode": "queue",
       "timingIn": 0.35,
-      "timingMid": 2.65,
+      "timingMid": 4.68,
       "timingOut": 0.25
     }
   ],
@@ -130929,17 +130929,17 @@
   "intro": {
     "enabled": true,
     "title": "Pháo Hoa Lệ Rơi",
-    "subtitle": "Bản Cổ Phong · Bướm Ngáo",
+    "subtitle": "Bản Cổ Phong · Quang Minh MasterD",
     "end": 20.0,
     "style": "storybook",
     "headline": "Pháo Hoa Lệ Rơi",
     "subline": "Bản Cổ Phong Da Diết",
     "ink": "#ffffff",
-    "secondaryInk": "#f3e8ff",
-    "creditInk": "#e9d5ff",
+    "secondaryInk": "#ffffff",
+    "creditInk": "#ffffff",
     "lines": [
       "Pháo Hoa Lệ Rơi",
-      "Em mặc áo dài đỏ, đứng cười giữa họ hàng..."
+      "Quang Minh MasterD"
     ],
     "titleEnd": 20.0
   },
@@ -130957,7 +130957,7 @@
   "stickers": [],
   "_selectedSegId": "phao-hoa-1",
   "_selectedStickerId": null,
-  "_updatedAt": 1794756124410,
+  "_updatedAt": 1794756666985,
   "backgroundStyle": "illustrated",
   "motionTheme": "ballad"
 }

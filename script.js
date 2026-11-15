@@ -1688,26 +1688,26 @@
         let x=(W-width)/2;
         for(const ch of letters){g.fillText(ch,x,height/2);x+=g.measureText(ch).width+spacing;}
 
-        // Luminous aura glow with accent color
-        g.shadowColor=data.accentColor||'#c084fc';
-        g.shadowBlur=28;
+        // Pure white luminous halo with deep contrast shadow
+        g.shadowColor='rgba(255, 255, 255, 0.95)';
+        g.shadowBlur=22;
         g.shadowOffsetY=0;
-        g.fillStyle=color||'#ffffff';
+        g.fillStyle='#ffffff';
         x=(W-width)/2;
         for(const ch of letters){g.fillText(ch,x,height/2);x+=g.measureText(ch).width+spacing;}
 
-        // Crisp bright core
-        g.shadowBlur=6;
-        g.fillStyle=color||'#ffffff';
+        // Crisp pure white core
+        g.shadowBlur=4;
+        g.fillStyle='#ffffff';
         x=(W-width)/2;
         for(const ch of letters){g.fillText(ch,x,height/2);x+=g.measureText(ch).width+spacing;}
 
         return {canvas:c,width};
       };
       storybookArtwork={
-        head:raster(head,'italic 600 140px "Playfair Display",Georgia,serif',230,intro.ink||'#ffffff'),
-        tail:raster(tail.toLocaleUpperCase('vi-VN'),'600 32px "Be Vietnam Pro",sans-serif',100,intro.secondaryInk||'#f3e8ff',3.2),
-        credit:raster(intro.subtitle||'','500 22px "Be Vietnam Pro",sans-serif',70,intro.creditInk||'#e9d5ff')
+        head:raster(head,'italic 600 140px "Playfair Display",Georgia,serif',230,'#ffffff'),
+        tail:raster(tail.toLocaleUpperCase('vi-VN'),'600 32px "Be Vietnam Pro",sans-serif',100,'#ffffff',3.2),
+        credit:raster(intro.subtitle||'','500 22px "Be Vietnam Pro",sans-serif',70,'#ffffff')
       };
     }
     const out=smooth((end-t)/1.4), enter=smooth((t-.25)/1.7), reveal=smooth((t-1.5)/1.7);
@@ -1720,9 +1720,9 @@
     ctx.drawImage(art.tail.canvas,0,H*.345-50);ctx.restore();
     const line=smooth((t-2.5)/1.5);
     ctx.globalAlpha=line*out*.8;
-    ctx.strokeStyle=data.accentColor||intro.secondaryInk||'#c084fc';
-    ctx.shadowColor=data.accentColor||'#c084fc';
-    ctx.shadowBlur=12;
+    ctx.strokeStyle='#ffffff';
+    ctx.shadowColor='rgba(0, 0, 0, 0.9)';
+    ctx.shadowBlur=8;
     ctx.lineWidth=2;
     ctx.beginPath();ctx.moveTo(W*.5-90*line,H*.392);ctx.lineTo(W*.5+90*line,H*.392);ctx.stroke();
     ctx.shadowBlur=0;
@@ -1941,101 +1941,135 @@
     persistStickers();
   }
 
-  // 2026-11-15: Khách hàng yêu cầu bỏ GIF đoạn dạo và làm hoạt họa chữ sáng tạo, hiệu ứng chuyển động mượt mà hơn; trước đó drawWords chỉ vẽ chữ tĩnh cả câu bỏ qua mốc thời gian từng từ (seg.words) và ngắt câu đột ngột, nên nâng cấp hiển thị karaoke từng từ với ánh sáng phát quang theo giọng hát, làm mượt chuyển cảnh crossfade giữa các câu và tạo chữ gian tấu nghệ thuật lơ lửng theo nhịp ballad.
+  // 2026-11-15: Khách hàng yêu cầu tựa và chữ màu trắng tinh khôi (#ffffff), khắc phục lỗi chữ bị chồng lên nhau; trước đó drawWords gom nhiều segment cùng vẽ tại baseY và dùng màu phát quang ám tím/hồng, nên chuyển sang chọn duy nhất 1 segment ưu tiên và render toàn bộ chữ màu trắng trên nền đổ bóng tương phản đen sâu sắc nét.
   function drawWords(t) {
     const sorted = sortedLyrics();
-    const active = [];
+    let selected = null;
+    let selectedItem = null;
+
+    // Pick single primary active segment
     for (const seg of sorted) {
-      if (t >= seg.start - 0.05 && t < seg.end + 0.05) {
+      if (t >= seg.start && t < seg.end) {
         const item = renderLyricSegment(seg, null, null, t);
-        if (item && item.opacity > 0.001) active.push({ seg, item });
-      }
-      if (seg.start > t + 0.2) break;
-    }
-    if (!active.length) return;
-
-    for (const { seg, item } of active) {
-      const art = item.art;
-      const baseY = H * (data.position === 'upper' ? 0.33 : data.position === 'lower' ? 0.64 : 0.5);
-      ctx.save();
-      ctx.translate(W * 0.5 + item.offsetX, baseY + item.offsetY);
-      ctx.scale(item.scale, item.scale);
-      ctx.globalAlpha = item.opacity;
-
-      if (art.wordLayout && art.wordLayout.length > 0) {
-        const textCenterOffset = -art.totalWidth / 2 + art.textWidth / 2;
-        ctx.save();
-        ctx.translate(textCenterOffset, 0);
-        ctx.font = `${fontWeight()} ${art.size}px ${fontFamily()}`;
-        ctx.textAlign = 'left';
-        ctx.textBaseline = 'middle';
-
-        for (let i = 0; i < art.wordLayout.length; i++) {
-          const w = art.wordLayout[i];
-          const isCurrent = t >= w.start && t < w.end;
-          const isSung = t >= w.end;
-
-          ctx.save();
-          if (isCurrent) {
-            const wp = clamp((t - w.start) / Math.max(0.001, w.end - w.start));
-            const wave = Math.sin(wp * Math.PI);
-            const wordScale = 1.0 + 0.07 * wave;
-            const lift = -3.5 * wave;
-
-            ctx.translate(w.x + w.width / 2, lift);
-            ctx.scale(wordScale, wordScale);
-            ctx.translate(-(w.x + w.width / 2), 0);
-
-            // Ethereal singing aura glow
-            ctx.shadowColor = data.accentColor || '#f49ac8';
-            ctx.shadowBlur = (Number(data.glow) || 22) * 0.85 + 14 * wave;
-            ctx.fillStyle = '#ffffff';
-            ctx.fillText(w.text, w.x, 0);
-
-            // Radiant core highlight
-            ctx.shadowBlur = 4;
-            ctx.fillStyle = '#fff4fa';
-            ctx.fillText(w.text, w.x, 0);
-          } else if (isSung) {
-            // Sung words: clear, crisp, radiant white with subtle accent depth
-            ctx.shadowColor = data.accentColor || '#f49ac8';
-            ctx.shadowBlur = Math.max(6, (Number(data.glow) || 22) * 0.28);
-            ctx.fillStyle = data.textColor || '#ffffff';
-            ctx.fillText(w.text, w.x, 0);
-          } else {
-            // Upcoming words: dreamy soft translucent white
-            ctx.globalAlpha = item.opacity * 0.62;
-            ctx.shadowColor = '#1d0e30';
-            ctx.shadowBlur = 4;
-            ctx.fillStyle = data.textColor || '#ffffff';
-            ctx.fillText(w.text, w.x, 0);
-          }
-          ctx.restore();
+        if (item && item.opacity > 0.001) {
+          selected = seg;
+          selectedItem = item;
+          break;
         }
-        ctx.restore();
-      } else if (art.text) {
-        const x = -art.totalWidth / 2 + art.textWidth / 2;
-        ctx.drawImage(art.text, x - art.text.displayWidth / 2, -art.text.displayHeight / 2, art.text.displayWidth, art.text.displayHeight);
       }
+      if (seg.start > t) break;
+    }
 
-      if (art.symbol) {
-        const x = art.totalWidth / 2 - art.iconWidth / 2;
-        const wave = Math.sin(t * 1.8 + Number(seg.start));
-        const floatY = wave * 3.2;
-        const tilt = Math.sin(t * 1.3) * 0.035;
-        const pulseScale = 1 + beatPulse(t) * 0.15;
+    // Fallback: segment in exit tail
+    if (!selected) {
+      for (let i = sorted.length - 1; i >= 0; i--) {
+        const seg = sorted[i];
+        if (t >= seg.end && t < seg.end + 0.2) {
+          const item = renderLyricSegment(seg, null, null, t);
+          if (item && item.opacity > 0.001) {
+            selected = seg;
+            selectedItem = item;
+            break;
+          }
+        }
+        if (seg.end < t - 0.25) break;
+      }
+    }
+
+    if (!selected || !selectedItem) return;
+    const item = selectedItem;
+    const seg = selected;
+    const art = item.art;
+    const baseY = H * (data.position === 'upper' ? 0.33 : data.position === 'lower' ? 0.64 : 0.5);
+
+    ctx.save();
+    ctx.translate(W * 0.5 + item.offsetX, baseY + item.offsetY);
+    ctx.scale(item.scale, item.scale);
+    ctx.globalAlpha = item.opacity;
+
+    if (art.wordLayout && art.wordLayout.length > 0) {
+      const textCenterOffset = -art.totalWidth / 2 + art.textWidth / 2;
+      ctx.save();
+      ctx.translate(textCenterOffset, 0);
+      ctx.font = `${fontWeight()} ${art.size}px ${fontFamily()}`;
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+
+      for (let i = 0; i < art.wordLayout.length; i++) {
+        const w = art.wordLayout[i];
+        const isCurrent = t >= w.start && t < w.end;
+        const isSung = t >= w.end;
 
         ctx.save();
-        ctx.translate(x, floatY);
-        ctx.rotate(tilt);
-        ctx.scale(pulseScale, pulseScale);
-        ctx.shadowColor = data.accentColor || '#f49ac8';
-        ctx.shadowBlur = 12 + 10 * beatPulse(t);
-        ctx.drawImage(art.symbol, -art.symbol.displayWidth / 2, -art.symbol.displayHeight / 2, art.symbol.displayWidth, art.symbol.displayHeight);
+        if (isCurrent) {
+          const wp = clamp((t - w.start) / Math.max(0.001, w.end - w.start));
+          const wave = Math.sin(wp * Math.PI);
+          const wordScale = 1.0 + 0.07 * wave;
+          const lift = -3.5 * wave;
+
+          ctx.translate(w.x + w.width / 2, lift);
+          ctx.scale(wordScale, wordScale);
+          ctx.translate(-(w.x + w.width / 2), 0);
+
+          // Deep contrast black shadow
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
+          ctx.shadowBlur = 12;
+          ctx.shadowOffsetY = 3;
+          ctx.fillStyle = '#000000';
+          ctx.fillText(w.text, w.x, 0);
+
+          // Luminous pure white halo
+          ctx.shadowColor = 'rgba(255, 255, 255, 0.95)';
+          ctx.shadowBlur = 20 + 8 * wave;
+          ctx.shadowOffsetY = 0;
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText(w.text, w.x, 0);
+
+          // Pure white crisp core
+          ctx.shadowBlur = 4;
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText(w.text, w.x, 0);
+        } else if (isSung) {
+          // Sung words: pure crisp white with deep black shadow
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
+          ctx.shadowBlur = 8;
+          ctx.shadowOffsetY = 2;
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText(w.text, w.x, 0);
+        } else {
+          // Upcoming words: soft translucent white
+          ctx.globalAlpha = item.opacity * 0.65;
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+          ctx.shadowBlur = 6;
+          ctx.shadowOffsetY = 2;
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText(w.text, w.x, 0);
+        }
         ctx.restore();
       }
       ctx.restore();
+    } else if (art.text) {
+      const x = -art.totalWidth / 2 + art.textWidth / 2;
+      ctx.drawImage(art.text, x - art.text.displayWidth / 2, -art.text.displayHeight / 2, art.text.displayWidth, art.text.displayHeight);
     }
+
+    if (art.symbol) {
+      const x = art.totalWidth / 2 - art.iconWidth / 2;
+      const wave = Math.sin(t * 1.8 + Number(seg.start));
+      const floatY = wave * 3.2;
+      const tilt = Math.sin(t * 1.3) * 0.035;
+      const pulseScale = 1 + beatPulse(t) * 0.15;
+
+      ctx.save();
+      ctx.translate(x, floatY);
+      ctx.rotate(tilt);
+      ctx.scale(pulseScale, pulseScale);
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+      ctx.shadowBlur = 10;
+      ctx.drawImage(art.symbol, -art.symbol.displayWidth / 2, -art.symbol.displayHeight / 2, art.symbol.displayWidth, art.symbol.displayHeight);
+      ctx.restore();
+    }
+    ctx.restore();
   }
 
   // 2026-11-07: Khách hàng cần chèn ảnh hoặc ảnh GIF tách nền vào video, kéo di chuyển & chỉnh kích thước trực tiếp trên màn hình canvas, đồng thời chọn hiển thị xuyên suốt video hoặc chỉ trong khoảng thời gian chỉ định; giải mã từng frame GIF qua ImageDecoder + hỗ trợ tách nền màu tự động (chroma key) và ẩn khung chọn khi đang ghi hình xuất video.
