@@ -1493,19 +1493,22 @@
   }
 
   const lyricArtwork = new Map();
+  // 2026-11-15: Khách hàng phản hồi thiếu icon; trước đó chỉ đọc qua NebulaMotion.textAndIcons nếu seg.icon rỗng sẽ mất biểu tượng cảm xúc, nên bổ sung dự phòng seg.icon || seg.tag || '' và fallback resolvedIcon để luôn render đầy đủ icon bên cạnh lời hát.
   function createLyricArtwork(seg) {
-    const parts = NebulaMotion.textAndIcons(seg.text, seg.icon);
+    const rawIcon = seg.icon || seg.tag || '';
+    const parts = NebulaMotion.textAndIcons(seg.text, rawIcon);
+    const resolvedIcon = parts.icon || rawIcon;
     const label = data.font === 'oswald' ? parts.text.toLocaleUpperCase('vi-VN') : parts.text;
     const wordsSignature = Array.isArray(seg.words) && seg.words.length ? seg.words.map(w => `${w.word}_${w.start}_${w.end}`).join('|') : '';
-    const key = JSON.stringify([label, parts.icon, data.font, data.fontSize, data.textColor, data.accentColor, data.glow, wordsSignature]);
+    const key = JSON.stringify([label, resolvedIcon, data.font, data.fontSize, data.textColor, data.accentColor, data.glow, wordsSignature]);
     if (lyricArtwork.has(key)) return lyricArtwork.get(key);
     const requestedSize = Number(data.fontSize) || 72;
     const maxWidth = W * 0.8;
-    const gap = parts.icon && label ? requestedSize * 0.3 : 0;
+    const gap = resolvedIcon && label ? requestedSize * 0.3 : 0;
     ctx.font = `${fontWeight()} ${requestedSize}px ${fontFamily()}`;
     const measured = ctx.measureText(label).width;
     ctx.font = `${requestedSize * 0.76}px "Segoe UI Emoji",sans-serif`;
-    const iconMeasured = parts.icon ? ctx.measureText(parts.icon).width : 0;
+    const iconMeasured = resolvedIcon ? ctx.measureText(resolvedIcon).width : 0;
     const size = requestedSize * Math.min(1, maxWidth / Math.max(1, measured + gap + iconMeasured));
     const ratio = size / requestedSize;
     const textWidth = measured * ratio, iconWidth = iconMeasured * ratio, spacing = gap * ratio;
@@ -1513,26 +1516,35 @@
     const pad = 40, height = Math.ceil(size * 2.1 + pad * 2);
 
     let wordLayout = null;
+    // 2026-11-15: Khách hàng xem video cần thấy lời bài hát hiển thị rõ ràng và chạy theo nhạc; trước đó lỗi không thấy lời do seg.words nhận khóa w/t thay vì word/start/end khiến text rỗng và wordLayout vẽ chuỗi trắng không fallback, nên sửa chuẩn hóa đa khóa (word||w||text, start??t, end) và tự động fallback sang raster cả câu nếu thiếu dữ liệu từ.
     if (Array.isArray(seg.words) && seg.words.length > 0) {
       ctx.font = `${fontWeight()} ${size}px ${fontFamily()}`;
       const spaceW = ctx.measureText(' ').width;
       let curX = 0;
-      wordLayout = seg.words.map((w) => {
-        const wordText = data.font === 'oswald' ? String(w.word || '').toLocaleUpperCase('vi-VN') : String(w.word || '');
+      const validEntries = [];
+      for (let i = 0; i < seg.words.length; i++) {
+        const w = seg.words[i];
+        const raw = w.word ?? w.w ?? w.text ?? '';
+        const wordText = data.font === 'oswald' ? String(raw).toLocaleUpperCase('vi-VN') : String(raw);
+        if (!wordText.trim()) continue;
         const wWidth = ctx.measureText(wordText).width;
-        const entry = {
+        const wStart = Number(w.start ?? w.t ?? seg.start);
+        const wEnd = Number(w.end ?? (i + 1 < seg.words.length ? (seg.words[i+1].start ?? seg.words[i+1].t) : seg.end));
+        validEntries.push({
           text: wordText,
-          start: Number(w.start),
-          end: Number(w.end),
+          start: wStart,
+          end: Math.max(wStart + 0.1, wEnd),
           x: curX,
           width: wWidth
-        };
+        });
         curX += wWidth + spaceW;
-        return entry;
-      });
-      const totalWordsW = curX > 0 ? curX - spaceW : 0;
-      for (const w of wordLayout) {
-        w.x -= totalWordsW / 2;
+      }
+      if (validEntries.length > 0) {
+        wordLayout = validEntries;
+        const totalWordsW = curX > 0 ? curX - spaceW : 0;
+        for (const w of wordLayout) {
+          w.x -= totalWordsW / 2;
+        }
       }
     }
 
@@ -1557,8 +1569,8 @@
       }
       return layer;
     }
-    const art = {label, icon:parts.icon, size, totalWidth, textWidth, iconWidth, spacing,
-      text:raster(label, textWidth, false), symbol:raster(parts.icon, iconWidth, true), wordLayout};
+    const art = {label, icon:resolvedIcon, size, totalWidth, textWidth, iconWidth, spacing,
+      text:raster(label, textWidth, false), symbol:raster(resolvedIcon, iconWidth, true), wordLayout};
     if (lyricArtwork.size > 24) lyricArtwork.clear();
     lyricArtwork.set(key, art);
     return art;
@@ -1941,7 +1953,7 @@
     persistStickers();
   }
 
-  // 2026-11-15: Khách hàng yêu cầu tựa và chữ màu trắng tinh khôi (#ffffff), khắc phục lỗi chữ bị chồng lên nhau; trước đó drawWords gom nhiều segment cùng vẽ tại baseY và dùng màu phát quang ám tím/hồng, nên chuyển sang chọn duy nhất 1 segment ưu tiên và render toàn bộ chữ màu trắng trên nền đổ bóng tương phản đen sâu sắc nét.
+  // 2026-11-15: Khách hàng phản hồi chữ bị giật giật khi hát; trước đó hiệu ứng chữ nhảy cao lift -3.5px, scale 1.07x và icon rung lắc theo beatPulse làm chữ rung giật liên tục, nên cố định baseline vững chắc, làm mượt chuyển động và làm nổi bật từ đang hát bằng hào quang trắng phát quang êm dịu không rung giật.
   function drawWords(t) {
     const sorted = sortedLyrics();
     let selected = null;
@@ -1951,7 +1963,7 @@
     for (const seg of sorted) {
       if (t >= seg.start && t < seg.end) {
         const item = renderLyricSegment(seg, null, null, t);
-        if (item && item.opacity > 0.001) {
+        if (item) {
           selected = seg;
           selectedItem = item;
           break;
@@ -1964,15 +1976,15 @@
     if (!selected) {
       for (let i = sorted.length - 1; i >= 0; i--) {
         const seg = sorted[i];
-        if (t >= seg.end && t < seg.end + 0.2) {
+        if (t >= seg.end && t < seg.end + 0.25) {
           const item = renderLyricSegment(seg, null, null, t);
-          if (item && item.opacity > 0.001) {
+          if (item) {
             selected = seg;
             selectedItem = item;
             break;
           }
         }
-        if (seg.end < t - 0.25) break;
+        if (seg.end < t - 0.3) break;
       }
     }
 
@@ -1983,9 +1995,11 @@
     const baseY = H * (data.position === 'upper' ? 0.33 : data.position === 'lower' ? 0.64 : 0.5);
 
     ctx.save();
-    ctx.translate(W * 0.5 + item.offsetX, baseY + item.offsetY);
-    ctx.scale(item.scale, item.scale);
-    ctx.globalAlpha = item.opacity;
+    const stableOffsetY = Number.isFinite(item.offsetY) ? item.offsetY * 0.2 : 0;
+    ctx.translate(W * 0.5 + (item.offsetX || 0), baseY + stableOffsetY);
+    ctx.scale(item.scale || 1, item.scale || 1);
+    const visibleOpacity = Math.max(0.85, item.opacity || 0);
+    ctx.globalAlpha = visibleOpacity;
 
     if (art.wordLayout && art.wordLayout.length > 0) {
       const textCenterOffset = -art.totalWidth / 2 + art.textWidth / 2;
@@ -2002,31 +2016,17 @@
 
         ctx.save();
         if (isCurrent) {
-          const wp = clamp((t - w.start) / Math.max(0.001, w.end - w.start));
-          const wave = Math.sin(wp * Math.PI);
-          const wordScale = 1.0 + 0.07 * wave;
-          const lift = -3.5 * wave;
-
-          ctx.translate(w.x + w.width / 2, lift);
-          ctx.scale(wordScale, wordScale);
-          ctx.translate(-(w.x + w.width / 2), 0);
-
-          // Deep contrast black shadow
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
-          ctx.shadowBlur = 12;
-          ctx.shadowOffsetY = 3;
-          ctx.fillStyle = '#000000';
-          ctx.fillText(w.text, w.x, 0);
-
-          // Luminous pure white halo
+          // Luminous aura glow around current word - rock solid baseline without vertical lift or scale jitter
           ctx.shadowColor = 'rgba(255, 255, 255, 0.95)';
-          ctx.shadowBlur = 20 + 8 * wave;
+          ctx.shadowBlur = 18;
           ctx.shadowOffsetY = 0;
           ctx.fillStyle = '#ffffff';
           ctx.fillText(w.text, w.x, 0);
 
-          // Pure white crisp core
-          ctx.shadowBlur = 4;
+          // Deep contrast shadow for ultra-crisp white core
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.95)';
+          ctx.shadowBlur = 6;
+          ctx.shadowOffsetY = 2;
           ctx.fillStyle = '#ffffff';
           ctx.fillText(w.text, w.x, 0);
         } else if (isSung) {
@@ -2038,7 +2038,7 @@
           ctx.fillText(w.text, w.x, 0);
         } else {
           // Upcoming words: soft translucent white
-          ctx.globalAlpha = item.opacity * 0.65;
+          ctx.globalAlpha = visibleOpacity * 0.72;
           ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
           ctx.shadowBlur = 6;
           ctx.shadowOffsetY = 2;
@@ -2055,17 +2055,10 @@
 
     if (art.symbol) {
       const x = art.totalWidth / 2 - art.iconWidth / 2;
-      const wave = Math.sin(t * 1.8 + Number(seg.start));
-      const floatY = wave * 3.2;
-      const tilt = Math.sin(t * 1.3) * 0.035;
-      const pulseScale = 1 + beatPulse(t) * 0.15;
-
       ctx.save();
-      ctx.translate(x, floatY);
-      ctx.rotate(tilt);
-      ctx.scale(pulseScale, pulseScale);
+      ctx.translate(x, 0);
       ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
-      ctx.shadowBlur = 10;
+      ctx.shadowBlur = 8;
       ctx.drawImage(art.symbol, -art.symbol.displayWidth / 2, -art.symbol.displayHeight / 2, art.symbol.displayWidth, art.symbol.displayHeight);
       ctx.restore();
     }
