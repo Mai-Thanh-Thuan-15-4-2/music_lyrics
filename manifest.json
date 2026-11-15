@@ -1,0 +1,15 @@
+{
+  "name": "Nebula Lyric Studio",
+  "short_name": "Nebula Studio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05060f",
+  "theme_color": "#05060f",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

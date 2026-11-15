@@ -1,0 +1,1668 @@
+{
+  "version": 3,
+  "songTitle": "Không Môn Đăng Hộ Đối - Cha Cha Cha Remix",
+  "artist": "Gold Remix",
+  "weather": "petal",
+  "density": 8,
+  "dim": 14,
+  "font": "modern",
+  "fontSize": 76,
+  "glow": 24,
+  "position": "center",
+  "textColor": "#fff5fa",
+  "accentColor": "#f2a6d5",
+  "beatEffect": null,
+  "lyrics": [
+    {
+      "id": "sunset-1",
+      "start": 29.92,
+      "end": 32.26,
+      "text": "Có con chim trên cành",
+      "icon": "🕊️",
+      "words": [
+        {
+          "word": "Có",
+          "start": 30.0,
+          "end": 30.48
+        },
+        {
+          "word": "con",
+          "start": 30.48,
+          "end": 30.88
+        },
+        {
+          "word": "chim",
+          "start": 30.88,
+          "end": 31.18
+        },
+        {
+          "word": "trên",
+          "start": 31.18,
+          "end": 31.58
+        },
+        {
+          "word": "cành,",
+          "start": 31.58,
+          "end": 32.18
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-2",
+      "start": 32.26,
+      "end": 36.02,
+      "text": "sao hôm nay vang lời buồn tênh",
+      "icon": "🥀",
+      "words": [
+        {
+          "word": "sao",
+          "start": 32.34,
+          "end": 33.58
+        },
+        {
+          "word": "hôm",
+          "start": 33.58,
+          "end": 33.86
+        },
+        {
+          "word": "nay",
+          "start": 33.86,
+          "end": 34.08
+        },
+        {
+          "word": "vang",
+          "start": 34.08,
+          "end": 34.46
+        },
+        {
+          "word": "lời",
+          "start": 34.46,
+          "end": 34.9
+        },
+        {
+          "word": "buồn",
+          "start": 34.9,
+          "end": 35.4
+        },
+        {
+          "word": "tênh",
+          "start": 35.4,
+          "end": 36.1
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-3",
+      "start": 36.02,
+      "end": 39.88,
+      "text": "Sao chim không gian rộng đôi canh",
+      "icon": "🕊️",
+      "words": [
+        {
+          "word": "Sao",
+          "start": 36.1,
+          "end": 37.26
+        },
+        {
+          "word": "chim",
+          "start": 37.26,
+          "end": 37.46
+        },
+        {
+          "word": "không",
+          "start": 37.46,
+          "end": 37.68
+        },
+        {
+          "word": "gian",
+          "start": 37.68,
+          "end": 38.06
+        },
+        {
+          "word": "rộng",
+          "start": 38.06,
+          "end": 38.54
+        },
+        {
+          "word": "đôi",
+          "start": 38.54,
+          "end": 39.04
+        },
+        {
+          "word": "canh,",
+          "start": 39.04,
+          "end": 39.72
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-4",
+      "start": 40.64,
+      "end": 43.06,
+      "text": "rồi bay cao lên tận trời xanh",
+      "icon": "☁️",
+      "words": [
+        {
+          "word": "rồi",
+          "start": 40.72,
+          "end": 40.88
+        },
+        {
+          "word": "bay",
+          "start": 40.88,
+          "end": 41.1
+        },
+        {
+          "word": "cao",
+          "start": 41.1,
+          "end": 41.58
+        },
+        {
+          "word": "lên",
+          "start": 41.58,
+          "end": 41.92
+        },
+        {
+          "word": "tận",
+          "start": 41.92,
+          "end": 42.26
+        },
+        {
+          "word": "trời",
+          "start": 42.26,
+          "end": 42.62
+        },
+        {
+          "word": "xanh",
+          "start": 42.62,
+          "end": 43.14
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-5",
+      "start": 43.06,
+      "end": 47.16,
+      "text": "Vì hôm nay tôi đang buồn",
+      "icon": "🥀",
+      "words": [
+        {
+          "word": "Vì",
+          "start": 43.14,
+          "end": 44.8
+        },
+        {
+          "word": "hôm",
+          "start": 44.8,
+          "end": 45.06
+        },
+        {
+          "word": "nay",
+          "start": 45.06,
+          "end": 45.34
+        },
+        {
+          "word": "tôi",
+          "start": 45.34,
+          "end": 45.8
+        },
+        {
+          "word": "đang",
+          "start": 45.8,
+          "end": 46.28
+        },
+        {
+          "word": "buồn,",
+          "start": 46.28,
+          "end": 47.0
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-6",
+      "start": 47.82,
+      "end": 50.4,
+      "text": "với những lời tôi không muốn",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "với",
+          "start": 47.9,
+          "end": 48.42
+        },
+        {
+          "word": "những",
+          "start": 48.42,
+          "end": 48.64
+        },
+        {
+          "word": "lời",
+          "start": 48.64,
+          "end": 49.0
+        },
+        {
+          "word": "tôi",
+          "start": 49.0,
+          "end": 49.42
+        },
+        {
+          "word": "không",
+          "start": 49.42,
+          "end": 49.86
+        },
+        {
+          "word": "muốn",
+          "start": 49.86,
+          "end": 50.48
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-7",
+      "start": 50.4,
+      "end": 54.44,
+      "text": "Mà ai mơ lời nói ra",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Mà",
+          "start": 50.48,
+          "end": 52.1
+        },
+        {
+          "word": "ai",
+          "start": 52.1,
+          "end": 52.46
+        },
+        {
+          "word": "mơ",
+          "start": 52.46,
+          "end": 52.76
+        },
+        {
+          "word": "lời",
+          "start": 52.76,
+          "end": 53.14
+        },
+        {
+          "word": "nói",
+          "start": 53.14,
+          "end": 53.62
+        },
+        {
+          "word": "ra,",
+          "start": 53.62,
+          "end": 54.28
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-8",
+      "start": 54.72,
+      "end": 56.64,
+      "text": "khiến nước mắt tùn",
+      "icon": "😢",
+      "words": [
+        {
+          "word": "khiến",
+          "start": 54.8,
+          "end": 55.08
+        },
+        {
+          "word": "nước",
+          "start": 55.08,
+          "end": 55.34
+        },
+        {
+          "word": "mắt",
+          "start": 55.34,
+          "end": 55.76
+        },
+        {
+          "word": "tùn",
+          "start": 55.76,
+          "end": 56.48
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-9",
+      "start": 58.44,
+      "end": 61.36,
+      "text": "Tình cảm môi sao là kỳ",
+      "icon": "💜",
+      "words": [
+        {
+          "word": "Tình",
+          "start": 58.52,
+          "end": 59.36
+        },
+        {
+          "word": "cảm",
+          "start": 59.36,
+          "end": 59.7
+        },
+        {
+          "word": "môi",
+          "start": 59.7,
+          "end": 60.16
+        },
+        {
+          "word": "sao",
+          "start": 60.16,
+          "end": 60.52
+        },
+        {
+          "word": "là",
+          "start": 60.52,
+          "end": 60.76
+        },
+        {
+          "word": "kỳ",
+          "start": 60.76,
+          "end": 61.44
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-10",
+      "start": 61.36,
+      "end": 65.06,
+      "text": "Ta chẳng thể nói trước thứ gì",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Ta",
+          "start": 61.44,
+          "end": 62.56
+        },
+        {
+          "word": "chẳng",
+          "start": 62.56,
+          "end": 63.02
+        },
+        {
+          "word": "thể",
+          "start": 63.02,
+          "end": 63.24
+        },
+        {
+          "word": "nói",
+          "start": 63.24,
+          "end": 63.56
+        },
+        {
+          "word": "trước",
+          "start": 63.56,
+          "end": 63.98
+        },
+        {
+          "word": "thứ",
+          "start": 63.98,
+          "end": 64.46
+        },
+        {
+          "word": "gì",
+          "start": 64.46,
+          "end": 65.14
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-11",
+      "start": 65.06,
+      "end": 68.5,
+      "text": "Yêu nhau mấy mùa tương vị",
+      "icon": "💜",
+      "words": [
+        {
+          "word": "Yêu",
+          "start": 65.14,
+          "end": 66.68
+        },
+        {
+          "word": "nhau",
+          "start": 66.68,
+          "end": 66.92
+        },
+        {
+          "word": "mấy",
+          "start": 66.92,
+          "end": 67.2
+        },
+        {
+          "word": "mùa",
+          "start": 67.2,
+          "end": 67.8
+        },
+        {
+          "word": "tương",
+          "start": 67.8,
+          "end": 68.2
+        },
+        {
+          "word": "vị",
+          "start": 68.2,
+          "end": 68.58
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-12",
+      "start": 68.5,
+      "end": 72.5,
+      "text": "Rồi hôm nay ta đành chia ly",
+      "icon": "💔",
+      "words": [
+        {
+          "word": "Rồi",
+          "start": 68.58,
+          "end": 70.08
+        },
+        {
+          "word": "hôm",
+          "start": 70.08,
+          "end": 70.32
+        },
+        {
+          "word": "nay",
+          "start": 70.32,
+          "end": 70.6
+        },
+        {
+          "word": "ta",
+          "start": 70.6,
+          "end": 71.06
+        },
+        {
+          "word": "đành",
+          "start": 71.06,
+          "end": 71.44
+        },
+        {
+          "word": "chia",
+          "start": 71.44,
+          "end": 71.78
+        },
+        {
+          "word": "ly",
+          "start": 71.78,
+          "end": 72.34
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-13",
+      "start": 73.26,
+      "end": 75.92,
+      "text": "Đang cầu mong xuân xe",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Đang",
+          "start": 73.34,
+          "end": 74.18
+        },
+        {
+          "word": "cầu",
+          "start": 74.18,
+          "end": 74.56
+        },
+        {
+          "word": "mong",
+          "start": 74.56,
+          "end": 74.94
+        },
+        {
+          "word": "xuân",
+          "start": 74.94,
+          "end": 75.44
+        },
+        {
+          "word": "xe",
+          "start": 75.44,
+          "end": 76.0
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-14",
+      "start": 75.92,
+      "end": 79.88,
+      "text": "Nhưng gặp chắc chơ thơ cha mẹ",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Nhưng",
+          "start": 76.0,
+          "end": 76.9
+        },
+        {
+          "word": "gặp",
+          "start": 76.9,
+          "end": 77.22
+        },
+        {
+          "word": "chắc",
+          "start": 77.22,
+          "end": 77.58
+        },
+        {
+          "word": "chơ",
+          "start": 77.58,
+          "end": 78.0
+        },
+        {
+          "word": "thơ",
+          "start": 78.0,
+          "end": 78.48
+        },
+        {
+          "word": "cha",
+          "start": 78.48,
+          "end": 78.96
+        },
+        {
+          "word": "mẹ",
+          "start": 78.96,
+          "end": 79.72
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-15",
+      "start": 80.74,
+      "end": 83.1,
+      "text": "Nói là anh không xứng",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Nói",
+          "start": 80.82,
+          "end": 81.66
+        },
+        {
+          "word": "là",
+          "start": 81.66,
+          "end": 81.92
+        },
+        {
+          "word": "anh",
+          "start": 81.92,
+          "end": 82.24
+        },
+        {
+          "word": "không",
+          "start": 82.24,
+          "end": 82.64
+        },
+        {
+          "word": "xứng",
+          "start": 82.64,
+          "end": 83.18
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-16",
+      "start": 83.1,
+      "end": 86.36,
+      "text": "Xin về đừng ghé",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Xin",
+          "start": 83.18,
+          "end": 84.12
+        },
+        {
+          "word": "về",
+          "start": 84.12,
+          "end": 84.52
+        },
+        {
+          "word": "đừng",
+          "start": 84.52,
+          "end": 85.0
+        },
+        {
+          "word": "ghé",
+          "start": 85.0,
+          "end": 86.2
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-17",
+      "start": 86.66,
+      "end": 90.0,
+      "text": "Tại hai ta không muốn đăng hô",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Tại",
+          "start": 86.74,
+          "end": 87.56
+        },
+        {
+          "word": "hai",
+          "start": 87.56,
+          "end": 87.86
+        },
+        {
+          "word": "ta",
+          "start": 87.86,
+          "end": 88.34
+        },
+        {
+          "word": "không",
+          "start": 88.34,
+          "end": 88.74
+        },
+        {
+          "word": "muốn",
+          "start": 88.74,
+          "end": 89.12
+        },
+        {
+          "word": "đăng",
+          "start": 89.12,
+          "end": 89.56
+        },
+        {
+          "word": "hô",
+          "start": 89.56,
+          "end": 90.08
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-18",
+      "start": 90.0,
+      "end": 90.92,
+      "text": "đôi",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "đôi",
+          "start": 90.08,
+          "end": 91.0
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-19",
+      "start": 90.92,
+      "end": 94.1,
+      "text": "Nên giờ đây chẳng thể sánh đôi",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Nên",
+          "start": 91.0,
+          "end": 91.58
+        },
+        {
+          "word": "giờ",
+          "start": 91.58,
+          "end": 91.9
+        },
+        {
+          "word": "đây",
+          "start": 91.9,
+          "end": 92.24
+        },
+        {
+          "word": "chẳng",
+          "start": 92.24,
+          "end": 92.78
+        },
+        {
+          "word": "thể",
+          "start": 92.78,
+          "end": 93.14
+        },
+        {
+          "word": "sánh",
+          "start": 93.14,
+          "end": 93.62
+        },
+        {
+          "word": "đôi",
+          "start": 93.62,
+          "end": 94.18
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-20",
+      "start": 94.1,
+      "end": 97.24,
+      "text": "Tại cuộc đời anh vẫn còn nối",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Tại",
+          "start": 94.18,
+          "end": 95.1
+        },
+        {
+          "word": "cuộc",
+          "start": 95.1,
+          "end": 95.34
+        },
+        {
+          "word": "đời",
+          "start": 95.34,
+          "end": 95.8
+        },
+        {
+          "word": "anh",
+          "start": 95.8,
+          "end": 96.0
+        },
+        {
+          "word": "vẫn",
+          "start": 96.0,
+          "end": 96.28
+        },
+        {
+          "word": "còn",
+          "start": 96.28,
+          "end": 96.86
+        },
+        {
+          "word": "nối",
+          "start": 96.86,
+          "end": 97.32
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-21",
+      "start": 97.24,
+      "end": 97.86,
+      "text": "trôi",
+      "icon": "☁️",
+      "words": [
+        {
+          "word": "trôi",
+          "start": 97.32,
+          "end": 97.94
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-22",
+      "start": 97.86,
+      "end": 100.88,
+      "text": "Thì hỏi làm sao ai mà mơ",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Thì",
+          "start": 97.94,
+          "end": 98.76
+        },
+        {
+          "word": "hỏi",
+          "start": 98.76,
+          "end": 99.14
+        },
+        {
+          "word": "làm",
+          "start": 99.14,
+          "end": 99.36
+        },
+        {
+          "word": "sao",
+          "start": 99.36,
+          "end": 99.76
+        },
+        {
+          "word": "ai",
+          "start": 99.76,
+          "end": 100.28
+        },
+        {
+          "word": "mà",
+          "start": 100.28,
+          "end": 100.56
+        },
+        {
+          "word": "mơ",
+          "start": 100.56,
+          "end": 100.96
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-23",
+      "start": 100.88,
+      "end": 101.74,
+      "text": "lối",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "lối",
+          "start": 100.96,
+          "end": 101.82
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-24",
+      "start": 101.74,
+      "end": 104.06,
+      "text": "Người là anh nhành lãn hoa kia",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Người",
+          "start": 101.82,
+          "end": 102.4
+        },
+        {
+          "word": "là",
+          "start": 102.4,
+          "end": 102.66
+        },
+        {
+          "word": "anh",
+          "start": 102.66,
+          "end": 102.86
+        },
+        {
+          "word": "nhành",
+          "start": 102.86,
+          "end": 103.06
+        },
+        {
+          "word": "lãn",
+          "start": 103.06,
+          "end": 103.3
+        },
+        {
+          "word": "hoa",
+          "start": 103.3,
+          "end": 103.68
+        },
+        {
+          "word": "kia",
+          "start": 103.68,
+          "end": 104.14
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-25",
+      "start": 104.06,
+      "end": 105.06,
+      "text": "nắm canh",
+      "icon": "🍃",
+      "words": [
+        {
+          "word": "nắm",
+          "start": 104.14,
+          "end": 104.56
+        },
+        {
+          "word": "canh",
+          "start": 104.56,
+          "end": 105.14
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-26",
+      "start": 105.06,
+      "end": 107.7,
+      "text": "Còn anh là anh anh có khô",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Còn",
+          "start": 105.14,
+          "end": 106.08
+        },
+        {
+          "word": "anh",
+          "start": 106.08,
+          "end": 106.34
+        },
+        {
+          "word": "là",
+          "start": 106.34,
+          "end": 106.66
+        },
+        {
+          "word": "anh",
+          "start": 106.66,
+          "end": 106.84
+        },
+        {
+          "word": "anh",
+          "start": 106.84,
+          "end": 106.96
+        },
+        {
+          "word": "có",
+          "start": 106.96,
+          "end": 107.34
+        },
+        {
+          "word": "khô",
+          "start": 107.34,
+          "end": 107.78
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-27",
+      "start": 107.7,
+      "end": 108.6,
+      "text": "bất hành",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "bất",
+          "start": 107.78,
+          "end": 108.12
+        },
+        {
+          "word": "hành",
+          "start": 108.12,
+          "end": 108.68
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-28",
+      "start": 108.6,
+      "end": 111.3,
+      "text": "Người thì tính sống trong lành",
+      "icon": "💜",
+      "words": [
+        {
+          "word": "Người",
+          "start": 108.68,
+          "end": 109.66
+        },
+        {
+          "word": "thì",
+          "start": 109.66,
+          "end": 109.92
+        },
+        {
+          "word": "tính",
+          "start": 109.92,
+          "end": 110.3
+        },
+        {
+          "word": "sống",
+          "start": 110.3,
+          "end": 110.54
+        },
+        {
+          "word": "trong",
+          "start": 110.54,
+          "end": 110.84
+        },
+        {
+          "word": "lành",
+          "start": 110.84,
+          "end": 111.38
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-29",
+      "start": 111.3,
+      "end": 114.42,
+      "text": "Còn anh vương đất khô buồn tan",
+      "icon": "🥀",
+      "words": [
+        {
+          "word": "Còn",
+          "start": 111.38,
+          "end": 111.98
+        },
+        {
+          "word": "anh",
+          "start": 111.98,
+          "end": 112.14
+        },
+        {
+          "word": "vương",
+          "start": 112.14,
+          "end": 112.56
+        },
+        {
+          "word": "đất",
+          "start": 112.56,
+          "end": 112.82
+        },
+        {
+          "word": "khô",
+          "start": 112.82,
+          "end": 113.24
+        },
+        {
+          "word": "buồn",
+          "start": 113.24,
+          "end": 113.94
+        },
+        {
+          "word": "tan",
+          "start": 113.94,
+          "end": 114.26
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-30",
+      "start": 116.1,
+      "end": 118.06,
+      "text": "Một người là hoa",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Một",
+          "start": 116.18,
+          "end": 116.94
+        },
+        {
+          "word": "người",
+          "start": 116.94,
+          "end": 117.28
+        },
+        {
+          "word": "là",
+          "start": 117.28,
+          "end": 117.58
+        },
+        {
+          "word": "hoa,",
+          "start": 117.58,
+          "end": 118.0
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-31",
+      "start": 118.06,
+      "end": 119.4,
+      "text": "một người là có",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "một",
+          "start": 118.14,
+          "end": 118.28
+        },
+        {
+          "word": "người",
+          "start": 118.28,
+          "end": 118.6
+        },
+        {
+          "word": "là",
+          "start": 118.6,
+          "end": 119.0
+        },
+        {
+          "word": "có",
+          "start": 119.0,
+          "end": 119.48
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-32",
+      "start": 119.4,
+      "end": 122.58,
+      "text": "Biết lấy gì ra làm tin với",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Biết",
+          "start": 119.48,
+          "end": 120.56
+        },
+        {
+          "word": "lấy",
+          "start": 120.56,
+          "end": 120.88
+        },
+        {
+          "word": "gì",
+          "start": 120.88,
+          "end": 121.2
+        },
+        {
+          "word": "ra",
+          "start": 121.2,
+          "end": 121.46
+        },
+        {
+          "word": "làm",
+          "start": 121.46,
+          "end": 121.86
+        },
+        {
+          "word": "tin",
+          "start": 121.86,
+          "end": 122.16
+        },
+        {
+          "word": "với",
+          "start": 122.16,
+          "end": 122.66
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-33",
+      "start": 122.58,
+      "end": 123.1,
+      "text": "họ",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "họ",
+          "start": 122.66,
+          "end": 123.18
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-34",
+      "start": 123.1,
+      "end": 126.4,
+      "text": "Nhiều lần bày to họ đâu thèm",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Nhiều",
+          "start": 123.18,
+          "end": 124.22
+        },
+        {
+          "word": "lần",
+          "start": 124.22,
+          "end": 124.5
+        },
+        {
+          "word": "bày",
+          "start": 124.5,
+          "end": 124.86
+        },
+        {
+          "word": "to",
+          "start": 124.86,
+          "end": 125.14
+        },
+        {
+          "word": "họ",
+          "start": 125.14,
+          "end": 125.54
+        },
+        {
+          "word": "đâu",
+          "start": 125.54,
+          "end": 125.88
+        },
+        {
+          "word": "thèm",
+          "start": 125.88,
+          "end": 126.48
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-35",
+      "start": 126.4,
+      "end": 126.84,
+      "text": "ngó",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "ngó",
+          "start": 126.48,
+          "end": 126.92
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-36",
+      "start": 126.84,
+      "end": 129.9,
+      "text": "Tranh lòng đau đớn hai từ không",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Tranh",
+          "start": 126.92,
+          "end": 127.82
+        },
+        {
+          "word": "lòng",
+          "start": 127.82,
+          "end": 128.2
+        },
+        {
+          "word": "đau",
+          "start": 128.2,
+          "end": 128.52
+        },
+        {
+          "word": "đớn",
+          "start": 128.52,
+          "end": 128.98
+        },
+        {
+          "word": "hai",
+          "start": 128.98,
+          "end": 129.32
+        },
+        {
+          "word": "từ",
+          "start": 129.32,
+          "end": 129.6
+        },
+        {
+          "word": "không",
+          "start": 129.6,
+          "end": 129.98
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-37",
+      "start": 129.9,
+      "end": 130.26,
+      "text": "cho",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "cho",
+          "start": 129.98,
+          "end": 130.34
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-38",
+      "start": 130.26,
+      "end": 133.52,
+      "text": "Người ta hỏi qua về chuyện xinh",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Người",
+          "start": 130.34,
+          "end": 131.46
+        },
+        {
+          "word": "ta",
+          "start": 131.46,
+          "end": 131.76
+        },
+        {
+          "word": "hỏi",
+          "start": 131.76,
+          "end": 132.12
+        },
+        {
+          "word": "qua",
+          "start": 132.12,
+          "end": 132.34
+        },
+        {
+          "word": "về",
+          "start": 132.34,
+          "end": 132.76
+        },
+        {
+          "word": "chuyện",
+          "start": 132.76,
+          "end": 133.2
+        },
+        {
+          "word": "xinh",
+          "start": 133.2,
+          "end": 133.6
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-39",
+      "start": 133.52,
+      "end": 134.18,
+      "text": "lễ",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "lễ",
+          "start": 133.6,
+          "end": 134.26
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-40",
+      "start": 134.18,
+      "end": 137.72,
+      "text": "Mấm cố cao làm sao chính tề",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Mấm",
+          "start": 134.26,
+          "end": 135.28
+        },
+        {
+          "word": "cố",
+          "start": 135.28,
+          "end": 135.66
+        },
+        {
+          "word": "cao",
+          "start": 135.66,
+          "end": 136.2
+        },
+        {
+          "word": "làm",
+          "start": 136.2,
+          "end": 136.4
+        },
+        {
+          "word": "sao",
+          "start": 136.4,
+          "end": 136.78
+        },
+        {
+          "word": "chính",
+          "start": 136.78,
+          "end": 137.16
+        },
+        {
+          "word": "tề",
+          "start": 137.16,
+          "end": 137.8
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-41",
+      "start": 137.72,
+      "end": 140.74,
+      "text": "Phần mình hèn thấp rơi vào thật",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Phần",
+          "start": 137.8,
+          "end": 138.7
+        },
+        {
+          "word": "mình",
+          "start": 138.7,
+          "end": 138.98
+        },
+        {
+          "word": "hèn",
+          "start": 138.98,
+          "end": 139.38
+        },
+        {
+          "word": "thấp",
+          "start": 139.38,
+          "end": 139.68
+        },
+        {
+          "word": "rơi",
+          "start": 139.68,
+          "end": 140.22
+        },
+        {
+          "word": "vào",
+          "start": 140.22,
+          "end": 140.52
+        },
+        {
+          "word": "thật",
+          "start": 140.52,
+          "end": 140.82
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-42",
+      "start": 140.74,
+      "end": 141.34,
+      "text": "thế",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "thế",
+          "start": 140.82,
+          "end": 141.42
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    },
+    {
+      "id": "sunset-43",
+      "start": 141.34,
+      "end": 144.06,
+      "text": "Lấy gì để ghê",
+      "icon": "✨",
+      "words": [
+        {
+          "word": "Lấy",
+          "start": 141.42,
+          "end": 142.46
+        },
+        {
+          "word": "gì",
+          "start": 142.46,
+          "end": 142.7
+        },
+        {
+          "word": "để",
+          "start": 142.7,
+          "end": 143.08
+        },
+        {
+          "word": "ghê",
+          "start": 143.08,
+          "end": 143.9
+        }
+      ],
+      "mode": "soft",
+      "timingIn": 0.45,
+      "timingMid": 2.2,
+      "timingOut": 0.45
+    }
+  ],
+  "textOverlays": [],
+  "_ytUrl": "https://youtu.be/Si-IWgFmtXo",
+  "media": {
+    "audio": "exports/sunset-remix/khong-mon-dang-ho-doi-remix.m4a",
+    "background": "assets/sunset-lavender-rose.png",
+    "backgroundName": "Sunset - Lavender Rose"
+  },
+  "transcription": {
+    "source": "local audio transcription",
+    "reviewed": false,
+    "processedThrough": 224.52
+  }
+}

@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Cache & virtual env
+.studio_cache/*
+!.studio_cache/workspace_state.json
+
+# Exported video renders
+exports/*.mp4
+
+# Temporary logs & zip packages
+*.log
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db

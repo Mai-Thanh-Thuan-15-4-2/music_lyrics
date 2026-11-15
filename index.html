@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#05060f" />
+  <title>NEBULA — Lyric Motion Studio</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="logo.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="cosmic-backdrop" aria-hidden="true">
+  <div class="nebula-orb orb-violet"></div>
+  <div class="nebula-orb orb-cyan"></div>
+  <div class="nebula-orb orb-rose"></div>
+</div>
+
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Nebula Lyric Studio">
+      <img src="logo.svg" alt="Nebula Studio Logo" class="brand-logo" width="42" height="42" />
+      <div class="brand-text">
+        <div class="brandname">NEBULA<span class="brand-dot">.</span>STUDIO</div>
+        <div class="brandmini">GALAXY LYRIC &amp; MOTION WORKSPACE</div>
+      </div>
+    </a>
+
+    <div class="top-actions"><button class="btn btn-ghost" id="undoBtn" type="button" title="Hoàn tác (Ctrl+Z)" disabled>↶ Undo</button><button class="btn btn-ghost" id="redoBtn" type="button" title="Làm lại (Ctrl+Shift+Z / Ctrl+Y)" disabled>↷ Redo</button>
+      <div class="status-pill" id="engineBadge" title="Trạng thái kết nối xử lý âm thanh">
+        <span class="status-dot" id="engineDot"></span>
+        <span id="engineText">Sẵn sàng</span>
+      </div>
+      <button class="btn btn-ghost" id="newProjectBtn" type="button">Dự án mới</button>
+      <button class="btn btn-ghost" id="loadProjectBtn" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        Mở dự án
+      </button>
+      <button class="btn" id="saveProjectBtn" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Lưu JSON
+      </button>
+      <button class="btn btn-ghost" id="agentPackageBtn" type="button">Gói agent</button>
+      <button class="btn btn-ghost" id="libraryBtn" type="button">Phiên bản</button>
+      <button class="btn btn-primary" id="exportBtn" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        <span>Xuất video WebM</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="workspace">
+    <main class="left-stack">
+      <div class="stage-card">
+        <div class="section-header stage-header">
+          <div class="stage-title-group">
+            <h1 class="section-title">Khung cảnh xem trước</h1>
+            <span class="tag">16:9 · 1600 × 900 HD</span>
+          </div>
+          <span class="preview-badge" id="previewStatus">LIVE PREVIEW</span>
+        </div>
+
+        <div class="preview-shell">
+          <div class="preview-outer">
+            <canvas id="scene" width="1600" height="900" aria-label="Khung xem trước hoạt ảnh lời bài hát"></canvas>
+            <button type="button" class="preview-play" id="overlayPlay" title="Phát / Tạm dừng">▶</button>
+            <div class="preview-tip">Click khung hình để Phát / Tạm dừng · Kéo thả ảnh &amp; nhạc trực tiếp</div>
+          </div>
+        </div>
+
+        <div class="transport">
+          <div class="time-line">
+            <b id="currentTimeLabel">00:00.00</b>
+            <span id="durationLabel">00:20.00</span>
+          </div>
+          <input class="seek" type="range" id="seek" min="0" max="20" value="0" step="0.01" aria-label="Tua thời gian" />
+          <canvas class="waveform" id="waveform" height="42" aria-label="Dạng sóng âm thanh"></canvas>
+          <div class="transport-bottom">
+            <div class="player-buttons">
+              <button class="small-text-btn" id="prevBtn" type="button" title="Về câu trước">⏮</button>
+              <button class="play-button" id="playBtn" type="button" aria-label="Phát">▶</button>
+              <button class="small-text-btn" id="nextBtn" type="button" title="Đến câu tiếp">⏭</button>
+            </div>
+            <div class="player-meta">
+              <div class="music-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              </div>
+              <div class="meta-copy">
+                <div class="meta-title" id="musicTitle">Chưa chọn nhạc · Chế độ xem thử</div>
+                <div class="meta-sub" id="musicSub">Chọn nhạc hoặc dán link YouTube ở cột phải</div>
+              </div>
+              <div class="music-level paused" id="musicBars"><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dual-sections">
+        <section class="section section-pad">
+          <div class="section-header">
+            <h2 class="section-title">Không gian &amp; hạt chuyển động</h2>
+            <button class="btn btn-small sunset-preset" id="sunsetPresetBtn" type="button">Hoàng hôn tím hồng</button>
+          </div>
+          <div class="weather-grid">
+            <button class="weather" type="button" data-weather="none">
+              <span class="weather-icon">⊘</span>
+              <span>Không dùng</span>
+            </button>
+            <button class="weather selected" type="button" data-weather="galaxy">
+              <span class="weather-icon">🌌</span>
+              <span>Ngân hà</span>
+            </button>
+            <button class="weather" type="button" data-weather="sun">
+              <span class="weather-icon">☀️</span>
+              <span>Nắng chiều</span>
+            </button>
+            <button class="weather" type="button" data-weather="snow">
+              <span class="weather-icon">❄️</span>
+              <span>Tuyết rơi</span>
+            </button>
+            <button class="weather" type="button" data-weather="rain">
+              <span class="weather-icon">🌧️</span>
+              <span>Mưa đêm</span>
+            </button>
+            <button class="weather" type="button" data-weather="petal">
+              <span class="weather-icon">🌸</span>
+              <span>Hoa đào</span>
+            </button>
+          </div>
+          <div class="controls-row">
+            <div class="control">
+              <div class="control-head">
+                <span>Mật độ hạt</span>
+                <strong id="densityVal">65%</strong>
+              </div>
+              <input class="range" id="density" type="range" min="0" max="100" value="65" />
+            </div>
+            <div class="control">
+              <div class="control-head">
+                <span>Độ tối nền</span>
+                <strong id="dimVal">38%</strong>
+              </div>
+              <input class="range" id="dim" type="range" min="0" max="85" value="38" />
+            </div>
+          </div>
+          <div class="beat-settings">
+            <div class="beat-settings-head"><label><input id="beatEnabled" type="checkbox" /> Nhịp theo nhạc</label><span id="beatBpm">Chưa phân tích nhạc</span></div>
+            <div class="control-head"><label for="beatAmount">Độ mạnh nhịp</label><strong id="beatAmountVal">80%</strong></div>
+            <input id="beatAmount" class="range" type="range" min="0" max="100" value="80" />
+            <label class="intro-toggle"><input id="introEnabled" type="checkbox" /> Mở đầu tên bài hát</label>
+          </div>
+        </section>
+
+        <section class="section section-pad">
+          <div class="section-header">
+            <h2 class="section-title">Typography &amp; ánh sáng chữ</h2>
+            <span class="section-hint">TEXT STYLE</span>
+          </div>
+          <div class="style-grid">
+            <div>
+              <label class="field-label" for="fontSelect" style="margin-top:0">Phông chữ</label>
+              <select id="fontSelect" class="select">
+                <option value="poetic">Lora · Thanh nhẹ</option>
+                <option value="oswald">Oswald Bold · Cao &amp; hiện đại</option>
+                <option value="vietnam">Be Vietnam Pro · Đậm rõ</option>
+                <option value="elegant">Playfair · Cổ điển</option>
+                <option value="modern">DM Sans · Tinh gọn</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="positionSelect" style="margin-top:0">Vị trí hiển thị</label>
+              <select id="positionSelect" class="select">
+                <option value="center">Chính giữa khung</option>
+                <option value="lower">Phần dưới (Cinema)</option>
+                <option value="upper">Phần trên</option>
+              </select>
+            </div>
+          </div>
+          <label class="field-label" for="directionSelect">Hướng chuyển động chữ</label>
+          <select id="directionSelect" class="select" title="Áp dụng cho chuyển động dọc của lời hát">
+            <option value="up">Dưới lên</option>
+            <option value="down">Trên xuống</option>
+          </select>
+          <div class="controls-row" style="margin-top:14px">
+            <div class="control">
+              <div class="control-head">
+                <span>Cỡ chữ</span>
+                <strong id="fontSizeVal">84 px</strong>
+              </div>
+              <input class="range" id="fontSize" type="range" min="38" max="116" value="84" />
+            </div>
+            <div class="control">
+              <div class="control-head">
+                <span>Quầng sáng (Glow)</span>
+                <strong id="glowVal">68%</strong>
+              </div>
+              <input class="range" id="glow" type="range" min="0" max="100" value="68" />
+            </div>
+          </div>
+          <div class="style-grid" style="margin-top:13px">
+            <label class="color-row">Màu chữ chính <input type="color" class="mini-color" id="textColor" value="#f5f7ff" /></label>
+            <label class="color-row">Màu hào quang <input type="color" class="mini-color" id="accentColor" value="#a78bfa" /></label>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <aside class="right-stack">
+      <section class="section lyrics-section">
+        <div class="lyrics-header">
+          <h2 class="section-title">Đoạn lời <span class="count" id="lyricCount">03 đoạn</span></h2>
+          <button class="btn btn-small" id="splitLyricsBtn" type="button" title="Tách theo dấu câu hoặc xuống dòng; giữ nguyên cụm từ và tự co chữ vừa một dòng">Tách câu 1 dòng</button>
+          <button class="btn btn-small" id="importLrcBtn" type="button">Nhập LRC</button>
+        </div>
+
+        <div class="lyrics-scrubber-bar">
+          <div class="scrubber-top">
+            <div class="scrubber-btns">
+              <button type="button" class="mini-scrubber-btn" id="sideRewBtn" title="Lùi 2 giây để nghe lại">↺ -2s</button>
+              <button type="button" class="mini-scrubber-play" id="sidePlayBtn" title="Phát / Tạm dừng nhạc">▶ Phát</button>
+              <button type="button" class="mini-scrubber-btn" id="sideFwdBtn" title="Tiến 2 giây">+2s ↻</button>
+            </div>
+            <div class="scrubber-time">
+              <b id="sideCurrentTime">00:00.00</b> / <span id="sideDuration">00:20.00</span>
+            </div>
+          </div>
+          <div class="scrubber-track-wrap">
+            <div class="scrubber-segments" id="scrubberSegments" aria-hidden="true"></div>
+            <input
+              type="range"
+              class="side-seek"
+              id="sideSeek"
+              min="0"
+              max="20"
+              value="0"
+              step="0.01"
+              aria-label="Thanh tua nhanh để chép lời"
+            />
+          </div>
+        </div>
+
+        <div class="lyric-pagination-bar">
+          <div class="lyric-pages" id="lyricPagination" role="tablist" aria-label="Phân trang đoạn lời"></div>
+          <div class="page-insert-group" role="group" aria-label="Chèn đoạn lời">
+            <button class="page-add-btn" id="insertBeforeBtn" type="button" title="Chèn câu mới vào TRƯỚC câu đang chọn (đẩy các câu sau lên)">+ Trước</button>
+            <button class="page-add-btn" id="insertAfterBtn" type="button" title="Chèn câu mới vào SAU câu đang chọn (chèn vào giữa)">+ Sau</button>
+            <button class="page-add-btn" id="addLyricBtn" type="button" title="Thêm câu mới vào cuối danh sách">+ Cuối</button>
+          </div>
+        </div>
+
+        <div class="lyrics-list" id="lyricList"></div>
+
+        <div class="lyrics-bottom">
+          <span class="helper">LRC / Timeline</span>
+          <button class="text-link" id="resetDemoBtn" type="button">Đặt lại mẫu</button>
+        </div>
+      </section>
+
+      <section class="section section-pad">
+        <div class="section-header">
+          <h2 class="section-title">Nguồn nhạc &amp; hình nền</h2>
+          <span class="section-hint">MEDIA</span>
+        </div>
+
+        <div class="yt-import-box">
+          <label class="yt-label" for="ytUrlInput">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#ff4d6d"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            YouTube Audio
+          </label>
+          <div class="yt-input-row">
+            <input
+              type="url"
+              id="ytUrlInput"
+              class="input yt-input"
+              placeholder="Dán link YouTube..."
+              autocomplete="off"
+            />
+            <button type="button" class="btn btn-galaxy" id="ytImportBtn">
+              <span id="ytBtnText">Lấy nhạc</span>
+            </button>
+          </div>
+
+          <div class="yt-preview-card hidden" id="ytPreviewCard">
+            <img id="ytThumbImg" class="yt-thumb" src="" alt="YouTube thumbnail" />
+            <div class="yt-info">
+              <div class="yt-track-title" id="ytTrackTitle">Đang tải thông tin...</div>
+              <div class="yt-track-sub" id="ytTrackAuthor">YouTube Audio</div>
+            </div>
+            <button type="button" class="btn btn-small" id="useYtThumbBtn" title="Đặt ảnh bìa video làm hình nền">
+              Dùng bìa
+            </button>
+          </div>
+        </div>
+
+        <div class="media-grid">
+          <label class="media-card" for="imageInput">
+            <span class="media-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </span>
+            <span class="media-copy">
+              <strong>Ảnh nền</strong>
+              <small id="imageName">PNG, JPG, WEBP</small>
+            </span>
+          </label>
+          <label class="media-card" for="audioInput">
+            <span class="media-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            </span>
+            <span class="media-copy">
+              <strong>File nhạc</strong>
+              <small id="audioName">MP3, WAV, M4A</small>
+            </span>
+          </label>
+        </div>
+        <div class="audio-path-actions">
+          <button type="button" class="btn btn-small" id="copyAudioPathBtn" disabled>Copy đường dẫn âm thanh</button>
+          <button type="button" class="btn btn-small btn-danger" id="removeAudioBtn" disabled>Gỡ nhạc</button>
+          <small id="audioPathHint">Nạp file nhạc để lấy đường dẫn</small>
+        </div>
+        <input class="hidden-input" type="file" id="imageInput" accept="image/*" />
+        <input class="hidden-input" type="file" id="audioInput" accept="audio/*" />
+      </section>
+
+      <section class="section section-pad sticker-section">
+        <div class="section-header" style="margin-bottom:10px">
+          <h2 class="section-title">Ảnh, GIF &amp; Văn bản <span class="count" id="stickerCount">00 lớp</span></h2>
+          <div class="sticker-header-actions">
+            <button class="btn btn-small" id="addTextOverlayBtn" type="button" style="padding:6px 10px" title="Thêm chữ mở đầu (Intro), tên bài hát, ca sĩ...">
+              + Văn bản
+            </button>
+            <label class="btn btn-small btn-galaxy" for="stickerInput" style="cursor:pointer;padding:6px 10px">
+              + Ảnh / GIF
+            </label>
+          </div>
+          <input class="hidden-input" type="file" id="stickerInput" accept="image/gif,image/png,image/webp,image/*" multiple />
+        </div>
+
+        <div class="sticker-pagination-bar hidden" id="stickerPaginationBar">
+          <div class="lyric-pages" id="stickerPagination" role="tablist" aria-label="Danh sách Ảnh/GIF/Văn bản"></div>
+          <button type="button" class="text-link" id="deselectStickerBtn" title="Ẩn khung viền chọn trên màn hình">Ẩn khung</button>
+        </div>
+
+        <div id="stickerList" class="sticker-list">
+          <div class="sticker-empty">Chưa có lớp phủ nào. Bấm <b>+ Văn bản</b> (làm đoạn mở đầu) hoặc <b>+ Ảnh / GIF</b> rồi kéo trên màn hình.</div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <span>NEBULA LYRIC STUDIO</span>
+    <span>·</span>
+    <span>Xử lý trực tiếp trên trình duyệt &amp; hỗ trợ xuất WebM 30fps</span>
+  </footer>
+</div>
+
+<dialog class="dialog-wrap" id="lyricsDialog">
+  <div class="dialog-body">
+    <h2>Nhập nhanh lời bài hát</h2>
+    <p>Dán lời có sẵn mốc thời gian định dạng LRC <b>[00:12.50] Câu hát</b>, hoặc dán từng dòng thông thường (tự động chia mỗi câu 4 giây).</p>
+    <textarea id="lrcText" class="textarea" placeholder="[00:00.00] Giữa ngân hà vạn vì sao sáng
+[00:04.50] Giai điệu ngân vang trong đêm sâu
+[00:09.00] Lưu giữ từng khoảnh khắc âm nhạc"></textarea>
+    <div class="dialog-actions">
+      <button class="btn btn-ghost" id="cancelLrcBtn" type="button">Đóng</button>
+      <button class="btn btn-primary" id="confirmLrcBtn" type="button">Áp dụng vào timeline</button>
+    </div>
+  </div>
+</dialog>
+
+<input class="hidden-input" id="projectInput" type="file" accept="application/json,.json" />
+<div id="ytHiddenMount" class="hidden-input" aria-hidden="true"></div>
+<div id="stickerDomMount" style="position:fixed;left:0;top:0;width:2px;height:2px;opacity:0.001;pointer-events:none;overflow:hidden;z-index:-1" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog id="libraryDialog" class="library-dialog">
+  <form method="dialog" class="library-panel">
+    <div class="section-header"><h2 class="section-title">Thư viện phiên bản</h2><button class="btn btn-small">Đóng</button></div>
+    <div id="libraryList" class="library-list">Đang tải...</div>
+    <div class="library-actions"><button type="button" class="btn btn-danger" id="cleanupSelectedBtn">Dọn mục đã chọn</button></div>
+  </form>
+</dialog>
+<dialog id="debugDialog" class="library-dialog">
+  <form method="dialog" class="library-panel">
+    <div class="section-header"><h2 class="section-title">Debug log</h2><button class="btn btn-small">Đóng</button></div>
+    <pre id="debugLogText" class="debug-log-text">Chưa có log.</pre>
+    <div class="library-actions"><button type="button" class="btn btn-small" id="clearDebugLogBtn">Xóa log</button></div>
+  </form>
+</dialog>
+<audio id="audio" preload="auto"></audio>
+
+<script src="lyric-motion.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+BẢN LỜI PHÚT ĐẦU — THẤM THOÁT REMIX
+
+Nhập bằng nút Mở dự án trong cửa sổ app đang có nhạc. Nhạc đang mở được giữ nguyên. File JSON không chứa âm thanh.
+
+Đây là bản nhận dạng tự động có chỉnh chính tả, chưa phải bản nghe duyệt thủ công.
+Cần kiểm tra lại lời tại các câu 4 (25s), 6 (32.22s), 8 (39.40s), 9 (43.14s), 12 (54.70s).
+Mốc từng câu là ước lượng; chưa có lời đáng tin cậy cho đoạn 57.14–60s.
+
+01. 14.38–17.38s | Thấm thoát đã bao năm rồi
+02. 17.74–21.34s | Tôi yêu người từ thuở mới đôi mươi
+03. 21.86–24.62s | Thương nhau, trao nhau cuộc đời
+04. 25.00–28.22s | Bắt tay gặp mặt người về với tôi
+05. 29.16–31.82s | Thấm thoát bao nhiêu năm trời
+06. 32.22–35.38s | Bên nhau thuở thời tay còn tay trắng
+07. 36.14–39.02s | Bây giờ thời thế đổi thay
+08. 39.40–42.56s | Tình ta vẫn vậy chẳng xa cách người
+09. 43.14–46.24s | Gió sương phong ba trải đời tôi
+10. 47.06–49.88s | Bên tôi luôn có vợ tuyệt vời
+11. 50.66–53.66s | Em luôn bên tôi lúc khổ đau
+12. 54.70–57.14s | Nguyện cạnh kề cả đời về sau

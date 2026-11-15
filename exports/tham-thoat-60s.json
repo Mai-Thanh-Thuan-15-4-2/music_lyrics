@@ -1,0 +1,158 @@
+{
+  "weather": "galaxy",
+  "density": 65,
+  "dim": 38,
+  "font": "oswald",
+  "position": "center",
+  "fontSize": 84,
+  "glow": 68,
+  "textColor": "#f5f7ff",
+  "accentColor": "#a78bfa",
+  "lyrics": [
+    {
+      "id": 1,
+      "start": 14.38,
+      "end": 17.38,
+      "text": "Thấm thoát đã bao năm rồi",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 2,
+      "start": 17.74,
+      "end": 21.34,
+      "text": "Tôi yêu người từ thuở mới đôi mươi",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 3,
+      "start": 21.86,
+      "end": 24.62,
+      "text": "Thương nhau, trao nhau cuộc đời",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 4,
+      "start": 25.0,
+      "end": 28.22,
+      "text": "Bắt tay gặp mặt người về với tôi",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 5,
+      "start": 29.16,
+      "end": 31.82,
+      "text": "Thấm thoát bao nhiêu năm trời",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 6,
+      "start": 32.22,
+      "end": 35.38,
+      "text": "Bên nhau thuở thời tay còn tay trắng",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 7,
+      "start": 36.14,
+      "end": 39.02,
+      "text": "Bây giờ thời thế đổi thay",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 8,
+      "start": 39.4,
+      "end": 42.56,
+      "text": "Tình ta vẫn vậy chẳng xa cách người",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 9,
+      "start": 43.14,
+      "end": 46.24,
+      "text": "Gió sương phong ba trải đời tôi",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 10,
+      "start": 47.06,
+      "end": 49.88,
+      "text": "Bên tôi luôn có vợ tuyệt vời",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 11,
+      "start": 50.66,
+      "end": 53.66,
+      "text": "Em luôn bên tôi lúc khổ đau",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    },
+    {
+      "id": 12,
+      "start": 54.7,
+      "end": 57.14,
+      "text": "Nguyện cạnh kề cả đời về sau",
+      "mode": "queue",
+      "timingIn": 0.45,
+      "timingMid": 1.5,
+      "timingOut": 0.45
+    }
+  ],
+  "_selectedSegId": "1",
+  "_selectedStickerId": "1794067609400.5706",
+  "_ytUrl": "https://youtu.be/Eb4098HyEdY?si=GOL307nju3rCV-nc",
+  "version": 2,
+  "_transcription": {
+    "source": "Eb4098HyEdY.m4a",
+    "rangeSeconds": [
+      0,
+      60
+    ],
+    "method": "Local faster-whisper small, medium and large-v3-turbo; cross-checked and spelling normalized",
+    "status": "needs_review",
+    "reviewSegmentIds": [
+      4,
+      6,
+      8,
+      9,
+      12
+    ],
+    "unresolvedRangeSeconds": [
+      57.14,
+      60
+    ],
+    "notes": "Mốc thời gian là ước lượng nhận dạng. Các câu 4, 6, 8, 9, 12 còn từ chưa chắc chắn; không có kết quả đáng tin cậy cho 57.14–60s. Không thêm lời suy đoán vào khoảng này."
+  }
+}

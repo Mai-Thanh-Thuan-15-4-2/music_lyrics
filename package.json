@@ -1,0 +1,13 @@
+{
+  "name": "nebula-lyric-studio",
+  "version": "1.0.0",
+  "description": "Nebula Lyric Studio - Cosmic Lyric Video & Audio Visualizer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "server": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

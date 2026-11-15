@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <radialGradient id="nebulaBg" cx="30%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#312e81" />
+      <stop offset="45%" stop-color="#13112c" />
+      <stop offset="100%" stop-color="#070712" />
+    </radialGradient>
+    <linearGradient id="orbitRing" x1="6" y1="46" x2="58" y2="18" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+    <linearGradient id="coreGlow" x1="18" y1="16" x2="46" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7dd3fc" />
+      <stop offset="48%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#e879f9" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Rounded cosmic badge -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#nebulaBg)" stroke="rgba(167,139,250,0.38)" stroke-width="1.5" />
+
+  <!-- Subtle distant stars -->
+  <circle cx="14" cy="15" r="1.1" fill="#e0f2fe" opacity="0.8" />
+  <circle cx="50" cy="14" r="1.4" fill="#f5d0fe" opacity="0.9" />
+  <circle cx="48" cy="49" r="1" fill="#bae6fd" opacity="0.7" />
+  <circle cx="15" cy="47" r="1.2" fill="#ddd6fe" opacity="0.65" />
+
+  <!-- Planet / Vinyl Core -->
+  <circle cx="32" cy="32" r="14.5" fill="url(#coreGlow)" opacity="0.18" />
+  <circle cx="32" cy="32" r="12" fill="#0d0e24" stroke="url(#coreGlow)" stroke-width="2" />
+
+  <!-- Soundwave / Equalizer bars inside core -->
+  <g filter="url(#softGlow)" stroke="url(#coreGlow)" stroke-linecap="round" stroke-width="2.4">
+    <line x1="25.5" y1="30" x2="25.5" y2="34" />
+    <line x1="29.8" y1="26" x2="29.8" y2="38" />
+    <line x1="34.2" y1="24" x2="34.2" y2="40" />
+    <line x1="38.5" y1="28.5" x2="38.5" y2="35.5" />
+  </g>
+
+  <!-- Galaxy Orbital Ring -->
+  <path d="M 9 39.5 C 14 46.5, 50 32.5, 55 24.5" stroke="url(#orbitRing)" stroke-width="2.6" stroke-linecap="round" filter="url(#softGlow)" />
+  <path d="M 9 39.5 C 6.5 34.5, 19 24.5, 26 22.5" stroke="url(#orbitRing)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3" opacity="0.75" />
+
+  <!-- Satellite star node on orbit -->
+  <circle cx="47.5" cy="28.5" r="2.6" fill="#ffffff" filter="url(#softGlow)" />
+</svg>
