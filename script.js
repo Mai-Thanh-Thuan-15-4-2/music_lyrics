@@ -470,6 +470,7 @@
     const srcVid = String(data.beatEffect?.sourceVideoId || data.youtubeId || '');
     $('quickSong1Btn')?.classList.toggle('active', srcVid === '0zJkOay1Ly8');
     $('quickSong2Btn')?.classList.toggle('active', srcVid === 'EnnNI-RlM40');
+    $('quickSong3Btn')?.classList.toggle('active', srcVid === 'n5D2aYJvis8');
     $('quickMedleyBtn')?.classList.toggle('active', srcVid.includes('0zJkOay1Ly8_EnnNI-RlM40'));
     clearAllTextArtworks();
     buildList();
@@ -2015,12 +2016,15 @@
   }
 
   let sunsetRemixArtwork = null, sunsetRemixKey = '';
+  let homecomingArtwork = null, homecomingKey = '';
   function clearAllTextArtworks() {
     lyricArtwork.clear();
     introArtwork = null;
     introArtworkKey = '';
     sunsetRemixArtwork = null;
     sunsetRemixKey = '';
+    homecomingArtwork = null;
+    homecomingKey = '';
     storybookArtwork = null;
     storybookKey = '';
     balladTitleArtwork = null;
@@ -2194,12 +2198,282 @@
     ctx.restore();
   }
 
+  // 2026-11-16: Khách hàng yêu cầu làm nguyên bài "Đi Về Nhà (Nhạc Sống Thôn Quê Cha Cha Cha)" với ảnh nền "Lối Về Nhà Trong Hoàng Hôn.png" và animation sáng tạo dạo nhạc hoàn toàn khác các video trước; bổ sung drawHomecomingIntro (đĩa than vàng xoay + đôi cánh sóng nhạc ngang đối xứng trên bầu trời hoàng hôn) và drawHomecomingInstrumental (khói nhạc ống khói + ánh đèn cửa sổ ấm áp + con đường sóng nhạc 3D uốn lượn về nhà).
+  function drawHomecomingIntro(t, customCfg = null) {
+    const cfg = customCfg || data.intro;
+    if (!cfg?.enabled) return;
+    const isOutro = t >= 246.5 && t <= 278.8;
+    const start = isOutro ? 246.5 : (Number(cfg.start) || 0);
+    const end = isOutro ? 278.8 : (Number(cfg.end) || 18.8);
+    if (t < start || t >= end) return;
+    const localT = t - start;
+    const dur = Math.max(1, end - start);
+    const title = String(cfg.title || data.songTitle || 'Đi Về Nhà').trim();
+    const subtitle = String(cfg.subtitle || data.artist || '').trim();
+    const upperTitle = title.toLocaleUpperCase('vi-VN');
+    const subUpper = subtitle.toLocaleUpperCase('vi-VN');
+    const fontReady = isCanvasFontReady('700 84px "Oswald"', upperTitle + ' ' + subUpper);
+    const key = JSON.stringify(['homecoming-remix', title, subtitle, fontReady]);
+    if (!homecomingArtwork || key !== homecomingKey) {
+      homecomingKey = key;
+      if (!fontReady && document.fonts?.load) {
+        document.fonts.load('700 84px "Oswald"', upperTitle + ' ' + subUpper).then(() => { clearAllTextArtworks(); draw(time()); }).catch(() => {});
+      }
+      homecomingArtwork = document.createElement('canvas');
+      homecomingArtwork.width = W;
+      homecomingArtwork.height = 290;
+      const g = homecomingArtwork.getContext('2d');
+      g.textAlign = 'center';
+      g.textBaseline = 'middle';
+      g.font = '700 80px "Oswald","Be Vietnam Pro","Segoe UI",Arial,sans-serif';
+      const fitted = Math.min(80, 80 * (W * 0.84) / Math.max(1, g.measureText(upperTitle).width));
+      g.font = `700 ${fitted}px "Oswald","Be Vietnam Pro","Segoe UI",Arial,sans-serif`;
+
+      g.shadowColor = 'rgba(15, 10, 5, 0.95)';
+      g.shadowBlur = 18;
+      g.shadowOffsetY = 4;
+      g.fillStyle = '#000000';
+      g.fillText(upperTitle, W / 2, 108);
+
+      g.shadowColor = '#f59e0b';
+      g.shadowBlur = 28;
+      g.shadowOffsetY = 0;
+      g.fillStyle = '#ffffff';
+      g.fillText(upperTitle, W / 2, 108);
+
+      g.shadowColor = '#fde047';
+      g.shadowBlur = 10;
+      g.fillStyle = '#fffbeb';
+      g.fillText(upperTitle, W / 2, 108);
+
+      g.font = '600 24px "Oswald","Be Vietnam Pro","Segoe UI",Arial,sans-serif';
+      const subW = g.measureText(subUpper).width + 68;
+      g.shadowColor = 'rgba(0, 0, 0, 0.88)';
+      g.shadowBlur = 12;
+      g.fillStyle = 'rgba(36, 18, 10, 0.78)';
+      g.strokeStyle = '#fbbf24';
+      g.lineWidth = 2;
+      g.beginPath();
+      g.roundRect((W - subW) / 2, 168, subW, 46, 23);
+      g.fill();
+      g.stroke();
+
+      g.shadowColor = '#f59e0b';
+      g.shadowBlur = 8;
+      g.fillStyle = '#fef08a';
+      g.fillText(subUpper, W / 2, 192);
+    }
+
+    const enter = smooth(localT / 1.0);
+    const out = smooth((dur - localT) / 1.1);
+    const alpha = enter * out;
+    const pulse = beatPulse(t);
+    const cx = W * 0.5, cy = H * 0.135;
+
+    ctx.save();
+    ctx.globalAlpha = alpha;
+
+    // Symmetrical Horizontal Equalizer Wings flanking the spinning Vinyl Turntable
+    const wingBars = 22;
+    for (let side = -1; side <= 1; side += 2) {
+      for (let i = 0; i < wingBars; i++) {
+        const u = i / (wingBars - 1);
+        const band = 4 + (i % 14);
+        const spec = Math.max(spectrumAt(t, band), spectrumAt(t, i % 6) * 0.8);
+        const wave = 0.26 + 0.22 * Math.sin(t * 6.4 - i * 0.42);
+        const lvl = Math.max(spec, wave);
+        const barH = (10 + lvl * 46 + pulse * 20) * (1 - u * 0.55);
+        const bx = cx + side * (78 + i * 15);
+        const by = cy + Math.sin(t * 3.8 + i * 0.35) * 4;
+        ctx.strokeStyle = i % 3 === 0 ? '#fef08a' : i % 3 === 1 ? '#f59e0b' : '#fb7185';
+        ctx.lineWidth = 4.2;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(bx, by - barH / 2);
+        ctx.lineTo(bx, by + barH / 2);
+        ctx.stroke();
+      }
+    }
+
+    // Spinning Golden Vinyl Record (Đĩa than Nhạc Sống Thôn Quê)
+    const vinylR = 54 + pulse * 8;
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(t * 1.65);
+    const vGrad = ctx.createRadialGradient(0, 0, 10, 0, 0, vinylR);
+    vGrad.addColorStop(0, '#f59e0b');
+    vGrad.addColorStop(0.38, '#291d12');
+    vGrad.addColorStop(0.85, '#1c140d');
+    vGrad.addColorStop(1, '#fbbf24');
+    ctx.fillStyle = vGrad;
+    ctx.shadowColor = '#f59e0b';
+    ctx.shadowBlur = 18 + pulse * 14;
+    ctx.beginPath();
+    ctx.arc(0, 0, vinylR, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.shadowBlur = 0;
+
+    // Vinyl grooves + golden reflection arcs
+    for (let gr = 26; gr < vinylR - 5; gr += 7) {
+      ctx.strokeStyle = 'rgba(254, 240, 138, 0.38)';
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.arc(0, 0, gr, 0.2, 1.35);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(0, 0, gr, Math.PI + 0.2, Math.PI + 1.35);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // Center Home Icon inside the vinyl
+    ctx.save();
+    ctx.translate(cx, cy);
+    const homeSc = 0.56 + pulse * 0.12;
+    ctx.scale(homeSc, homeSc);
+    ctx.drawImage(musicGlyph('🏡'), -80, -80);
+    ctx.restore();
+
+    // Title & Subtitle Banner in upper sky
+    ctx.save();
+    const titleY = H * 0.295;
+    const bounceOffset = Math.sin(localT * 3.4) * 3.5 - pulse * 5;
+    const titleScale = (0.94 + 0.06 * enter) * (1 + pulse * 0.028);
+    ctx.translate(W / 2, titleY + bounceOffset);
+    ctx.scale(titleScale, titleScale);
+    ctx.drawImage(homecomingArtwork, -W / 2, -120);
+    ctx.restore();
+
+    ctx.restore();
+  }
+
+  function drawHomecomingInstrumental(t) {
+    const effect = data.beatEffect;
+    if (!effect?.enabled) return;
+    const visibility = smooth(instrumentalVisibility(t));
+    const pulse = beatPulse(t);
+
+    ctx.save();
+
+    // 1. Rotating Golden Sunbeams & Beat Halo around the painted setting sun (x=0.692*W, y=0.378*H)
+    const sunX = W * 0.692, sunY = H * 0.378;
+    const sunRays = 12;
+    for (let r = 0; r < sunRays; r++) {
+      const ang = (r / sunRays) * Math.PI * 2 + t * 0.18;
+      const spec = Math.max(spectrumAt(t, r % 12), 0.25);
+      const rayLen = 45 + spec * 65 + pulse * 35;
+      ctx.save();
+      ctx.globalAlpha = (0.16 + 0.18 * pulse) * (0.6 + 0.4 * visibility);
+      ctx.strokeStyle = r % 2 === 0 ? '#fef08a' : '#fb923c';
+      ctx.lineWidth = 3.5;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(sunX + Math.cos(ang) * 24, sunY + Math.sin(ang) * 24);
+      ctx.lineTo(sunX + Math.cos(ang) * (24 + rayLen), sunY + Math.sin(ang) * (24 + rayLen));
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // 2. Warm Hearth Glow at the Cottage Windows (x=0.768*W, y=0.515*H) + Musical Chimney Notes
+    const houseX = W * 0.768, houseY = H * 0.515;
+    const hearthR = 38 + pulse * 26 + 8 * Math.sin(t * 4.2);
+    const hearthGrad = ctx.createRadialGradient(houseX, houseY, 2, houseX, houseY, hearthR);
+    hearthGrad.addColorStop(0, `rgba(254, 240, 138, ${0.42 + 0.32 * pulse})`);
+    hearthGrad.addColorStop(0.5, `rgba(245, 158, 11, ${0.22 + 0.18 * pulse})`);
+    hearthGrad.addColorStop(1, 'rgba(245, 158, 11, 0)');
+    ctx.fillStyle = hearthGrad;
+    ctx.beginPath();
+    ctx.arc(houseX, houseY, hearthR, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Musical notes rising from the cottage chimney (x=0.793*W, y=0.455*H)
+    const chimX = W * 0.793, chimY = H * 0.455;
+    const chimGlyphs = ['♪', '♫', '✨', '🌸'];
+    for (let c = 0; c < 4; c++) {
+      const prog = (t * 0.28 + c * 0.25) % 1;
+      const nx = chimX + Math.sin(prog * Math.PI * 2.5 + c) * (18 + prog * 28) + prog * 22;
+      const ny = chimY - prog * 135;
+      const nAlpha = Math.sin(prog * Math.PI) * (0.55 + 0.35 * pulse);
+      ctx.save();
+      ctx.globalAlpha = nAlpha;
+      ctx.translate(nx, ny);
+      const nSc = 0.22 + prog * 0.18 + pulse * 0.06;
+      ctx.scale(nSc, nSc);
+      ctx.drawImage(musicGlyph(chimGlyphs[c]), -80, -80);
+      ctx.restore();
+    }
+
+    // 3. Winding Homecoming Road Firefly & Beat-Step Stream from (0.24*W, 0.92*H) to (0.73*W, 0.57*H)
+    const roadSteps = 28;
+    for (let s = 0; s < roadSteps; s++) {
+      const u = ((s / roadSteps) + t * 0.08) % 1;
+      // Cubic Bezier following the dirt road in "Lối Về Nhà Trong Hoàng Hôn.png"
+      const inv = 1 - u;
+      const rx = inv * inv * inv * (W * 0.25) + 3 * inv * inv * u * (W * 0.36) + 3 * inv * u * u * (W * 0.64) + u * u * u * (W * 0.73);
+      const ry = inv * inv * inv * (H * 0.94) + 3 * inv * inv * u * (H * 0.68) + 3 * inv * u * u * (H * 0.62) + u * u * u * (H * 0.56);
+      const spec = Math.max(spectrumAt(t, s % 16), 0.22);
+      const hop = Math.abs(Math.sin(t * 5.2 + s * 0.55)) * (8 + spec * 24 + pulse * 18) * (1 - u * 0.55);
+      const dotR = (2.2 + spec * 3.8 + pulse * 2.4) * (1 - u * 0.5);
+      ctx.globalAlpha = Math.sin(u * Math.PI) * (0.45 + 0.45 * visibility);
+      ctx.fillStyle = s % 3 === 0 ? '#fef08a' : s % 3 === 1 ? '#f59e0b' : '#fb7185';
+      ctx.shadowColor = ctx.fillStyle;
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(rx, ry - hop, dotR, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.shadowBlur = 0;
+
+    // 4. Full Instrumental Solo / Dạo Nhạc Showcase (3D Horizon Wave + Countryside Carousel)
+    if (visibility > 0.02) {
+      const waveX0 = W * 0.10, waveSpan = W * 0.80, waveBaseY = H * 0.84;
+      const waveColors = ['#f59e0b', '#fef08a', '#fb7185'];
+      for (let wl = 0; wl < 3; wl++) {
+        ctx.save();
+        ctx.strokeStyle = waveColors[wl];
+        ctx.shadowColor = waveColors[wl];
+        ctx.shadowBlur = 12;
+        ctx.lineWidth = 3.6 - wl * 0.7;
+        ctx.globalAlpha = visibility * (0.78 - wl * 0.16);
+        ctx.beginPath();
+        for (let k = 0; k <= 72; k++) {
+          const u = k / 72;
+          const taper = Math.sin(u * Math.PI);
+          const spec = Math.max(spectrumAt(t, (k + wl * 6) % 20), 0.24);
+          const wy = waveBaseY + Math.sin(u * Math.PI * 5 - t * 4.6 + wl * 1.1) * (16 + spec * 44 + pulse * 26) * taper;
+          if (k === 0) ctx.moveTo(waveX0, wy);
+          else ctx.lineTo(waveX0 + waveSpan * u, wy);
+        }
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // Floating Musical & Homecoming Icons during Instrumental Solo
+      const soloIcons = ['🌸', '🎸', '🏡', '🥁', '🌼'];
+      for (let idx = 0; idx < soloIcons.length; idx++) {
+        ctx.save();
+        ctx.globalAlpha = visibility * 0.90;
+        const ix = W * 0.5 + (idx - 2) * 145;
+        const iy = H * 0.45 + Math.sin(t * 3.2 + idx * 0.9) * 10 - pulse * 14;
+        ctx.translate(ix, iy);
+        ctx.rotate(Math.sin(t * 2.5 + idx) * 0.08);
+        const isc = 0.66 + pulse * 0.16;
+        ctx.scale(isc, isc);
+        ctx.drawImage(musicGlyph(soloIcons[idx]), -80, -80);
+        ctx.restore();
+      }
+    }
+
+    ctx.restore();
+  }
+
   function drawIntro(t) {
     const intro=data.intro;
     if (intro?.enabled) {
       if(intro.style==='ballad') drawBalladIntro(t);
       else if(intro.style==='storybook') drawStorybookIntro(t);
       else if(intro.style==='sunset-remix') drawSunsetRemixIntro(t, intro);
+      else if(intro.style==='homecoming-remix') drawHomecomingIntro(t, intro);
       else drawRemixIntro(t);
     }
     if (data.secondIntro?.enabled) {
@@ -2260,6 +2534,7 @@
 
   function drawInstrumental(t) {
     if(data.motionTheme==='ballad'){drawBalladInterlude(t);return;}
+    if(data.intro?.style==='homecoming-remix'){drawHomecomingInstrumental(t);return;}
     const effect=data.beatEffect;
     if (!effect?.enabled) return;
     const visibility=smooth(instrumentalVisibility(t));
@@ -4163,6 +4438,7 @@
   }
   $('quickSong1Btn')?.addEventListener('click', () => loadQuickExportProject('/exports/sao-minh-chua-nam-tay-nhau.json', 'Bài 1: Sao Mình Chưa Nắm Tay Nhau'));
   $('quickSong2Btn')?.addEventListener('click', () => loadQuickExportProject('/exports/den-khi-nao.json', 'Bài 2: Đến Khi Nào'));
+  $('quickSong3Btn')?.addEventListener('click', () => loadQuickExportProject('/exports/di-ve-nha.json', 'Bài 3: Đi Về Nhà (Cha Cha Cha)'));
   $('quickMedleyBtn')?.addEventListener('click', () => loadQuickExportProject('/exports/lien-khuc-2-bai.json', 'Liên Khúc 2 Bài Nối Tiếp'));
 
   $('loadProjectBtn').addEventListener('click', () => $('projectInput').click());
