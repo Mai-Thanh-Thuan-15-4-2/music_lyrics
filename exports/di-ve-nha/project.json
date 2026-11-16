@@ -147207,1623 +147207,8 @@
   "lyrics": [
     {
       "id": "dvn_001",
-      "start": 1.52,
-      "end": 4.7,
-      "text": "Đường về nhà là vào tim ta 🏡💖",
-      "icon": "🏡💖",
-      "tag": "🏡💖",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.5,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Đường",
-          "start": 1.52,
-          "end": 2.12
-        },
-        {
-          "word": "về",
-          "start": 2.12,
-          "end": 2.48
-        },
-        {
-          "word": "nhà",
-          "start": 2.48,
-          "end": 2.72
-        },
-        {
-          "word": "là",
-          "start": 2.72,
-          "end": 3.16
-        },
-        {
-          "word": "vào",
-          "start": 3.16,
-          "end": 3.84
-        },
-        {
-          "word": "tim",
-          "start": 3.84,
-          "end": 4.24
-        },
-        {
-          "word": "ta",
-          "start": 4.24,
-          "end": 4.7
-        }
-      ]
-    },
-    {
-      "id": "dvn_002",
-      "start": 4.88,
-      "end": 8.35,
-      "text": "Dẫu nắng mưa gần xa ☀️🌧️",
-      "icon": "☀️🌧️",
-      "tag": "☀️🌧️",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.79,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Dẫu",
-          "start": 4.88,
-          "end": 5.6
-        },
-        {
-          "word": "nắng",
-          "start": 5.6,
-          "end": 6.08
-        },
-        {
-          "word": "mưa",
-          "start": 6.08,
-          "end": 6.4
-        },
-        {
-          "word": "gần",
-          "start": 6.4,
-          "end": 7.32
-        },
-        {
-          "word": "xa",
-          "start": 7.32,
-          "end": 8.35
-        }
-      ]
-    },
-    {
-      "id": "dvn_003",
-      "start": 8.68,
-      "end": 12.15,
-      "text": "Thất bát, vang danh 🌟🏆",
-      "icon": "🌟🏆",
-      "tag": "🌟🏆",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.79,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Thất",
-          "start": 8.68,
-          "end": 9.68
-        },
-        {
-          "word": "bát,",
-          "start": 9.68,
-          "end": 10.4
-        },
-        {
-          "word": "vang",
-          "start": 10.4,
-          "end": 11.4
-        },
-        {
-          "word": "danh",
-          "start": 11.4,
-          "end": 12.15
-        }
-      ]
-    },
-    {
-      "id": "dvn_004",
-      "start": 12.32,
-      "end": 15.35,
-      "text": "Nhà vẫn luôn chờ ta 🏠🤍",
-      "icon": "🏠🤍",
-      "tag": "🏠🤍",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.35,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Nhà",
-          "start": 12.32,
-          "end": 12.8
-        },
-        {
-          "word": "vẫn",
-          "start": 12.8,
-          "end": 13.24
-        },
-        {
-          "word": "luôn",
-          "start": 13.24,
-          "end": 13.52
-        },
-        {
-          "word": "chờ",
-          "start": 13.52,
-          "end": 14.8
-        },
-        {
-          "word": "ta",
-          "start": 14.8,
-          "end": 15.35
-        }
-      ]
-    },
-    {
-      "id": "dvn_005",
-      "start": 15.48,
-      "end": 18.7,
-      "text": "Đường về nhà là vào tim ta 🛤️💛",
-      "icon": "🛤️💛",
-      "tag": "🛤️💛",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.54,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Đường",
-          "start": 15.48,
-          "end": 16.1
-        },
-        {
-          "word": "về",
-          "start": 16.1,
-          "end": 16.55
-        },
-        {
-          "word": "nhà",
-          "start": 16.55,
-          "end": 17.0
-        },
-        {
-          "word": "là",
-          "start": 17.0,
-          "end": 17.4
-        },
-        {
-          "word": "vào",
-          "start": 17.4,
-          "end": 17.85
-        },
-        {
-          "word": "tim",
-          "start": 17.85,
-          "end": 18.25
-        },
-        {
-          "word": "ta",
-          "start": 18.25,
-          "end": 18.7
-        }
-      ]
-    },
-    {
-      "id": "dvn_006",
-      "start": 18.88,
-      "end": 22.55,
-      "text": "Dẫu có muôn trùng qua 🌊⛰️",
-      "icon": "🌊⛰️",
-      "tag": "🌊⛰️",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.99,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Dẫu",
-          "start": 18.88,
-          "end": 19.6
-        },
-        {
-          "word": "có",
-          "start": 19.6,
-          "end": 20.2
-        },
-        {
-          "word": "muôn",
-          "start": 20.2,
-          "end": 20.8
-        },
-        {
-          "word": "trùng",
-          "start": 20.8,
-          "end": 21.5
-        },
-        {
-          "word": "qua",
-          "start": 21.5,
-          "end": 22.55
-        }
-      ]
-    },
-    {
-      "id": "dvn_007",
-      "start": 22.88,
-      "end": 26.35,
-      "text": "Vật đổi, sao dời ✨🌌",
-      "icon": "✨🌌",
-      "tag": "✨🌌",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.79,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Vật",
-          "start": 22.88,
-          "end": 23.88
-        },
-        {
-          "word": "đổi,",
-          "start": 23.88,
-          "end": 24.8
-        },
-        {
-          "word": "sao",
-          "start": 24.8,
-          "end": 25.6
-        },
-        {
-          "word": "dời",
-          "start": 25.6,
-          "end": 26.35
-        }
-      ]
-    },
-    {
-      "id": "dvn_008",
-      "start": 26.56,
-      "end": 28.12,
-      "text": "Nhà vẫn luôn là nhà 🏡🌸",
-      "icon": "🏡🌸",
-      "tag": "🏡🌸",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.88,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Nhà",
-          "start": 26.56,
-          "end": 26.95
-        },
-        {
-          "word": "vẫn",
-          "start": 26.95,
-          "end": 27.3
-        },
-        {
-          "word": "luôn",
-          "start": 27.3,
-          "end": 27.6
-        },
-        {
-          "word": "là",
-          "start": 27.6,
-          "end": 27.85
-        },
-        {
-          "word": "nhà",
-          "start": 27.85,
-          "end": 28.12
-        }
-      ]
-    },
-    {
-      "id": "dvn_009",
-      "start": 28.2,
-      "end": 29.75,
-      "text": "Đi về nhà 🛤️🏠",
-      "icon": "🛤️🏠",
-      "tag": "🛤️🏠",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.87,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Đi",
-          "start": 28.2,
-          "end": 28.36
-        },
-        {
-          "word": "về",
-          "start": 28.36,
-          "end": 28.96
-        },
-        {
-          "word": "nhà",
-          "start": 28.96,
-          "end": 29.75
-        }
-      ]
-    },
-    {
-      "id": "dvn_010",
-      "start": 30.08,
-      "end": 31.65,
-      "text": "Lao vào đời mà kiếm cơm 🌾🍚",
-      "icon": "🌾🍚",
-      "tag": "🌾🍚",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.89,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Lao",
-          "start": 30.08,
-          "end": 30.36
-        },
-        {
-          "word": "vào",
-          "start": 30.36,
-          "end": 30.56
-        },
-        {
-          "word": "đời",
-          "start": 30.56,
-          "end": 30.72
-        },
-        {
-          "word": "mà",
-          "start": 30.72,
-          "end": 30.84
-        },
-        {
-          "word": "kiếm",
-          "start": 30.84,
-          "end": 31.24
-        },
-        {
-          "word": "cơm",
-          "start": 31.24,
-          "end": 31.65
-        }
-      ]
-    },
-    {
-      "id": "dvn_011",
-      "start": 31.8,
-      "end": 33.28,
-      "text": "Lao vào đời tìm cơ hội 🚀✨",
-      "icon": "🚀✨",
-      "tag": "🚀✨",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.8,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Lao",
-          "start": 31.8,
-          "end": 32.04
-        },
-        {
-          "word": "vào",
-          "start": 32.04,
-          "end": 32.28
-        },
-        {
-          "word": "đời",
-          "start": 32.28,
-          "end": 32.44
-        },
-        {
-          "word": "tìm",
-          "start": 32.44,
-          "end": 32.8
-        },
-        {
-          "word": "cơ",
-          "start": 32.8,
-          "end": 32.96
-        },
-        {
-          "word": "hội",
-          "start": 32.96,
-          "end": 33.28
-        }
-      ]
-    },
-    {
-      "id": "dvn_012",
-      "start": 33.4,
-      "end": 34.95,
-      "text": "Những thành thị thường lấp lánh 🌃💫",
-      "icon": "🌃💫",
-      "tag": "🌃💫",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.87,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Những",
-          "start": 33.4,
-          "end": 33.84
-        },
-        {
-          "word": "thành",
-          "start": 33.84,
-          "end": 34.08
-        },
-        {
-          "word": "thị",
-          "start": 34.08,
-          "end": 34.32
-        },
-        {
-          "word": "thường",
-          "start": 34.32,
-          "end": 34.52
-        },
-        {
-          "word": "lấp",
-          "start": 34.52,
-          "end": 34.8
-        },
-        {
-          "word": "lánh",
-          "start": 34.8,
-          "end": 34.95
-        }
-      ]
-    },
-    {
-      "id": "dvn_013",
-      "start": 35.04,
-      "end": 36.9,
-      "text": "Còn đêm thành thị thường trơ trọi 🏙️🌙",
-      "icon": "🏙️🌙",
-      "tag": "🏙️🌙",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 1.18,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Còn",
-          "start": 35.04,
-          "end": 35.36
-        },
-        {
-          "word": "đêm",
-          "start": 35.36,
-          "end": 35.6
-        },
-        {
-          "word": "thành",
-          "start": 35.6,
-          "end": 35.84
-        },
-        {
-          "word": "thị",
-          "start": 35.84,
-          "end": 36.08
-        },
-        {
-          "word": "thường",
-          "start": 36.08,
-          "end": 36.28
-        },
-        {
-          "word": "trơ",
-          "start": 36.28,
-          "end": 36.56
-        },
-        {
-          "word": "trọi",
-          "start": 36.56,
-          "end": 36.9
-        }
-      ]
-    },
-    {
-      "id": "dvn_014",
-      "start": 37.04,
-      "end": 38.38,
-      "text": "Như mọi đứa trẻ khác 👦🌱",
-      "icon": "👦🌱",
-      "tag": "👦🌱",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.66,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Như",
-          "start": 37.04,
-          "end": 37.4
-        },
-        {
-          "word": "mọi",
-          "start": 37.4,
-          "end": 37.64
-        },
-        {
-          "word": "đứa",
-          "start": 37.64,
-          "end": 37.8
-        },
-        {
-          "word": "trẻ",
-          "start": 37.8,
-          "end": 38.08
-        },
-        {
-          "word": "khác",
-          "start": 38.08,
-          "end": 38.38
-        }
-      ]
-    },
-    {
-      "id": "dvn_015",
-      "start": 38.48,
-      "end": 40.55,
-      "text": "Lớn lên muốn đi xa hoài 🛤️🌍",
-      "icon": "🛤️🌍",
-      "tag": "🛤️🌍",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 1.39,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Lớn",
-          "start": 38.48,
-          "end": 38.76
-        },
-        {
-          "word": "lên",
-          "start": 38.76,
-          "end": 38.92
-        },
-        {
-          "word": "muốn",
-          "start": 38.92,
-          "end": 39.2
-        },
-        {
-          "word": "đi",
-          "start": 39.2,
-          "end": 39.36
-        },
-        {
-          "word": "xa",
-          "start": 39.36,
-          "end": 39.8
-        },
-        {
-          "word": "hoài",
-          "start": 39.8,
-          "end": 40.55
-        }
-      ]
-    },
-    {
-      "id": "dvn_016",
-      "start": 40.8,
-      "end": 42.0,
-      "text": "Nhà thì vẫn ở yên đó 🏡🕯️",
-      "icon": "🏡🕯️",
-      "tag": "🏡🕯️",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.52,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Nhà",
-          "start": 40.8,
-          "end": 40.96
-        },
-        {
-          "word": "thì",
-          "start": 40.96,
-          "end": 41.12
-        },
-        {
-          "word": "vẫn",
-          "start": 41.12,
-          "end": 41.44
-        },
-        {
-          "word": "ở",
-          "start": 41.44,
-          "end": 41.6
-        },
-        {
-          "word": "yên",
-          "start": 41.6,
-          "end": 41.8
-        },
-        {
-          "word": "đó",
-          "start": 41.8,
-          "end": 42.0
-        }
-      ]
-    },
-    {
-      "id": "dvn_017",
-      "start": 42.08,
-      "end": 44.1,
-      "text": "Đợi những đứa con đang ra ngoài 🚪🤍",
-      "icon": "🚪🤍",
-      "tag": "🚪🤍",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 1.34,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Đợi",
-          "start": 42.08,
-          "end": 42.48
-        },
-        {
-          "word": "những",
-          "start": 42.48,
-          "end": 42.76
-        },
-        {
-          "word": "đứa",
-          "start": 42.76,
-          "end": 42.96
-        },
-        {
-          "word": "con",
-          "start": 42.96,
-          "end": 43.2
-        },
-        {
-          "word": "đang",
-          "start": 43.2,
-          "end": 43.44
-        },
-        {
-          "word": "ra",
-          "start": 43.44,
-          "end": 43.64
-        },
-        {
-          "word": "ngoài",
-          "start": 43.64,
-          "end": 44.1
-        }
-      ]
-    },
-    {
-      "id": "dvn_018",
-      "start": 44.28,
-      "end": 45.42,
-      "text": "Bước ra ngoài mới biết 👣🌤️",
-      "icon": "👣🌤️",
-      "tag": "👣🌤️",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.46,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Bước",
-          "start": 44.28,
-          "end": 44.6
-        },
-        {
-          "word": "ra",
-          "start": 44.6,
-          "end": 44.76
-        },
-        {
-          "word": "ngoài",
-          "start": 44.76,
-          "end": 45.0
-        },
-        {
-          "word": "mới",
-          "start": 45.0,
-          "end": 45.2
-        },
-        {
-          "word": "biết",
-          "start": 45.2,
-          "end": 45.42
-        }
-      ]
-    },
-    {
-      "id": "dvn_019",
-      "start": 45.52,
-      "end": 47.55,
-      "text": "Không ở đâu bằng ở nhà 🏠💖",
-      "icon": "🏠💖",
-      "tag": "🏠💖",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 1.35,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Không",
-          "start": 45.52,
-          "end": 45.68
-        },
-        {
-          "word": "ở",
-          "start": 45.68,
-          "end": 46.04
-        },
-        {
-          "word": "đâu",
-          "start": 46.04,
-          "end": 46.2
-        },
-        {
-          "word": "bằng",
-          "start": 46.2,
-          "end": 46.52
-        },
-        {
-          "word": "ở",
-          "start": 46.52,
-          "end": 46.88
-        },
-        {
-          "word": "nhà",
-          "start": 46.88,
-          "end": 47.55
-        }
-      ]
-    },
-    {
-      "id": "dvn_020",
-      "start": 47.8,
-      "end": 48.95,
-      "text": "Biết có gì để mất 💭🤲",
-      "icon": "💭🤲",
-      "tag": "💭🤲",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.47,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Biết",
-          "start": 47.8,
-          "end": 48.08
-        },
-        {
-          "word": "có",
-          "start": 48.08,
-          "end": 48.24
-        },
-        {
-          "word": "gì",
-          "start": 48.24,
-          "end": 48.36
-        },
-        {
-          "word": "để",
-          "start": 48.36,
-          "end": 48.72
-        },
-        {
-          "word": "mất",
-          "start": 48.72,
-          "end": 48.95
-        }
-      ]
-    },
-    {
-      "id": "dvn_021",
-      "start": 49.04,
-      "end": 51.1,
-      "text": "Trước khi sẵn sàng mở quà 🎁✨",
-      "icon": "🎁✨",
-      "tag": "🎁✨",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 1.38,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Trước",
-          "start": 49.04,
-          "end": 49.36
-        },
-        {
-          "word": "khi",
-          "start": 49.36,
-          "end": 49.6
-        },
-        {
-          "word": "sẵn",
-          "start": 49.6,
-          "end": 49.84
-        },
-        {
-          "word": "sàng",
-          "start": 49.84,
-          "end": 50.04
-        },
-        {
-          "word": "mở",
-          "start": 50.04,
-          "end": 50.36
-        },
-        {
-          "word": "quà",
-          "start": 50.36,
-          "end": 51.1
-        }
-      ]
-    },
-    {
-      "id": "dvn_022",
-      "start": 51.36,
-      "end": 52.55,
-      "text": "Không phải là võ sĩ 🥊🔥",
-      "icon": "🥊🔥",
-      "tag": "🥊🔥",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.51,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Không",
-          "start": 51.36,
-          "end": 51.56
-        },
-        {
-          "word": "phải",
-          "start": 51.56,
-          "end": 51.8
-        },
-        {
-          "word": "là",
-          "start": 51.8,
-          "end": 51.96
-        },
-        {
-          "word": "võ",
-          "start": 51.96,
-          "end": 52.28
-        },
-        {
-          "word": "sĩ",
-          "start": 52.28,
-          "end": 52.55
-        }
-      ]
-    },
-    {
-      "id": "dvn_023",
-      "start": 52.68,
-      "end": 54.38,
-      "text": "Nhưng mà phải giỏi đấu đá ⚡🛡️",
-      "icon": "⚡🛡️",
-      "tag": "⚡🛡️",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 1.02,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Nhưng",
-          "start": 52.68,
-          "end": 52.84
-        },
-        {
-          "word": "mà",
-          "start": 52.84,
-          "end": 52.96
-        },
-        {
-          "word": "phải",
-          "start": 52.96,
-          "end": 53.32
-        },
-        {
-          "word": "giỏi",
-          "start": 53.32,
-          "end": 53.64
-        },
-        {
-          "word": "đấu",
-          "start": 53.64,
-          "end": 53.96
-        },
-        {
-          "word": "đá",
-          "start": 53.96,
-          "end": 54.38
-        }
-      ]
-    },
-    {
-      "id": "dvn_024",
-      "start": 54.52,
-      "end": 55.52,
-      "text": "Nhiều khi kiệt sức 😮‍💨🌧️",
-      "icon": "😮‍💨🌧️",
-      "tag": "😮‍💨🌧️",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.4,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Nhiều",
-          "start": 54.52,
-          "end": 54.96
-        },
-        {
-          "word": "khi",
-          "start": 54.96,
-          "end": 55.16
-        },
-        {
-          "word": "kiệt",
-          "start": 55.16,
-          "end": 55.35
-        },
-        {
-          "word": "sức",
-          "start": 55.35,
-          "end": 55.52
-        }
-      ]
-    },
-    {
-      "id": "dvn_025",
-      "start": 55.6,
-      "end": 58.35,
-      "text": "Chỉ vì gắng giữ mình không xấu xa 🪷🤍",
-      "icon": "🪷🤍",
-      "tag": "🪷🤍",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.07,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Chỉ",
-          "start": 55.6,
-          "end": 55.84
-        },
-        {
-          "word": "vì",
-          "start": 55.84,
-          "end": 56.16
-        },
-        {
-          "word": "gắng",
-          "start": 56.16,
-          "end": 56.48
-        },
-        {
-          "word": "giữ",
-          "start": 56.48,
-          "end": 56.76
-        },
-        {
-          "word": "mình",
-          "start": 56.76,
-          "end": 56.96
-        },
-        {
-          "word": "không",
-          "start": 56.96,
-          "end": 57.16
-        },
-        {
-          "word": "xấu",
-          "start": 57.16,
-          "end": 57.6
-        },
-        {
-          "word": "xa",
-          "start": 57.6,
-          "end": 58.35
-        }
-      ]
-    },
-    {
-      "id": "dvn_026",
-      "start": 58.6,
-      "end": 61.8,
-      "text": "Đôi lúc bỗng thấy đồng cảm với Mai An Tiêm 🍉🏝️",
-      "icon": "🍉🏝️",
-      "tag": "🍉🏝️",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.52,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Đôi",
-          "start": 58.6,
-          "end": 59.0
-        },
-        {
-          "word": "lúc",
-          "start": 59.0,
-          "end": 59.12
-        },
-        {
-          "word": "bỗng",
-          "start": 59.12,
-          "end": 59.4
-        },
-        {
-          "word": "thấy",
-          "start": 59.4,
-          "end": 59.96
-        },
-        {
-          "word": "đồng",
-          "start": 59.96,
-          "end": 60.12
-        },
-        {
-          "word": "cảm",
-          "start": 60.12,
-          "end": 60.32
-        },
-        {
-          "word": "với",
-          "start": 60.32,
-          "end": 60.48
-        },
-        {
-          "word": "Mai",
-          "start": 60.48,
-          "end": 60.72
-        },
-        {
-          "word": "An",
-          "start": 60.72,
-          "end": 61.12
-        },
-        {
-          "word": "Tiêm",
-          "start": 61.12,
-          "end": 61.8
-        }
-      ]
-    },
-    {
-      "id": "dvn_027",
-      "start": 62.04,
-      "end": 63.48,
-      "text": "Bước chân ra là sóng gió 🌊⛈️",
-      "icon": "🌊⛈️",
-      "tag": "🌊⛈️",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.76,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Bước",
-          "start": 62.04,
-          "end": 62.32
-        },
-        {
-          "word": "chân",
-          "start": 62.32,
-          "end": 62.56
-        },
-        {
-          "word": "ra",
-          "start": 62.56,
-          "end": 62.68
-        },
-        {
-          "word": "là",
-          "start": 62.68,
-          "end": 62.8
-        },
-        {
-          "word": "sóng",
-          "start": 62.8,
-          "end": 63.24
-        },
-        {
-          "word": "gió",
-          "start": 63.24,
-          "end": 63.48
-        }
-      ]
-    },
-    {
-      "id": "dvn_028",
-      "start": 63.56,
-      "end": 65.55,
-      "text": "Chỉ có nhà mãi an yên 🏡🕊️",
-      "icon": "🏡🕊️",
-      "tag": "🏡🕊️",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 1.31,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Chỉ",
-          "start": 63.56,
-          "end": 63.84
-        },
-        {
-          "word": "có",
-          "start": 63.84,
-          "end": 64.08
-        },
-        {
-          "word": "nhà",
-          "start": 64.08,
-          "end": 64.44
-        },
-        {
-          "word": "mãi",
-          "start": 64.44,
-          "end": 64.68
-        },
-        {
-          "word": "an",
-          "start": 64.68,
-          "end": 65.12
-        },
-        {
-          "word": "yên",
-          "start": 65.12,
-          "end": 65.55
-        }
-      ]
-    },
-    {
-      "id": "dvn_029",
-      "start": 65.72,
-      "end": 68.95,
-      "text": "Ngoài kia phức tạp như rễ má và dây mơ 🌿🌀",
-      "icon": "🌿🌀",
-      "tag": "🌿🌀",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.55,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Ngoài",
-          "start": 65.72,
-          "end": 66.08
-        },
-        {
-          "word": "kia",
-          "start": 66.08,
-          "end": 66.32
-        },
-        {
-          "word": "phức",
-          "start": 66.32,
-          "end": 66.52
-        },
-        {
-          "word": "tạp",
-          "start": 66.52,
-          "end": 66.92
-        },
-        {
-          "word": "như",
-          "start": 66.92,
-          "end": 67.0
-        },
-        {
-          "word": "rễ",
-          "start": 67.0,
-          "end": 67.4
-        },
-        {
-          "word": "má",
-          "start": 67.4,
-          "end": 67.6
-        },
-        {
-          "word": "và",
-          "start": 67.6,
-          "end": 67.88
-        },
-        {
-          "word": "dây",
-          "start": 67.88,
-          "end": 68.28
-        },
-        {
-          "word": "mơ",
-          "start": 68.28,
-          "end": 68.95
-        }
-      ]
-    },
-    {
-      "id": "dvn_030",
-      "start": 69.16,
-      "end": 70.35,
-      "text": "Về nhà để có lúc 🏠✨",
-      "icon": "🏠✨",
-      "tag": "🏠✨",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.51,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Về",
-          "start": 69.16,
-          "end": 69.4
-        },
-        {
-          "word": "nhà",
-          "start": 69.4,
-          "end": 69.56
-        },
-        {
-          "word": "để",
-          "start": 69.56,
-          "end": 69.84
-        },
-        {
-          "word": "có",
-          "start": 69.84,
-          "end": 70.08
-        },
-        {
-          "word": "lúc",
-          "start": 70.08,
-          "end": 70.35
-        }
-      ]
-    },
-    {
-      "id": "dvn_031",
-      "start": 70.44,
-      "end": 72.55,
-      "text": "Cho phép mình được ngây thơ 🌼😊",
-      "icon": "🌼😊",
-      "tag": "🌼😊",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 1.43,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Cho",
-          "start": 70.44,
-          "end": 70.64
-        },
-        {
-          "word": "phép",
-          "start": 70.64,
-          "end": 70.92
-        },
-        {
-          "word": "mình",
-          "start": 70.92,
-          "end": 71.12
-        },
-        {
-          "word": "được",
-          "start": 71.12,
-          "end": 71.32
-        },
-        {
-          "word": "ngây",
-          "start": 71.32,
-          "end": 71.84
-        },
-        {
-          "word": "thơ",
-          "start": 71.84,
-          "end": 72.55
-        }
-      ]
-    },
-    {
-      "id": "dvn_032",
-      "start": 72.84,
-      "end": 76.15,
-      "text": "Mang theo bao náo nức lên chuyến xe này 🚌🎒",
-      "icon": "🚌🎒",
-      "tag": "🚌🎒",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.63,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Mang",
-          "start": 72.84,
-          "end": 73.28
-        },
-        {
-          "word": "theo",
-          "start": 73.28,
-          "end": 73.6
-        },
-        {
-          "word": "bao",
-          "start": 73.6,
-          "end": 73.88
-        },
-        {
-          "word": "náo",
-          "start": 73.88,
-          "end": 74.16
-        },
-        {
-          "word": "nức",
-          "start": 74.16,
-          "end": 74.75
-        },
-        {
-          "word": "lên",
-          "start": 74.75,
-          "end": 75.12
-        },
-        {
-          "word": "chuyến",
-          "start": 75.12,
-          "end": 75.44
-        },
-        {
-          "word": "xe",
-          "start": 75.44,
-          "end": 75.68
-        },
-        {
-          "word": "này",
-          "start": 75.68,
-          "end": 76.15
-        }
-      ]
-    },
-    {
-      "id": "dvn_033",
-      "start": 76.32,
-      "end": 79.75,
-      "text": "Trọn một niềm thao thức suốt những đêm ngày 🌙💭",
-      "icon": "🌙💭",
-      "tag": "🌙💭",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.75,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Trọn",
-          "start": 76.32,
-          "end": 76.92
-        },
-        {
-          "word": "một",
-          "start": 76.92,
-          "end": 77.16
-        },
-        {
-          "word": "niềm",
-          "start": 77.16,
-          "end": 77.48
-        },
-        {
-          "word": "thao",
-          "start": 77.48,
-          "end": 77.8
-        },
-        {
-          "word": "thức",
-          "start": 77.8,
-          "end": 78.28
-        },
-        {
-          "word": "suốt",
-          "start": 78.28,
-          "end": 78.72
-        },
-        {
-          "word": "những",
-          "start": 78.72,
-          "end": 79.0
-        },
-        {
-          "word": "đêm",
-          "start": 79.0,
-          "end": 79.36
-        },
-        {
-          "word": "ngày",
-          "start": 79.36,
-          "end": 79.75
-        }
-      ]
-    },
-    {
-      "id": "dvn_034",
-      "start": 79.88,
-      "end": 81.58,
-      "text": "Cùng dòng người trên phố 🛵🏮",
-      "icon": "🛵🏮",
-      "tag": "🛵🏮",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 1.02,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Cùng",
-          "start": 79.88,
-          "end": 80.52
-        },
-        {
-          "word": "dòng",
-          "start": 80.52,
-          "end": 80.76
-        },
-        {
-          "word": "người",
-          "start": 80.76,
-          "end": 81.04
-        },
-        {
-          "word": "trên",
-          "start": 81.04,
-          "end": 81.28
-        },
-        {
-          "word": "phố",
-          "start": 81.28,
-          "end": 81.58
-        }
-      ]
-    },
-    {
-      "id": "dvn_035",
-      "start": 81.68,
-      "end": 83.22,
-      "text": "Mang sắc mai hương đào 🌼🌸",
-      "icon": "🌼🌸",
-      "tag": "🌼🌸",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.86,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Mang",
-          "start": 81.68,
-          "end": 82.2
-        },
-        {
-          "word": "sắc",
-          "start": 82.2,
-          "end": 82.48
-        },
-        {
-          "word": "mai",
-          "start": 82.48,
-          "end": 82.72
-        },
-        {
-          "word": "hương",
-          "start": 82.72,
-          "end": 83.0
-        },
-        {
-          "word": "đào",
-          "start": 83.0,
-          "end": 83.22
-        }
-      ]
-    },
-    {
-      "id": "dvn_036",
-      "start": 83.32,
-      "end": 86.65,
-      "text": "Tìm về nơi ấm êm 🏡🔥",
-      "icon": "🏡🔥",
-      "tag": "🏡🔥",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.65,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Tìm",
-          "start": 83.32,
-          "end": 83.88
-        },
-        {
-          "word": "về",
-          "start": 83.88,
-          "end": 84.28
-        },
-        {
-          "word": "nơi",
-          "start": 84.28,
-          "end": 85.1
-        },
-        {
-          "word": "ấm",
-          "start": 85.1,
-          "end": 85.96
-        },
-        {
-          "word": "êm",
-          "start": 85.96,
-          "end": 86.65
-        }
-      ]
-    },
-    {
-      "id": "dvn_037",
-      "start": 86.96,
-      "end": 90.2,
+      "start": 1.18,
+      "end": 4.42,
       "text": "Đường về nhà là vào tim ta 🏡💖",
       "icon": "🏡💖",
       "tag": "🏡💖",
@@ -148835,45 +147220,1660 @@
       "words": [
         {
           "word": "Đường",
-          "start": 86.96,
-          "end": 87.44
+          "start": 1.18,
+          "end": 1.76
         },
         {
           "word": "về",
-          "start": 87.44,
-          "end": 87.8
+          "start": 1.76,
+          "end": 2.16
         },
         {
           "word": "nhà",
-          "start": 87.8,
-          "end": 88.28
+          "start": 2.16,
+          "end": 2.52
         },
         {
           "word": "là",
-          "start": 88.28,
-          "end": 88.64
+          "start": 2.52,
+          "end": 2.9
         },
         {
           "word": "vào",
-          "start": 88.64,
-          "end": 89.04
+          "start": 2.9,
+          "end": 3.44
         },
         {
           "word": "tim",
-          "start": 89.04,
-          "end": 89.52
+          "start": 3.44,
+          "end": 3.88
         },
         {
           "word": "ta",
-          "start": 89.52,
-          "end": 90.2
+          "start": 3.88,
+          "end": 4.42
+        }
+      ]
+    },
+    {
+      "id": "dvn_002",
+      "start": 4.62,
+      "end": 8.08,
+      "text": "Dẫu nắng mưa gần xa ☀️🌧️",
+      "icon": "☀️🌧️",
+      "tag": "☀️🌧️",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.78,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Dẫu",
+          "start": 4.62,
+          "end": 5.26
+        },
+        {
+          "word": "nắng",
+          "start": 5.26,
+          "end": 5.72
+        },
+        {
+          "word": "mưa",
+          "start": 5.72,
+          "end": 6.08
+        },
+        {
+          "word": "gần",
+          "start": 6.08,
+          "end": 7.12
+        },
+        {
+          "word": "xa",
+          "start": 7.12,
+          "end": 8.08
+        }
+      ]
+    },
+    {
+      "id": "dvn_003",
+      "start": 8.32,
+      "end": 11.65,
+      "text": "Thất bát, vang danh 🌟🏆",
+      "icon": "🌟🏆",
+      "tag": "🌟🏆",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.65,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Thất",
+          "start": 8.32,
+          "end": 9.18
+        },
+        {
+          "word": "bát,",
+          "start": 9.18,
+          "end": 9.96
+        },
+        {
+          "word": "vang",
+          "start": 9.96,
+          "end": 10.92
+        },
+        {
+          "word": "danh",
+          "start": 10.92,
+          "end": 11.65
+        }
+      ]
+    },
+    {
+      "id": "dvn_004",
+      "start": 11.86,
+      "end": 14.78,
+      "text": "Nhà vẫn luôn chờ ta 🏠🤍",
+      "icon": "🏠🤍",
+      "tag": "🏠🤍",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.24,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Nhà",
+          "start": 11.86,
+          "end": 12.36
+        },
+        {
+          "word": "vẫn",
+          "start": 12.36,
+          "end": 12.78
+        },
+        {
+          "word": "luôn",
+          "start": 12.78,
+          "end": 13.06
+        },
+        {
+          "word": "chờ",
+          "start": 13.06,
+          "end": 13.98
+        },
+        {
+          "word": "ta",
+          "start": 13.98,
+          "end": 14.78
+        }
+      ]
+    },
+    {
+      "id": "dvn_005",
+      "start": 15.02,
+      "end": 18.55,
+      "text": "Đường về nhà là vào tim ta 🛤️💛",
+      "icon": "🛤️💛",
+      "tag": "🛤️💛",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.85,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Đường",
+          "start": 15.02,
+          "end": 15.86
+        },
+        {
+          "word": "về",
+          "start": 15.86,
+          "end": 16.26
+        },
+        {
+          "word": "nhà",
+          "start": 16.26,
+          "end": 16.74
+        },
+        {
+          "word": "là",
+          "start": 16.74,
+          "end": 17.14
+        },
+        {
+          "word": "vào",
+          "start": 17.14,
+          "end": 17.64
+        },
+        {
+          "word": "tim",
+          "start": 17.64,
+          "end": 18.02
+        },
+        {
+          "word": "ta",
+          "start": 18.02,
+          "end": 18.55
+        }
+      ]
+    },
+    {
+      "id": "dvn_006",
+      "start": 18.74,
+      "end": 22.05,
+      "text": "Dẫu có muôn trùng qua 🌊⛰️",
+      "icon": "🌊⛰️",
+      "tag": "🌊⛰️",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.63,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Dẫu",
+          "start": 18.74,
+          "end": 19.26
+        },
+        {
+          "word": "có",
+          "start": 19.26,
+          "end": 19.86
+        },
+        {
+          "word": "muôn",
+          "start": 19.86,
+          "end": 20.18
+        },
+        {
+          "word": "trùng",
+          "start": 20.18,
+          "end": 21.26
+        },
+        {
+          "word": "qua",
+          "start": 21.26,
+          "end": 22.05
+        }
+      ]
+    },
+    {
+      "id": "dvn_007",
+      "start": 22.28,
+      "end": 25.88,
+      "text": "Vật đổi, sao dời ✨🌌",
+      "icon": "✨🌌",
+      "tag": "✨🌌",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.92,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Vật",
+          "start": 22.28,
+          "end": 23.22
+        },
+        {
+          "word": "đổi,",
+          "start": 23.22,
+          "end": 24.18
+        },
+        {
+          "word": "sao",
+          "start": 24.18,
+          "end": 25.12
+        },
+        {
+          "word": "dời",
+          "start": 25.12,
+          "end": 25.88
+        }
+      ]
+    },
+    {
+      "id": "dvn_008",
+      "start": 26.12,
+      "end": 28.08,
+      "text": "Nhà vẫn luôn là nhà 🏡🌸",
+      "icon": "🏡🌸",
+      "tag": "🏡🌸",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 1.28,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Nhà",
+          "start": 26.12,
+          "end": 26.62
+        },
+        {
+          "word": "vẫn",
+          "start": 26.62,
+          "end": 27.02
+        },
+        {
+          "word": "luôn",
+          "start": 27.02,
+          "end": 27.32
+        },
+        {
+          "word": "là",
+          "start": 27.32,
+          "end": 27.68
+        },
+        {
+          "word": "nhà",
+          "start": 27.68,
+          "end": 28.08
+        }
+      ]
+    },
+    {
+      "id": "dvn_009",
+      "start": 28.18,
+      "end": 29.65,
+      "text": "Đi về nhà 🛤️🏠",
+      "icon": "🛤️🏠",
+      "tag": "🛤️🏠",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.79,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Đi",
+          "start": 28.18,
+          "end": 28.38
+        },
+        {
+          "word": "về",
+          "start": 28.38,
+          "end": 28.88
+        },
+        {
+          "word": "nhà",
+          "start": 28.88,
+          "end": 29.65
+        }
+      ]
+    },
+    {
+      "id": "dvn_010",
+      "start": 29.94,
+      "end": 31.51,
+      "text": "Lao vào đời mà kiếm cơm 🌾🍚",
+      "icon": "🌾🍚",
+      "tag": "🌾🍚",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.89,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Lao",
+          "start": 29.94,
+          "end": 30.22
+        },
+        {
+          "word": "vào",
+          "start": 30.22,
+          "end": 30.42
+        },
+        {
+          "word": "đời",
+          "start": 30.42,
+          "end": 30.58
+        },
+        {
+          "word": "mà",
+          "start": 30.58,
+          "end": 30.7
+        },
+        {
+          "word": "kiếm",
+          "start": 30.7,
+          "end": 31.1
+        },
+        {
+          "word": "cơm",
+          "start": 31.1,
+          "end": 31.51
+        }
+      ]
+    },
+    {
+      "id": "dvn_011",
+      "start": 31.66,
+      "end": 33.14,
+      "text": "Lao vào đời tìm cơ hội 🚀✨",
+      "icon": "🚀✨",
+      "tag": "🚀✨",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.8,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Lao",
+          "start": 31.66,
+          "end": 31.9
+        },
+        {
+          "word": "vào",
+          "start": 31.9,
+          "end": 32.14
+        },
+        {
+          "word": "đời",
+          "start": 32.14,
+          "end": 32.3
+        },
+        {
+          "word": "tìm",
+          "start": 32.3,
+          "end": 32.66
+        },
+        {
+          "word": "cơ",
+          "start": 32.66,
+          "end": 32.82
+        },
+        {
+          "word": "hội",
+          "start": 32.82,
+          "end": 33.14
+        }
+      ]
+    },
+    {
+      "id": "dvn_012",
+      "start": 33.26,
+      "end": 34.81,
+      "text": "Những thành thị thường lấp lánh 🌃💫",
+      "icon": "🌃💫",
+      "tag": "🌃💫",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.87,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Những",
+          "start": 33.26,
+          "end": 33.7
+        },
+        {
+          "word": "thành",
+          "start": 33.7,
+          "end": 33.94
+        },
+        {
+          "word": "thị",
+          "start": 33.94,
+          "end": 34.18
+        },
+        {
+          "word": "thường",
+          "start": 34.18,
+          "end": 34.38
+        },
+        {
+          "word": "lấp",
+          "start": 34.38,
+          "end": 34.66
+        },
+        {
+          "word": "lánh",
+          "start": 34.66,
+          "end": 34.81
+        }
+      ]
+    },
+    {
+      "id": "dvn_013",
+      "start": 34.9,
+      "end": 36.76,
+      "text": "Còn đêm thành thị thường trơ trọi 🏙️🌙",
+      "icon": "🏙️🌙",
+      "tag": "🏙️🌙",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 1.18,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Còn",
+          "start": 34.9,
+          "end": 35.22
+        },
+        {
+          "word": "đêm",
+          "start": 35.22,
+          "end": 35.46
+        },
+        {
+          "word": "thành",
+          "start": 35.46,
+          "end": 35.7
+        },
+        {
+          "word": "thị",
+          "start": 35.7,
+          "end": 35.94
+        },
+        {
+          "word": "thường",
+          "start": 35.94,
+          "end": 36.14
+        },
+        {
+          "word": "trơ",
+          "start": 36.14,
+          "end": 36.42
+        },
+        {
+          "word": "trọi",
+          "start": 36.42,
+          "end": 36.76
+        }
+      ]
+    },
+    {
+      "id": "dvn_014",
+      "start": 36.9,
+      "end": 38.24,
+      "text": "Như mọi đứa trẻ khác 👦🌱",
+      "icon": "👦🌱",
+      "tag": "👦🌱",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.66,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Như",
+          "start": 36.9,
+          "end": 37.26
+        },
+        {
+          "word": "mọi",
+          "start": 37.26,
+          "end": 37.5
+        },
+        {
+          "word": "đứa",
+          "start": 37.5,
+          "end": 37.66
+        },
+        {
+          "word": "trẻ",
+          "start": 37.66,
+          "end": 37.94
+        },
+        {
+          "word": "khác",
+          "start": 37.94,
+          "end": 38.24
+        }
+      ]
+    },
+    {
+      "id": "dvn_015",
+      "start": 38.34,
+      "end": 40.41,
+      "text": "Lớn lên muốn đi xa hoài 🛤️🌍",
+      "icon": "🛤️🌍",
+      "tag": "🛤️🌍",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 1.39,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Lớn",
+          "start": 38.34,
+          "end": 38.62
+        },
+        {
+          "word": "lên",
+          "start": 38.62,
+          "end": 38.78
+        },
+        {
+          "word": "muốn",
+          "start": 38.78,
+          "end": 39.06
+        },
+        {
+          "word": "đi",
+          "start": 39.06,
+          "end": 39.22
+        },
+        {
+          "word": "xa",
+          "start": 39.22,
+          "end": 39.66
+        },
+        {
+          "word": "hoài",
+          "start": 39.66,
+          "end": 40.41
+        }
+      ]
+    },
+    {
+      "id": "dvn_016",
+      "start": 40.66,
+      "end": 41.86,
+      "text": "Nhà thì vẫn ở yên đó 🏡🕯️",
+      "icon": "🏡🕯️",
+      "tag": "🏡🕯️",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.52,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Nhà",
+          "start": 40.66,
+          "end": 40.82
+        },
+        {
+          "word": "thì",
+          "start": 40.82,
+          "end": 40.98
+        },
+        {
+          "word": "vẫn",
+          "start": 40.98,
+          "end": 41.3
+        },
+        {
+          "word": "ở",
+          "start": 41.3,
+          "end": 41.46
+        },
+        {
+          "word": "yên",
+          "start": 41.46,
+          "end": 41.66
+        },
+        {
+          "word": "đó",
+          "start": 41.66,
+          "end": 41.86
+        }
+      ]
+    },
+    {
+      "id": "dvn_017",
+      "start": 41.94,
+      "end": 43.96,
+      "text": "Đợi những đứa con đang ra ngoài 🚪🤍",
+      "icon": "🚪🤍",
+      "tag": "🚪🤍",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 1.34,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Đợi",
+          "start": 41.94,
+          "end": 42.34
+        },
+        {
+          "word": "những",
+          "start": 42.34,
+          "end": 42.62
+        },
+        {
+          "word": "đứa",
+          "start": 42.62,
+          "end": 42.82
+        },
+        {
+          "word": "con",
+          "start": 42.82,
+          "end": 43.06
+        },
+        {
+          "word": "đang",
+          "start": 43.06,
+          "end": 43.3
+        },
+        {
+          "word": "ra",
+          "start": 43.3,
+          "end": 43.5
+        },
+        {
+          "word": "ngoài",
+          "start": 43.5,
+          "end": 43.96
+        }
+      ]
+    },
+    {
+      "id": "dvn_018",
+      "start": 44.14,
+      "end": 45.28,
+      "text": "Bước ra ngoài mới biết 👣🌤️",
+      "icon": "👣🌤️",
+      "tag": "👣🌤️",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.46,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Bước",
+          "start": 44.14,
+          "end": 44.46
+        },
+        {
+          "word": "ra",
+          "start": 44.46,
+          "end": 44.62
+        },
+        {
+          "word": "ngoài",
+          "start": 44.62,
+          "end": 44.86
+        },
+        {
+          "word": "mới",
+          "start": 44.86,
+          "end": 45.06
+        },
+        {
+          "word": "biết",
+          "start": 45.06,
+          "end": 45.28
+        }
+      ]
+    },
+    {
+      "id": "dvn_019",
+      "start": 45.38,
+      "end": 47.41,
+      "text": "Không ở đâu bằng ở nhà 🏠💖",
+      "icon": "🏠💖",
+      "tag": "🏠💖",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 1.35,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Không",
+          "start": 45.38,
+          "end": 45.54
+        },
+        {
+          "word": "ở",
+          "start": 45.54,
+          "end": 45.9
+        },
+        {
+          "word": "đâu",
+          "start": 45.9,
+          "end": 46.06
+        },
+        {
+          "word": "bằng",
+          "start": 46.06,
+          "end": 46.38
+        },
+        {
+          "word": "ở",
+          "start": 46.38,
+          "end": 46.74
+        },
+        {
+          "word": "nhà",
+          "start": 46.74,
+          "end": 47.41
+        }
+      ]
+    },
+    {
+      "id": "dvn_020",
+      "start": 47.66,
+      "end": 48.81,
+      "text": "Biết có gì để mất 💭🤲",
+      "icon": "💭🤲",
+      "tag": "💭🤲",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.47,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Biết",
+          "start": 47.66,
+          "end": 47.94
+        },
+        {
+          "word": "có",
+          "start": 47.94,
+          "end": 48.1
+        },
+        {
+          "word": "gì",
+          "start": 48.1,
+          "end": 48.22
+        },
+        {
+          "word": "để",
+          "start": 48.22,
+          "end": 48.58
+        },
+        {
+          "word": "mất",
+          "start": 48.58,
+          "end": 48.81
+        }
+      ]
+    },
+    {
+      "id": "dvn_021",
+      "start": 48.9,
+      "end": 50.96,
+      "text": "Trước khi sẵn sàng mở quà 🎁✨",
+      "icon": "🎁✨",
+      "tag": "🎁✨",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 1.38,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Trước",
+          "start": 48.9,
+          "end": 49.22
+        },
+        {
+          "word": "khi",
+          "start": 49.22,
+          "end": 49.46
+        },
+        {
+          "word": "sẵn",
+          "start": 49.46,
+          "end": 49.7
+        },
+        {
+          "word": "sàng",
+          "start": 49.7,
+          "end": 49.9
+        },
+        {
+          "word": "mở",
+          "start": 49.9,
+          "end": 50.22
+        },
+        {
+          "word": "quà",
+          "start": 50.22,
+          "end": 50.96
+        }
+      ]
+    },
+    {
+      "id": "dvn_022",
+      "start": 51.22,
+      "end": 52.41,
+      "text": "Không phải là võ sĩ 🥊🔥",
+      "icon": "🥊🔥",
+      "tag": "🥊🔥",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.51,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Không",
+          "start": 51.22,
+          "end": 51.42
+        },
+        {
+          "word": "phải",
+          "start": 51.42,
+          "end": 51.66
+        },
+        {
+          "word": "là",
+          "start": 51.66,
+          "end": 51.82
+        },
+        {
+          "word": "võ",
+          "start": 51.82,
+          "end": 52.14
+        },
+        {
+          "word": "sĩ",
+          "start": 52.14,
+          "end": 52.41
+        }
+      ]
+    },
+    {
+      "id": "dvn_023",
+      "start": 52.54,
+      "end": 54.24,
+      "text": "Nhưng mà phải giỏi đấu đá ⚡🛡️",
+      "icon": "⚡🛡️",
+      "tag": "⚡🛡️",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 1.02,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Nhưng",
+          "start": 52.54,
+          "end": 52.7
+        },
+        {
+          "word": "mà",
+          "start": 52.7,
+          "end": 52.82
+        },
+        {
+          "word": "phải",
+          "start": 52.82,
+          "end": 53.18
+        },
+        {
+          "word": "giỏi",
+          "start": 53.18,
+          "end": 53.5
+        },
+        {
+          "word": "đấu",
+          "start": 53.5,
+          "end": 53.82
+        },
+        {
+          "word": "đá",
+          "start": 53.82,
+          "end": 54.24
+        }
+      ]
+    },
+    {
+      "id": "dvn_024",
+      "start": 54.38,
+      "end": 55.38,
+      "text": "Nhiều khi kiệt sức 😮‍💨🌧️",
+      "icon": "😮‍💨🌧️",
+      "tag": "😮‍💨🌧️",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.4,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Nhiều",
+          "start": 54.38,
+          "end": 54.82
+        },
+        {
+          "word": "khi",
+          "start": 54.82,
+          "end": 55.02
+        },
+        {
+          "word": "kiệt",
+          "start": 55.02,
+          "end": 55.21
+        },
+        {
+          "word": "sức",
+          "start": 55.21,
+          "end": 55.38
+        }
+      ]
+    },
+    {
+      "id": "dvn_025",
+      "start": 55.46,
+      "end": 58.21,
+      "text": "Chỉ vì gắng giữ mình không xấu xa 🪷🤍",
+      "icon": "🪷🤍",
+      "tag": "🪷🤍",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.07,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Chỉ",
+          "start": 55.46,
+          "end": 55.7
+        },
+        {
+          "word": "vì",
+          "start": 55.7,
+          "end": 56.02
+        },
+        {
+          "word": "gắng",
+          "start": 56.02,
+          "end": 56.34
+        },
+        {
+          "word": "giữ",
+          "start": 56.34,
+          "end": 56.62
+        },
+        {
+          "word": "mình",
+          "start": 56.62,
+          "end": 56.82
+        },
+        {
+          "word": "không",
+          "start": 56.82,
+          "end": 57.02
+        },
+        {
+          "word": "xấu",
+          "start": 57.02,
+          "end": 57.46
+        },
+        {
+          "word": "xa",
+          "start": 57.46,
+          "end": 58.21
+        }
+      ]
+    },
+    {
+      "id": "dvn_026",
+      "start": 58.46,
+      "end": 61.66,
+      "text": "Đôi lúc bỗng thấy đồng cảm với Mai An Tiêm 🍉🏝️",
+      "icon": "🍉🏝️",
+      "tag": "🍉🏝️",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.52,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Đôi",
+          "start": 58.46,
+          "end": 58.86
+        },
+        {
+          "word": "lúc",
+          "start": 58.86,
+          "end": 58.98
+        },
+        {
+          "word": "bỗng",
+          "start": 58.98,
+          "end": 59.26
+        },
+        {
+          "word": "thấy",
+          "start": 59.26,
+          "end": 59.82
+        },
+        {
+          "word": "đồng",
+          "start": 59.82,
+          "end": 59.98
+        },
+        {
+          "word": "cảm",
+          "start": 59.98,
+          "end": 60.18
+        },
+        {
+          "word": "với",
+          "start": 60.18,
+          "end": 60.34
+        },
+        {
+          "word": "Mai",
+          "start": 60.34,
+          "end": 60.58
+        },
+        {
+          "word": "An",
+          "start": 60.58,
+          "end": 60.98
+        },
+        {
+          "word": "Tiêm",
+          "start": 60.98,
+          "end": 61.66
+        }
+      ]
+    },
+    {
+      "id": "dvn_027",
+      "start": 61.9,
+      "end": 63.34,
+      "text": "Bước chân ra là sóng gió 🌊⛈️",
+      "icon": "🌊⛈️",
+      "tag": "🌊⛈️",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.76,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Bước",
+          "start": 61.9,
+          "end": 62.18
+        },
+        {
+          "word": "chân",
+          "start": 62.18,
+          "end": 62.42
+        },
+        {
+          "word": "ra",
+          "start": 62.42,
+          "end": 62.54
+        },
+        {
+          "word": "là",
+          "start": 62.54,
+          "end": 62.66
+        },
+        {
+          "word": "sóng",
+          "start": 62.66,
+          "end": 63.1
+        },
+        {
+          "word": "gió",
+          "start": 63.1,
+          "end": 63.34
+        }
+      ]
+    },
+    {
+      "id": "dvn_028",
+      "start": 63.42,
+      "end": 65.41,
+      "text": "Chỉ có nhà mãi an yên 🏡🕊️",
+      "icon": "🏡🕊️",
+      "tag": "🏡🕊️",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 1.31,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Chỉ",
+          "start": 63.42,
+          "end": 63.7
+        },
+        {
+          "word": "có",
+          "start": 63.7,
+          "end": 63.94
+        },
+        {
+          "word": "nhà",
+          "start": 63.94,
+          "end": 64.3
+        },
+        {
+          "word": "mãi",
+          "start": 64.3,
+          "end": 64.54
+        },
+        {
+          "word": "an",
+          "start": 64.54,
+          "end": 64.98
+        },
+        {
+          "word": "yên",
+          "start": 64.98,
+          "end": 65.41
+        }
+      ]
+    },
+    {
+      "id": "dvn_029",
+      "start": 65.58,
+      "end": 68.81,
+      "text": "Ngoài kia phức tạp như rễ má và dây mơ 🌿🌀",
+      "icon": "🌿🌀",
+      "tag": "🌿🌀",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.55,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Ngoài",
+          "start": 65.58,
+          "end": 65.94
+        },
+        {
+          "word": "kia",
+          "start": 65.94,
+          "end": 66.18
+        },
+        {
+          "word": "phức",
+          "start": 66.18,
+          "end": 66.38
+        },
+        {
+          "word": "tạp",
+          "start": 66.38,
+          "end": 66.78
+        },
+        {
+          "word": "như",
+          "start": 66.78,
+          "end": 66.86
+        },
+        {
+          "word": "rễ",
+          "start": 66.86,
+          "end": 67.26
+        },
+        {
+          "word": "má",
+          "start": 67.26,
+          "end": 67.46
+        },
+        {
+          "word": "và",
+          "start": 67.46,
+          "end": 67.74
+        },
+        {
+          "word": "dây",
+          "start": 67.74,
+          "end": 68.14
+        },
+        {
+          "word": "mơ",
+          "start": 68.14,
+          "end": 68.81
+        }
+      ]
+    },
+    {
+      "id": "dvn_030",
+      "start": 69.02,
+      "end": 70.21,
+      "text": "Về nhà để có lúc 🏠✨",
+      "icon": "🏠✨",
+      "tag": "🏠✨",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.51,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Về",
+          "start": 69.02,
+          "end": 69.26
+        },
+        {
+          "word": "nhà",
+          "start": 69.26,
+          "end": 69.42
+        },
+        {
+          "word": "để",
+          "start": 69.42,
+          "end": 69.7
+        },
+        {
+          "word": "có",
+          "start": 69.7,
+          "end": 69.94
+        },
+        {
+          "word": "lúc",
+          "start": 69.94,
+          "end": 70.21
+        }
+      ]
+    },
+    {
+      "id": "dvn_031",
+      "start": 70.3,
+      "end": 72.41,
+      "text": "Cho phép mình được ngây thơ 🌼😊",
+      "icon": "🌼😊",
+      "tag": "🌼😊",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 1.43,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Cho",
+          "start": 70.3,
+          "end": 70.5
+        },
+        {
+          "word": "phép",
+          "start": 70.5,
+          "end": 70.78
+        },
+        {
+          "word": "mình",
+          "start": 70.78,
+          "end": 70.98
+        },
+        {
+          "word": "được",
+          "start": 70.98,
+          "end": 71.18
+        },
+        {
+          "word": "ngây",
+          "start": 71.18,
+          "end": 71.7
+        },
+        {
+          "word": "thơ",
+          "start": 71.7,
+          "end": 72.41
+        }
+      ]
+    },
+    {
+      "id": "dvn_032",
+      "start": 72.7,
+      "end": 76.01,
+      "text": "Mang theo bao náo nức lên chuyến xe này 🚌🎒",
+      "icon": "🚌🎒",
+      "tag": "🚌🎒",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.63,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Mang",
+          "start": 72.7,
+          "end": 73.14
+        },
+        {
+          "word": "theo",
+          "start": 73.14,
+          "end": 73.46
+        },
+        {
+          "word": "bao",
+          "start": 73.46,
+          "end": 73.74
+        },
+        {
+          "word": "náo",
+          "start": 73.74,
+          "end": 74.02
+        },
+        {
+          "word": "nức",
+          "start": 74.02,
+          "end": 74.61
+        },
+        {
+          "word": "lên",
+          "start": 74.61,
+          "end": 74.98
+        },
+        {
+          "word": "chuyến",
+          "start": 74.98,
+          "end": 75.3
+        },
+        {
+          "word": "xe",
+          "start": 75.3,
+          "end": 75.54
+        },
+        {
+          "word": "này",
+          "start": 75.54,
+          "end": 76.01
+        }
+      ]
+    },
+    {
+      "id": "dvn_033",
+      "start": 76.18,
+      "end": 79.61,
+      "text": "Trọn một niềm thao thức suốt những đêm ngày 🌙💭",
+      "icon": "🌙💭",
+      "tag": "🌙💭",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.75,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Trọn",
+          "start": 76.18,
+          "end": 76.78
+        },
+        {
+          "word": "một",
+          "start": 76.78,
+          "end": 77.02
+        },
+        {
+          "word": "niềm",
+          "start": 77.02,
+          "end": 77.34
+        },
+        {
+          "word": "thao",
+          "start": 77.34,
+          "end": 77.66
+        },
+        {
+          "word": "thức",
+          "start": 77.66,
+          "end": 78.14
+        },
+        {
+          "word": "suốt",
+          "start": 78.14,
+          "end": 78.58
+        },
+        {
+          "word": "những",
+          "start": 78.58,
+          "end": 78.86
+        },
+        {
+          "word": "đêm",
+          "start": 78.86,
+          "end": 79.22
+        },
+        {
+          "word": "ngày",
+          "start": 79.22,
+          "end": 79.61
+        }
+      ]
+    },
+    {
+      "id": "dvn_034",
+      "start": 79.74,
+      "end": 81.44,
+      "text": "Cùng dòng người trên phố 🛵🏮",
+      "icon": "🛵🏮",
+      "tag": "🛵🏮",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 1.02,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Cùng",
+          "start": 79.74,
+          "end": 80.38
+        },
+        {
+          "word": "dòng",
+          "start": 80.38,
+          "end": 80.62
+        },
+        {
+          "word": "người",
+          "start": 80.62,
+          "end": 80.9
+        },
+        {
+          "word": "trên",
+          "start": 80.9,
+          "end": 81.14
+        },
+        {
+          "word": "phố",
+          "start": 81.14,
+          "end": 81.44
+        }
+      ]
+    },
+    {
+      "id": "dvn_035",
+      "start": 81.54,
+      "end": 83.08,
+      "text": "Mang sắc mai hương đào 🌼🌸",
+      "icon": "🌼🌸",
+      "tag": "🌼🌸",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 0.86,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Mang",
+          "start": 81.54,
+          "end": 82.06
+        },
+        {
+          "word": "sắc",
+          "start": 82.06,
+          "end": 82.34
+        },
+        {
+          "word": "mai",
+          "start": 82.34,
+          "end": 82.58
+        },
+        {
+          "word": "hương",
+          "start": 82.58,
+          "end": 82.86
+        },
+        {
+          "word": "đào",
+          "start": 82.86,
+          "end": 83.08
+        }
+      ]
+    },
+    {
+      "id": "dvn_036",
+      "start": 83.18,
+      "end": 86.51,
+      "text": "Tìm về nơi ấm êm 🏡🔥",
+      "icon": "🏡🔥",
+      "tag": "🏡🔥",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.65,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Tìm",
+          "start": 83.18,
+          "end": 83.74
+        },
+        {
+          "word": "về",
+          "start": 83.74,
+          "end": 84.14
+        },
+        {
+          "word": "nơi",
+          "start": 84.14,
+          "end": 84.96
+        },
+        {
+          "word": "ấm",
+          "start": 84.96,
+          "end": 85.82
+        },
+        {
+          "word": "êm",
+          "start": 85.82,
+          "end": 86.51
+        }
+      ]
+    },
+    {
+      "id": "dvn_037",
+      "start": 86.82,
+      "end": 90.06,
+      "text": "Đường về nhà là vào tim ta 🏡💖",
+      "icon": "🏡💖",
+      "tag": "🏡💖",
+      "mode": "queue",
+      "accentColor": "#f59e0b",
+      "timingIn": 0.4,
+      "timingMid": 2.56,
+      "timingOut": 0.28,
+      "words": [
+        {
+          "word": "Đường",
+          "start": 86.82,
+          "end": 87.3
+        },
+        {
+          "word": "về",
+          "start": 87.3,
+          "end": 87.66
+        },
+        {
+          "word": "nhà",
+          "start": 87.66,
+          "end": 88.14
+        },
+        {
+          "word": "là",
+          "start": 88.14,
+          "end": 88.5
+        },
+        {
+          "word": "vào",
+          "start": 88.5,
+          "end": 88.9
+        },
+        {
+          "word": "tim",
+          "start": 88.9,
+          "end": 89.38
+        },
+        {
+          "word": "ta",
+          "start": 89.38,
+          "end": 90.06
         }
       ]
     },
     {
       "id": "dvn_038",
-      "start": 90.48,
-      "end": 93.55,
+      "start": 90.34,
+      "end": 93.41,
       "text": "Dẫu nắng mưa gần xa ☀️🌧️",
       "icon": "☀️🌧️",
       "tag": "☀️🌧️",
@@ -148885,35 +148885,35 @@
       "words": [
         {
           "word": "Dẫu",
-          "start": 90.48,
-          "end": 90.96
+          "start": 90.34,
+          "end": 90.82
         },
         {
           "word": "nắng",
-          "start": 90.96,
-          "end": 91.4
+          "start": 90.82,
+          "end": 91.26
         },
         {
           "word": "mưa",
-          "start": 91.4,
-          "end": 91.76
+          "start": 91.26,
+          "end": 91.62
         },
         {
           "word": "gần",
-          "start": 91.76,
-          "end": 92.68
+          "start": 91.62,
+          "end": 92.54
         },
         {
           "word": "xa",
-          "start": 92.68,
-          "end": 93.55
+          "start": 92.54,
+          "end": 93.41
         }
       ]
     },
     {
       "id": "dvn_039",
-      "start": 93.88,
-      "end": 97.25,
+      "start": 93.74,
+      "end": 97.11,
       "text": "Thất bát, vang danh 🌟🏆",
       "icon": "🌟🏆",
       "tag": "🌟🏆",
@@ -148925,30 +148925,30 @@
       "words": [
         {
           "word": "Thất",
-          "start": 93.88,
-          "end": 94.88
+          "start": 93.74,
+          "end": 94.74
         },
         {
           "word": "bát,",
-          "start": 94.88,
-          "end": 95.68
+          "start": 94.74,
+          "end": 95.54
         },
         {
           "word": "vang",
-          "start": 95.68,
-          "end": 96.68
+          "start": 95.54,
+          "end": 96.54
         },
         {
           "word": "danh",
-          "start": 96.68,
-          "end": 97.25
+          "start": 96.54,
+          "end": 97.11
         }
       ]
     },
     {
       "id": "dvn_040",
-      "start": 97.48,
-      "end": 100.45,
+      "start": 97.34,
+      "end": 100.31,
       "text": "Nhà vẫn luôn chờ ta 🏠🤍",
       "icon": "🏠🤍",
       "tag": "🏠🤍",
@@ -148960,35 +148960,35 @@
       "words": [
         {
           "word": "Nhà",
-          "start": 97.48,
-          "end": 98.08
+          "start": 97.34,
+          "end": 97.94
         },
         {
           "word": "vẫn",
-          "start": 98.08,
-          "end": 98.48
+          "start": 97.94,
+          "end": 98.34
         },
         {
           "word": "luôn",
-          "start": 98.48,
-          "end": 98.72
+          "start": 98.34,
+          "end": 98.58
         },
         {
           "word": "chờ",
-          "start": 98.72,
-          "end": 99.72
+          "start": 98.58,
+          "end": 99.58
         },
         {
           "word": "ta",
-          "start": 99.72,
-          "end": 100.45
+          "start": 99.58,
+          "end": 100.31
         }
       ]
     },
     {
       "id": "dvn_041",
-      "start": 100.72,
-      "end": 104.25,
+      "start": 100.58,
+      "end": 104.11,
       "text": "Đường về nhà là vào tim ta 🛤️💛",
       "icon": "🛤️💛",
       "tag": "🛤️💛",
@@ -149000,45 +149000,45 @@
       "words": [
         {
           "word": "Đường",
-          "start": 100.72,
-          "end": 101.6
+          "start": 100.58,
+          "end": 101.46
         },
         {
           "word": "về",
-          "start": 101.6,
-          "end": 102.0
+          "start": 101.46,
+          "end": 101.86
         },
         {
           "word": "nhà",
-          "start": 102.0,
-          "end": 102.48
+          "start": 101.86,
+          "end": 102.34
         },
         {
           "word": "là",
-          "start": 102.48,
-          "end": 102.92
+          "start": 102.34,
+          "end": 102.78
         },
         {
           "word": "vào",
-          "start": 102.92,
-          "end": 103.36
+          "start": 102.78,
+          "end": 103.22
         },
         {
           "word": "tim",
-          "start": 103.36,
-          "end": 103.76
+          "start": 103.22,
+          "end": 103.62
         },
         {
           "word": "ta",
-          "start": 103.76,
-          "end": 104.25
+          "start": 103.62,
+          "end": 104.11
         }
       ]
     },
     {
       "id": "dvn_042",
-      "start": 104.44,
-      "end": 107.95,
+      "start": 104.3,
+      "end": 107.81,
       "text": "Dẫu có muôn trùng qua 🌊⛰️",
       "icon": "🌊⛰️",
       "tag": "🌊⛰️",
@@ -149050,35 +149050,35 @@
       "words": [
         {
           "word": "Dẫu",
-          "start": 104.44,
-          "end": 105.04
+          "start": 104.3,
+          "end": 104.9
         },
         {
           "word": "có",
-          "start": 105.04,
-          "end": 105.6
+          "start": 104.9,
+          "end": 105.46
         },
         {
           "word": "muôn",
-          "start": 105.6,
-          "end": 105.96
+          "start": 105.46,
+          "end": 105.82
         },
         {
           "word": "trùng",
-          "start": 105.96,
-          "end": 107.28
+          "start": 105.82,
+          "end": 107.14
         },
         {
           "word": "qua",
-          "start": 107.28,
-          "end": 107.95
+          "start": 107.14,
+          "end": 107.81
         }
       ]
     },
     {
       "id": "dvn_043",
-      "start": 108.28,
-      "end": 112.25,
+      "start": 108.14,
+      "end": 112.11,
       "text": "Vật đổi, sao dời ✨🌌",
       "icon": "✨🌌",
       "tag": "✨🌌",
@@ -149090,30 +149090,30 @@
       "words": [
         {
           "word": "Vật",
-          "start": 108.28,
-          "end": 109.08
+          "start": 108.14,
+          "end": 108.94
         },
         {
           "word": "đổi,",
-          "start": 109.08,
-          "end": 110.08
+          "start": 108.94,
+          "end": 109.94
         },
         {
           "word": "sao",
-          "start": 110.08,
-          "end": 111.52
+          "start": 109.94,
+          "end": 111.38
         },
         {
           "word": "dời",
-          "start": 111.52,
-          "end": 112.25
+          "start": 111.38,
+          "end": 112.11
         }
       ]
     },
     {
       "id": "dvn_044",
-      "start": 112.52,
-      "end": 114.95,
+      "start": 112.38,
+      "end": 114.81,
       "text": "Nhà vẫn luôn là nhà 🏡🌸",
       "icon": "🏡🌸",
       "tag": "🏡🌸",
@@ -149125,35 +149125,35 @@
       "words": [
         {
           "word": "Nhà",
-          "start": 112.52,
-          "end": 112.84
+          "start": 112.38,
+          "end": 112.7
         },
         {
           "word": "vẫn",
-          "start": 112.84,
-          "end": 113.12
+          "start": 112.7,
+          "end": 112.98
         },
         {
           "word": "luôn",
-          "start": 113.12,
-          "end": 113.65
+          "start": 112.98,
+          "end": 113.51
         },
         {
           "word": "là",
-          "start": 113.65,
-          "end": 114.24
+          "start": 113.51,
+          "end": 114.1
         },
         {
           "word": "nhà",
-          "start": 114.24,
-          "end": 114.95
+          "start": 114.1,
+          "end": 114.81
         }
       ]
     },
     {
       "id": "dvn_045",
-      "start": 115.24,
-      "end": 117.88,
+      "start": 115.1,
+      "end": 117.74,
       "text": "Về ngôi nhà có góc vườn nhiều chó nhiều gà 🏡🐕",
       "icon": "🏡🐕",
       "tag": "🏡🐕",
@@ -149165,60 +149165,60 @@
       "words": [
         {
           "word": "Về",
-          "start": 115.24,
-          "end": 115.6
+          "start": 115.1,
+          "end": 115.46
         },
         {
           "word": "ngôi",
-          "start": 115.6,
-          "end": 115.92
+          "start": 115.46,
+          "end": 115.78
         },
         {
           "word": "nhà",
-          "start": 115.92,
-          "end": 116.12
+          "start": 115.78,
+          "end": 115.98
         },
         {
           "word": "có",
-          "start": 116.12,
-          "end": 116.52
+          "start": 115.98,
+          "end": 116.38
         },
         {
           "word": "góc",
-          "start": 116.52,
-          "end": 116.72
+          "start": 116.38,
+          "end": 116.58
         },
         {
           "word": "vườn",
-          "start": 116.72,
-          "end": 116.96
+          "start": 116.58,
+          "end": 116.82
         },
         {
           "word": "nhiều",
-          "start": 116.96,
-          "end": 117.16
+          "start": 116.82,
+          "end": 117.02
         },
         {
           "word": "chó",
-          "start": 117.16,
-          "end": 117.44
+          "start": 117.02,
+          "end": 117.3
         },
         {
           "word": "nhiều",
-          "start": 117.44,
-          "end": 117.68
+          "start": 117.3,
+          "end": 117.54
         },
         {
           "word": "gà",
-          "start": 117.68,
-          "end": 117.88
+          "start": 117.54,
+          "end": 117.74
         }
       ]
     },
     {
       "id": "dvn_046",
-      "start": 117.96,
-      "end": 119.68,
+      "start": 117.82,
+      "end": 119.54,
       "text": "Đám bạn nói con khó chiều 👥😄",
       "icon": "👥😄",
       "tag": "👥😄",
@@ -149230,40 +149230,40 @@
       "words": [
         {
           "word": "Đám",
-          "start": 117.96,
-          "end": 118.32
+          "start": 117.82,
+          "end": 118.18
         },
         {
           "word": "bạn",
-          "start": 118.32,
-          "end": 118.56
+          "start": 118.18,
+          "end": 118.42
         },
         {
           "word": "nói",
-          "start": 118.56,
-          "end": 118.76
+          "start": 118.42,
+          "end": 118.62
         },
         {
           "word": "con",
-          "start": 118.76,
-          "end": 118.96
+          "start": 118.62,
+          "end": 118.82
         },
         {
           "word": "khó",
-          "start": 118.96,
-          "end": 119.2
+          "start": 118.82,
+          "end": 119.06
         },
         {
           "word": "chiều",
-          "start": 119.2,
-          "end": 119.68
+          "start": 119.06,
+          "end": 119.54
         }
       ]
     },
     {
       "id": "dvn_047",
-      "start": 119.8,
-      "end": 122.1,
+      "start": 119.66,
+      "end": 121.96,
       "text": "Lại thích gió trời hơn gió điều hòa 🍃🌤️",
       "icon": "🍃🌤️",
       "tag": "🍃🌤️",
@@ -149275,50 +149275,50 @@
       "words": [
         {
           "word": "Lại",
-          "start": 119.8,
-          "end": 119.96
+          "start": 119.66,
+          "end": 119.82
         },
         {
           "word": "thích",
-          "start": 119.96,
-          "end": 120.16
+          "start": 119.82,
+          "end": 120.02
         },
         {
           "word": "gió",
-          "start": 120.16,
-          "end": 120.32
+          "start": 120.02,
+          "end": 120.18
         },
         {
           "word": "trời",
-          "start": 120.32,
-          "end": 120.52
+          "start": 120.18,
+          "end": 120.38
         },
         {
           "word": "hơn",
-          "start": 120.52,
-          "end": 120.84
+          "start": 120.38,
+          "end": 120.7
         },
         {
           "word": "gió",
-          "start": 120.84,
-          "end": 121.0
+          "start": 120.7,
+          "end": 120.86
         },
         {
           "word": "điều",
-          "start": 121.0,
-          "end": 121.36
+          "start": 120.86,
+          "end": 121.22
         },
         {
           "word": "hòa",
-          "start": 121.36,
-          "end": 122.1
+          "start": 121.22,
+          "end": 121.96
         }
       ]
     },
     {
       "id": "dvn_048",
-      "start": 122.36,
-      "end": 124.05,
+      "start": 122.22,
+      "end": 123.91,
       "text": "Về ăn cơm mẹ nấu 🍚🍲",
       "icon": "🍚🍲",
       "tag": "🍚🍲",
@@ -149330,35 +149330,35 @@
       "words": [
         {
           "word": "Về",
-          "start": 122.36,
-          "end": 122.72
+          "start": 122.22,
+          "end": 122.58
         },
         {
           "word": "ăn",
-          "start": 122.72,
-          "end": 122.96
+          "start": 122.58,
+          "end": 122.82
         },
         {
           "word": "cơm",
-          "start": 122.96,
-          "end": 123.2
+          "start": 122.82,
+          "end": 123.06
         },
         {
           "word": "mẹ",
-          "start": 123.2,
-          "end": 123.48
+          "start": 123.06,
+          "end": 123.34
         },
         {
           "word": "nấu",
-          "start": 123.48,
-          "end": 124.05
+          "start": 123.34,
+          "end": 123.91
         }
       ]
     },
     {
       "id": "dvn_049",
-      "start": 124.2,
-      "end": 125.85,
+      "start": 124.06,
+      "end": 125.71,
       "text": "Về mặc áo mẹ may 👕🧵",
       "icon": "👕🧵",
       "tag": "👕🧵",
@@ -149370,35 +149370,35 @@
       "words": [
         {
           "word": "Về",
-          "start": 124.2,
-          "end": 124.44
+          "start": 124.06,
+          "end": 124.3
         },
         {
           "word": "mặc",
-          "start": 124.44,
-          "end": 124.72
+          "start": 124.3,
+          "end": 124.58
         },
         {
           "word": "áo",
-          "start": 124.72,
-          "end": 124.88
+          "start": 124.58,
+          "end": 124.74
         },
         {
           "word": "mẹ",
-          "start": 124.88,
-          "end": 125.2
+          "start": 124.74,
+          "end": 125.06
         },
         {
           "word": "may",
-          "start": 125.2,
-          "end": 125.85
+          "start": 125.06,
+          "end": 125.71
         }
       ]
     },
     {
       "id": "dvn_050",
-      "start": 126.0,
-      "end": 127.08,
+      "start": 125.86,
+      "end": 126.94,
       "text": "Về đưa ba ra chợ 🛵👨‍👦",
       "icon": "🛵👨‍👦",
       "tag": "🛵👨‍👦",
@@ -149410,35 +149410,35 @@
       "words": [
         {
           "word": "Về",
-          "start": 126.0,
-          "end": 126.24
+          "start": 125.86,
+          "end": 126.1
         },
         {
           "word": "đưa",
-          "start": 126.24,
-          "end": 126.52
+          "start": 126.1,
+          "end": 126.38
         },
         {
           "word": "ba",
-          "start": 126.52,
-          "end": 126.72
+          "start": 126.38,
+          "end": 126.58
         },
         {
           "word": "ra",
-          "start": 126.72,
-          "end": 126.88
+          "start": 126.58,
+          "end": 126.74
         },
         {
           "word": "chợ",
-          "start": 126.88,
-          "end": 127.08
+          "start": 126.74,
+          "end": 126.94
         }
       ]
     },
     {
       "id": "dvn_051",
-      "start": 127.16,
-      "end": 129.3,
+      "start": 127.02,
+      "end": 129.16,
       "text": "Mua cây đào cây mai về bày 🌸🌼",
       "icon": "🌸🌼",
       "tag": "🌸🌼",
@@ -149450,45 +149450,45 @@
       "words": [
         {
           "word": "Mua",
-          "start": 127.16,
-          "end": 127.6
+          "start": 127.02,
+          "end": 127.46
         },
         {
           "word": "cây",
-          "start": 127.6,
-          "end": 127.88
+          "start": 127.46,
+          "end": 127.74
         },
         {
           "word": "đào",
-          "start": 127.88,
-          "end": 128.04
+          "start": 127.74,
+          "end": 127.9
         },
         {
           "word": "cây",
-          "start": 128.04,
-          "end": 128.32
+          "start": 127.9,
+          "end": 128.18
         },
         {
           "word": "mai",
-          "start": 128.32,
-          "end": 128.52
+          "start": 128.18,
+          "end": 128.38
         },
         {
           "word": "về",
-          "start": 128.52,
-          "end": 128.72
+          "start": 128.38,
+          "end": 128.58
         },
         {
           "word": "bày",
-          "start": 128.72,
-          "end": 129.3
+          "start": 128.58,
+          "end": 129.16
         }
       ]
     },
     {
       "id": "dvn_052",
-      "start": 129.44,
-      "end": 130.78,
+      "start": 129.3,
+      "end": 130.64,
       "text": "Cả năm trời làm việc 🗓️💼",
       "icon": "🗓️💼",
       "tag": "🗓️💼",
@@ -149500,35 +149500,35 @@
       "words": [
         {
           "word": "Cả",
-          "start": 129.44,
-          "end": 129.84
+          "start": 129.3,
+          "end": 129.7
         },
         {
           "word": "năm",
-          "start": 129.84,
-          "end": 130.04
+          "start": 129.7,
+          "end": 129.9
         },
         {
           "word": "trời",
-          "start": 130.04,
-          "end": 130.36
+          "start": 129.9,
+          "end": 130.22
         },
         {
           "word": "làm",
-          "start": 130.36,
-          "end": 130.56
+          "start": 130.22,
+          "end": 130.42
         },
         {
           "word": "việc",
-          "start": 130.56,
-          "end": 130.78
+          "start": 130.42,
+          "end": 130.64
         }
       ]
     },
     {
       "id": "dvn_053",
-      "start": 130.88,
-      "end": 133.05,
+      "start": 130.74,
+      "end": 132.91,
       "text": "Nhiều khi rã rời như cái máy ⚙️😮‍💨",
       "icon": "⚙️😮‍💨",
       "tag": "⚙️😮‍💨",
@@ -149540,45 +149540,45 @@
       "words": [
         {
           "word": "Nhiều",
-          "start": 130.88,
-          "end": 131.12
+          "start": 130.74,
+          "end": 130.98
         },
         {
           "word": "khi",
-          "start": 131.12,
-          "end": 131.24
+          "start": 130.98,
+          "end": 131.1
         },
         {
           "word": "rã",
-          "start": 131.24,
-          "end": 131.64
+          "start": 131.1,
+          "end": 131.5
         },
         {
           "word": "rời",
-          "start": 131.64,
-          "end": 131.84
+          "start": 131.5,
+          "end": 131.7
         },
         {
           "word": "như",
-          "start": 131.84,
-          "end": 132.04
+          "start": 131.7,
+          "end": 131.9
         },
         {
           "word": "cái",
-          "start": 132.04,
-          "end": 132.32
+          "start": 131.9,
+          "end": 132.18
         },
         {
           "word": "máy",
-          "start": 132.32,
-          "end": 133.05
+          "start": 132.18,
+          "end": 132.91
         }
       ]
     },
     {
       "id": "dvn_054",
-      "start": 133.2,
-      "end": 134.35,
+      "start": 133.06,
+      "end": 134.21,
       "text": "Về nhà thấy áp lực 🏠🍃",
       "icon": "🏠🍃",
       "tag": "🏠🍃",
@@ -149590,35 +149590,35 @@
       "words": [
         {
           "word": "Về",
-          "start": 133.2,
-          "end": 133.48
+          "start": 133.06,
+          "end": 133.34
         },
         {
           "word": "nhà",
-          "start": 133.48,
-          "end": 133.64
+          "start": 133.34,
+          "end": 133.5
         },
         {
           "word": "thấy",
-          "start": 133.64,
-          "end": 133.88
+          "start": 133.5,
+          "end": 133.74
         },
         {
           "word": "áp",
-          "start": 133.88,
-          "end": 134.08
+          "start": 133.74,
+          "end": 133.94
         },
         {
           "word": "lực",
-          "start": 134.08,
-          "end": 134.35
+          "start": 133.94,
+          "end": 134.21
         }
       ]
     },
     {
       "id": "dvn_055",
-      "start": 134.44,
-      "end": 136.05,
+      "start": 134.3,
+      "end": 135.91,
       "text": "Nhẹ như bấc thổi cái là bay 🌬️🕊️",
       "icon": "🌬️🕊️",
       "tag": "🌬️🕊️",
@@ -149630,45 +149630,45 @@
       "words": [
         {
           "word": "Nhẹ",
-          "start": 134.44,
-          "end": 134.72
+          "start": 134.3,
+          "end": 134.58
         },
         {
           "word": "như",
-          "start": 134.72,
-          "end": 134.84
+          "start": 134.58,
+          "end": 134.7
         },
         {
           "word": "bấc",
-          "start": 134.84,
-          "end": 135.08
+          "start": 134.7,
+          "end": 134.94
         },
         {
           "word": "thổi",
-          "start": 135.08,
-          "end": 135.4
+          "start": 134.94,
+          "end": 135.26
         },
         {
           "word": "cái",
-          "start": 135.4,
-          "end": 135.6
+          "start": 135.26,
+          "end": 135.46
         },
         {
           "word": "là",
-          "start": 135.6,
-          "end": 135.8
+          "start": 135.46,
+          "end": 135.66
         },
         {
           "word": "bay",
-          "start": 135.8,
-          "end": 136.05
+          "start": 135.66,
+          "end": 135.91
         }
       ]
     },
     {
       "id": "dvn_056",
-      "start": 136.12,
-      "end": 138.2,
+      "start": 135.98,
+      "end": 138.06,
       "text": "Ấm êm hơn bếp lửa 🔥🧡",
       "icon": "🔥🧡",
       "tag": "🔥🧡",
@@ -149680,35 +149680,35 @@
       "words": [
         {
           "word": "Ấm",
-          "start": 136.12,
-          "end": 136.96
+          "start": 135.98,
+          "end": 136.82
         },
         {
           "word": "êm",
-          "start": 136.96,
-          "end": 137.24
+          "start": 136.82,
+          "end": 137.1
         },
         {
           "word": "hơn",
-          "start": 137.24,
-          "end": 137.44
+          "start": 137.1,
+          "end": 137.3
         },
         {
           "word": "bếp",
-          "start": 137.44,
-          "end": 137.72
+          "start": 137.3,
+          "end": 137.58
         },
         {
           "word": "lửa",
-          "start": 137.72,
-          "end": 138.2
+          "start": 137.58,
+          "end": 138.06
         }
       ]
     },
     {
       "id": "dvn_057",
-      "start": 138.36,
-      "end": 139.98,
+      "start": 138.22,
+      "end": 139.84,
       "text": "Ngọt bùi hơn lúa non 🌾✨",
       "icon": "🌾✨",
       "tag": "🌾✨",
@@ -149720,35 +149720,35 @@
       "words": [
         {
           "word": "Ngọt",
-          "start": 138.36,
-          "end": 138.68
+          "start": 138.22,
+          "end": 138.54
         },
         {
           "word": "bùi",
-          "start": 138.68,
-          "end": 139.0
+          "start": 138.54,
+          "end": 138.86
         },
         {
           "word": "hơn",
-          "start": 139.0,
-          "end": 139.2
+          "start": 138.86,
+          "end": 139.06
         },
         {
           "word": "lúa",
-          "start": 139.2,
-          "end": 139.44
+          "start": 139.06,
+          "end": 139.3
         },
         {
           "word": "non",
-          "start": 139.44,
-          "end": 139.98
+          "start": 139.3,
+          "end": 139.84
         }
       ]
     },
     {
       "id": "dvn_058",
-      "start": 140.12,
-      "end": 141.7,
+      "start": 139.98,
+      "end": 141.56,
       "text": "Nhà vẫn luôn ở đó 🏡🕯️",
       "icon": "🏡🕯️",
       "tag": "🏡🕯️",
@@ -149760,35 +149760,35 @@
       "words": [
         {
           "word": "Nhà",
-          "start": 140.12,
-          "end": 140.48
+          "start": 139.98,
+          "end": 140.34
         },
         {
           "word": "vẫn",
-          "start": 140.48,
-          "end": 140.72
+          "start": 140.34,
+          "end": 140.58
         },
         {
           "word": "luôn",
-          "start": 140.72,
-          "end": 140.96
+          "start": 140.58,
+          "end": 140.82
         },
         {
           "word": "ở",
-          "start": 140.96,
-          "end": 141.16
+          "start": 140.82,
+          "end": 141.02
         },
         {
           "word": "đó",
-          "start": 141.16,
-          "end": 141.7
+          "start": 141.02,
+          "end": 141.56
         }
       ]
     },
     {
       "id": "dvn_059",
-      "start": 141.84,
-      "end": 143.65,
+      "start": 141.7,
+      "end": 143.51,
       "text": "Mong chờ những đứa con 🚪🤍",
       "icon": "🚪🤍",
       "tag": "🚪🤍",
@@ -149800,35 +149800,35 @@
       "words": [
         {
           "word": "Mong",
-          "start": 141.84,
-          "end": 142.2
+          "start": 141.7,
+          "end": 142.06
         },
         {
           "word": "chờ",
-          "start": 142.2,
-          "end": 142.52
+          "start": 142.06,
+          "end": 142.38
         },
         {
           "word": "những",
-          "start": 142.52,
-          "end": 142.76
+          "start": 142.38,
+          "end": 142.62
         },
         {
           "word": "đứa",
-          "start": 142.76,
-          "end": 143.0
+          "start": 142.62,
+          "end": 142.86
         },
         {
           "word": "con",
-          "start": 143.0,
-          "end": 143.65
+          "start": 142.86,
+          "end": 143.51
         }
       ]
     },
     {
       "id": "dvn_060",
-      "start": 143.8,
-      "end": 147.15,
+      "start": 143.66,
+      "end": 147.01,
       "text": "Dẫu cho mưa cho nắng không bao giờ nề hà 🌧️☀️",
       "icon": "🌧️☀️",
       "tag": "🌧️☀️",
@@ -149840,60 +149840,60 @@
       "words": [
         {
           "word": "Dẫu",
-          "start": 143.8,
-          "end": 144.12
+          "start": 143.66,
+          "end": 143.98
         },
         {
           "word": "cho",
-          "start": 144.12,
-          "end": 144.32
+          "start": 143.98,
+          "end": 144.18
         },
         {
           "word": "mưa",
-          "start": 144.32,
-          "end": 144.52
+          "start": 144.18,
+          "end": 144.38
         },
         {
           "word": "cho",
-          "start": 144.52,
-          "end": 144.8
+          "start": 144.38,
+          "end": 144.66
         },
         {
           "word": "nắng",
-          "start": 144.8,
-          "end": 145.52
+          "start": 144.66,
+          "end": 145.38
         },
         {
           "word": "không",
-          "start": 145.52,
-          "end": 145.76
+          "start": 145.38,
+          "end": 145.62
         },
         {
           "word": "bao",
-          "start": 145.76,
-          "end": 145.96
+          "start": 145.62,
+          "end": 145.82
         },
         {
           "word": "giờ",
-          "start": 145.96,
-          "end": 146.12
+          "start": 145.82,
+          "end": 145.98
         },
         {
           "word": "nề",
-          "start": 146.12,
-          "end": 146.48
+          "start": 145.98,
+          "end": 146.34
         },
         {
           "word": "hà",
-          "start": 146.48,
-          "end": 147.15
+          "start": 146.34,
+          "end": 147.01
         }
       ]
     },
     {
       "id": "dvn_061",
-      "start": 147.36,
-      "end": 150.9,
+      "start": 147.22,
+      "end": 150.76,
       "text": "Hạnh phúc chỉ đơn giản là còn được về nhà 💖🏡",
       "icon": "💖🏡",
       "tag": "💖🏡",
@@ -149905,60 +149905,60 @@
       "words": [
         {
           "word": "Hạnh",
-          "start": 147.36,
-          "end": 147.6
+          "start": 147.22,
+          "end": 147.46
         },
         {
           "word": "phúc",
-          "start": 147.6,
-          "end": 147.8
+          "start": 147.46,
+          "end": 147.66
         },
         {
           "word": "chỉ",
-          "start": 147.8,
-          "end": 148.12
+          "start": 147.66,
+          "end": 147.98
         },
         {
           "word": "đơn",
-          "start": 148.12,
-          "end": 148.32
+          "start": 147.98,
+          "end": 148.18
         },
         {
           "word": "giản",
-          "start": 148.32,
-          "end": 148.88
+          "start": 148.18,
+          "end": 148.74
         },
         {
           "word": "là",
-          "start": 148.88,
-          "end": 149.24
+          "start": 148.74,
+          "end": 149.1
         },
         {
           "word": "còn",
-          "start": 149.24,
-          "end": 149.52
+          "start": 149.1,
+          "end": 149.38
         },
         {
           "word": "được",
-          "start": 149.52,
-          "end": 150.08
+          "start": 149.38,
+          "end": 149.94
         },
         {
           "word": "về",
-          "start": 150.08,
-          "end": 150.25
+          "start": 149.94,
+          "end": 150.11
         },
         {
           "word": "nhà",
-          "start": 150.25,
-          "end": 150.9
+          "start": 150.11,
+          "end": 150.76
         }
       ]
     },
     {
       "id": "dvn_062",
-      "start": 151.08,
-      "end": 152.55,
+      "start": 150.94,
+      "end": 152.41,
       "text": "Hạnh phúc, đi về nhà 😊🏠",
       "icon": "😊🏠",
       "tag": "😊🏠",
@@ -149970,35 +149970,35 @@
       "words": [
         {
           "word": "Hạnh",
-          "start": 151.08,
-          "end": 151.4
+          "start": 150.94,
+          "end": 151.26
         },
         {
           "word": "phúc,",
-          "start": 151.4,
-          "end": 151.88
+          "start": 151.26,
+          "end": 151.74
         },
         {
           "word": "đi",
-          "start": 151.88,
-          "end": 152.12
+          "start": 151.74,
+          "end": 151.98
         },
         {
           "word": "về",
-          "start": 152.12,
-          "end": 152.28
+          "start": 151.98,
+          "end": 152.14
         },
         {
           "word": "nhà",
-          "start": 152.28,
-          "end": 152.55
+          "start": 152.14,
+          "end": 152.41
         }
       ]
     },
     {
       "id": "dvn_063",
-      "start": 152.68,
-      "end": 154.48,
+      "start": 152.54,
+      "end": 154.34,
       "text": "Cô đơn, đi về nhà 🌙🏠",
       "icon": "🌙🏠",
       "tag": "🌙🏠",
@@ -150010,35 +150010,35 @@
       "words": [
         {
           "word": "Cô",
-          "start": 152.68,
-          "end": 153.2
+          "start": 152.54,
+          "end": 153.06
         },
         {
           "word": "đơn,",
-          "start": 153.2,
-          "end": 153.68
+          "start": 153.06,
+          "end": 153.54
         },
         {
           "word": "đi",
-          "start": 153.68,
-          "end": 153.92
+          "start": 153.54,
+          "end": 153.78
         },
         {
           "word": "về",
-          "start": 153.92,
-          "end": 154.08
+          "start": 153.78,
+          "end": 153.94
         },
         {
           "word": "nhà",
-          "start": 154.08,
-          "end": 154.48
+          "start": 153.94,
+          "end": 154.34
         }
       ]
     },
     {
       "id": "dvn_064",
-      "start": 154.64,
-      "end": 156.15,
+      "start": 154.5,
+      "end": 156.01,
       "text": "Thành công, đi về nhà 🏆🏠",
       "icon": "🏆🏠",
       "tag": "🏆🏠",
@@ -150050,35 +150050,35 @@
       "words": [
         {
           "word": "Thành",
-          "start": 154.64,
-          "end": 154.96
+          "start": 154.5,
+          "end": 154.82
         },
         {
           "word": "công,",
-          "start": 154.96,
-          "end": 155.44
+          "start": 154.82,
+          "end": 155.3
         },
         {
           "word": "đi",
-          "start": 155.44,
-          "end": 155.68
+          "start": 155.3,
+          "end": 155.54
         },
         {
           "word": "về",
-          "start": 155.68,
-          "end": 155.88
+          "start": 155.54,
+          "end": 155.74
         },
         {
           "word": "nhà",
-          "start": 155.88,
-          "end": 156.15
+          "start": 155.74,
+          "end": 156.01
         }
       ]
     },
     {
       "id": "dvn_065",
-      "start": 156.28,
-      "end": 157.98,
+      "start": 156.14,
+      "end": 157.84,
       "text": "Thất bại, đi về nhà 🌧️🏠",
       "icon": "🌧️🏠",
       "tag": "🌧️🏠",
@@ -150090,35 +150090,35 @@
       "words": [
         {
           "word": "Thất",
-          "start": 156.28,
-          "end": 156.72
+          "start": 156.14,
+          "end": 156.58
         },
         {
           "word": "bại,",
-          "start": 156.72,
-          "end": 157.2
+          "start": 156.58,
+          "end": 157.06
         },
         {
           "word": "đi",
-          "start": 157.2,
-          "end": 157.4
+          "start": 157.06,
+          "end": 157.26
         },
         {
           "word": "về",
-          "start": 157.4,
-          "end": 157.6
+          "start": 157.26,
+          "end": 157.46
         },
         {
           "word": "nhà",
-          "start": 157.6,
-          "end": 157.98
+          "start": 157.46,
+          "end": 157.84
         }
       ]
     },
     {
       "id": "dvn_066",
-      "start": 158.12,
-      "end": 159.65,
+      "start": 157.98,
+      "end": 159.51,
       "text": "Mệt quá, đi về nhà 😮‍💨🏠",
       "icon": "😮‍💨🏠",
       "tag": "😮‍💨🏠",
@@ -150130,35 +150130,35 @@
       "words": [
         {
           "word": "Mệt",
-          "start": 158.12,
-          "end": 158.52
+          "start": 157.98,
+          "end": 158.38
         },
         {
           "word": "quá,",
-          "start": 158.52,
-          "end": 158.96
+          "start": 158.38,
+          "end": 158.82
         },
         {
           "word": "đi",
-          "start": 158.96,
-          "end": 159.2
+          "start": 158.82,
+          "end": 159.06
         },
         {
           "word": "về",
-          "start": 159.2,
-          "end": 159.4
+          "start": 159.06,
+          "end": 159.26
         },
         {
           "word": "nhà",
-          "start": 159.4,
-          "end": 159.65
+          "start": 159.26,
+          "end": 159.51
         }
       ]
     },
     {
       "id": "dvn_067",
-      "start": 159.76,
-      "end": 161.42,
+      "start": 159.62,
+      "end": 161.28,
       "text": "Mông lung, đi về nhà 🌫️🏠",
       "icon": "🌫️🏠",
       "tag": "🌫️🏠",
@@ -150170,35 +150170,35 @@
       "words": [
         {
           "word": "Mông",
-          "start": 159.76,
-          "end": 160.24
+          "start": 159.62,
+          "end": 160.1
         },
         {
           "word": "lung,",
-          "start": 160.24,
-          "end": 160.76
+          "start": 160.1,
+          "end": 160.62
         },
         {
           "word": "đi",
-          "start": 160.76,
-          "end": 161.0
+          "start": 160.62,
+          "end": 160.86
         },
         {
           "word": "về",
-          "start": 161.0,
-          "end": 161.16
+          "start": 160.86,
+          "end": 161.02
         },
         {
           "word": "nhà",
-          "start": 161.16,
-          "end": 161.42
+          "start": 161.02,
+          "end": 161.28
         }
       ]
     },
     {
       "id": "dvn_068",
-      "start": 161.56,
-      "end": 163.3,
+      "start": 161.42,
+      "end": 163.16,
       "text": "Chênh vênh, đi về nhà 🍂🏠",
       "icon": "🍂🏠",
       "tag": "🍂🏠",
@@ -150210,35 +150210,35 @@
       "words": [
         {
           "word": "Chênh",
-          "start": 161.56,
-          "end": 162.04
+          "start": 161.42,
+          "end": 161.9
         },
         {
           "word": "vênh,",
-          "start": 162.04,
-          "end": 162.52
+          "start": 161.9,
+          "end": 162.38
         },
         {
           "word": "đi",
-          "start": 162.52,
-          "end": 162.76
+          "start": 162.38,
+          "end": 162.62
         },
         {
           "word": "về",
-          "start": 162.76,
-          "end": 162.96
+          "start": 162.62,
+          "end": 162.82
         },
         {
           "word": "nhà",
-          "start": 162.96,
-          "end": 163.3
+          "start": 162.82,
+          "end": 163.16
         }
       ]
     },
     {
       "id": "dvn_069",
-      "start": 163.44,
-      "end": 166.75,
+      "start": 163.3,
+      "end": 166.61,
       "text": "Không có việc gì, thì đi về nhà ✨🏡",
       "icon": "✨🏡",
       "tag": "✨🏡",
@@ -150250,50 +150250,50 @@
       "words": [
         {
           "word": "Không",
-          "start": 163.44,
-          "end": 163.68
+          "start": 163.3,
+          "end": 163.54
         },
         {
           "word": "có",
-          "start": 163.68,
-          "end": 163.84
+          "start": 163.54,
+          "end": 163.7
         },
         {
           "word": "việc",
-          "start": 163.84,
-          "end": 164.24
+          "start": 163.7,
+          "end": 164.1
         },
         {
           "word": "gì,",
-          "start": 164.24,
-          "end": 164.8
+          "start": 164.1,
+          "end": 164.66
         },
         {
           "word": "thì",
-          "start": 164.8,
-          "end": 165.24
+          "start": 164.66,
+          "end": 165.1
         },
         {
           "word": "đi",
-          "start": 165.24,
-          "end": 165.48
+          "start": 165.1,
+          "end": 165.34
         },
         {
           "word": "về",
-          "start": 165.48,
-          "end": 166.0
+          "start": 165.34,
+          "end": 165.86
         },
         {
           "word": "nhà",
-          "start": 166.0,
-          "end": 166.75
+          "start": 165.86,
+          "end": 166.61
         }
       ]
     },
     {
       "id": "dvn_070",
-      "start": 167.0,
-      "end": 169.6,
+      "start": 166.86,
+      "end": 169.46,
       "text": "Không có việc gì, thì đi về nhà 🌸🏡",
       "icon": "🌸🏡",
       "tag": "🌸🏡",
@@ -150305,50 +150305,50 @@
       "words": [
         {
           "word": "Không",
-          "start": 167.0,
-          "end": 167.16
+          "start": 166.86,
+          "end": 167.02
         },
         {
           "word": "có",
-          "start": 167.16,
-          "end": 167.36
+          "start": 167.02,
+          "end": 167.22
         },
         {
           "word": "việc",
-          "start": 167.36,
-          "end": 167.6
+          "start": 167.22,
+          "end": 167.46
         },
         {
           "word": "gì,",
-          "start": 167.6,
-          "end": 168.32
+          "start": 167.46,
+          "end": 168.18
         },
         {
           "word": "thì",
-          "start": 168.32,
-          "end": 168.84
+          "start": 168.18,
+          "end": 168.7
         },
         {
           "word": "đi",
-          "start": 168.84,
-          "end": 169.04
+          "start": 168.7,
+          "end": 168.9
         },
         {
           "word": "về",
-          "start": 169.04,
-          "end": 169.2
+          "start": 168.9,
+          "end": 169.06
         },
         {
           "word": "nhà",
-          "start": 169.2,
-          "end": 169.6
+          "start": 169.06,
+          "end": 169.46
         }
       ]
     },
     {
       "id": "dvn_071",
-      "start": 169.76,
-      "end": 171.95,
+      "start": 169.62,
+      "end": 171.81,
       "text": "Đi về nhà, đi về nhà 🛤️🏠",
       "icon": "🛤️🏠",
       "tag": "🛤️🏠",
@@ -150360,40 +150360,40 @@
       "words": [
         {
           "word": "Đi",
-          "start": 169.76,
-          "end": 170.0
+          "start": 169.62,
+          "end": 169.86
         },
         {
           "word": "về",
-          "start": 170.0,
-          "end": 170.16
+          "start": 169.86,
+          "end": 170.02
         },
         {
           "word": "nhà,",
-          "start": 170.16,
-          "end": 170.64
+          "start": 170.02,
+          "end": 170.5
         },
         {
           "word": "đi",
-          "start": 170.64,
-          "end": 170.84
+          "start": 170.5,
+          "end": 170.7
         },
         {
           "word": "về",
-          "start": 170.84,
-          "end": 171.24
+          "start": 170.7,
+          "end": 171.1
         },
         {
           "word": "nhà",
-          "start": 171.24,
-          "end": 171.95
+          "start": 171.1,
+          "end": 171.81
         }
       ]
     },
     {
       "id": "dvn_072",
-      "start": 172.24,
-      "end": 175.5,
+      "start": 172.1,
+      "end": 175.36,
       "text": "Đường về nhà là vào tim ta 🏡💖",
       "icon": "🏡💖",
       "tag": "🏡💖",
@@ -150405,45 +150405,45 @@
       "words": [
         {
           "word": "Đường",
-          "start": 172.24,
-          "end": 172.84
+          "start": 172.1,
+          "end": 172.7
         },
         {
           "word": "về",
-          "start": 172.84,
-          "end": 173.24
+          "start": 172.7,
+          "end": 173.1
         },
         {
           "word": "nhà",
-          "start": 173.24,
-          "end": 173.56
+          "start": 173.1,
+          "end": 173.42
         },
         {
           "word": "là",
-          "start": 173.56,
-          "end": 173.96
+          "start": 173.42,
+          "end": 173.82
         },
         {
           "word": "vào",
-          "start": 173.96,
-          "end": 174.52
+          "start": 173.82,
+          "end": 174.38
         },
         {
           "word": "tim",
-          "start": 174.52,
-          "end": 175.0
+          "start": 174.38,
+          "end": 174.86
         },
         {
           "word": "ta",
-          "start": 175.0,
-          "end": 175.5
+          "start": 174.86,
+          "end": 175.36
         }
       ]
     },
     {
       "id": "dvn_073",
-      "start": 175.68,
-      "end": 179.45,
+      "start": 175.54,
+      "end": 179.31,
       "text": "Dẫu nắng mưa gần xa ☀️🌧️",
       "icon": "☀️🌧️",
       "tag": "☀️🌧️",
@@ -150455,35 +150455,35 @@
       "words": [
         {
           "word": "Dẫu",
-          "start": 175.68,
-          "end": 176.36
+          "start": 175.54,
+          "end": 176.22
         },
         {
           "word": "nắng",
-          "start": 176.36,
-          "end": 176.8
+          "start": 176.22,
+          "end": 176.66
         },
         {
           "word": "mưa",
-          "start": 176.8,
-          "end": 177.12
+          "start": 176.66,
+          "end": 176.98
         },
         {
           "word": "gần",
-          "start": 177.12,
-          "end": 178.76
+          "start": 176.98,
+          "end": 178.62
         },
         {
           "word": "xa",
-          "start": 178.76,
-          "end": 179.45
+          "start": 178.62,
+          "end": 179.31
         }
       ]
     },
     {
       "id": "dvn_074",
-      "start": 179.76,
-      "end": 182.7,
+      "start": 179.62,
+      "end": 182.56,
       "text": "Thất bát, vang danh 🌟🏆",
       "icon": "🌟🏆",
       "tag": "🌟🏆",
@@ -150495,30 +150495,30 @@
       "words": [
         {
           "word": "Thất",
-          "start": 179.76,
-          "end": 180.28
+          "start": 179.62,
+          "end": 180.14
         },
         {
           "word": "bát,",
-          "start": 180.28,
-          "end": 181.0
+          "start": 180.14,
+          "end": 180.86
         },
         {
           "word": "vang",
-          "start": 181.0,
-          "end": 182.0
+          "start": 180.86,
+          "end": 181.86
         },
         {
           "word": "danh",
-          "start": 182.0,
-          "end": 182.7
+          "start": 181.86,
+          "end": 182.56
         }
       ]
     },
     {
       "id": "dvn_075",
-      "start": 182.92,
-      "end": 185.85,
+      "start": 182.78,
+      "end": 185.71,
       "text": "Nhà vẫn luôn chờ ta 🏠🤍",
       "icon": "🏠🤍",
       "tag": "🏠🤍",
@@ -150530,35 +150530,35 @@
       "words": [
         {
           "word": "Nhà",
-          "start": 182.92,
-          "end": 183.4
+          "start": 182.78,
+          "end": 183.26
         },
         {
           "word": "vẫn",
-          "start": 183.4,
-          "end": 183.84
+          "start": 183.26,
+          "end": 183.7
         },
         {
           "word": "luôn",
-          "start": 183.84,
-          "end": 184.08
+          "start": 183.7,
+          "end": 183.94
         },
         {
           "word": "chờ",
-          "start": 184.08,
-          "end": 185.08
+          "start": 183.94,
+          "end": 184.94
         },
         {
           "word": "ta",
-          "start": 185.08,
-          "end": 185.85
+          "start": 184.94,
+          "end": 185.71
         }
       ]
     },
     {
       "id": "dvn_076",
-      "start": 186.08,
-      "end": 189.6,
+      "start": 185.94,
+      "end": 189.46,
       "text": "Đường về nhà là vào tim ta 🛤️💛",
       "icon": "🛤️💛",
       "tag": "🛤️💛",
@@ -150570,45 +150570,45 @@
       "words": [
         {
           "word": "Đường",
-          "start": 186.08,
-          "end": 187.0
+          "start": 185.94,
+          "end": 186.86
         },
         {
           "word": "về",
-          "start": 187.0,
-          "end": 187.28
+          "start": 186.86,
+          "end": 187.14
         },
         {
           "word": "nhà",
-          "start": 187.28,
-          "end": 187.84
+          "start": 187.14,
+          "end": 187.7
         },
         {
           "word": "là",
-          "start": 187.84,
-          "end": 188.2
+          "start": 187.7,
+          "end": 188.06
         },
         {
           "word": "vào",
-          "start": 188.2,
-          "end": 188.76
+          "start": 188.06,
+          "end": 188.62
         },
         {
           "word": "tim",
-          "start": 188.76,
-          "end": 189.08
+          "start": 188.62,
+          "end": 188.94
         },
         {
           "word": "ta",
-          "start": 189.08,
-          "end": 189.6
+          "start": 188.94,
+          "end": 189.46
         }
       ]
     },
     {
       "id": "dvn_077",
-      "start": 189.84,
-      "end": 193.05,
+      "start": 189.7,
+      "end": 192.91,
       "text": "Dẫu có muôn trùng qua 🌊⛰️",
       "icon": "🌊⛰️",
       "tag": "🌊⛰️",
@@ -150620,35 +150620,35 @@
       "words": [
         {
           "word": "Dẫu",
-          "start": 189.84,
-          "end": 190.32
+          "start": 189.7,
+          "end": 190.18
         },
         {
           "word": "có",
-          "start": 190.32,
-          "end": 190.96
+          "start": 190.18,
+          "end": 190.82
         },
         {
           "word": "muôn",
-          "start": 190.96,
-          "end": 191.24
+          "start": 190.82,
+          "end": 191.1
         },
         {
           "word": "trùng",
-          "start": 191.24,
-          "end": 192.32
+          "start": 191.1,
+          "end": 192.18
         },
         {
           "word": "qua",
-          "start": 192.32,
-          "end": 193.05
+          "start": 192.18,
+          "end": 192.91
         }
       ]
     },
     {
       "id": "dvn_078",
-      "start": 193.32,
-      "end": 197.0,
+      "start": 193.18,
+      "end": 196.86,
       "text": "Vật đổi, sao dời ✨🌌",
       "icon": "✨🌌",
       "tag": "✨🌌",
@@ -150660,30 +150660,30 @@
       "words": [
         {
           "word": "Vật",
-          "start": 193.32,
-          "end": 194.28
+          "start": 193.18,
+          "end": 194.14
         },
         {
           "word": "đổi,",
-          "start": 194.28,
-          "end": 195.32
+          "start": 194.14,
+          "end": 195.18
         },
         {
           "word": "sao",
-          "start": 195.32,
-          "end": 196.32
+          "start": 195.18,
+          "end": 196.18
         },
         {
           "word": "dời",
-          "start": 196.32,
-          "end": 197.0
+          "start": 196.18,
+          "end": 196.86
         }
       ]
     },
     {
       "id": "dvn_079",
-      "start": 197.28,
-      "end": 199.85,
+      "start": 197.14,
+      "end": 199.71,
       "text": "Nhà vẫn luôn là nhà 🏡🌸",
       "icon": "🏡🌸",
       "tag": "🏡🌸",
@@ -150695,35 +150695,35 @@
       "words": [
         {
           "word": "Nhà",
-          "start": 197.28,
-          "end": 197.8
+          "start": 197.14,
+          "end": 197.66
         },
         {
           "word": "vẫn",
-          "start": 197.8,
-          "end": 198.25
+          "start": 197.66,
+          "end": 198.11
         },
         {
           "word": "luôn",
-          "start": 198.25,
-          "end": 198.65
+          "start": 198.11,
+          "end": 198.51
         },
         {
           "word": "là",
-          "start": 198.65,
-          "end": 199.08
+          "start": 198.51,
+          "end": 198.94
         },
         {
           "word": "nhà",
-          "start": 199.08,
-          "end": 199.85
+          "start": 198.94,
+          "end": 199.71
         }
       ]
     },
     {
       "id": "dvn_080",
-      "start": 200.08,
-      "end": 203.95,
+      "start": 199.94,
+      "end": 203.81,
       "text": "Nhà có thể lớn, có thể nhỏ, có thể không khang trang 🏠🌿",
       "icon": "🏠🌿",
       "tag": "🏠🌿",
@@ -150735,70 +150735,70 @@
       "words": [
         {
           "word": "Nhà",
-          "start": 200.08,
-          "end": 200.36
+          "start": 199.94,
+          "end": 200.22
         },
         {
           "word": "có",
-          "start": 200.36,
-          "end": 200.52
+          "start": 200.22,
+          "end": 200.38
         },
         {
           "word": "thể",
-          "start": 200.52,
-          "end": 200.8
+          "start": 200.38,
+          "end": 200.66
         },
         {
           "word": "lớn,",
-          "start": 200.8,
-          "end": 201.16
+          "start": 200.66,
+          "end": 201.02
         },
         {
           "word": "có",
-          "start": 201.16,
-          "end": 201.36
+          "start": 201.02,
+          "end": 201.22
         },
         {
           "word": "thể",
-          "start": 201.36,
-          "end": 201.68
+          "start": 201.22,
+          "end": 201.54
         },
         {
           "word": "nhỏ,",
-          "start": 201.68,
-          "end": 202.04
+          "start": 201.54,
+          "end": 201.9
         },
         {
           "word": "có",
-          "start": 202.04,
-          "end": 202.24
+          "start": 201.9,
+          "end": 202.1
         },
         {
           "word": "thể",
-          "start": 202.24,
-          "end": 202.4
+          "start": 202.1,
+          "end": 202.26
         },
         {
           "word": "không",
-          "start": 202.4,
-          "end": 202.68
+          "start": 202.26,
+          "end": 202.54
         },
         {
           "word": "khang",
-          "start": 202.68,
-          "end": 203.24
+          "start": 202.54,
+          "end": 203.1
         },
         {
           "word": "trang",
-          "start": 203.24,
-          "end": 203.95
+          "start": 203.1,
+          "end": 203.81
         }
       ]
     },
     {
       "id": "dvn_081",
-      "start": 204.24,
-      "end": 207.55,
+      "start": 204.1,
+      "end": 207.41,
       "text": "Cha mẹ nào cũng muốn con được sống đàng hoàng 👨‍👩‍👧💖",
       "icon": "👨‍👩‍👧💖",
       "tag": "👨‍👩‍👧💖",
@@ -150810,60 +150810,60 @@
       "words": [
         {
           "word": "Cha",
-          "start": 204.24,
-          "end": 204.52
+          "start": 204.1,
+          "end": 204.38
         },
         {
           "word": "mẹ",
-          "start": 204.52,
-          "end": 204.76
+          "start": 204.38,
+          "end": 204.62
         },
         {
           "word": "nào",
-          "start": 204.76,
-          "end": 204.92
+          "start": 204.62,
+          "end": 204.78
         },
         {
           "word": "cũng",
-          "start": 204.92,
-          "end": 205.2
+          "start": 204.78,
+          "end": 205.06
         },
         {
           "word": "muốn",
-          "start": 205.2,
-          "end": 205.76
+          "start": 205.06,
+          "end": 205.62
         },
         {
           "word": "con",
-          "start": 205.76,
-          "end": 206.24
+          "start": 205.62,
+          "end": 206.1
         },
         {
           "word": "được",
-          "start": 206.24,
-          "end": 206.48
+          "start": 206.1,
+          "end": 206.34
         },
         {
           "word": "sống",
-          "start": 206.48,
-          "end": 206.72
+          "start": 206.34,
+          "end": 206.58
         },
         {
           "word": "đàng",
-          "start": 206.72,
-          "end": 207.0
+          "start": 206.58,
+          "end": 206.86
         },
         {
           "word": "hoàng",
-          "start": 207.0,
-          "end": 207.55
+          "start": 206.86,
+          "end": 207.41
         }
       ]
     },
     {
       "id": "dvn_082",
-      "start": 207.76,
-      "end": 211.05,
+      "start": 207.62,
+      "end": 210.91,
       "text": "Lớn lên làm người mong một tương lai sáng lạng 🌅🌟",
       "icon": "🌅🌟",
       "tag": "🌅🌟",
@@ -150875,60 +150875,60 @@
       "words": [
         {
           "word": "Lớn",
-          "start": 207.76,
-          "end": 208.36
+          "start": 207.62,
+          "end": 208.22
         },
         {
           "word": "lên",
-          "start": 208.36,
-          "end": 208.56
+          "start": 208.22,
+          "end": 208.42
         },
         {
           "word": "làm",
-          "start": 208.56,
-          "end": 208.8
+          "start": 208.42,
+          "end": 208.66
         },
         {
           "word": "người",
-          "start": 208.8,
-          "end": 209.12
+          "start": 208.66,
+          "end": 208.98
         },
         {
           "word": "mong",
-          "start": 209.12,
-          "end": 209.36
+          "start": 208.98,
+          "end": 209.22
         },
         {
           "word": "một",
-          "start": 209.36,
-          "end": 209.72
+          "start": 209.22,
+          "end": 209.58
         },
         {
           "word": "tương",
-          "start": 209.72,
-          "end": 209.96
+          "start": 209.58,
+          "end": 209.82
         },
         {
           "word": "lai",
-          "start": 209.96,
-          "end": 210.12
+          "start": 209.82,
+          "end": 209.98
         },
         {
           "word": "sáng",
-          "start": 210.12,
-          "end": 210.52
+          "start": 209.98,
+          "end": 210.38
         },
         {
           "word": "lạng",
-          "start": 210.52,
-          "end": 211.05
+          "start": 210.38,
+          "end": 210.91
         }
       ]
     },
     {
       "id": "dvn_083",
-      "start": 211.24,
-      "end": 214.65,
+      "start": 211.1,
+      "end": 214.51,
       "text": "Cặm cụi cả đời không bao giờ thấy than van 🌾🤍",
       "icon": "🌾🤍",
       "tag": "🌾🤍",
@@ -150940,60 +150940,60 @@
       "words": [
         {
           "word": "Cặm",
-          "start": 211.24,
-          "end": 211.8
+          "start": 211.1,
+          "end": 211.66
         },
         {
           "word": "cụi",
-          "start": 211.8,
-          "end": 212.16
+          "start": 211.66,
+          "end": 212.02
         },
         {
           "word": "cả",
-          "start": 212.16,
-          "end": 212.36
+          "start": 212.02,
+          "end": 212.22
         },
         {
           "word": "đời",
-          "start": 212.36,
-          "end": 212.68
+          "start": 212.22,
+          "end": 212.54
         },
         {
           "word": "không",
-          "start": 212.68,
-          "end": 212.92
+          "start": 212.54,
+          "end": 212.78
         },
         {
           "word": "bao",
-          "start": 212.92,
-          "end": 213.12
+          "start": 212.78,
+          "end": 212.98
         },
         {
           "word": "giờ",
-          "start": 213.12,
-          "end": 213.28
+          "start": 212.98,
+          "end": 213.14
         },
         {
           "word": "thấy",
-          "start": 213.28,
-          "end": 213.6
+          "start": 213.14,
+          "end": 213.46
         },
         {
           "word": "than",
-          "start": 213.6,
-          "end": 213.92
+          "start": 213.46,
+          "end": 213.78
         },
         {
           "word": "van",
-          "start": 213.92,
-          "end": 214.65
+          "start": 213.78,
+          "end": 214.51
         }
       ]
     },
     {
       "id": "dvn_084",
-      "start": 214.92,
-      "end": 218.15,
+      "start": 214.78,
+      "end": 218.01,
       "text": "Đường về nhà là vào tim ta 🛤️🏡",
       "icon": "🛤️🏡",
       "tag": "🛤️🏡",
@@ -151005,45 +151005,45 @@
       "words": [
         {
           "word": "Đường",
-          "start": 214.92,
-          "end": 215.48
+          "start": 214.78,
+          "end": 215.34
         },
         {
           "word": "về",
-          "start": 215.48,
-          "end": 215.8
+          "start": 215.34,
+          "end": 215.66
         },
         {
           "word": "nhà",
-          "start": 215.8,
-          "end": 216.2
+          "start": 215.66,
+          "end": 216.06
         },
         {
           "word": "là",
-          "start": 216.2,
-          "end": 216.44
+          "start": 216.06,
+          "end": 216.3
         },
         {
           "word": "vào",
-          "start": 216.44,
-          "end": 217.0
+          "start": 216.3,
+          "end": 216.86
         },
         {
           "word": "tim",
-          "start": 217.0,
-          "end": 217.72
+          "start": 216.86,
+          "end": 217.58
         },
         {
           "word": "ta",
-          "start": 217.72,
-          "end": 218.15
+          "start": 217.58,
+          "end": 218.01
         }
       ]
     },
     {
       "id": "dvn_085",
-      "start": 218.36,
-      "end": 221.45,
+      "start": 218.22,
+      "end": 221.31,
       "text": "Đường về nhà là vào tim ta 🏡💖",
       "icon": "🏡💖",
       "tag": "🏡💖",
@@ -151055,45 +151055,45 @@
       "words": [
         {
           "word": "Đường",
-          "start": 218.36,
-          "end": 219.0
+          "start": 218.22,
+          "end": 218.86
         },
         {
           "word": "về",
-          "start": 219.0,
-          "end": 219.36
+          "start": 218.86,
+          "end": 219.22
         },
         {
           "word": "nhà",
-          "start": 219.36,
-          "end": 219.72
+          "start": 219.22,
+          "end": 219.58
         },
         {
           "word": "là",
-          "start": 219.72,
-          "end": 220.08
+          "start": 219.58,
+          "end": 219.94
         },
         {
           "word": "vào",
-          "start": 220.08,
-          "end": 220.72
+          "start": 219.94,
+          "end": 220.58
         },
         {
           "word": "tim",
-          "start": 220.72,
-          "end": 221.08
+          "start": 220.58,
+          "end": 220.94
         },
         {
           "word": "ta",
-          "start": 221.08,
-          "end": 221.45
+          "start": 220.94,
+          "end": 221.31
         }
       ]
     },
     {
       "id": "dvn_086",
-      "start": 221.64,
-      "end": 225.4,
+      "start": 221.5,
+      "end": 225.26,
       "text": "Dẫu nắng mưa gần xa ☀️🌧️",
       "icon": "☀️🌧️",
       "tag": "☀️🌧️",
@@ -151105,35 +151105,35 @@
       "words": [
         {
           "word": "Dẫu",
-          "start": 221.64,
-          "end": 222.48
+          "start": 221.5,
+          "end": 222.34
         },
         {
           "word": "nắng",
-          "start": 222.48,
-          "end": 222.8
+          "start": 222.34,
+          "end": 222.66
         },
         {
           "word": "mưa",
-          "start": 222.8,
-          "end": 223.36
+          "start": 222.66,
+          "end": 223.22
         },
         {
           "word": "gần",
-          "start": 223.36,
-          "end": 224.72
+          "start": 223.22,
+          "end": 224.58
         },
         {
           "word": "xa",
-          "start": 224.72,
-          "end": 225.4
+          "start": 224.58,
+          "end": 225.26
         }
       ]
     },
     {
       "id": "dvn_087",
-      "start": 225.72,
-      "end": 228.65,
+      "start": 225.58,
+      "end": 228.51,
       "text": "Thất bát, vang danh 🌟🏆",
       "icon": "🌟🏆",
       "tag": "🌟🏆",
@@ -151145,30 +151145,30 @@
       "words": [
         {
           "word": "Thất",
-          "start": 225.72,
-          "end": 226.36
+          "start": 225.58,
+          "end": 226.22
         },
         {
           "word": "bát,",
-          "start": 226.36,
-          "end": 227.24
+          "start": 226.22,
+          "end": 227.1
         },
         {
           "word": "vang",
-          "start": 227.24,
-          "end": 228.24
+          "start": 227.1,
+          "end": 228.1
         },
         {
           "word": "danh",
-          "start": 228.24,
-          "end": 228.65
+          "start": 228.1,
+          "end": 228.51
         }
       ]
     },
     {
       "id": "dvn_088",
-      "start": 228.8,
-      "end": 232.05,
+      "start": 228.66,
+      "end": 231.91,
       "text": "Nhà vẫn luôn chờ ta 🏠🤍",
       "icon": "🏠🤍",
       "tag": "🏠🤍",
@@ -151180,35 +151180,35 @@
       "words": [
         {
           "word": "Nhà",
-          "start": 228.8,
-          "end": 229.48
+          "start": 228.66,
+          "end": 229.34
         },
         {
           "word": "vẫn",
-          "start": 229.48,
-          "end": 230.08
+          "start": 229.34,
+          "end": 229.94
         },
         {
           "word": "luôn",
-          "start": 230.08,
-          "end": 230.32
+          "start": 229.94,
+          "end": 230.18
         },
         {
           "word": "chờ",
-          "start": 230.32,
-          "end": 231.32
+          "start": 230.18,
+          "end": 231.18
         },
         {
           "word": "ta",
-          "start": 231.32,
-          "end": 232.05
+          "start": 231.18,
+          "end": 231.91
         }
       ]
     },
     {
       "id": "dvn_089",
-      "start": 232.32,
-      "end": 235.85,
+      "start": 232.18,
+      "end": 235.71,
       "text": "Đường về nhà là vào tim ta 🛤️💛",
       "icon": "🛤️💛",
       "tag": "🛤️💛",
@@ -151220,45 +151220,45 @@
       "words": [
         {
           "word": "Đường",
-          "start": 232.32,
-          "end": 233.16
+          "start": 232.18,
+          "end": 233.02
         },
         {
           "word": "về",
-          "start": 233.16,
-          "end": 233.6
+          "start": 233.02,
+          "end": 233.46
         },
         {
           "word": "nhà",
-          "start": 233.6,
-          "end": 234.0
+          "start": 233.46,
+          "end": 233.86
         },
         {
           "word": "là",
-          "start": 234.0,
-          "end": 234.28
+          "start": 233.86,
+          "end": 234.14
         },
         {
           "word": "vào",
-          "start": 234.28,
-          "end": 234.8
+          "start": 234.14,
+          "end": 234.66
         },
         {
           "word": "tim",
-          "start": 234.8,
-          "end": 235.36
+          "start": 234.66,
+          "end": 235.22
         },
         {
           "word": "ta",
-          "start": 235.36,
-          "end": 235.85
+          "start": 235.22,
+          "end": 235.71
         }
       ]
     },
     {
       "id": "dvn_090",
-      "start": 236.12,
-      "end": 239.4,
+      "start": 235.98,
+      "end": 239.26,
       "text": "Dẫu có muôn trùng qua 🌊⛰️",
       "icon": "🌊⛰️",
       "tag": "🌊⛰️",
@@ -151270,35 +151270,35 @@
       "words": [
         {
           "word": "Dẫu",
-          "start": 236.12,
-          "end": 236.6
+          "start": 235.98,
+          "end": 236.46
         },
         {
           "word": "có",
-          "start": 236.6,
-          "end": 237.08
+          "start": 236.46,
+          "end": 236.94
         },
         {
           "word": "muôn",
-          "start": 237.08,
-          "end": 237.48
+          "start": 236.94,
+          "end": 237.34
         },
         {
           "word": "trùng",
-          "start": 237.48,
-          "end": 238.68
+          "start": 237.34,
+          "end": 238.54
         },
         {
           "word": "qua",
-          "start": 238.68,
-          "end": 239.4
+          "start": 238.54,
+          "end": 239.26
         }
       ]
     },
     {
       "id": "dvn_091",
-      "start": 239.68,
-      "end": 243.05,
+      "start": 239.54,
+      "end": 242.91,
       "text": "Vật đổi, sao dời ✨🌌",
       "icon": "✨🌌",
       "tag": "✨🌌",
@@ -151310,30 +151310,30 @@
       "words": [
         {
           "word": "Vật",
-          "start": 239.68,
-          "end": 240.6
+          "start": 239.54,
+          "end": 240.46
         },
         {
           "word": "đổi,",
-          "start": 240.6,
-          "end": 241.48
+          "start": 240.46,
+          "end": 241.34
         },
         {
           "word": "sao",
-          "start": 241.48,
-          "end": 242.36
+          "start": 241.34,
+          "end": 242.22
         },
         {
           "word": "dời",
-          "start": 242.36,
-          "end": 243.05
+          "start": 242.22,
+          "end": 242.91
         }
       ]
     },
     {
       "id": "dvn_092",
-      "start": 243.28,
-      "end": 246.3,
+      "start": 243.14,
+      "end": 246.16,
       "text": "Nhà vẫn luôn là nhà 🏡🌸",
       "icon": "🏡🌸",
       "tag": "🏡🌸",
@@ -151345,31 +151345,31 @@
       "words": [
         {
           "word": "Nhà",
-          "start": 243.28,
-          "end": 243.84
+          "start": 243.14,
+          "end": 243.7
         },
         {
           "word": "vẫn",
-          "start": 243.84,
-          "end": 244.28
+          "start": 243.7,
+          "end": 244.14
         },
         {
           "word": "luôn",
-          "start": 244.28,
-          "end": 244.75
+          "start": 244.14,
+          "end": 244.61
         },
         {
           "word": "là",
-          "start": 244.75,
-          "end": 245.35
+          "start": 244.61,
+          "end": 245.21
         },
         {
           "word": "nhà",
-          "start": 245.35,
-          "end": 246.3
+          "start": 245.21,
+          "end": 246.16
         }
       ]
     }
   ],
-  "_updatedAt": 1794809741563
+  "_updatedAt": 1794810155858
 }
