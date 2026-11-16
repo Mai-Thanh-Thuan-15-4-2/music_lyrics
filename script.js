@@ -2712,47 +2712,62 @@
         const isCurrent = t >= w.start && t < w.end;
         const isSung = t >= w.end;
 
+        // 2026-11-16: Khách hàng yêu cầu bỏ hiệu ứng đường line gạch chân dưới chữ đang hát và thay bằng hiệu ứng tan biến chữ (word dissolve); loại bỏ thanh roundRect dưới chữ và cho từng chữ sau khi hát phát sáng, bay nhẹ lên kèm hạt bụi sao rồi mờ dần tan biến hoàn toàn.
         ctx.save();
-        if (isCurrent) {
-          const wProg = clamp((t - w.start) / Math.max(0.08, w.end - w.start), 0, 1);
-          const wave = Math.sin(wProg * Math.PI);
-          const lift = -3.4 * wave - 2.2 * pulse;
-          const wordScale = 1 + 0.048 * wave + 0.028 * pulse;
-          const wordCenterX = w.x + w.width / 2;
+        if (isCurrent || isSung) {
+          const wDur = Math.max(0.08, w.end - w.start);
+          const wProg = isCurrent ? clamp((t - w.start) / wDur, 0, 1) : 1;
+          const afterElapsed = isSung ? Math.max(0, t - w.end) : 0;
+          const dissolve = isCurrent
+            ? clamp((wProg - 0.68) / 0.65, 0, 0.45)
+            : clamp(0.45 + afterElapsed / 0.34, 0.45, 1);
 
-          ctx.translate(wordCenterX, lift);
-          ctx.scale(wordScale, wordScale);
-          ctx.translate(-wordCenterX, 0);
+          if (dissolve < 0.995) {
+            const fadeAlpha = 1 - smooth(dissolve);
+            const wave = isCurrent ? Math.sin(wProg * Math.PI) : 0;
+            const lift = -3.4 * wave - 2.2 * pulse - dissolve * 22;
+            const wordScale = 1 + 0.048 * wave + 0.028 * pulse + dissolve * 0.1;
+            const wordCenterX = w.x + w.width / 2;
 
-          // Luminous aura glow around current word synced with beat
-          ctx.shadowColor = glowColor;
-          ctx.shadowBlur = (24 + 14 * wave + 16 * pulse) * Math.max(0.4, glowAmount);
-          ctx.shadowOffsetY = 0;
-          ctx.fillStyle = mainColor;
-          ctx.fillText(w.text, w.x, 0);
+            ctx.globalAlpha = visibleOpacity * fadeAlpha;
+            ctx.translate(wordCenterX, lift);
+            ctx.scale(wordScale, wordScale);
+            ctx.translate(-wordCenterX, 0);
 
-          // Crisp core with deep contrast shadow
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.94)';
-          ctx.shadowBlur = 7;
-          ctx.shadowOffsetY = 2;
-          ctx.fillStyle = '#ffffff';
-          ctx.fillText(w.text, w.x, 0);
+            // Luminous aura glow that expands as the word dissolves
+            ctx.shadowColor = glowColor;
+            ctx.shadowBlur = (24 + 14 * wave + 16 * pulse + dissolve * 28) * Math.max(0.4, glowAmount);
+            ctx.shadowOffsetY = 0;
+            ctx.fillStyle = dissolve > 0.25 ? '#fef08a' : mainColor;
+            ctx.fillText(w.text, w.x, 0);
 
-          // Animated beat-synced karaoke underline bar under the active word
-          const barW = Math.max(6, w.width * clamp(wProg * 1.15, 0.15, 1));
-          const barY = art.size * 0.54;
-          ctx.shadowBlur = 0;
-          ctx.fillStyle = '#fef08a';
-          ctx.beginPath();
-          ctx.roundRect(w.x, barY, barW, 4, 2);
-          ctx.fill();
-        } else if (isSung) {
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
-          ctx.fillText(w.text, w.x, 2.5);
-          ctx.fillStyle = mainColor;
-          ctx.fillText(w.text, w.x, 0);
+            // Crisp core with deep contrast shadow
+            ctx.shadowColor = `rgba(0, 0, 0, ${0.94 * fadeAlpha})`;
+            ctx.shadowBlur = 7;
+            ctx.shadowOffsetY = 2;
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText(w.text, w.x, 0);
+
+            // Dissolving stardust sparks rising from the vanishing word
+            if (dissolve > 0.04) {
+              ctx.shadowColor = glowColor;
+              ctx.shadowBlur = 10;
+              const sparkCount = 6;
+              for (let sp = 0; sp < sparkCount; sp++) {
+                const su = (sp + 0.5) / sparkCount;
+                const seedVal = Math.sin((i + 1) * 19.7 + sp * 7.3);
+                const sx = w.x + w.width * su + seedVal * 16 * dissolve;
+                const sy = -art.size * 0.15 - dissolve * (26 + (sp % 3) * 14);
+                const sr = Math.max(0.8, (1 - dissolve) * (2.6 + (sp % 2) * 1.4));
+                ctx.fillStyle = sp % 2 === 0 ? '#fef08a' : glowColor;
+                ctx.beginPath();
+                ctx.arc(sx, sy, sr, 0, Math.PI * 2);
+                ctx.fill();
+              }
+            }
+          }
         } else {
-          ctx.globalAlpha = visibleOpacity * 0.72;
+          ctx.globalAlpha = visibleOpacity * 0.78;
           ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
           ctx.fillText(w.text, w.x, 2.5);
           ctx.fillStyle = mainColor;
