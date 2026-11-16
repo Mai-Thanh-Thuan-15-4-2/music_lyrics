@@ -2424,55 +2424,7 @@
     }
     ctx.shadowBlur = 0;
 
-    // 4. Floating Background Vocal Ad-libs ("bay ngoài lời") drifting in the sky outside the main center lyrics
-    // 2026-11-16: Khách hàng phản hồi các từ ngân "ooh yeahhh" là tiếng bè phiêu bay bên ngoài chứ không nên gộp vào dòng lời chính; tách toàn bộ "Ooh-ah", "Ooh yeahhh", "Yeah-eh" ra khỏi data.lyrics để lời chính chuẩn 100%, đồng thời vẽ hiệu ứng chữ bè bay lơ lửng nhẹ ở hai bên bầu trời ngoài vùng lời chính.
-    const adlibs = [
-      { start: 7.45, end: 8.65, text: '♪ Ooh-ah ~', side: -1 },
-      { start: 13.85, end: 15.40, text: '♫ Ooh yeahhh ~', side: 1 },
-      { start: 21.55, end: 22.80, text: '♪ Yeah-eh ~', side: -1 },
-      { start: 85.10, end: 86.85, text: '♫ Ooh yeahhh ~', side: 1 },
-      { start: 92.75, end: 93.85, text: '♪ Ooh-ah ~', side: -1 },
-      { start: 99.15, end: 100.65, text: '♫ Ooh yeahhh ~', side: 1 },
-      { start: 107.05, end: 108.25, text: '♪ Yeah-eh ~', side: -1 },
-      { start: 111.20, end: 112.45, text: '♫ Ooh-ooh ~', side: 1 },
-      { start: 178.40, end: 179.70, text: '♪ Ooh-ah ~', side: -1 },
-      { start: 184.45, end: 186.00, text: '♫ Ooh yeahhh ~', side: 1 },
-      { start: 191.95, end: 193.25, text: '♪ Yeah-eh ~', side: -1 },
-      { start: 196.15, end: 197.25, text: '♫ Ooh-ooh ~', side: 1 },
-      { start: 224.40, end: 225.65, text: '♪ Ooh-ah ~', side: -1 },
-      { start: 230.65, end: 232.25, text: '♫ Ooh yeahhh ~', side: 1 },
-      { start: 238.30, end: 239.60, text: '♪ Yeah-eh ~', side: -1 },
-      { start: 242.10, end: 243.25, text: '♫ Ooh-ooh ~', side: 1 },
-      { start: 246.30, end: 248.60, text: '🎶 Ooh yeahhh ~', side: -1 },
-      { start: 268.00, end: 270.60, text: '✨ Yeahhh ~', side: 1 }
-    ];
-    for (const ad of adlibs) {
-      if (t < ad.start || t > ad.end) continue;
-      const p = clamp((t - ad.start) / Math.max(0.2, ad.end - ad.start), 0, 1);
-      const env = Math.sin(p * Math.PI);
-      const ax = W * (ad.side < 0 ? 0.22 : 0.78) + ad.side * p * 34 + Math.sin(p * Math.PI * 2) * 10;
-      const ay = H * 0.34 - p * 54;
-      ctx.save();
-      ctx.globalAlpha = env * 0.86;
-      ctx.translate(ax, ay);
-      ctx.rotate(ad.side * (-0.08 + p * 0.05));
-      const sc = 0.88 + 0.16 * env + pulse * 0.08;
-      ctx.scale(sc, sc);
-      ctx.font = 'italic 700 34px "Playfair Display","Be Vietnam Pro",serif';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
-      ctx.shadowBlur = 12;
-      ctx.fillStyle = '#000000';
-      ctx.fillText(ad.text, 0, 2);
-      ctx.shadowColor = '#f59e0b';
-      ctx.shadowBlur = 18;
-      ctx.fillStyle = '#fef08a';
-      ctx.fillText(ad.text, 0, 0);
-      ctx.restore();
-    }
-
-    // 5. Full Instrumental Solo / Dạo Nhạc Showcase (3D Horizon Wave + Countryside Carousel)
+    // 4. Full Instrumental Solo / Dạo Nhạc Showcase (3D Horizon Wave + Countryside Carousel)
     if (visibility > 0.02) {
       const waveX0 = W * 0.10, waveSpan = W * 0.80, waveBaseY = H * 0.84;
       const waveColors = ['#f59e0b', '#fef08a', '#fb7185'];
