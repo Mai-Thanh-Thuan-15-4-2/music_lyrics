@@ -2677,7 +2677,16 @@
     const item = selectedItem;
     const seg = selected;
     const art = item.art;
-    const baseY = H * (data.position === 'upper' ? 0.33 : data.position === 'lower' ? 0.64 : 0.5);
+    // 2026-11-16: Khách hàng yêu cầu khi tựa bài hát còn hiển thị ở đầu bài thì chữ lời hát nằm thấp phía dưới để không đụng tựa bài, và ngay khi tựa bài vừa biến mất thì chữ tự động đẩy mượt lên giữa màn hình (H * 0.50); nội suy baseY theo trạng thái hiển thị của intro.
+    let baseY = H * (data.position === 'upper' ? 0.33 : data.position === 'lower' ? 0.64 : 0.5);
+    if (data.position !== 'upper' && data.intro?.enabled && data.intro?.style === 'homecoming-remix') {
+      const introStart = Number(data.intro.start) || 0;
+      const introEnd = Number(data.intro.end) || 18.8;
+      const introActive = smooth((t - introStart) / 0.6) * (1 - smooth((t - (introEnd - 1.1)) / 1.1));
+      const outroActive = smooth((t - 246.0) / 0.8) * (1 - smooth((t - 278.0) / 1.0));
+      const pushDown = Math.max(introActive, outroActive);
+      baseY = H * (0.50 + 0.14 * pushDown);
+    }
 
     ctx.save();
     ctx.translate(W * 0.5 + (item.offsetX || 0), baseY + (item.offsetY || 0));
