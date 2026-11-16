@@ -147258,14 +147258,14 @@
     {
       "id": "dvn_002",
       "start": 4.88,
-      "end": 8.5,
-      "text": "Dẫu nắng mưa gần xa (Ooh-ah) ☀️🌧️",
+      "end": 8.35,
+      "text": "Dẫu nắng mưa gần xa ☀️🌧️",
       "icon": "☀️🌧️",
       "tag": "☀️🌧️",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 2.94,
+      "timingMid": 2.79,
       "timingOut": 0.28,
       "words": [
         {
@@ -147291,12 +147291,7 @@
         {
           "word": "xa",
           "start": 7.32,
-          "end": 7.85
-        },
-        {
-          "word": "(Ooh-ah)",
-          "start": 7.85,
-          "end": 8.5
+          "end": 8.35
         }
       ]
     },
@@ -147338,14 +147333,14 @@
     {
       "id": "dvn_004",
       "start": 12.32,
-      "end": 14.2,
+      "end": 15.35,
       "text": "Nhà vẫn luôn chờ ta 🏠🤍",
       "icon": "🏠🤍",
       "tag": "🏠🤍",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 1.2,
+      "timingMid": 2.35,
       "timingOut": 0.28,
       "words": [
         {
@@ -147366,47 +147361,17 @@
         {
           "word": "chờ",
           "start": 13.52,
-          "end": 13.95
+          "end": 14.8
         },
         {
           "word": "ta",
-          "start": 13.95,
-          "end": 14.2
+          "start": 14.8,
+          "end": 15.35
         }
       ]
     },
     {
       "id": "dvn_005",
-      "start": 14.28,
-      "end": 15.4,
-      "text": "Ooh yeahhh ~ 🎶✨",
-      "icon": "🎶✨",
-      "tag": "🎶✨",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.44,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Ooh",
-          "start": 14.28,
-          "end": 14.8
-        },
-        {
-          "word": "yeahhh",
-          "start": 14.8,
-          "end": 15.2
-        },
-        {
-          "word": "~",
-          "start": 15.2,
-          "end": 15.4
-        }
-      ]
-    },
-    {
-      "id": "dvn_006",
       "start": 15.48,
       "end": 18.7,
       "text": "Đường về nhà là vào tim ta 🛤️💛",
@@ -147456,16 +147421,16 @@
       ]
     },
     {
-      "id": "dvn_007",
+      "id": "dvn_006",
       "start": 18.88,
-      "end": 22.7,
-      "text": "Dẫu có muôn trùng qua (Yeah-eh) 🌊⛰️",
+      "end": 22.55,
+      "text": "Dẫu có muôn trùng qua 🌊⛰️",
       "icon": "🌊⛰️",
       "tag": "🌊⛰️",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 3.14,
+      "timingMid": 2.99,
       "timingOut": 0.28,
       "words": [
         {
@@ -147486,22 +147451,17 @@
         {
           "word": "trùng",
           "start": 20.8,
-          "end": 21.4
+          "end": 21.5
         },
         {
           "word": "qua",
-          "start": 21.4,
-          "end": 21.95
-        },
-        {
-          "word": "(Yeah-eh)",
-          "start": 21.95,
-          "end": 22.7
+          "start": 21.5,
+          "end": 22.55
         }
       ]
     },
     {
-      "id": "dvn_008",
+      "id": "dvn_007",
       "start": 22.88,
       "end": 26.35,
       "text": "Vật đổi, sao dời ✨🌌",
@@ -147536,7 +147496,7 @@
       ]
     },
     {
-      "id": "dvn_009",
+      "id": "dvn_008",
       "start": 26.56,
       "end": 28.12,
       "text": "Nhà vẫn luôn là nhà 🏡🌸",
@@ -147576,16 +147536,16 @@
       ]
     },
     {
-      "id": "dvn_010",
+      "id": "dvn_009",
       "start": 28.2,
-      "end": 29.88,
-      "text": "Đi về nhà (Ooh yeahhh) 🛤️🎶",
-      "icon": "🛤️🎶",
-      "tag": "🛤️🎶",
+      "end": 29.75,
+      "text": "Đi về nhà 🛤️🏠",
+      "icon": "🛤️🏠",
+      "tag": "🛤️🏠",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 1.0,
+      "timingMid": 0.87,
       "timingOut": 0.28,
       "words": [
         {
@@ -147596,27 +147556,17 @@
         {
           "word": "về",
           "start": 28.36,
-          "end": 28.8
+          "end": 28.96
         },
         {
           "word": "nhà",
-          "start": 28.8,
-          "end": 29.25
-        },
-        {
-          "word": "(Ooh",
-          "start": 29.25,
-          "end": 29.55
-        },
-        {
-          "word": "yeahhh)",
-          "start": 29.55,
-          "end": 29.88
+          "start": 28.96,
+          "end": 29.75
         }
       ]
     },
     {
-      "id": "dvn_011",
+      "id": "dvn_010",
       "start": 30.08,
       "end": 31.65,
       "text": "Lao vào đời mà kiếm cơm 🌾🍚",
@@ -147661,7 +147611,7 @@
       ]
     },
     {
-      "id": "dvn_012",
+      "id": "dvn_011",
       "start": 31.8,
       "end": 33.28,
       "text": "Lao vào đời tìm cơ hội 🚀✨",
@@ -147706,7 +147656,7 @@
       ]
     },
     {
-      "id": "dvn_013",
+      "id": "dvn_012",
       "start": 33.4,
       "end": 34.95,
       "text": "Những thành thị thường lấp lánh 🌃💫",
@@ -147751,7 +147701,7 @@
       ]
     },
     {
-      "id": "dvn_014",
+      "id": "dvn_013",
       "start": 35.04,
       "end": 36.9,
       "text": "Còn đêm thành thị thường trơ trọi 🏙️🌙",
@@ -147801,7 +147751,7 @@
       ]
     },
     {
-      "id": "dvn_015",
+      "id": "dvn_014",
       "start": 37.04,
       "end": 38.38,
       "text": "Như mọi đứa trẻ khác 👦🌱",
@@ -147841,7 +147791,7 @@
       ]
     },
     {
-      "id": "dvn_016",
+      "id": "dvn_015",
       "start": 38.48,
       "end": 40.55,
       "text": "Lớn lên muốn đi xa hoài 🛤️🌍",
@@ -147886,7 +147836,7 @@
       ]
     },
     {
-      "id": "dvn_017",
+      "id": "dvn_016",
       "start": 40.8,
       "end": 42.0,
       "text": "Nhà thì vẫn ở yên đó 🏡🕯️",
@@ -147931,7 +147881,7 @@
       ]
     },
     {
-      "id": "dvn_018",
+      "id": "dvn_017",
       "start": 42.08,
       "end": 44.1,
       "text": "Đợi những đứa con đang ra ngoài 🚪🤍",
@@ -147981,7 +147931,7 @@
       ]
     },
     {
-      "id": "dvn_019",
+      "id": "dvn_018",
       "start": 44.28,
       "end": 45.42,
       "text": "Bước ra ngoài mới biết 👣🌤️",
@@ -148021,7 +147971,7 @@
       ]
     },
     {
-      "id": "dvn_020",
+      "id": "dvn_019",
       "start": 45.52,
       "end": 47.55,
       "text": "Không ở đâu bằng ở nhà 🏠💖",
@@ -148066,7 +148016,7 @@
       ]
     },
     {
-      "id": "dvn_021",
+      "id": "dvn_020",
       "start": 47.8,
       "end": 48.95,
       "text": "Biết có gì để mất 💭🤲",
@@ -148106,7 +148056,7 @@
       ]
     },
     {
-      "id": "dvn_022",
+      "id": "dvn_021",
       "start": 49.04,
       "end": 51.1,
       "text": "Trước khi sẵn sàng mở quà 🎁✨",
@@ -148151,7 +148101,7 @@
       ]
     },
     {
-      "id": "dvn_023",
+      "id": "dvn_022",
       "start": 51.36,
       "end": 52.55,
       "text": "Không phải là võ sĩ 🥊🔥",
@@ -148191,7 +148141,7 @@
       ]
     },
     {
-      "id": "dvn_024",
+      "id": "dvn_023",
       "start": 52.68,
       "end": 54.38,
       "text": "Nhưng mà phải giỏi đấu đá ⚡🛡️",
@@ -148236,7 +148186,7 @@
       ]
     },
     {
-      "id": "dvn_025",
+      "id": "dvn_024",
       "start": 54.52,
       "end": 55.52,
       "text": "Nhiều khi kiệt sức 😮‍💨🌧️",
@@ -148271,7 +148221,7 @@
       ]
     },
     {
-      "id": "dvn_026",
+      "id": "dvn_025",
       "start": 55.6,
       "end": 58.35,
       "text": "Chỉ vì gắng giữ mình không xấu xa 🪷🤍",
@@ -148326,7 +148276,7 @@
       ]
     },
     {
-      "id": "dvn_027",
+      "id": "dvn_026",
       "start": 58.6,
       "end": 61.8,
       "text": "Đôi lúc bỗng thấy đồng cảm với Mai An Tiêm 🍉🏝️",
@@ -148391,7 +148341,7 @@
       ]
     },
     {
-      "id": "dvn_028",
+      "id": "dvn_027",
       "start": 62.04,
       "end": 63.48,
       "text": "Bước chân ra là sóng gió 🌊⛈️",
@@ -148436,7 +148386,7 @@
       ]
     },
     {
-      "id": "dvn_029",
+      "id": "dvn_028",
       "start": 63.56,
       "end": 65.55,
       "text": "Chỉ có nhà mãi an yên 🏡🕊️",
@@ -148481,7 +148431,7 @@
       ]
     },
     {
-      "id": "dvn_030",
+      "id": "dvn_029",
       "start": 65.72,
       "end": 68.95,
       "text": "Ngoài kia phức tạp như rễ má và dây mơ 🌿🌀",
@@ -148546,7 +148496,7 @@
       ]
     },
     {
-      "id": "dvn_031",
+      "id": "dvn_030",
       "start": 69.16,
       "end": 70.35,
       "text": "Về nhà để có lúc 🏠✨",
@@ -148586,7 +148536,7 @@
       ]
     },
     {
-      "id": "dvn_032",
+      "id": "dvn_031",
       "start": 70.44,
       "end": 72.55,
       "text": "Cho phép mình được ngây thơ 🌼😊",
@@ -148631,7 +148581,7 @@
       ]
     },
     {
-      "id": "dvn_033",
+      "id": "dvn_032",
       "start": 72.84,
       "end": 76.15,
       "text": "Mang theo bao náo nức lên chuyến xe này 🚌🎒",
@@ -148691,7 +148641,7 @@
       ]
     },
     {
-      "id": "dvn_034",
+      "id": "dvn_033",
       "start": 76.32,
       "end": 79.75,
       "text": "Trọn một niềm thao thức suốt những đêm ngày 🌙💭",
@@ -148751,7 +148701,7 @@
       ]
     },
     {
-      "id": "dvn_035",
+      "id": "dvn_034",
       "start": 79.88,
       "end": 81.58,
       "text": "Cùng dòng người trên phố 🛵🏮",
@@ -148791,7 +148741,7 @@
       ]
     },
     {
-      "id": "dvn_036",
+      "id": "dvn_035",
       "start": 81.68,
       "end": 83.22,
       "text": "Mang sắc mai hương đào 🌼🌸",
@@ -148831,16 +148781,16 @@
       ]
     },
     {
-      "id": "dvn_037",
+      "id": "dvn_036",
       "start": 83.32,
-      "end": 86.75,
-      "text": "Tìm về nơi ấm êm (Ooh yeahhh) 🏡🔥",
+      "end": 86.65,
+      "text": "Tìm về nơi ấm êm 🏡🔥",
       "icon": "🏡🔥",
       "tag": "🏡🔥",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 2.75,
+      "timingMid": 2.65,
       "timingOut": 0.28,
       "words": [
         {
@@ -148856,32 +148806,22 @@
         {
           "word": "nơi",
           "start": 84.28,
-          "end": 85.0
+          "end": 85.1
         },
         {
           "word": "ấm",
-          "start": 85.0,
-          "end": 85.55
+          "start": 85.1,
+          "end": 85.96
         },
         {
           "word": "êm",
-          "start": 85.55,
-          "end": 86.05
-        },
-        {
-          "word": "(Ooh",
-          "start": 86.05,
-          "end": 86.35
-        },
-        {
-          "word": "yeahhh)",
-          "start": 86.35,
-          "end": 86.75
+          "start": 85.96,
+          "end": 86.65
         }
       ]
     },
     {
-      "id": "dvn_038",
+      "id": "dvn_037",
       "start": 86.96,
       "end": 90.2,
       "text": "Đường về nhà là vào tim ta 🏡💖",
@@ -148931,16 +148871,16 @@
       ]
     },
     {
-      "id": "dvn_039",
+      "id": "dvn_038",
       "start": 90.48,
-      "end": 93.68,
-      "text": "Dẫu nắng mưa gần xa (Ooh-ah) ☀️🌧️",
+      "end": 93.55,
+      "text": "Dẫu nắng mưa gần xa ☀️🌧️",
       "icon": "☀️🌧️",
       "tag": "☀️🌧️",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 2.52,
+      "timingMid": 2.39,
       "timingOut": 0.28,
       "words": [
         {
@@ -148961,22 +148901,17 @@
         {
           "word": "gần",
           "start": 91.76,
-          "end": 92.55
+          "end": 92.68
         },
         {
           "word": "xa",
-          "start": 92.55,
-          "end": 93.05
-        },
-        {
-          "word": "(Ooh-ah)",
-          "start": 93.05,
-          "end": 93.68
+          "start": 92.68,
+          "end": 93.55
         }
       ]
     },
     {
-      "id": "dvn_040",
+      "id": "dvn_039",
       "start": 93.88,
       "end": 97.25,
       "text": "Thất bát, vang danh 🌟🏆",
@@ -149011,16 +148946,16 @@
       ]
     },
     {
-      "id": "dvn_041",
+      "id": "dvn_040",
       "start": 97.48,
-      "end": 99.45,
+      "end": 100.45,
       "text": "Nhà vẫn luôn chờ ta 🏠🤍",
       "icon": "🏠🤍",
       "tag": "🏠🤍",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 1.29,
+      "timingMid": 2.29,
       "timingOut": 0.28,
       "words": [
         {
@@ -149041,47 +148976,17 @@
         {
           "word": "chờ",
           "start": 98.72,
-          "end": 99.15
+          "end": 99.72
         },
         {
           "word": "ta",
-          "start": 99.15,
-          "end": 99.45
+          "start": 99.72,
+          "end": 100.45
         }
       ]
     },
     {
-      "id": "dvn_042",
-      "start": 99.52,
-      "end": 100.58,
-      "text": "Ooh yeahhh ~ 🎶✨",
-      "icon": "🎶✨",
-      "tag": "🎶✨",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.4,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Ooh",
-          "start": 99.52,
-          "end": 100.0
-        },
-        {
-          "word": "yeahhh",
-          "start": 100.0,
-          "end": 100.38
-        },
-        {
-          "word": "~",
-          "start": 100.38,
-          "end": 100.58
-        }
-      ]
-    },
-    {
-      "id": "dvn_043",
+      "id": "dvn_041",
       "start": 100.72,
       "end": 104.25,
       "text": "Đường về nhà là vào tim ta 🛤️💛",
@@ -149131,16 +149036,16 @@
       ]
     },
     {
-      "id": "dvn_044",
+      "id": "dvn_042",
       "start": 104.44,
-      "end": 108.08,
-      "text": "Dẫu có muôn trùng qua (Yeah-eh) 🌊⛰️",
+      "end": 107.95,
+      "text": "Dẫu có muôn trùng qua 🌊⛰️",
       "icon": "🌊⛰️",
       "tag": "🌊⛰️",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 2.96,
+      "timingMid": 2.83,
       "timingOut": 0.28,
       "words": [
         {
@@ -149161,31 +149066,26 @@
         {
           "word": "trùng",
           "start": 105.96,
-          "end": 106.85
+          "end": 107.28
         },
         {
           "word": "qua",
-          "start": 106.85,
-          "end": 107.35
-        },
-        {
-          "word": "(Yeah-eh)",
-          "start": 107.35,
-          "end": 108.08
+          "start": 107.28,
+          "end": 107.95
         }
       ]
     },
     {
-      "id": "dvn_045",
+      "id": "dvn_043",
       "start": 108.28,
-      "end": 112.35,
-      "text": "Vật đổi, sao dời (Ooh-ooh) ✨🌌",
+      "end": 112.25,
+      "text": "Vật đổi, sao dời ✨🌌",
       "icon": "✨🌌",
       "tag": "✨🌌",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 3.39,
+      "timingMid": 3.29,
       "timingOut": 0.28,
       "words": [
         {
@@ -149201,22 +149101,17 @@
         {
           "word": "sao",
           "start": 110.08,
-          "end": 111.1
+          "end": 111.52
         },
         {
           "word": "dời",
-          "start": 111.1,
-          "end": 111.68
-        },
-        {
-          "word": "(Ooh-ooh)",
-          "start": 111.68,
-          "end": 112.35
+          "start": 111.52,
+          "end": 112.25
         }
       ]
     },
     {
-      "id": "dvn_046",
+      "id": "dvn_044",
       "start": 112.52,
       "end": 114.95,
       "text": "Nhà vẫn luôn là nhà 🏡🌸",
@@ -149256,7 +149151,7 @@
       ]
     },
     {
-      "id": "dvn_047",
+      "id": "dvn_045",
       "start": 115.24,
       "end": 117.88,
       "text": "Về ngôi nhà có góc vườn nhiều chó nhiều gà 🏡🐕",
@@ -149321,7 +149216,7 @@
       ]
     },
     {
-      "id": "dvn_048",
+      "id": "dvn_046",
       "start": 117.96,
       "end": 119.68,
       "text": "Đám bạn nói con khó chiều 👥😄",
@@ -149366,7 +149261,7 @@
       ]
     },
     {
-      "id": "dvn_049",
+      "id": "dvn_047",
       "start": 119.8,
       "end": 122.1,
       "text": "Lại thích gió trời hơn gió điều hòa 🍃🌤️",
@@ -149421,7 +149316,7 @@
       ]
     },
     {
-      "id": "dvn_050",
+      "id": "dvn_048",
       "start": 122.36,
       "end": 124.05,
       "text": "Về ăn cơm mẹ nấu 🍚🍲",
@@ -149461,7 +149356,7 @@
       ]
     },
     {
-      "id": "dvn_051",
+      "id": "dvn_049",
       "start": 124.2,
       "end": 125.85,
       "text": "Về mặc áo mẹ may 👕🧵",
@@ -149501,7 +149396,7 @@
       ]
     },
     {
-      "id": "dvn_052",
+      "id": "dvn_050",
       "start": 126.0,
       "end": 127.08,
       "text": "Về đưa ba ra chợ 🛵👨‍👦",
@@ -149541,7 +149436,7 @@
       ]
     },
     {
-      "id": "dvn_053",
+      "id": "dvn_051",
       "start": 127.16,
       "end": 129.3,
       "text": "Mua cây đào cây mai về bày 🌸🌼",
@@ -149591,7 +149486,7 @@
       ]
     },
     {
-      "id": "dvn_054",
+      "id": "dvn_052",
       "start": 129.44,
       "end": 130.78,
       "text": "Cả năm trời làm việc 🗓️💼",
@@ -149631,7 +149526,7 @@
       ]
     },
     {
-      "id": "dvn_055",
+      "id": "dvn_053",
       "start": 130.88,
       "end": 133.05,
       "text": "Nhiều khi rã rời như cái máy ⚙️😮‍💨",
@@ -149681,7 +149576,7 @@
       ]
     },
     {
-      "id": "dvn_056",
+      "id": "dvn_054",
       "start": 133.2,
       "end": 134.35,
       "text": "Về nhà thấy áp lực 🏠🍃",
@@ -149721,7 +149616,7 @@
       ]
     },
     {
-      "id": "dvn_057",
+      "id": "dvn_055",
       "start": 134.44,
       "end": 136.05,
       "text": "Nhẹ như bấc thổi cái là bay 🌬️🕊️",
@@ -149771,7 +149666,7 @@
       ]
     },
     {
-      "id": "dvn_058",
+      "id": "dvn_056",
       "start": 136.12,
       "end": 138.2,
       "text": "Ấm êm hơn bếp lửa 🔥🧡",
@@ -149811,7 +149706,7 @@
       ]
     },
     {
-      "id": "dvn_059",
+      "id": "dvn_057",
       "start": 138.36,
       "end": 139.98,
       "text": "Ngọt bùi hơn lúa non 🌾✨",
@@ -149851,7 +149746,7 @@
       ]
     },
     {
-      "id": "dvn_060",
+      "id": "dvn_058",
       "start": 140.12,
       "end": 141.7,
       "text": "Nhà vẫn luôn ở đó 🏡🕯️",
@@ -149891,7 +149786,7 @@
       ]
     },
     {
-      "id": "dvn_061",
+      "id": "dvn_059",
       "start": 141.84,
       "end": 143.65,
       "text": "Mong chờ những đứa con 🚪🤍",
@@ -149931,7 +149826,7 @@
       ]
     },
     {
-      "id": "dvn_062",
+      "id": "dvn_060",
       "start": 143.8,
       "end": 147.15,
       "text": "Dẫu cho mưa cho nắng không bao giờ nề hà 🌧️☀️",
@@ -149996,7 +149891,7 @@
       ]
     },
     {
-      "id": "dvn_063",
+      "id": "dvn_061",
       "start": 147.36,
       "end": 150.9,
       "text": "Hạnh phúc chỉ đơn giản là còn được về nhà 💖🏡",
@@ -150061,7 +149956,7 @@
       ]
     },
     {
-      "id": "dvn_064",
+      "id": "dvn_062",
       "start": 151.08,
       "end": 152.55,
       "text": "Hạnh phúc, đi về nhà 😊🏠",
@@ -150101,7 +149996,7 @@
       ]
     },
     {
-      "id": "dvn_065",
+      "id": "dvn_063",
       "start": 152.68,
       "end": 154.48,
       "text": "Cô đơn, đi về nhà 🌙🏠",
@@ -150141,7 +150036,7 @@
       ]
     },
     {
-      "id": "dvn_066",
+      "id": "dvn_064",
       "start": 154.64,
       "end": 156.15,
       "text": "Thành công, đi về nhà 🏆🏠",
@@ -150181,7 +150076,7 @@
       ]
     },
     {
-      "id": "dvn_067",
+      "id": "dvn_065",
       "start": 156.28,
       "end": 157.98,
       "text": "Thất bại, đi về nhà 🌧️🏠",
@@ -150221,7 +150116,7 @@
       ]
     },
     {
-      "id": "dvn_068",
+      "id": "dvn_066",
       "start": 158.12,
       "end": 159.65,
       "text": "Mệt quá, đi về nhà 😮‍💨🏠",
@@ -150261,7 +150156,7 @@
       ]
     },
     {
-      "id": "dvn_069",
+      "id": "dvn_067",
       "start": 159.76,
       "end": 161.42,
       "text": "Mông lung, đi về nhà 🌫️🏠",
@@ -150301,7 +150196,7 @@
       ]
     },
     {
-      "id": "dvn_070",
+      "id": "dvn_068",
       "start": 161.56,
       "end": 163.3,
       "text": "Chênh vênh, đi về nhà 🍂🏠",
@@ -150341,7 +150236,7 @@
       ]
     },
     {
-      "id": "dvn_071",
+      "id": "dvn_069",
       "start": 163.44,
       "end": 166.75,
       "text": "Không có việc gì, thì đi về nhà ✨🏡",
@@ -150396,7 +150291,7 @@
       ]
     },
     {
-      "id": "dvn_072",
+      "id": "dvn_070",
       "start": 167.0,
       "end": 169.6,
       "text": "Không có việc gì, thì đi về nhà 🌸🏡",
@@ -150451,7 +150346,7 @@
       ]
     },
     {
-      "id": "dvn_073",
+      "id": "dvn_071",
       "start": 169.76,
       "end": 171.95,
       "text": "Đi về nhà, đi về nhà 🛤️🏠",
@@ -150496,7 +150391,7 @@
       ]
     },
     {
-      "id": "dvn_074",
+      "id": "dvn_072",
       "start": 172.24,
       "end": 175.5,
       "text": "Đường về nhà là vào tim ta 🏡💖",
@@ -150546,16 +150441,16 @@
       ]
     },
     {
-      "id": "dvn_075",
+      "id": "dvn_073",
       "start": 175.68,
-      "end": 179.55,
-      "text": "Dẫu nắng mưa gần xa (Ooh-ah) ☀️🌧️",
+      "end": 179.45,
+      "text": "Dẫu nắng mưa gần xa ☀️🌧️",
       "icon": "☀️🌧️",
       "tag": "☀️🌧️",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 3.19,
+      "timingMid": 3.09,
       "timingOut": 0.28,
       "words": [
         {
@@ -150576,22 +150471,17 @@
         {
           "word": "gần",
           "start": 177.12,
-          "end": 178.2
-        },
-        {
-          "word": "xa",
-          "start": 178.2,
           "end": 178.76
         },
         {
-          "word": "(Ooh-ah)",
+          "word": "xa",
           "start": 178.76,
-          "end": 179.55
+          "end": 179.45
         }
       ]
     },
     {
-      "id": "dvn_076",
+      "id": "dvn_074",
       "start": 179.76,
       "end": 182.7,
       "text": "Thất bát, vang danh 🌟🏆",
@@ -150626,16 +150516,16 @@
       ]
     },
     {
-      "id": "dvn_077",
+      "id": "dvn_075",
       "start": 182.92,
-      "end": 184.72,
+      "end": 185.85,
       "text": "Nhà vẫn luôn chờ ta 🏠🤍",
       "icon": "🏠🤍",
       "tag": "🏠🤍",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 1.12,
+      "timingMid": 2.25,
       "timingOut": 0.28,
       "words": [
         {
@@ -150656,47 +150546,17 @@
         {
           "word": "chờ",
           "start": 184.08,
-          "end": 184.45
+          "end": 185.08
         },
         {
           "word": "ta",
-          "start": 184.45,
-          "end": 184.72
+          "start": 185.08,
+          "end": 185.85
         }
       ]
     },
     {
-      "id": "dvn_078",
-      "start": 184.8,
-      "end": 185.92,
-      "text": "Ooh yeahhh ~ 🎶✨",
-      "icon": "🎶✨",
-      "tag": "🎶✨",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.44,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Ooh",
-          "start": 184.8,
-          "end": 185.3
-        },
-        {
-          "word": "yeahhh",
-          "start": 185.3,
-          "end": 185.72
-        },
-        {
-          "word": "~",
-          "start": 185.72,
-          "end": 185.92
-        }
-      ]
-    },
-    {
-      "id": "dvn_079",
+      "id": "dvn_076",
       "start": 186.08,
       "end": 189.6,
       "text": "Đường về nhà là vào tim ta 🛤️💛",
@@ -150746,16 +150606,16 @@
       ]
     },
     {
-      "id": "dvn_080",
+      "id": "dvn_077",
       "start": 189.84,
-      "end": 193.15,
-      "text": "Dẫu có muôn trùng qua (Yeah-eh) 🌊⛰️",
+      "end": 193.05,
+      "text": "Dẫu có muôn trùng qua 🌊⛰️",
       "icon": "🌊⛰️",
       "tag": "🌊⛰️",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 2.63,
+      "timingMid": 2.53,
       "timingOut": 0.28,
       "words": [
         {
@@ -150776,31 +150636,26 @@
         {
           "word": "trùng",
           "start": 191.24,
-          "end": 191.95
+          "end": 192.32
         },
         {
           "word": "qua",
-          "start": 191.95,
-          "end": 192.45
-        },
-        {
-          "word": "(Yeah-eh)",
-          "start": 192.45,
-          "end": 193.15
+          "start": 192.32,
+          "end": 193.05
         }
       ]
     },
     {
-      "id": "dvn_081",
+      "id": "dvn_078",
       "start": 193.32,
-      "end": 197.15,
-      "text": "Vật đổi, sao dời (Ooh-ooh) ✨🌌",
+      "end": 197.0,
+      "text": "Vật đổi, sao dời ✨🌌",
       "icon": "✨🌌",
       "tag": "✨🌌",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 3.15,
+      "timingMid": 3.0,
       "timingOut": 0.28,
       "words": [
         {
@@ -150816,22 +150671,17 @@
         {
           "word": "sao",
           "start": 195.32,
-          "end": 196.15
+          "end": 196.32
         },
         {
           "word": "dời",
-          "start": 196.15,
-          "end": 196.65
-        },
-        {
-          "word": "(Ooh-ooh)",
-          "start": 196.65,
-          "end": 197.15
+          "start": 196.32,
+          "end": 197.0
         }
       ]
     },
     {
-      "id": "dvn_082",
+      "id": "dvn_079",
       "start": 197.28,
       "end": 199.85,
       "text": "Nhà vẫn luôn là nhà 🏡🌸",
@@ -150871,7 +150721,7 @@
       ]
     },
     {
-      "id": "dvn_083",
+      "id": "dvn_080",
       "start": 200.08,
       "end": 203.95,
       "text": "Nhà có thể lớn, có thể nhỏ, có thể không khang trang 🏠🌿",
@@ -150946,7 +150796,7 @@
       ]
     },
     {
-      "id": "dvn_084",
+      "id": "dvn_081",
       "start": 204.24,
       "end": 207.55,
       "text": "Cha mẹ nào cũng muốn con được sống đàng hoàng 👨‍👩‍👧💖",
@@ -151011,7 +150861,7 @@
       ]
     },
     {
-      "id": "dvn_085",
+      "id": "dvn_082",
       "start": 207.76,
       "end": 211.05,
       "text": "Lớn lên làm người mong một tương lai sáng lạng 🌅🌟",
@@ -151076,7 +150926,7 @@
       ]
     },
     {
-      "id": "dvn_086",
+      "id": "dvn_083",
       "start": 211.24,
       "end": 214.65,
       "text": "Cặm cụi cả đời không bao giờ thấy than van 🌾🤍",
@@ -151141,7 +150991,7 @@
       ]
     },
     {
-      "id": "dvn_087",
+      "id": "dvn_084",
       "start": 214.92,
       "end": 218.15,
       "text": "Đường về nhà là vào tim ta 🛤️🏡",
@@ -151191,7 +151041,7 @@
       ]
     },
     {
-      "id": "dvn_088",
+      "id": "dvn_085",
       "start": 218.36,
       "end": 221.45,
       "text": "Đường về nhà là vào tim ta 🏡💖",
@@ -151241,16 +151091,16 @@
       ]
     },
     {
-      "id": "dvn_089",
+      "id": "dvn_086",
       "start": 221.64,
-      "end": 225.55,
-      "text": "Dẫu nắng mưa gần xa (Ooh-ah) ☀️🌧️",
+      "end": 225.4,
+      "text": "Dẫu nắng mưa gần xa ☀️🌧️",
       "icon": "☀️🌧️",
       "tag": "☀️🌧️",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 3.23,
+      "timingMid": 3.08,
       "timingOut": 0.28,
       "words": [
         {
@@ -151271,22 +151121,17 @@
         {
           "word": "gần",
           "start": 223.36,
-          "end": 224.3
+          "end": 224.72
         },
         {
           "word": "xa",
-          "start": 224.3,
-          "end": 224.85
-        },
-        {
-          "word": "(Ooh-ah)",
-          "start": 224.85,
-          "end": 225.55
+          "start": 224.72,
+          "end": 225.4
         }
       ]
     },
     {
-      "id": "dvn_090",
+      "id": "dvn_087",
       "start": 225.72,
       "end": 228.65,
       "text": "Thất bát, vang danh 🌟🏆",
@@ -151321,16 +151166,16 @@
       ]
     },
     {
-      "id": "dvn_091",
+      "id": "dvn_088",
       "start": 228.8,
-      "end": 230.92,
+      "end": 232.05,
       "text": "Nhà vẫn luôn chờ ta 🏠🤍",
       "icon": "🏠🤍",
       "tag": "🏠🤍",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 1.44,
+      "timingMid": 2.57,
       "timingOut": 0.28,
       "words": [
         {
@@ -151351,47 +151196,17 @@
         {
           "word": "chờ",
           "start": 230.32,
-          "end": 230.65
+          "end": 231.32
         },
         {
           "word": "ta",
-          "start": 230.65,
-          "end": 230.92
+          "start": 231.32,
+          "end": 232.05
         }
       ]
     },
     {
-      "id": "dvn_092",
-      "start": 231.0,
-      "end": 232.18,
-      "text": "Ooh yeahhh ~ 🎶✨",
-      "icon": "🎶✨",
-      "tag": "🎶✨",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 0.5,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Ooh",
-          "start": 231.0,
-          "end": 231.5
-        },
-        {
-          "word": "yeahhh",
-          "start": 231.5,
-          "end": 231.95
-        },
-        {
-          "word": "~",
-          "start": 231.95,
-          "end": 232.18
-        }
-      ]
-    },
-    {
-      "id": "dvn_093",
+      "id": "dvn_089",
       "start": 232.32,
       "end": 235.85,
       "text": "Đường về nhà là vào tim ta 🛤️💛",
@@ -151441,16 +151256,16 @@
       ]
     },
     {
-      "id": "dvn_094",
+      "id": "dvn_090",
       "start": 236.12,
-      "end": 239.5,
-      "text": "Dẫu có muôn trùng qua (Yeah-eh) 🌊⛰️",
+      "end": 239.4,
+      "text": "Dẫu có muôn trùng qua 🌊⛰️",
       "icon": "🌊⛰️",
       "tag": "🌊⛰️",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 2.7,
+      "timingMid": 2.6,
       "timingOut": 0.28,
       "words": [
         {
@@ -151471,31 +151286,26 @@
         {
           "word": "trùng",
           "start": 237.48,
-          "end": 238.25
+          "end": 238.68
         },
         {
           "word": "qua",
-          "start": 238.25,
-          "end": 238.75
-        },
-        {
-          "word": "(Yeah-eh)",
-          "start": 238.75,
-          "end": 239.5
+          "start": 238.68,
+          "end": 239.4
         }
       ]
     },
     {
-      "id": "dvn_095",
+      "id": "dvn_091",
       "start": 239.68,
-      "end": 243.15,
-      "text": "Vật đổi, sao dời (Ooh-ooh) ✨🌌",
+      "end": 243.05,
+      "text": "Vật đổi, sao dời ✨🌌",
       "icon": "✨🌌",
       "tag": "✨🌌",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 2.79,
+      "timingMid": 2.69,
       "timingOut": 0.28,
       "words": [
         {
@@ -151511,31 +151321,26 @@
         {
           "word": "sao",
           "start": 241.48,
-          "end": 242.15
+          "end": 242.36
         },
         {
           "word": "dời",
-          "start": 242.15,
-          "end": 242.65
-        },
-        {
-          "word": "(Ooh-ooh)",
-          "start": 242.65,
-          "end": 243.15
+          "start": 242.36,
+          "end": 243.05
         }
       ]
     },
     {
-      "id": "dvn_096",
+      "id": "dvn_092",
       "start": 243.28,
-      "end": 246.1,
+      "end": 246.3,
       "text": "Nhà vẫn luôn là nhà 🏡🌸",
       "icon": "🏡🌸",
       "tag": "🏡🌸",
       "mode": "queue",
       "accentColor": "#f59e0b",
       "timingIn": 0.4,
-      "timingMid": 2.14,
+      "timingMid": 2.34,
       "timingOut": 0.28,
       "words": [
         {
@@ -151561,105 +151366,10 @@
         {
           "word": "nhà",
           "start": 245.35,
-          "end": 246.1
-        }
-      ]
-    },
-    {
-      "id": "dvn_097",
-      "start": 246.25,
-      "end": 249.6,
-      "text": "Ooh yeahhh ~ Đi về nhà! 🎶🏡",
-      "icon": "🎶🏡",
-      "tag": "🎶🏡",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 2.67,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Ooh",
-          "start": 246.25,
-          "end": 246.85
-        },
-        {
-          "word": "yeahhh",
-          "start": 246.85,
-          "end": 247.55
-        },
-        {
-          "word": "~",
-          "start": 247.55,
-          "end": 247.9
-        },
-        {
-          "word": "Đi",
-          "start": 247.9,
-          "end": 248.35
-        },
-        {
-          "word": "về",
-          "start": 248.35,
-          "end": 248.85
-        },
-        {
-          "word": "nhà!",
-          "start": 248.85,
-          "end": 249.6
-        }
-      ]
-    },
-    {
-      "id": "dvn_098",
-      "start": 267.8,
-      "end": 271.5,
-      "text": "Yeahhh ~ Nhà vẫn luôn là nhà ✨🏡",
-      "icon": "✨🏡",
-      "tag": "✨🏡",
-      "mode": "queue",
-      "accentColor": "#f59e0b",
-      "timingIn": 0.4,
-      "timingMid": 3.02,
-      "timingOut": 0.28,
-      "words": [
-        {
-          "word": "Yeahhh",
-          "start": 267.8,
-          "end": 268.55
-        },
-        {
-          "word": "~",
-          "start": 268.55,
-          "end": 268.85
-        },
-        {
-          "word": "Nhà",
-          "start": 268.85,
-          "end": 269.35
-        },
-        {
-          "word": "vẫn",
-          "start": 269.35,
-          "end": 269.8
-        },
-        {
-          "word": "luôn",
-          "start": 269.8,
-          "end": 270.25
-        },
-        {
-          "word": "là",
-          "start": 270.25,
-          "end": 270.7
-        },
-        {
-          "word": "nhà",
-          "start": 270.7,
-          "end": 271.5
+          "end": 246.3
         }
       ]
     }
   ],
-  "_updatedAt": 1794809108695
+  "_updatedAt": 1794809605442
 }
