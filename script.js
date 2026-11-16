@@ -2707,67 +2707,55 @@
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
 
+      // 2026-11-16: Khách hàng phản hồi hiệu ứng tan biến từng chữ trông xấu và yêu cầu thay bằng 1 thanh line progress duy nhất dưới cả câu trừ dần từ trái qua phải; giữ nguyên đầy đủ các từ trên câu và vẽ 1 thanh tiến trình chung phía dưới co ngắn từ trái sang phải theo đúng vị trí chữ đang hát.
+      const firstWord = art.wordLayout[0];
+      const lastWord = art.wordLayout[art.wordLayout.length - 1];
+      const lineLeft = firstWord.x;
+      const lineRight = lastWord.x + lastWord.width;
+      let cursorX = lineLeft;
+
       for (let i = 0; i < art.wordLayout.length; i++) {
         const w = art.wordLayout[i];
         const isCurrent = t >= w.start && t < w.end;
         const isSung = t >= w.end;
 
-        // 2026-11-16: Khách hàng yêu cầu bỏ hiệu ứng đường line gạch chân dưới chữ đang hát và thay bằng hiệu ứng tan biến chữ (word dissolve); loại bỏ thanh roundRect dưới chữ và cho từng chữ sau khi hát phát sáng, bay nhẹ lên kèm hạt bụi sao rồi mờ dần tan biến hoàn toàn.
+        if (isSung) {
+          cursorX = Math.max(cursorX, w.x + w.width);
+        } else if (isCurrent) {
+          const wProg = clamp((t - w.start) / Math.max(0.08, w.end - w.start), 0, 1);
+          cursorX = Math.max(cursorX, w.x + w.width * wProg);
+        }
+
         ctx.save();
-        if (isCurrent || isSung) {
-          const wDur = Math.max(0.08, w.end - w.start);
-          const wProg = isCurrent ? clamp((t - w.start) / wDur, 0, 1) : 1;
-          const afterElapsed = isSung ? Math.max(0, t - w.end) : 0;
-          const dissolve = isCurrent
-            ? clamp((wProg - 0.68) / 0.65, 0, 0.45)
-            : clamp(0.45 + afterElapsed / 0.34, 0.45, 1);
+        if (isCurrent) {
+          const wProg = clamp((t - w.start) / Math.max(0.08, w.end - w.start), 0, 1);
+          const wave = Math.sin(wProg * Math.PI);
+          const lift = -3.4 * wave - 2.2 * pulse;
+          const wordScale = 1 + 0.048 * wave + 0.028 * pulse;
+          const wordCenterX = w.x + w.width / 2;
 
-          if (dissolve < 0.995) {
-            const fadeAlpha = 1 - smooth(dissolve);
-            const wave = isCurrent ? Math.sin(wProg * Math.PI) : 0;
-            const lift = -3.4 * wave - 2.2 * pulse - dissolve * 22;
-            const wordScale = 1 + 0.048 * wave + 0.028 * pulse + dissolve * 0.1;
-            const wordCenterX = w.x + w.width / 2;
+          ctx.translate(wordCenterX, lift);
+          ctx.scale(wordScale, wordScale);
+          ctx.translate(-wordCenterX, 0);
 
-            ctx.globalAlpha = visibleOpacity * fadeAlpha;
-            ctx.translate(wordCenterX, lift);
-            ctx.scale(wordScale, wordScale);
-            ctx.translate(-wordCenterX, 0);
+          ctx.shadowColor = glowColor;
+          ctx.shadowBlur = (24 + 14 * wave + 16 * pulse) * Math.max(0.4, glowAmount);
+          ctx.shadowOffsetY = 0;
+          ctx.fillStyle = mainColor;
+          ctx.fillText(w.text, w.x, 0);
 
-            // Luminous aura glow that expands as the word dissolves
-            ctx.shadowColor = glowColor;
-            ctx.shadowBlur = (24 + 14 * wave + 16 * pulse + dissolve * 28) * Math.max(0.4, glowAmount);
-            ctx.shadowOffsetY = 0;
-            ctx.fillStyle = dissolve > 0.25 ? '#fef08a' : mainColor;
-            ctx.fillText(w.text, w.x, 0);
-
-            // Crisp core with deep contrast shadow
-            ctx.shadowColor = `rgba(0, 0, 0, ${0.94 * fadeAlpha})`;
-            ctx.shadowBlur = 7;
-            ctx.shadowOffsetY = 2;
-            ctx.fillStyle = '#ffffff';
-            ctx.fillText(w.text, w.x, 0);
-
-            // Dissolving stardust sparks rising from the vanishing word
-            if (dissolve > 0.04) {
-              ctx.shadowColor = glowColor;
-              ctx.shadowBlur = 10;
-              const sparkCount = 6;
-              for (let sp = 0; sp < sparkCount; sp++) {
-                const su = (sp + 0.5) / sparkCount;
-                const seedVal = Math.sin((i + 1) * 19.7 + sp * 7.3);
-                const sx = w.x + w.width * su + seedVal * 16 * dissolve;
-                const sy = -art.size * 0.15 - dissolve * (26 + (sp % 3) * 14);
-                const sr = Math.max(0.8, (1 - dissolve) * (2.6 + (sp % 2) * 1.4));
-                ctx.fillStyle = sp % 2 === 0 ? '#fef08a' : glowColor;
-                ctx.beginPath();
-                ctx.arc(sx, sy, sr, 0, Math.PI * 2);
-                ctx.fill();
-              }
-            }
-          }
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.94)';
+          ctx.shadowBlur = 7;
+          ctx.shadowOffsetY = 2;
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText(w.text, w.x, 0);
+        } else if (isSung) {
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
+          ctx.fillText(w.text, w.x, 2.5);
+          ctx.fillStyle = mainColor;
+          ctx.fillText(w.text, w.x, 0);
         } else {
-          ctx.globalAlpha = visibleOpacity * 0.78;
+          ctx.globalAlpha = visibleOpacity * 0.72;
           ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
           ctx.fillText(w.text, w.x, 2.5);
           ctx.fillStyle = mainColor;
@@ -2775,6 +2763,40 @@
         }
         ctx.restore();
       }
+
+      // Single progress line under the whole lyric sentence that subtracts from left to right
+      const barY = art.size * 0.56;
+      const fullSpan = Math.max(20, lineRight - lineLeft);
+      const remainW = Math.max(0, lineRight - clamp(cursorX, lineLeft, lineRight));
+      ctx.save();
+      // Subtle dim track showing full sentence width
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.16)';
+      ctx.beginPath();
+      ctx.roundRect(lineLeft, barY, fullSpan, 4, 2);
+      ctx.fill();
+
+      if (remainW > 1.5) {
+        const startX = lineRight - remainW;
+        const barGrad = ctx.createLinearGradient(startX, 0, lineRight, 0);
+        barGrad.addColorStop(0, '#ffffff');
+        barGrad.addColorStop(0.15, '#fef08a');
+        barGrad.addColorStop(1, glowColor);
+        ctx.shadowColor = glowColor;
+        ctx.shadowBlur = 12 + 8 * pulse;
+        ctx.fillStyle = barGrad;
+        ctx.beginPath();
+        ctx.roundRect(startX, barY, remainW, 4.5, 2.25);
+        ctx.fill();
+
+        // Glowing leading spark at the subtracting left edge
+        ctx.shadowColor = '#fef08a';
+        ctx.shadowBlur = 14;
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(startX, barY + 2.25, 3.8 + pulse * 1.6, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
       ctx.restore();
     } else if (art.text) {
       const x = -art.totalWidth / 2 + art.textWidth / 2;
