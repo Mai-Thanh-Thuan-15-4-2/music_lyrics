@@ -203569,7 +203569,7 @@
       "id": "n50_008",
       "start": 25.4,
       "end": 29.25,
-      "text": "~ Một lòng dặn lòng mãi về em ~",
+      "text": "~ Một lòng răng long bạc đầu ~",
       "icon": "",
       "tag": "",
       "mode": "soft",
@@ -203594,33 +203594,28 @@
           "end": 26.18
         },
         {
-          "word": "dặn",
+          "word": "răng",
           "start": 26.18,
           "end": 26.78
         },
         {
-          "word": "lòng",
+          "word": "long",
           "start": 26.78,
           "end": 27.1
         },
         {
-          "word": "mãi",
+          "word": "bạc",
           "start": 27.1,
           "end": 27.95
         },
         {
-          "word": "về",
+          "word": "đầu",
           "start": 27.95,
-          "end": 28.2
-        },
-        {
-          "word": "em",
-          "start": 28.2,
           "end": 29.25
         },
         {
           "word": "~",
-          "start": 28.2,
+          "start": 27.95,
           "end": 29.25
         }
       ]
@@ -207456,5 +207451,5 @@
       ]
     }
   ],
-  "_updatedAt": 1794981983743
+  "_updatedAt": 1794982553374
 }
