@@ -471,6 +471,7 @@
     $('quickSong1Btn')?.classList.toggle('active', srcVid === '0zJkOay1Ly8');
     $('quickSong2Btn')?.classList.toggle('active', srcVid === 'EnnNI-RlM40');
     $('quickSong3Btn')?.classList.toggle('active', srcVid === 'n5D2aYJvis8');
+    $('quickSong4Btn')?.classList.toggle('active', srcVid === '_ItBpdim1b4');
     $('quickMedleyBtn')?.classList.toggle('active', srcVid.includes('0zJkOay1Ly8_EnnNI-RlM40'));
     clearAllTextArtworks();
     buildList();
@@ -2017,6 +2018,7 @@
 
   let sunsetRemixArtwork = null, sunsetRemixKey = '';
   let homecomingArtwork = null, homecomingKey = '';
+  let twilightEternalArtwork = null, twilightEternalKey = '';
   function clearAllTextArtworks() {
     lyricArtwork.clear();
     introArtwork = null;
@@ -2025,6 +2027,8 @@
     sunsetRemixKey = '';
     homecomingArtwork = null;
     homecomingKey = '';
+    twilightEternalArtwork = null;
+    twilightEternalKey = '';
     storybookArtwork = null;
     storybookKey = '';
     balladTitleArtwork = null;
@@ -2467,6 +2471,334 @@
     ctx.restore();
   }
 
+  // 2026-11-18: Khách hàng yêu cầu thêm bài thứ 4 "50 Năm Về Sau (Style Thazh x Đông Remix) - Thiện ND" với ảnh nền "Bầu trời hoàng hôn mây mỏng rực rỡ.png", thiết kế văn bản tựa bài khác hoàn toàn các bài trước và hiệu ứng animation dạo nhạc mới; bổ sung drawTwilightEternalIntro (chữ nghệ thuật Playfair Display Italic mạ gradient Rose-Gold + khung pha lê lục giác câu thơ + dải vô cực ∞ Lissajous 2 sao chổi đuổi nhau) và drawTwilightEternalInstrumental (sóng nhạc gương phản chiếu đối xứng 2 chiều trên chân trời hoàng hôn tím đỏ).
+  function drawTwilightEternalIntro(t, customCfg = null) {
+    const cfg = customCfg || data.intro;
+    if (!cfg?.enabled) return;
+    const isDrop1 = t >= 119.0 && t <= 168.8;
+    const isDrop2 = t >= 316.0 && t <= 382.0;
+    const start = isDrop2 ? 316.0 : isDrop1 ? 119.0 : (Number(cfg.start) || 0);
+    const end = isDrop2 ? 382.0 : isDrop1 ? 168.8 : (Number(cfg.end) || 19.2);
+    if (t < start || t >= end) return;
+    const localT = t - start;
+    const dur = Math.max(1, end - start);
+    const title = String(cfg.title || data.songTitle || '50 Năm Về Sau').trim();
+    const subtitle = String(cfg.subtitle || data.artist || 'Thiện ND · Style Thazh × Đông Remix').trim();
+    const quoteText = String(cfg.subline || 'Tìm được thấy nhau không dễ dàng đâu...').trim();
+    const fontReady = isCanvasFontReady('italic 700 84px "Playfair Display"', title + ' ' + subtitle);
+    const key = JSON.stringify(['twilight-eternal', title, subtitle, quoteText, fontReady]);
+
+    if (!twilightEternalArtwork || key !== twilightEternalKey) {
+      twilightEternalKey = key;
+      if (!fontReady && document.fonts?.load) {
+        document.fonts.load('italic 700 84px "Playfair Display"', title).then(() => { clearAllTextArtworks(); draw(time()); }).catch(() => {});
+      }
+      twilightEternalArtwork = document.createElement('canvas');
+      twilightEternalArtwork.width = W;
+      twilightEternalArtwork.height = 310;
+      const g = twilightEternalArtwork.getContext('2d');
+      g.textAlign = 'center';
+      g.textBaseline = 'middle';
+
+      // 1. Top spaced artist crest with flanking starlight lines
+      const spacedSub = subtitle.toLocaleUpperCase('vi-VN').split('').join(' ');
+      g.font = '600 16px "Be Vietnam Pro","Segoe UI",sans-serif';
+      const topText = `✦   ${spacedSub}   ✦`;
+      const topW = g.measureText(topText).width;
+      const lineSpan = 130;
+      const gradL = g.createLinearGradient(W / 2 - topW / 2 - lineSpan - 18, 0, W / 2 - topW / 2 - 18, 0);
+      gradL.addColorStop(0, 'rgba(56, 189, 248, 0)');
+      gradL.addColorStop(1, '#fda4af');
+      g.strokeStyle = gradL;
+      g.lineWidth = 1.6;
+      g.beginPath();
+      g.moveTo(W / 2 - topW / 2 - lineSpan - 18, 36);
+      g.lineTo(W / 2 - topW / 2 - 18, 36);
+      g.stroke();
+
+      const gradR = g.createLinearGradient(W / 2 + topW / 2 + 18, 0, W / 2 + topW / 2 + lineSpan + 18, 0);
+      gradR.addColorStop(0, '#fda4af');
+      gradR.addColorStop(1, 'rgba(56, 189, 248, 0)');
+      g.strokeStyle = gradR;
+      g.beginPath();
+      g.moveTo(W / 2 + topW / 2 + 18, 36);
+      g.lineTo(W / 2 + topW / 2 + lineSpan + 18, 36);
+      g.stroke();
+
+      g.shadowColor = 'rgba(0, 0, 0, 0.9)';
+      g.shadowBlur = 10;
+      g.fillStyle = '#fecdd3';
+      g.fillText(topText, W / 2, 36);
+
+      // 2. Editorial Serif Italic Title ("50 Năm Về Sau") with Metallic Rose-Gold & Silver Gradient
+      g.font = 'italic 700 86px "Playfair Display",Georgia,serif';
+      const fitted = Math.min(86, 86 * (W * 0.84) / Math.max(1, g.measureText(title).width));
+      g.font = `italic 700 ${fitted}px "Playfair Display",Georgia,serif`;
+
+      // Deep contrast shadow
+      g.shadowColor = 'rgba(8, 5, 20, 0.95)';
+      g.shadowBlur = 20;
+      g.shadowOffsetY = 5;
+      g.fillStyle = '#090414';
+      g.fillText(title, W / 2, 114);
+
+      // Outer crimson-magenta twilight aura
+      g.shadowColor = '#f43f5e';
+      g.shadowBlur = 32;
+      g.shadowOffsetY = 0;
+      g.fillStyle = '#ffffff';
+      g.fillText(title, W / 2, 114);
+
+      // Metallic Rose-Gold to Starlight Silver vertical gradient fill
+      const titleGrad = g.createLinearGradient(0, 65, 0, 160);
+      titleGrad.addColorStop(0, '#ffffff');
+      titleGrad.addColorStop(0.38, '#fff1f2');
+      titleGrad.addColorStop(0.72, '#fda4af');
+      titleGrad.addColorStop(1, '#fb7185');
+      g.shadowColor = '#38bdf8';
+      g.shadowBlur = 12;
+      g.fillStyle = titleGrad;
+      g.fillText(title, W / 2, 114);
+
+      // Champagne gold fine contour
+      g.shadowBlur = 0;
+      g.strokeStyle = 'rgba(254, 240, 138, 0.65)';
+      g.lineWidth = 1.2;
+      g.strokeText(title, W / 2, 114);
+
+      // 3. Diamond-Tipped Crystal Plaque with Poetic Tagline
+      g.font = 'italic 500 24px "Lora","Be Vietnam Pro",Georgia,serif';
+      const displayQuote = `“ ${quoteText} ”`;
+      const qW = g.measureText(displayQuote).width + 96;
+      const qH = 46;
+      const qX = (W - qW) / 2;
+      const qY = 182;
+      const tip = 22;
+
+      g.shadowColor = 'rgba(0, 0, 0, 0.85)';
+      g.shadowBlur = 14;
+      const plaqueGrad = g.createLinearGradient(qX, qY, qX + qW, qY + qH);
+      plaqueGrad.addColorStop(0, 'rgba(15, 23, 58, 0.78)');
+      plaqueGrad.addColorStop(0.5, 'rgba(76, 17, 56, 0.82)');
+      plaqueGrad.addColorStop(1, 'rgba(15, 23, 58, 0.78)');
+      g.fillStyle = plaqueGrad;
+      g.strokeStyle = '#fda4af';
+      g.lineWidth = 1.8;
+
+      g.beginPath();
+      g.moveTo(qX + tip, qY);
+      g.lineTo(qX + qW - tip, qY);
+      g.lineTo(qX + qW, qY + qH / 2);
+      g.lineTo(qX + qW - tip, qY + qH);
+      g.lineTo(qX + tip, qY + qH);
+      g.lineTo(qX, qY + qH / 2);
+      g.closePath();
+      g.fill();
+      g.stroke();
+
+      g.shadowColor = '#fb7185';
+      g.shadowBlur = 10;
+      g.fillStyle = '#fef08a';
+      g.fillText(displayQuote, W / 2, qY + qH / 2 + 1);
+    }
+
+    const enter = smooth(localT / 1.0);
+    const out = smooth((dur - localT) / 1.1);
+    const alpha = enter * out;
+    const pulse = beatPulse(t);
+    const cx = W * 0.5;
+    const cy = (isDrop1 || isDrop2) ? H * 0.17 : H * 0.135;
+
+    ctx.save();
+    ctx.globalAlpha = alpha;
+
+    // 1. Infinity Love Ribbon (∞ Lissajous Figure-8 Spectrum Pearls)
+    const infPoints = 52;
+    const infW = 145 + pulse * 18;
+    const infH = 44 + pulse * 8;
+    for (let i = 0; i < infPoints; i++) {
+      const u = (i / infPoints) * Math.PI * 2;
+      const band = i % 18;
+      const spec = Math.max(spectrumAt(t, band), 0.25);
+      const px = cx + Math.sin(u) * infW;
+      const py = cy + Math.sin(u * 2) * (infH + spec * 12);
+      const dotR = 2.0 + spec * 3.8 + pulse * 2.2;
+      ctx.fillStyle = i % 3 === 0 ? '#38bdf8' : i % 3 === 1 ? '#fb7185' : '#fef08a';
+      ctx.shadowColor = ctx.fillStyle;
+      ctx.shadowBlur = 10;
+      ctx.beginPath();
+      ctx.arc(px, py, dotR, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // 2. Twin Orbiting Soulmate Comets ("Anh và Em") chasing along the ∞ Infinity Loop
+    const cometColors = ['#38bdf8', '#fb7185'];
+    for (let c = 0; c < 2; c++) {
+      const headPhase = t * 1.85 + c * Math.PI;
+      ctx.save();
+      for (let tail = 0; tail < 14; tail++) {
+        const tu = headPhase - tail * 0.065;
+        const tx = cx + Math.sin(tu) * infW;
+        const ty = cy + Math.sin(tu * 2) * infH;
+        const tRatio = 1 - tail / 14;
+        ctx.globalAlpha = alpha * tRatio * 0.92;
+        ctx.fillStyle = tail === 0 ? '#ffffff' : cometColors[c];
+        ctx.shadowColor = cometColors[c];
+        ctx.shadowBlur = tail === 0 ? 18 : 10;
+        ctx.beginPath();
+        ctx.arc(tx, ty, (tail === 0 ? 5.5 : 4.2 * tRatio) + pulse * 1.8, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    // 3. Center 50-Year Astrolabe Clock Ring & Hourglass/Heart Emblem
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(t * 0.45);
+    const dialR = 44 + pulse * 7;
+    ctx.strokeStyle = 'rgba(254, 240, 138, 0.65)';
+    ctx.lineWidth = 1.6;
+    ctx.beginPath();
+    ctx.arc(0, 0, dialR, 0, Math.PI * 2);
+    ctx.stroke();
+    for (let tk = 0; tk < 12; tk++) {
+      const a = (tk / 12) * Math.PI * 2;
+      ctx.beginPath();
+      ctx.moveTo(Math.cos(a) * (dialR - 5), Math.sin(a) * (dialR - 5));
+      ctx.lineTo(Math.cos(a) * (dialR + 4), Math.sin(a) * (dialR + 4));
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    ctx.save();
+    ctx.translate(cx, cy);
+    const emSc = 0.54 + pulse * 0.12;
+    ctx.scale(emSc, emSc);
+    ctx.drawImage(musicGlyph('⏳'), -80, -80);
+    ctx.restore();
+
+    // 4. Render Split-Typography Rose-Gold Title Card
+    ctx.save();
+    const titleY = (isDrop1 || isDrop2) ? H * 0.35 : H * 0.295;
+    const floatY = Math.sin(localT * 3.1) * 3.5 - pulse * 5;
+    const titleScale = (0.94 + 0.06 * enter) * (1 + pulse * 0.025);
+    ctx.translate(W / 2, titleY + floatY);
+    ctx.scale(titleScale, titleScale);
+    ctx.drawImage(twilightEternalArtwork, -W / 2, -115);
+    ctx.restore();
+
+    ctx.restore();
+  }
+
+  function drawTwilightEternalInstrumental(t) {
+    const effect = data.beatEffect;
+    if (!effect?.enabled) return;
+    const visibility = smooth(instrumentalVisibility(t));
+    const pulse = beatPulse(t);
+
+    ctx.save();
+
+    // 1. Ambient Twilight Shooting Stars & Rising Love Sparks across the crimson-indigo sky
+    const sparkCount = 16;
+    for (let s = 0; s < sparkCount; s++) {
+      const prog = (t * (0.06 + (s % 4) * 0.015) + s * 0.19) % 1;
+      const sx = W * (0.08 + ((s * 0.173) % 0.84)) + Math.sin(prog * Math.PI * 3 + s) * 24;
+      const sy = H * 0.88 - prog * (H * 0.72);
+      const sAlpha = Math.sin(prog * Math.PI) * (0.35 + 0.45 * pulse);
+      ctx.fillStyle = s % 3 === 0 ? '#38bdf8' : s % 3 === 1 ? '#fb7185' : '#fef08a';
+      ctx.globalAlpha = sAlpha;
+      ctx.shadowColor = ctx.fillStyle;
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(sx, sy, 1.8 + (s % 3) * 1.1 + pulse * 1.8, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.shadowBlur = 0;
+
+    // 2. Dual-Sided Mirrored Horizon Spectrogram (Sóng Nhạc Gương Phản Chiếu 2 Chiều)
+    const mirrorY = H * (visibility > 0.4 ? 0.64 : 0.85);
+    const needles = 64;
+    const spanW = W * 0.76;
+    const startX = (W - spanW) / 2;
+    const stepX = spanW / needles;
+
+    for (let i = 0; i <= needles; i++) {
+      const u = i / needles;
+      const centerDist = Math.abs(u - 0.5) * 2;
+      const envelope = Math.cos(centerDist * Math.PI * 0.48);
+      const band = Math.floor(centerDist * 18);
+      const spec = Math.max(spectrumAt(t, band), spectrumAt(t, 6 + (i % 12)) * 0.82);
+      const harmonic = 0.24 + 0.18 * Math.sin(t * 5.8 + i * 0.36) * Math.cos(t * 3.2 - i * 0.24);
+      const lvl = Math.max(spec, harmonic);
+      const amp = (0.38 + 0.62 * visibility) * effect.amount;
+      const upLen = (8 + lvl * (74 + 56 * pulse) * amp) * envelope;
+      const downLen = upLen * 0.58;
+      const nx = startX + i * stepX;
+
+      const col = i % 3 === 0 ? '#fb7185' : i % 3 === 1 ? '#38bdf8' : '#fef08a';
+      ctx.strokeStyle = col;
+      ctx.lineCap = 'round';
+
+      // Upper sky needle
+      ctx.globalAlpha = (0.38 + 0.56 * visibility) * (0.5 + 0.5 * lvl);
+      ctx.lineWidth = 3.4;
+      ctx.beginPath();
+      ctx.moveTo(nx, mirrorY - 2);
+      ctx.lineTo(nx, mirrorY - 2 - upLen);
+      ctx.stroke();
+
+      // Lower mirror reflection needle
+      ctx.globalAlpha = (0.18 + 0.30 * visibility) * (0.4 + 0.6 * lvl);
+      ctx.lineWidth = 2.6;
+      ctx.beginPath();
+      ctx.moveTo(nx, mirrorY + 2);
+      ctx.lineTo(nx, mirrorY + 2 + downLen);
+      ctx.stroke();
+    }
+
+    // Center glowing horizon laser line
+    const hGrad = ctx.createLinearGradient(startX, 0, startX + spanW, 0);
+    hGrad.addColorStop(0, 'rgba(56, 189, 248, 0)');
+    hGrad.addColorStop(0.25, '#38bdf8');
+    hGrad.addColorStop(0.5, '#fef08a');
+    hGrad.addColorStop(0.75, '#fb7185');
+    hGrad.addColorStop(1, 'rgba(251, 113, 133, 0)');
+    ctx.globalAlpha = 0.45 + 0.45 * visibility;
+    ctx.strokeStyle = hGrad;
+    ctx.lineWidth = 2.2 + pulse * 1.5;
+    ctx.beginPath();
+    ctx.moveTo(startX, mirrorY);
+    ctx.lineTo(startX + spanW, mirrorY);
+    ctx.stroke();
+
+    // 3. Full EDM Remix Drop Showcase (Aurora Silk Waves & Eternal Love Carousel)
+    if (visibility > 0.04) {
+      const auroraColors = ['#fb7185', '#38bdf8', '#c084fc'];
+      for (let al = 0; al < 3; al++) {
+        ctx.save();
+        ctx.strokeStyle = auroraColors[al];
+        ctx.shadowColor = auroraColors[al];
+        ctx.shadowBlur = 14;
+        ctx.lineWidth = 3.2 - al * 0.6;
+        ctx.globalAlpha = visibility * (0.72 - al * 0.15);
+        ctx.beginPath();
+        for (let k = 0; k <= 76; k++) {
+          const u = k / 76;
+          const taper = Math.sin(u * Math.PI);
+          const spec = Math.max(spectrumAt(t, (k + al * 5) % 20), 0.25);
+          const ay = mirrorY + Math.sin(u * Math.PI * 4 + t * 4.4 + al * 1.2) * (18 + spec * 46 + pulse * 24) * taper;
+          if (k === 0) ctx.moveTo(startX, ay);
+          else ctx.lineTo(startX + spanW * u, ay);
+        }
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+
+    ctx.restore();
+  }
+
   function drawIntro(t) {
     const intro=data.intro;
     if (intro?.enabled) {
@@ -2474,6 +2806,7 @@
       else if(intro.style==='storybook') drawStorybookIntro(t);
       else if(intro.style==='sunset-remix') drawSunsetRemixIntro(t, intro);
       else if(intro.style==='homecoming-remix') drawHomecomingIntro(t, intro);
+      else if(intro.style==='twilight-eternal') drawTwilightEternalIntro(t, intro);
       else drawRemixIntro(t);
     }
     if (data.secondIntro?.enabled) {
@@ -2535,6 +2868,7 @@
   function drawInstrumental(t) {
     if(data.motionTheme==='ballad'){drawBalladInterlude(t);return;}
     if(data.intro?.style==='homecoming-remix'){drawHomecomingInstrumental(t);return;}
+    if(data.intro?.style==='twilight-eternal'){drawTwilightEternalInstrumental(t);return;}
     const effect=data.beatEffect;
     if (!effect?.enabled) return;
     const visibility=smooth(instrumentalVisibility(t));
@@ -2679,11 +3013,13 @@
     const art = item.art;
     // 2026-11-16: Khách hàng yêu cầu khi tựa bài hát còn hiển thị ở đầu bài thì chữ lời hát nằm thấp phía dưới để không đụng tựa bài, và ngay khi tựa bài vừa biến mất thì chữ tự động đẩy mượt lên giữa màn hình (H * 0.50); nội suy baseY theo trạng thái hiển thị của intro.
     let baseY = H * (data.position === 'upper' ? 0.33 : data.position === 'lower' ? 0.64 : 0.5);
-    if (data.position !== 'upper' && data.intro?.enabled && data.intro?.style === 'homecoming-remix') {
+    if (data.position !== 'upper' && data.intro?.enabled && (data.intro?.style === 'homecoming-remix' || data.intro?.style === 'twilight-eternal')) {
       const introStart = Number(data.intro.start) || 0;
-      const introEnd = Number(data.intro.end) || 18.8;
+      const introEnd = Number(data.intro.end) || 19.2;
       const introActive = smooth((t - introStart) / 0.6) * (1 - smooth((t - (introEnd - 1.1)) / 1.1));
-      const outroActive = smooth((t - 246.0) / 0.8) * (1 - smooth((t - 278.0) / 1.0));
+      const outroActive = data.intro?.style === 'homecoming-remix'
+        ? smooth((t - 246.0) / 0.8) * (1 - smooth((t - 278.0) / 1.0))
+        : 0;
       const pushDown = Math.max(introActive, outroActive);
       baseY = H * (0.50 + 0.14 * pushDown);
     }
@@ -4485,6 +4821,7 @@
   $('quickSong1Btn')?.addEventListener('click', () => loadQuickExportProject('/exports/sao-minh-chua-nam-tay-nhau.json', 'Bài 1: Sao Mình Chưa Nắm Tay Nhau'));
   $('quickSong2Btn')?.addEventListener('click', () => loadQuickExportProject('/exports/den-khi-nao.json', 'Bài 2: Đến Khi Nào'));
   $('quickSong3Btn')?.addEventListener('click', () => loadQuickExportProject('/exports/di-ve-nha.json', 'Bài 3: Đi Về Nhà (Cha Cha Cha)'));
+  $('quickSong4Btn')?.addEventListener('click', () => loadQuickExportProject('/exports/50-nam-ve-sau.json', 'Bài 4: 50 Năm Về Sau (Style Thazh × Đông Remix)'));
   $('quickMedleyBtn')?.addEventListener('click', () => loadQuickExportProject('/exports/lien-khuc-2-bai.json', 'Liên Khúc 2 Bài Nối Tiếp'));
 
   $('loadProjectBtn').addEventListener('click', () => $('projectInput').click());
