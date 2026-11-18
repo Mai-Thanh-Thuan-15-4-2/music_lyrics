@@ -3043,24 +3043,11 @@
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
 
-      // 2026-11-16: Khách hàng phản hồi hiệu ứng tan biến từng chữ trông xấu và yêu cầu thay bằng 1 thanh line progress duy nhất dưới cả câu trừ dần từ trái qua phải; giữ nguyên đầy đủ các từ trên câu và vẽ 1 thanh tiến trình chung phía dưới co ngắn từ trái sang phải theo đúng vị trí chữ đang hát.
-      const firstWord = art.wordLayout[0];
-      const lastWord = art.wordLayout[art.wordLayout.length - 1];
-      const lineLeft = firstWord.x;
-      const lineRight = lastWord.x + lastWord.width;
-      let cursorX = lineLeft;
-
+      // 2026-11-18: Khách hàng yêu cầu bỏ hiệu ứng thanh ngang progress dưới câu lời hát; xóa bỏ phần vẽ thanh tiến trình và điểm sáng dẫn đường phía dưới chữ, chỉ giữ hiệu ứng từng chữ phát sáng và nảy nhẹ theo nhịp hát.
       for (let i = 0; i < art.wordLayout.length; i++) {
         const w = art.wordLayout[i];
         const isCurrent = t >= w.start && t < w.end;
         const isSung = t >= w.end;
-
-        if (isSung) {
-          cursorX = Math.max(cursorX, w.x + w.width);
-        } else if (isCurrent) {
-          const wProg = clamp((t - w.start) / Math.max(0.08, w.end - w.start), 0, 1);
-          cursorX = Math.max(cursorX, w.x + w.width * wProg);
-        }
 
         ctx.save();
         if (isCurrent) {
@@ -3099,40 +3086,6 @@
         }
         ctx.restore();
       }
-
-      // Single progress line under the whole lyric sentence that subtracts from left to right
-      const barY = art.size * 0.56;
-      const fullSpan = Math.max(20, lineRight - lineLeft);
-      const remainW = Math.max(0, lineRight - clamp(cursorX, lineLeft, lineRight));
-      ctx.save();
-      // Subtle dim track showing full sentence width
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.16)';
-      ctx.beginPath();
-      ctx.roundRect(lineLeft, barY, fullSpan, 4, 2);
-      ctx.fill();
-
-      if (remainW > 1.5) {
-        const startX = lineRight - remainW;
-        const barGrad = ctx.createLinearGradient(startX, 0, lineRight, 0);
-        barGrad.addColorStop(0, '#ffffff');
-        barGrad.addColorStop(0.15, '#fef08a');
-        barGrad.addColorStop(1, glowColor);
-        ctx.shadowColor = glowColor;
-        ctx.shadowBlur = 12 + 8 * pulse;
-        ctx.fillStyle = barGrad;
-        ctx.beginPath();
-        ctx.roundRect(startX, barY, remainW, 4.5, 2.25);
-        ctx.fill();
-
-        // Glowing leading spark at the subtracting left edge
-        ctx.shadowColor = '#fef08a';
-        ctx.shadowBlur = 14;
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(startX, barY + 2.25, 3.8 + pulse * 1.6, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      ctx.restore();
       ctx.restore();
     } else if (art.text) {
       const x = -art.totalWidth / 2 + art.textWidth / 2;
