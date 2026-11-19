@@ -3000,45 +3000,25 @@
     persistStickers();
   }
 
-  // 2026-11-15: Khách hàng phản hồi hiệu ứng chữ bị tĩnh quá chán và không nhận các tùy chỉnh hiệu ứng/màu sắc/ánh sáng; trước đó drawWords bỏ qua item.offsetX, item.offsetY, item.scale, item.opacity khiến mọi kiểu hoạt ảnh đều đứng im, nên khôi phục đầy đủ phép biến đổi chuyển động từ NebulaMotion kết hợp lướt từ karaoke mượt mà và icon bồng bềnh theo nhịp.
+  // 2026-11-19: Khách hàng yêu cầu hiệu ứng chữ kiểu nhỏ mờ từ trên rơi xuống to rõ ở giữa rồi rơi xuống thu nhỏ mờ biến mất; cập nhật drawWords để render đồng thời các câu đang chuyển tiếp (câu cũ rơi thu nhỏ phía dưới trong lúc câu mới rơi từ trên xuống to dần) kèm hiệu ứng làm mờ quang học nhẹ khi ở biên trên/dưới.
   function drawWords(t) {
     const sorted = sortedLyrics();
-    let selected = null;
-    let selectedItem = null;
+    const visibleItems = [];
 
-    // Pick single primary active segment
-    for (const seg of sorted) {
-      if (t >= seg.start && t < seg.end) {
-        const item = renderLyricSegment(seg, null, null, t);
-        if (item) {
-          selected = seg;
-          selectedItem = item;
-          break;
-        }
-      }
-      if (seg.start > t) break;
-    }
-
-    // Fallback: segment in exit tail
-    if (!selected) {
-      for (let i = sorted.length - 1; i >= 0; i--) {
-        const seg = sorted[i];
-        if (t >= seg.end && t < seg.end + 0.25) {
-          const item = renderLyricSegment(seg, null, null, t);
-          if (item) {
-            selected = seg;
-            selectedItem = item;
-            break;
-          }
-        }
-        if (seg.end < t - 0.3) break;
+    for (let i = 0; i < sorted.length; i++) {
+      const seg = sorted[i];
+      if (t < seg.start - 0.35) break;
+      if (t > seg.end + 0.45) continue;
+      const item = renderLyricSegment(seg, sorted[i - 1] || null, sorted[i + 1] || null, t);
+      if (item && (item.opacity ?? 1) > 0.008) {
+        visibleItems.push({ seg, item });
       }
     }
 
-    if (!selected || !selectedItem) return;
-    const item = selectedItem;
-    const seg = selected;
-    const art = item.art;
+    if (!visibleItems.length) return;
+    // Draw dimmer/exiting lines behind the bright active center line
+    visibleItems.sort((a, b) => (a.item.opacity ?? 1) - (b.item.opacity ?? 1));
+
     // 2026-11-16: Khách hàng yêu cầu khi tựa bài hát còn hiển thị ở đầu bài thì chữ lời hát nằm thấp phía dưới để không đụng tựa bài, và ngay khi tựa bài vừa biến mất thì chữ tự động đẩy mượt lên giữa màn hình (H * 0.50); nội suy baseY theo trạng thái hiển thị của intro.
     let baseY = H * (data.position === 'upper' ? 0.33 : data.position === 'lower' ? 0.64 : 0.5);
     if (data.position !== 'upper' && data.intro?.enabled && (data.intro?.style === 'homecoming-remix' || data.intro?.style === 'twilight-eternal')) {
@@ -3052,47 +3032,60 @@
       baseY = H * (0.50 + 0.14 * pushDown);
     }
 
-    ctx.save();
-    ctx.translate(W * 0.5 + (item.offsetX || 0), baseY + (item.offsetY || 0));
-    ctx.scale(item.scale || 1, item.scale || 1);
-    const visibleOpacity = clamp(item.opacity ?? 1, 0, 1);
-    ctx.globalAlpha = visibleOpacity;
-
     const breath = data.beatEffect?.enabled ? NebulaMotion.beatBreath(data.beatEffect, t) : 0;
     const pulse = data.beatEffect?.enabled ? beatPulse(t) : 0;
 
-    // 2026-11-19: Khách hàng phản hồi hiệu ứng vẫn hơi khựng; trước đó drawWords gọi fillText + shadowBlur 38px mỗi khung hình và giật theo gai beatPulse(t), nên dùng trực tiếp bitmap art.text đã render sẵn (1.5x supersampled) kết hợp nhịp thở mượt NebulaMotion.beatBreath() để chạy cực nhẹ 60fps không khựng.
-    if (art.text) {
-      const textCenterX = -art.totalWidth / 2 + art.textWidth / 2;
-      const lineLift = -breath * 3.0;
-      const lineScale = 1 + breath * 0.015;
-      ctx.save();
-      ctx.translate(textCenterX, lineLift);
-      ctx.scale(lineScale, lineScale);
-      ctx.drawImage(art.text, -art.text.displayWidth / 2, -art.text.displayHeight / 2, art.text.displayWidth, art.text.displayHeight);
-      ctx.restore();
-    } else if (art.label) {
-      const textCenterX = -art.totalWidth / 2 + art.textWidth / 2;
-      ctx.font = `${fontWeight()} ${art.size}px ${fontFamily()}`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillStyle = data.textColor || '#ffffff';
-      ctx.fillText(art.label, textCenterX, 0);
-    }
+    for (const { seg, item } of visibleItems) {
+      const art = item.art;
+      const visibleOpacity = clamp(item.opacity ?? 1, 0, 1);
+      const edgeFade = clamp(item.edgeFade ?? 0, 0, 1);
 
-    if (art.symbol) {
-      const x = art.totalWidth / 2 - art.iconWidth / 2;
-      const floatY = Math.sin(t * 2.4 + Number(seg.start || 0)) * 3.0 - pulse * 4.5;
-      const iconScale = 1 + 0.035 * Math.sin(t * 2.8 + Number(seg.start || 0)) + pulse * 0.08;
       ctx.save();
-      ctx.translate(x, floatY);
-      ctx.scale(iconScale, iconScale);
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.88)';
-      ctx.shadowBlur = 8;
-      ctx.drawImage(art.symbol, -art.symbol.displayWidth / 2, -art.symbol.displayHeight / 2, art.symbol.displayWidth, art.symbol.displayHeight);
+      ctx.translate(W * 0.5 + (item.offsetX || 0), baseY + (item.offsetY || 0));
+      ctx.scale(item.scale || 1, item.scale || 1);
+      ctx.globalAlpha = visibleOpacity;
+
+      if (art.text) {
+        const textCenterX = -art.totalWidth / 2 + art.textWidth / 2;
+        const focusWeight = 1 - edgeFade;
+        const lineLift = -breath * 2.6 * focusWeight;
+        const lineScale = 1 + breath * 0.014 * focusWeight;
+        ctx.save();
+        ctx.translate(textCenterX, lineLift);
+        ctx.scale(lineScale, lineScale);
+
+        // Zero-cost optical soft-blur haze while small/faded near top & bottom
+        if (edgeFade > 0.14) {
+          const blurShift = 2.4 * edgeFade;
+          ctx.globalAlpha = visibleOpacity * edgeFade * 0.24;
+          ctx.drawImage(art.text, -art.text.displayWidth / 2, -art.text.displayHeight / 2 - blurShift, art.text.displayWidth, art.text.displayHeight);
+          ctx.drawImage(art.text, -art.text.displayWidth / 2, -art.text.displayHeight / 2 + blurShift, art.text.displayWidth, art.text.displayHeight);
+          ctx.globalAlpha = visibleOpacity * (1 - edgeFade * 0.18);
+        }
+
+        ctx.drawImage(art.text, -art.text.displayWidth / 2, -art.text.displayHeight / 2, art.text.displayWidth, art.text.displayHeight);
+        ctx.restore();
+      } else if (art.label) {
+        const textCenterX = -art.totalWidth / 2 + art.textWidth / 2;
+        ctx.font = `${fontWeight()} ${art.size}px ${fontFamily()}`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = data.textColor || '#ffffff';
+        ctx.fillText(art.label, textCenterX, 0);
+      }
+
+      if (art.symbol) {
+        const x = art.totalWidth / 2 - art.iconWidth / 2;
+        const floatY = Math.sin(t * 2.4 + Number(seg.start || 0)) * 3.0 - pulse * 4.5;
+        const iconScale = 1 + 0.035 * Math.sin(t * 2.8 + Number(seg.start || 0)) + pulse * 0.08;
+        ctx.save();
+        ctx.translate(x, floatY);
+        ctx.scale(iconScale, iconScale);
+        ctx.drawImage(art.symbol, -art.symbol.displayWidth / 2, -art.symbol.displayHeight / 2, art.symbol.displayWidth, art.symbol.displayHeight);
+        ctx.restore();
+      }
       ctx.restore();
     }
-    ctx.restore();
   }
 
   // 2026-11-07: Khách hàng cần chèn ảnh hoặc ảnh GIF tách nền vào video, kéo di chuyển & chỉnh kích thước trực tiếp trên màn hình canvas, đồng thời chọn hiển thị xuyên suốt video hoặc chỉ trong khoảng thời gian chỉ định; giải mã từng frame GIF qua ImageDecoder + hỗ trợ tách nền màu tự động (chroma key) và ẩn khung chọn khi đang ghi hình xuất video.

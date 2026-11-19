@@ -57,31 +57,62 @@
     const power=strength+(clamp(Number(b.strength)||0)-strength)*smooth(progress);
     return amount*power*(.5+.5*Math.cos(progress*Math.PI*2));
   }
-  // 2026-11-19: Khách hàng yêu cầu animation xuất hiện và biến mất của câu lời hát phải mượt mà hơn; kéo dài nhẹ biên độ fade-in/fade-out theo đường cong bậc 5 (smooth) và làm mềm quãng trượt vào/ra (offsetY, scale) ở các chế độ poem/queue/soft/slide/bounce.
+  // 2026-11-19: Khách hàng yêu cầu hiệu ứng chữ nhỏ mờ từ trên rơi xuống phóng to rõ ở giữa rồi tiếp tục rơi xuống thu nhỏ mờ biến mất; nâng cấp chế độ 'queue' với khoảng nối trước/sau (enterLead/exitTail) để câu cũ rơi xuống thu nhỏ mượt song song với câu mới rơi từ trên xuống to dần ở giữa (hỗ trợ cả hướng down từ trên xuống và up từ dưới lên).
   function state(seg, t, rhythm = 0, direction = 'up') {
-    const phase = phases(seg), local = t - Number(seg.start);
+    const start = Number(seg.start) || 0;
+    const end = Math.max(start + 0.1, Number(seg.end) || start + 2);
+    const dur = end - start;
+    const mode = seg.mode || 'queue';
+
+    if (mode === 'queue') {
+      const enterLead = 0.28;
+      const exitTail = 0.40;
+      if (t < start - enterLead || t > end + exitTail) return null;
+      const enterIn = Math.min(0.48, dur * 0.28);
+      const exitOut = Math.min(0.42, dur * 0.26);
+      const uIn = clamp((t - (start - enterLead)) / Math.max(0.12, enterLead + enterIn), 0, 1);
+      const uOut = clamp((t - (end - exitOut)) / Math.max(0.12, exitOut + exitTail), 0, 1);
+      const eIn = smooth(uIn);
+      const eOut = smooth(uOut);
+      const midProg = clamp((t - start) / Math.max(0.1, dur), 0, 1);
+      const dirSign = direction === 'down' ? 1 : -1;
+      const travel = 126;
+      const offsetY = dirSign * (-travel * (1 - eIn) + travel * eOut + 10 * (midProg - 0.5));
+      const focus = eIn * (1 - eOut);
+      const scale = 0.54 + 0.48 * focus;
+      const opacity = Math.pow(eIn, 1.18) * Math.pow(1 - eOut, 1.18);
+      return {
+        offsetX: 0,
+        offsetY,
+        scale,
+        opacity,
+        edgeFade: 1 - Math.min(eIn, 1 - eOut),
+        progress: midProg,
+        glowFactor: 0.75 + 0.25 * focus,
+        mode
+      };
+    }
+
+    const phase = phases(seg), local = t - start;
     if (local < 0 || local >= phase.duration) return null;
     const progress = local/phase.duration;
     const enterDur = Math.max(phase.entry, Math.min(0.62, phase.duration * 0.30));
     const exitDur = Math.max(phase.exit, Math.min(0.58, phase.duration * 0.28));
     const enter = smooth(local/enterDur), leave = smooth((phase.duration-local)/exitDur);
-    const result = {offsetX:0, offsetY:0, scale:1, opacity:enter*leave, progress, glowFactor:0.75, mode:seg.mode || 'queue'};
+    const result = {offsetX:0, offsetY:0, scale:1, opacity:enter*leave, edgeFade: 1 - Math.min(enter, leave), progress, glowFactor:0.75, mode};
     const envelope = enter*leave;
-    if (seg.mode === 'none') { result.opacity = 1; return result; }
-    if (seg.mode === 'queue') {
-      result.offsetY = 22*(1-enter) - 18*(1-leave);
-      result.scale = 0.97 + 0.03*enter;
-    } else if (seg.mode === 'slide') {
+    if (mode === 'none') { result.opacity = 1; result.edgeFade = 0; return result; }
+    if (mode === 'slide') {
       result.offsetX = 48*(1-enter) - 42*(1-leave);
       result.offsetY = 0;
       result.scale = 1;
-    } else if (seg.mode === 'bounce') {
+    } else if (mode === 'bounce') {
       const p = clamp(local/enterDur), q = 1-leave;
       const breath = clamp(rhythm) * envelope;
       result.offsetX = 16 * (1 - p) ** 2 - 14 * q;
       result.offsetY = 26*(1-p)**3 - 8*Math.sin(Math.PI*p)**2*(1-p) - 18*q - 3.5*breath;
       result.scale = 0.96 + 0.04*enter + 0.022 * breath;
-    } else if (seg.mode === 'poem') {
+    } else if (mode === 'poem') {
       const fadeIn = smooth(local / Math.min(0.72, phase.duration * 0.32));
       const fadeOut = smooth((phase.duration - local) / Math.min(0.66, phase.duration * 0.30));
       result.opacity = fadeIn * fadeOut;
