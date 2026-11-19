@@ -2602,6 +2602,7 @@
       g.fillText(displayQuote, W / 2, qY + qH / 2 + 1);
     }
 
+    // 2026-11-19: Khách hàng phản hồi hiệu ứng bài "50 Năm Về Sau" chưa mượt; trước đó drawTwilightEternalIntro/Instrumental gọi >100 lệnh ctx.shadowBlur mỗi khung hình trong vòng lặp hạt và nhảy đột ngột mirrorY (visibility > 0.4 ? 0.64 : 0.85) gây khựng khung hình và giật thanh sóng, nên thay shadowBlur trong vòng lặp bằng lớp hào quang 2 vòng nhẹ, nội suy mượt mirrorY và làm mượt theo thời gian cho 64 cột sóng gương.
     const enter = smooth(localT / 1.0);
     const out = smooth((dur - localT) / 1.1);
     const alpha = enter * out;
@@ -2610,22 +2611,26 @@
     const cy = (isDrop1 || isDrop2) ? H * 0.17 : H * 0.135;
 
     ctx.save();
-    ctx.globalAlpha = alpha;
+    ctx.shadowBlur = 0;
 
-    // 1. Infinity Love Ribbon (∞ Lissajous Figure-8 Spectrum Pearls)
+    // 1. Infinity Love Ribbon (∞ Lissajous Figure-8 Spectrum Pearls - zero shadowBlur for 60fps)
     const infPoints = 52;
-    const infW = 145 + pulse * 18;
-    const infH = 44 + pulse * 8;
+    const infW = 145 + pulse * 14;
+    const infH = 44 + pulse * 6;
     for (let i = 0; i < infPoints; i++) {
       const u = (i / infPoints) * Math.PI * 2;
       const band = i % 18;
       const spec = Math.max(spectrumAt(t, band), 0.25);
       const px = cx + Math.sin(u) * infW;
-      const py = cy + Math.sin(u * 2) * (infH + spec * 12);
-      const dotR = 2.0 + spec * 3.8 + pulse * 2.2;
-      ctx.fillStyle = i % 3 === 0 ? '#38bdf8' : i % 3 === 1 ? '#fb7185' : '#fef08a';
-      ctx.shadowColor = ctx.fillStyle;
-      ctx.shadowBlur = 10;
+      const py = cy + Math.sin(u * 2) * (infH + spec * 10);
+      const dotR = 2.0 + spec * 3.4 + pulse * 1.8;
+      const col = i % 3 === 0 ? '#38bdf8' : i % 3 === 1 ? '#fb7185' : '#fef08a';
+      ctx.fillStyle = col;
+      ctx.globalAlpha = alpha * 0.26;
+      ctx.beginPath();
+      ctx.arc(px, py, dotR * 2.1, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = alpha * 0.92;
       ctx.beginPath();
       ctx.arc(px, py, dotR, 0, Math.PI * 2);
       ctx.fill();
@@ -2634,29 +2639,32 @@
     // 2. Twin Orbiting Soulmate Comets ("Anh và Em") chasing along the ∞ Infinity Loop
     const cometColors = ['#38bdf8', '#fb7185'];
     for (let c = 0; c < 2; c++) {
-      const headPhase = t * 1.85 + c * Math.PI;
-      ctx.save();
+      const headPhase = t * 1.65 + c * Math.PI;
       for (let tail = 0; tail < 14; tail++) {
         const tu = headPhase - tail * 0.065;
         const tx = cx + Math.sin(tu) * infW;
         const ty = cy + Math.sin(tu * 2) * infH;
         const tRatio = 1 - tail / 14;
-        ctx.globalAlpha = alpha * tRatio * 0.92;
-        ctx.fillStyle = tail === 0 ? '#ffffff' : cometColors[c];
-        ctx.shadowColor = cometColors[c];
-        ctx.shadowBlur = tail === 0 ? 18 : 10;
+        const r = (tail === 0 ? 5.2 : 4.0 * tRatio) + pulse * 1.4;
+        ctx.fillStyle = cometColors[c];
+        ctx.globalAlpha = alpha * tRatio * 0.28;
         ctx.beginPath();
-        ctx.arc(tx, ty, (tail === 0 ? 5.5 : 4.2 * tRatio) + pulse * 1.8, 0, Math.PI * 2);
+        ctx.arc(tx, ty, r * 2.2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = tail === 0 ? '#ffffff' : cometColors[c];
+        ctx.globalAlpha = alpha * tRatio * 0.92;
+        ctx.beginPath();
+        ctx.arc(tx, ty, r, 0, Math.PI * 2);
         ctx.fill();
       }
-      ctx.restore();
     }
 
     // 3. Center 50-Year Astrolabe Clock Ring & Hourglass/Heart Emblem
     ctx.save();
+    ctx.globalAlpha = alpha;
     ctx.translate(cx, cy);
-    ctx.rotate(t * 0.45);
-    const dialR = 44 + pulse * 7;
+    ctx.rotate(t * 0.42);
+    const dialR = 44 + pulse * 6;
     ctx.strokeStyle = 'rgba(254, 240, 138, 0.65)';
     ctx.lineWidth = 1.6;
     ctx.beginPath();
@@ -2672,17 +2680,19 @@
     ctx.restore();
 
     ctx.save();
+    ctx.globalAlpha = alpha;
     ctx.translate(cx, cy);
-    const emSc = 0.54 + pulse * 0.12;
+    const emSc = 0.54 + pulse * 0.1;
     ctx.scale(emSc, emSc);
     ctx.drawImage(musicGlyph('⏳'), -80, -80);
     ctx.restore();
 
     // 4. Render Split-Typography Rose-Gold Title Card
     ctx.save();
+    ctx.globalAlpha = alpha;
     const titleY = (isDrop1 || isDrop2) ? H * 0.35 : H * 0.295;
-    const floatY = Math.sin(localT * 3.1) * 3.5 - pulse * 5;
-    const titleScale = (0.94 + 0.06 * enter) * (1 + pulse * 0.025);
+    const floatY = Math.sin(localT * 2.6) * 3.0 - pulse * 3.5;
+    const titleScale = (0.95 + 0.05 * enter) * (1 + pulse * 0.018);
     ctx.translate(W / 2, titleY + floatY);
     ctx.scale(titleScale, titleScale);
     ctx.drawImage(twilightEternalArtwork, -W / 2, -115);
@@ -2691,6 +2701,7 @@
     ctx.restore();
   }
 
+  const twilightBarSmooth = new Float32Array(65);
   function drawTwilightEternalInstrumental(t) {
     const effect = data.beatEffect;
     if (!effect?.enabled) return;
@@ -2698,26 +2709,30 @@
     const pulse = beatPulse(t);
 
     ctx.save();
-
-    // 1. Ambient Twilight Shooting Stars & Rising Love Sparks across the crimson-indigo sky
-    const sparkCount = 16;
-    for (let s = 0; s < sparkCount; s++) {
-      const prog = (t * (0.06 + (s % 4) * 0.015) + s * 0.19) % 1;
-      const sx = W * (0.08 + ((s * 0.173) % 0.84)) + Math.sin(prog * Math.PI * 3 + s) * 24;
-      const sy = H * 0.88 - prog * (H * 0.72);
-      const sAlpha = Math.sin(prog * Math.PI) * (0.35 + 0.45 * pulse);
-      ctx.fillStyle = s % 3 === 0 ? '#38bdf8' : s % 3 === 1 ? '#fb7185' : '#fef08a';
-      ctx.globalAlpha = sAlpha;
-      ctx.shadowColor = ctx.fillStyle;
-      ctx.shadowBlur = 12;
-      ctx.beginPath();
-      ctx.arc(sx, sy, 1.8 + (s % 3) * 1.1 + pulse * 1.8, 0, Math.PI * 2);
-      ctx.fill();
-    }
     ctx.shadowBlur = 0;
 
-    // 2. Dual-Sided Mirrored Horizon Spectrogram (Sóng Nhạc Gương Phản Chiếu 2 Chiều)
-    const mirrorY = H * (visibility > 0.4 ? 0.64 : 0.85);
+    // 1. Ambient Twilight Shooting Stars & Rising Love Sparks (lightweight 2-circle halo, zero shadowBlur)
+    const sparkCount = 16;
+    for (let s = 0; s < sparkCount; s++) {
+      const prog = (t * (0.055 + (s % 4) * 0.014) + s * 0.19) % 1;
+      const sx = W * (0.08 + ((s * 0.173) % 0.84)) + Math.sin(prog * Math.PI * 3 + s) * 24;
+      const sy = H * 0.88 - prog * (H * 0.72);
+      const sAlpha = Math.sin(prog * Math.PI) * (0.36 + 0.40 * pulse);
+      const col = s % 3 === 0 ? '#38bdf8' : s % 3 === 1 ? '#fb7185' : '#fef08a';
+      const r = 1.8 + (s % 3) * 1.0 + pulse * 1.4;
+      ctx.fillStyle = col;
+      ctx.globalAlpha = sAlpha * 0.28;
+      ctx.beginPath();
+      ctx.arc(sx, sy, r * 2.4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = sAlpha;
+      ctx.beginPath();
+      ctx.arc(sx, sy, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // 2. Dual-Sided Mirrored Horizon Spectrogram with smooth vertical glide & temporal bar damping
+    const mirrorY = H * (0.85 - 0.21 * visibility);
     const needles = 64;
     const spanW = W * 0.76;
     const startX = (W - spanW) / 2;
@@ -2729,10 +2744,12 @@
       const envelope = Math.cos(centerDist * Math.PI * 0.48);
       const band = Math.floor(centerDist * 18);
       const spec = Math.max(spectrumAt(t, band), spectrumAt(t, 6 + (i % 12)) * 0.82);
-      const harmonic = 0.24 + 0.18 * Math.sin(t * 5.8 + i * 0.36) * Math.cos(t * 3.2 - i * 0.24);
-      const lvl = Math.max(spec, harmonic);
+      const harmonic = 0.24 + 0.16 * Math.sin(t * 5.2 + i * 0.34) * Math.cos(t * 2.8 - i * 0.22);
+      const targetLvl = Math.max(spec, harmonic);
+      twilightBarSmooth[i] += (targetLvl - twilightBarSmooth[i]) * 0.22;
+      const lvl = twilightBarSmooth[i];
       const amp = (0.38 + 0.62 * visibility) * effect.amount;
-      const upLen = (8 + lvl * (74 + 56 * pulse) * amp) * envelope;
+      const upLen = (8 + lvl * (72 + 48 * pulse) * amp) * envelope;
       const downLen = upLen * 0.58;
       const nx = startX + i * stepX;
 
@@ -2766,31 +2783,32 @@
     hGrad.addColorStop(1, 'rgba(251, 113, 133, 0)');
     ctx.globalAlpha = 0.45 + 0.45 * visibility;
     ctx.strokeStyle = hGrad;
-    ctx.lineWidth = 2.2 + pulse * 1.5;
+    ctx.lineWidth = 2.2 + pulse * 1.3;
     ctx.beginPath();
     ctx.moveTo(startX, mirrorY);
     ctx.lineTo(startX + spanW, mirrorY);
     ctx.stroke();
 
-    // 3. Full EDM Remix Drop Showcase (Aurora Silk Waves & Eternal Love Carousel)
+    // 3. Full EDM Remix Drop Showcase (Silky 2-pass Aurora Silk Waves, zero shadowBlur)
     if (visibility > 0.04) {
       const auroraColors = ['#fb7185', '#38bdf8', '#c084fc'];
       for (let al = 0; al < 3; al++) {
         ctx.save();
         ctx.strokeStyle = auroraColors[al];
-        ctx.shadowColor = auroraColors[al];
-        ctx.shadowBlur = 14;
-        ctx.lineWidth = 3.2 - al * 0.6;
-        ctx.globalAlpha = visibility * (0.72 - al * 0.15);
         ctx.beginPath();
         for (let k = 0; k <= 76; k++) {
           const u = k / 76;
           const taper = Math.sin(u * Math.PI);
           const spec = Math.max(spectrumAt(t, (k + al * 5) % 20), 0.25);
-          const ay = mirrorY + Math.sin(u * Math.PI * 4 + t * 4.4 + al * 1.2) * (18 + spec * 46 + pulse * 24) * taper;
+          const ay = mirrorY + Math.sin(u * Math.PI * 4 + t * 3.9 + al * 1.2) * (16 + spec * 40 + pulse * 20) * taper;
           if (k === 0) ctx.moveTo(startX, ay);
           else ctx.lineTo(startX + spanW * u, ay);
         }
+        ctx.globalAlpha = visibility * (0.22 - al * 0.04);
+        ctx.lineWidth = 8.5 - al * 1.5;
+        ctx.stroke();
+        ctx.globalAlpha = visibility * (0.72 - al * 0.15);
+        ctx.lineWidth = 3.0 - al * 0.5;
         ctx.stroke();
         ctx.restore();
       }
