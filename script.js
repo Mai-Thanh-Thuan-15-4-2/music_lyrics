@@ -3053,57 +3053,31 @@
     const glowAmount = clamp(Number(data.glow ?? 68) / 100, 0, 1.5);
     const pulse = data.beatEffect?.enabled ? beatPulse(t) : 0;
 
-    if (art.wordLayout && art.wordLayout.length > 0) {
-      const textCenterOffset = -art.totalWidth / 2 + art.textWidth / 2;
+    // 2026-11-19: Khách hàng yêu cầu bỏ hiệu ứng nhảy từng chữ và chỉ giữ chuyển động/nhảy nhẹ cho cả câu mượt mà; thay vòng lặp nhảy từng từ trong art.wordLayout bằng vẽ nguyên cả câu (art.label) đồng nhất với độ nhấc nhẹ theo nhịp và ánh sáng đều.
+    if (art.label) {
+      const textCenterX = -art.totalWidth / 2 + art.textWidth / 2;
+      const lineLift = -pulse * 3.2;
+      const lineScale = 1 + pulse * 0.016;
       ctx.save();
-      ctx.translate(textCenterOffset, 0);
+      ctx.translate(textCenterX, lineLift);
+      ctx.scale(lineScale, lineScale);
       ctx.font = `${fontWeight()} ${art.size}px ${fontFamily()}`;
-      ctx.textAlign = 'left';
+      ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
-      // 2026-11-18: Khách hàng yêu cầu bỏ hiệu ứng thanh ngang progress dưới câu lời hát; xóa bỏ phần vẽ thanh tiến trình và điểm sáng dẫn đường phía dưới chữ, chỉ giữ hiệu ứng từng chữ phát sáng và nảy nhẹ theo nhịp hát.
-      for (let i = 0; i < art.wordLayout.length; i++) {
-        const w = art.wordLayout[i];
-        const isCurrent = t >= w.start && t < w.end;
-        const isSung = t >= w.end;
+      // Soft luminous outer halo breathing gently with beat
+      ctx.shadowColor = glowColor;
+      ctx.shadowBlur = (22 + 16 * pulse) * Math.max(0.4, glowAmount);
+      ctx.shadowOffsetY = 0;
+      ctx.fillStyle = mainColor;
+      ctx.fillText(art.label, 0, 0);
 
-        ctx.save();
-        if (isCurrent) {
-          const wProg = clamp((t - w.start) / Math.max(0.08, w.end - w.start), 0, 1);
-          const wave = Math.sin(wProg * Math.PI);
-          const lift = -3.4 * wave - 2.2 * pulse;
-          const wordScale = 1 + 0.048 * wave + 0.028 * pulse;
-          const wordCenterX = w.x + w.width / 2;
-
-          ctx.translate(wordCenterX, lift);
-          ctx.scale(wordScale, wordScale);
-          ctx.translate(-wordCenterX, 0);
-
-          ctx.shadowColor = glowColor;
-          ctx.shadowBlur = (24 + 14 * wave + 16 * pulse) * Math.max(0.4, glowAmount);
-          ctx.shadowOffsetY = 0;
-          ctx.fillStyle = mainColor;
-          ctx.fillText(w.text, w.x, 0);
-
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.94)';
-          ctx.shadowBlur = 7;
-          ctx.shadowOffsetY = 2;
-          ctx.fillStyle = '#ffffff';
-          ctx.fillText(w.text, w.x, 0);
-        } else if (isSung) {
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
-          ctx.fillText(w.text, w.x, 2.5);
-          ctx.fillStyle = mainColor;
-          ctx.fillText(w.text, w.x, 0);
-        } else {
-          ctx.globalAlpha = visibleOpacity * 0.72;
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.85)';
-          ctx.fillText(w.text, w.x, 2.5);
-          ctx.fillStyle = mainColor;
-          ctx.fillText(w.text, w.x, 0);
-        }
-        ctx.restore();
-      }
+      // Crisp foreground text with deep contrast shadow
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.92)';
+      ctx.shadowBlur = 7;
+      ctx.shadowOffsetY = 2.5;
+      ctx.fillStyle = mainColor;
+      ctx.fillText(art.label, 0, 0);
       ctx.restore();
     } else if (art.text) {
       const x = -art.totalWidth / 2 + art.textWidth / 2;
