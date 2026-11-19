@@ -3032,8 +3032,16 @@
       baseY = H * (0.50 + 0.14 * pushDown);
     }
 
-    const breath = data.beatEffect?.enabled ? NebulaMotion.beatBreath(data.beatEffect, t) : 0;
-    const pulse = data.beatEffect?.enabled ? beatPulse(t) : 0;
+    // 2026-11-19: Khách hàng phản hồi khi chữ ở giữa nhún theo nhịp bị giật; trước đó dùng NebulaMotion.beatBreath() bám theo các beat phát hiện không đều (khoảng cách + độ mạnh thay đổi từng nhịp) gây nhún méo nhịp, nên đổi sang dao động sin liên tục theo lưới BPM (chu kỳ 2 phách, neo ở beat đầu) với biên độ nhỏ để nhún êm, đều và không bao giờ giật.
+    let breath = 0;
+    const fx = data.beatEffect;
+    if (fx?.enabled && Number(fx.bpm) > 0) {
+      const period = (60 / Number(fx.bpm)) * 2;
+      const anchor = Number(fx.beats?.[0]?.time) || 0;
+      const amount = clamp(Number(fx.amount) || 0.8, 0, 1);
+      breath = amount * (0.5 - 0.5 * Math.cos(((t - anchor) / period) * Math.PI * 2));
+    }
+    const pulse = 0;
 
     for (const { seg, item } of visibleItems) {
       const art = item.art;
