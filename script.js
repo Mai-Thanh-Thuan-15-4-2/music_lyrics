@@ -1401,23 +1401,29 @@
     const count = Math.floor((particles.length * data.density) / 100);
     if (!count) return;
 
+    // 2026-11-19: Khách hàng phản hồi hiệu ứng vẫn bị khựng chưa mượt; nguyên nhân do drawWeather('galaxy' và 'snow') gọi tới >150 lệnh ctx.shadowBlur mỗi khung hình gây rớt FPS nghiêm trọng, nên thay shadowBlur trong vòng lặp hạt bằng 2 vòng tròn trong suốt siêu nhẹ để giữ 60fps ổn định.
     if (weather === 'galaxy') {
       const palette = ['#ffffff', '#7dd3fc', '#c4b5fd', '#f5d0fe'];
+      ctx.shadowBlur = 0;
       for (let i = 0; i < count; i++) {
         const p = particles[i];
         const px = mod(p.x * W + t * (8 + 22 * p.z) + Math.sin(t * 0.4 + p.phase) * 26, W);
         const py = mod(p.y * H - t * (4 + 14 * p.v) + Math.cos(t * 0.35 + p.phase) * 18, H);
         const pulse = 0.35 + 0.65 * Math.sin(t * (1.5 + p.v * 1.5) + p.phase);
-        const r = 1.0 + 2.8 * p.z;
-        ctx.globalAlpha = (0.18 + 0.65 * p.z) * Math.max(0.15, pulse);
+        const r = 1.0 + 2.6 * p.z;
+        const a = (0.18 + 0.65 * p.z) * Math.max(0.15, pulse);
         ctx.fillStyle = palette[p.hue];
-        ctx.shadowBlur = 10 * p.z;
-        ctx.shadowColor = palette[p.hue];
+        if (p.z > 0.45) {
+          ctx.globalAlpha = a * 0.24;
+          ctx.beginPath();
+          ctx.arc(px, py, r * 2.4, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.globalAlpha = a;
         ctx.beginPath();
         ctx.arc(px, py, r, 0, Math.PI * 2);
         ctx.fill();
       }
-      ctx.shadowBlur = 0;
 
       // Periodic Shooting Star across the Galaxy
       const cycle = (t * 0.38) % 1;
@@ -1461,20 +1467,24 @@
       }
       ctx.globalAlpha = 1;
     } else if (weather === 'snow') {
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = '#f4f9ff';
       for (let i = 0; i < count; i++) {
         const p = particles[i],
           v = 24 + 65 * p.z;
         const px = mod(p.x * W + Math.sin(t * (0.5 + p.v * 0.5) + p.phase) * (14 + 25 * p.z), W),
           py = mod(p.y * H + t * v, H);
-        ctx.globalAlpha = 0.3 + 0.7 * p.z;
-        ctx.fillStyle = '#f4f9ff';
-        ctx.shadowBlur = 8 * p.z;
-        ctx.shadowColor = '#e7f5ff';
+        const r = 1.4 + 3.6 * p.z;
+        const a = 0.3 + 0.7 * p.z;
+        ctx.globalAlpha = a * 0.25;
         ctx.beginPath();
-        ctx.arc(px, py, 1.4 + 3.8 * p.z, 0, Math.PI * 2);
+        ctx.arc(px, py, r * 1.9, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = a;
+        ctx.beginPath();
+        ctx.arc(px, py, r, 0, Math.PI * 2);
         ctx.fill();
       }
-      ctx.shadowBlur = 0;
       ctx.globalAlpha = 1;
     } else if (weather === 'rain') {
       ctx.strokeStyle = '#d4e5ff';
@@ -3048,40 +3058,26 @@
     const visibleOpacity = clamp(item.opacity ?? 1, 0, 1);
     ctx.globalAlpha = visibleOpacity;
 
-    const mainColor = data.textColor || '#ffffff';
-    const glowColor = seg.accentColor || data.accentColor || '#ffffff';
-    const glowAmount = clamp(Number(data.glow ?? 68) / 100, 0, 1.5);
+    const breath = data.beatEffect?.enabled ? NebulaMotion.beatBreath(data.beatEffect, t) : 0;
     const pulse = data.beatEffect?.enabled ? beatPulse(t) : 0;
 
-    // 2026-11-19: Khách hàng yêu cầu bỏ hiệu ứng nhảy từng chữ và chỉ giữ chuyển động/nhảy nhẹ cho cả câu mượt mà; thay vòng lặp nhảy từng từ trong art.wordLayout bằng vẽ nguyên cả câu (art.label) đồng nhất với độ nhấc nhẹ theo nhịp và ánh sáng đều.
-    if (art.label) {
+    // 2026-11-19: Khách hàng phản hồi hiệu ứng vẫn hơi khựng; trước đó drawWords gọi fillText + shadowBlur 38px mỗi khung hình và giật theo gai beatPulse(t), nên dùng trực tiếp bitmap art.text đã render sẵn (1.5x supersampled) kết hợp nhịp thở mượt NebulaMotion.beatBreath() để chạy cực nhẹ 60fps không khựng.
+    if (art.text) {
       const textCenterX = -art.totalWidth / 2 + art.textWidth / 2;
-      const lineLift = -pulse * 3.2;
-      const lineScale = 1 + pulse * 0.016;
+      const lineLift = -breath * 3.0;
+      const lineScale = 1 + breath * 0.015;
       ctx.save();
       ctx.translate(textCenterX, lineLift);
       ctx.scale(lineScale, lineScale);
+      ctx.drawImage(art.text, -art.text.displayWidth / 2, -art.text.displayHeight / 2, art.text.displayWidth, art.text.displayHeight);
+      ctx.restore();
+    } else if (art.label) {
+      const textCenterX = -art.totalWidth / 2 + art.textWidth / 2;
       ctx.font = `${fontWeight()} ${art.size}px ${fontFamily()}`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-
-      // Soft luminous outer halo breathing gently with beat
-      ctx.shadowColor = glowColor;
-      ctx.shadowBlur = (22 + 16 * pulse) * Math.max(0.4, glowAmount);
-      ctx.shadowOffsetY = 0;
-      ctx.fillStyle = mainColor;
-      ctx.fillText(art.label, 0, 0);
-
-      // Crisp foreground text with deep contrast shadow
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.92)';
-      ctx.shadowBlur = 7;
-      ctx.shadowOffsetY = 2.5;
-      ctx.fillStyle = mainColor;
-      ctx.fillText(art.label, 0, 0);
-      ctx.restore();
-    } else if (art.text) {
-      const x = -art.totalWidth / 2 + art.textWidth / 2;
-      ctx.drawImage(art.text, x - art.text.displayWidth / 2, -art.text.displayHeight / 2, art.text.displayWidth, art.text.displayHeight);
+      ctx.fillStyle = data.textColor || '#ffffff';
+      ctx.fillText(art.label, textCenterX, 0);
     }
 
     if (art.symbol) {
